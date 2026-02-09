@@ -46,6 +46,890 @@ class Card {
     }
 }
 
+// ========== MODE QUIZ LIBRE ==========
+class QuizMode {
+    constructor(app) {
+        this.app = app;
+        this.quizQuestions = [];
+        this.currentQuestionIndex = 0;
+        this.answered = false;
+        this.quizStats = { total: 0, correct: 0, incorrect: 0 };
+    }
+
+    showCategorySelection() {
+        // Extraire toutes les catégories uniques
+        const categories = [...new Set(allQuestions.map(q => q.category))].sort();
+
+        document.getElementById('quiz-tab').innerHTML = `
+            <div style="text-align: center;">
+                <h2 style="margin-bottom: 10px;">❓ Mode Quiz</h2>
+                <p style="color: #666; margin-bottom: 30px;">
+                    Entraînez-vous sans impact sur la révision espacée
+                </p>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 15px; font-size: 1.1em;">Choisir une catégorie</h3>
+                    <button class="primary-btn" onclick="app.quiz.startQuiz('all', null)"
+                            style="margin-bottom: 15px; width: 100%; max-width: 400px;">
+                        🎯 Toutes les catégories (${allQuestions.length} questions)
+                    </button>
+
+                    ${categories.map(cat => {
+                        const count = allQuestions.filter(q => q.category === cat).length;
+                        return `
+                            <button class="answer-btn"
+                                    onclick="app.quiz.showDifficultySelection('${cat.replace(/'/g, "\\'")}')"
+                                    style="margin: 5px; width: 100%; max-width: 400px; text-align: left; padding: 15px;">
+                                ${cat} <span style="color: #999; font-size: 0.9em;">(${count})</span>
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 15px; font-size: 1.1em;">Filtrer par difficulté</h3>
+                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                        <button class="answer-btn" onclick="app.quiz.startQuiz('all', 'easy')"
+                                style="background: #6bcf7f; color: white; padding: 12px 20px;">
+                            😊 Facile
+                        </button>
+                        <button class="answer-btn" onclick="app.quiz.startQuiz('all', 'medium')"
+                                style="background: #ffd93d; color: #333; padding: 12px 20px;">
+                            🤔 Moyen
+                        </button>
+                        <button class="answer-btn" onclick="app.quiz.startQuiz('all', 'hard')"
+                                style="background: #ff6b6b; color: white; padding: 12px 20px;">
+                            😰 Difficile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    showDifficultySelection(category) {
+        const categoryQuestions = allQuestions.filter(q => q.category === category);
+        const easyCount = categoryQuestions.filter(q => q.difficulty === 'easy').length;
+        const mediumCount = categoryQuestions.filter(q => q.difficulty === 'medium').length;
+        const hardCount = categoryQuestions.filter(q => q.difficulty === 'hard').length;
+
+        document.getElementById('quiz-tab').innerHTML = `
+            <div style="text-align: center;">
+                <button class="answer-btn" onclick="app.quiz.showCategorySelection()"
+                        style="margin-bottom: 20px;">
+                    ← Retour
+                </button>
+
+                <h2 style="margin-bottom: 10px;">${category}</h2>
+                <p style="color: #666; margin-bottom: 30px;">
+                    ${categoryQuestions.length} questions disponibles
+                </p>
+
+                <div style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto;">
+                    <button class="primary-btn" onclick="app.quiz.startQuiz('${category.replace(/'/g, "\\'")}', null)">
+                        🎯 Toutes les questions (${categoryQuestions.length})
+                    </button>
+
+                    ${easyCount > 0 ? `
+                        <button class="answer-btn" onclick="app.quiz.startQuiz('${category.replace(/'/g, "\\'")}', 'easy')"
+                                style="background: #6bcf7f; color: white;">
+                            😊 Facile (${easyCount})
+                        </button>
+                    ` : ''}
+
+                    ${mediumCount > 0 ? `
+                        <button class="answer-btn" onclick="app.quiz.startQuiz('${category.replace(/'/g, "\\'")}', 'medium')"
+                                style="background: #ffd93d; color: #333;">
+                            🤔 Moyen (${mediumCount})
+                        </button>
+                    ` : ''}
+
+                    ${hardCount > 0 ? `
+                        <button class="answer-btn" onclick="app.quiz.startQuiz('${category.replace(/'/g, "\\'")}', 'hard')"
+                                style="background: #ff6b6b; color: white;">
+                            😰 Difficile (${hardCount})
+                        </button>
+                    ` : ''}
+                </div>
+            </div>
+        `;
+    }
+
+    startQuiz(category, difficulty) {
+        // Filtrer les questions
+        let questions = allQuestions;
+
+        if (category !== 'all') {
+            questions = questions.filter(q => q.category === category);
+        }
+
+        if (difficulty) {
+            questions = questions.filter(q => q.difficulty === difficulty);
+        }
+
+        if (questions.length === 0) {
+            alert('Aucune question disponible avec ces filtres');
+            return;
+        }
+
+        // Mélanger l'ordre des questions (Fisher-Yates shuffle)
+        this.quizQuestions = [...questions];
+        for (let i = this.quizQuestions.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.quizQuestions[i], this.quizQuestions[j]] = [this.quizQuestions[j], this.quizQuestions[i]];
+        }
+
+        this.currentQuestionIndex = 0;
+        this.answered = false;
+        this.quizStats = { total: 0, correct: 0, incorrect: 0 };
+        this.showQuizQuestion();
+    }
+
+    showQuizQuestion() {
+        if (this.currentQuestionIndex >= this.quizQuestions.length) {
+            this.showQuizResults();
+            return;
+        }
+
+        this.answered = false;
+        const question = this.quizQuestions[this.currentQuestionIndex];
+        const progress = ((this.currentQuestionIndex + 1) / this.quizQuestions.length) * 100;
+
+        const imageHTML = question.image ? `
+            <div style="margin-bottom: 20px; text-align: center;">
+                <img src="${question.image}"
+                     alt="${question.imageAlt || question.question}"
+                     style="max-width: 100%; height: auto; border-radius: 12px;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer;"
+                     onclick="this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)'; this.style.transition = 'transform 0.3s';">
+            </div>
+        ` : '';
+
+        const difficultyBadge = question.difficulty ? `
+            <span style="
+                background: ${
+                    question.difficulty === 'easy' ? '#6bcf7f' :
+                    question.difficulty === 'medium' ? '#ffd93d' : '#ff6b6b'
+                };
+                color: ${question.difficulty === 'medium' ? '#333' : 'white'};
+                padding: 5px 12px;
+                border-radius: 12px;
+                font-size: 0.8em;
+                font-weight: bold;
+                margin-left: 10px;
+            ">
+                ${
+                    question.difficulty === 'easy' ? '😊 Facile' :
+                    question.difficulty === 'medium' ? '🤔 Moyen' : '😰 Difficile'
+                }
+            </span>
+        ` : '';
+
+        document.getElementById('quiz-tab').innerHTML = `
+            <div style="text-align: center; margin-bottom: 15px;">
+                <button class="answer-btn" onclick="app.quiz.showCategorySelection()"
+                        style="display: inline-block; margin-bottom: 10px;">
+                    ← Quitter le quiz
+                </button>
+                <div style="color: #666; font-size: 0.9em;">
+                    Question ${this.currentQuestionIndex + 1} sur ${this.quizQuestions.length}
+                </div>
+                <div style="margin-top: 10px; color: #667eea; font-weight: bold;">
+                    Score : ${this.quizStats.correct}/${this.quizStats.total}
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: ${progress}%"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="category-badge">${question.category}${difficultyBadge}</div>
+
+                ${imageHTML}
+
+                <div class="question-text">${question.question}</div>
+
+                <div class="answers">
+                    ${question.answers.map((answer, index) => `
+                        <button class="answer-btn" onclick="app.quiz.selectQuizAnswer(${index})">
+                            ${answer}
+                        </button>
+                    `).join('')}
+                </div>
+
+                <div id="quiz-feedback"></div>
+            </div>
+        `;
+    }
+
+    selectQuizAnswer(selectedIndex) {
+        if (this.answered) return;
+        this.answered = true;
+
+        const question = this.quizQuestions[this.currentQuestionIndex];
+        const isCorrect = selectedIndex === question.correct;
+
+        this.quizStats.total++;
+        if (isCorrect) {
+            this.quizStats.correct++;
+        } else {
+            this.quizStats.incorrect++;
+        }
+
+        const buttons = document.querySelectorAll('#quiz-tab .answer-btn');
+        buttons.forEach((btn, idx) => {
+            if (idx === question.correct) {
+                btn.style.background = '#6bcf7f';
+                btn.style.color = 'white';
+            } else if (idx === selectedIndex) {
+                btn.style.background = '#ff6b6b';
+                btn.style.color = 'white';
+            }
+            btn.disabled = true;
+        });
+
+        const feedback = document.getElementById('quiz-feedback');
+        feedback.innerHTML = `
+            <div style="margin-top: 20px; padding: 20px; background: ${isCorrect ? '#e7f9eb' : '#ffe6e6'};
+                        border-radius: 12px; text-align: left;">
+                <strong style="color: ${isCorrect ? '#2d8f3c' : '#d32f2f'}; font-size: 1.2em;">
+                    ${isCorrect ? '✅ Correct !' : '❌ Incorrect'}
+                </strong>
+                <p style="margin: 10px 0; color: #333;">
+                    <strong>Explication :</strong><br>
+                    ${question.explanation}
+                </p>
+                ${question.keyPoints ? `
+                    <div style="margin-top: 10px;">
+                        <strong>Points clés :</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px;">
+                            ${question.keyPoints.map(p => `<li>${p}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
+                <button class="primary-btn" onclick="app.quiz.nextQuizQuestion()"
+                        style="margin-top: 15px; width: 100%;">
+                    ${this.currentQuestionIndex + 1 < this.quizQuestions.length ?
+                        'Question suivante →' : 'Voir les résultats 🎯'}
+                </button>
+            </div>
+        `;
+    }
+
+    nextQuizQuestion() {
+        this.currentQuestionIndex++;
+        this.showQuizQuestion();
+    }
+
+    showQuizResults() {
+        const percentage = Math.round((this.quizStats.correct / this.quizStats.total) * 100);
+        const emoji = percentage >= 80 ? '🏆' : percentage >= 60 ? '👍' : percentage >= 40 ? '💪' : '📚';
+        const message = percentage >= 80 ? 'Excellent !' :
+                       percentage >= 60 ? 'Très bien !' :
+                       percentage >= 40 ? 'Pas mal, continuez !' :
+                       'Continuez à vous entraîner !';
+
+        document.getElementById('quiz-tab').innerHTML = `
+            <div style="text-align: center; padding: 20px;">
+                <div style="font-size: 5em; margin-bottom: 20px;">${emoji}</div>
+                <h2 style="margin-bottom: 10px;">${message}</h2>
+                <p style="color: #666; margin-bottom: 30px;">Résultats du quiz</p>
+
+                <div style="font-size: 3em; color: #667eea; font-weight: bold; margin-bottom: 10px;">
+                    ${percentage}%
+                </div>
+                <div style="color: #666; margin-bottom: 30px;">
+                    ${this.quizStats.correct} bonnes réponses sur ${this.quizStats.total}
+                </div>
+
+                <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 30px;">
+                    <div style="background: #e7f9eb; padding: 20px; border-radius: 12px; flex: 1; max-width: 150px;">
+                        <div style="font-size: 2em; color: #2d8f3c;">✅</div>
+                        <div style="font-size: 1.5em; font-weight: bold;">${this.quizStats.correct}</div>
+                        <div style="color: #666; font-size: 0.9em;">Correctes</div>
+                    </div>
+                    <div style="background: #ffe6e6; padding: 20px; border-radius: 12px; flex: 1; max-width: 150px;">
+                        <div style="font-size: 2em; color: #d32f2f;">❌</div>
+                        <div style="font-size: 1.5em; font-weight: bold;">${this.quizStats.incorrect}</div>
+                        <div style="color: #666; font-size: 0.9em;">Incorrectes</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: 0 auto;">
+                    <button class="primary-btn" onclick="app.quiz.showCategorySelection()">
+                        🔄 Nouveau quiz
+                    </button>
+                    <button class="answer-btn" onclick="switchTab('daily')">
+                        📅 Retour aux révisions
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// ========== CALCULATRICE DE CHANTIER ==========
+class ConstructionCalculator {
+    constructor(app) {
+        this.app = app;
+    }
+
+    showMenu() {
+        document.getElementById('calculator-tab').innerHTML = `
+            <div style="text-align: center;">
+                <h2 style="margin-bottom: 10px;">🧮 Calculatrice de chantier</h2>
+                <p style="color: #666; margin-bottom: 30px;">
+                    Outils pratiques pour vos installations
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; max-width: 600px; margin: 0 auto;">
+                    <button class="answer-btn" onclick="app.calculator.showUnitConverter()"
+                            style="padding: 30px 20px; font-size: 1em; height: auto;">
+                        <div style="font-size: 2em; margin-bottom: 10px;">📏</div>
+                        <div style="font-weight: bold;">Convertisseur</div>
+                        <div style="font-size: 0.8em; color: #999; margin-top: 5px;">mm, cm, m, pouces</div>
+                    </button>
+
+                    <button class="answer-btn" onclick="app.calculator.showHeatingPowerCalc()"
+                            style="padding: 30px 20px; font-size: 1em; height: auto;">
+                        <div style="font-size: 2em; margin-bottom: 10px;">🔥</div>
+                        <div style="font-weight: bold;">Puissance</div>
+                        <div style="font-size: 0.8em; color: #999; margin-top: 5px;">Chauffage</div>
+                    </button>
+
+                    <button class="answer-btn" onclick="app.calculator.showFlowCalc()"
+                            style="padding: 30px 20px; font-size: 1em; height: auto;">
+                        <div style="font-size: 2em; margin-bottom: 10px;">💧</div>
+                        <div style="font-weight: bold;">Débit</div>
+                        <div style="font-size: 0.8em; color: #999; margin-top: 5px;">Eau et pression</div>
+                    </button>
+
+                    <button class="answer-btn" onclick="app.calculator.showSlopeCalc()"
+                            style="padding: 30px 20px; font-size: 1em; height: auto;">
+                        <div style="font-size: 2em; margin-bottom: 10px;">↘️</div>
+                        <div style="font-weight: bold;">Pente</div>
+                        <div style="font-size: 0.8em; color: #999; margin-top: 5px;">Évacuation</div>
+                    </button>
+
+                    <button class="answer-btn" onclick="app.calculator.showPipeDiameterCalc()"
+                            style="padding: 30px 20px; font-size: 1em; height: auto;">
+                        <div style="font-size: 2em; margin-bottom: 10px;">🔧</div>
+                        <div style="font-weight: bold;">Diamètres</div>
+                        <div style="font-size: 0.8em; color: #999; margin-top: 5px;">Tuyauterie</div>
+                    </button>
+
+                    <button class="answer-btn" onclick="app.calculator.showAreaVolumeCalc()"
+                            style="padding: 30px 20px; font-size: 1em; height: auto;">
+                        <div style="font-size: 2em; margin-bottom: 10px;">📐</div>
+                        <div style="font-weight: bold;">Surface</div>
+                        <div style="font-size: 0.8em; color: #999; margin-top: 5px;">Volume</div>
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    showUnitConverter() {
+        document.getElementById('calculator-tab').innerHTML = `
+            <div style="max-width: 500px; margin: 0 auto;">
+                <button class="answer-btn" onclick="app.calculator.showMenu()"
+                        style="margin-bottom: 20px;">
+                    ← Retour
+                </button>
+
+                <h2 style="text-align: center; margin-bottom: 10px;">📏 Convertisseur d'unités</h2>
+                <p style="color: #666; text-align: center; margin-bottom: 30px;">
+                    Convertir mm, cm, m, pouces
+                </p>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Valeur à convertir</label>
+                    <input type="number" id="unit-value" placeholder="Ex: 100"
+                           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1.1em; margin-bottom: 20px;">
+
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">De</label>
+                    <select id="unit-from"
+                            style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; margin-bottom: 20px;">
+                        <option value="mm">Millimètres (mm)</option>
+                        <option value="cm">Centimètres (cm)</option>
+                        <option value="m">Mètres (m)</option>
+                        <option value="pouces">Pouces (in)</option>
+                    </select>
+
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Vers</label>
+                    <select id="unit-to"
+                            style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; margin-bottom: 20px;">
+                        <option value="mm">Millimètres (mm)</option>
+                        <option value="cm">Centimètres (cm)</option>
+                        <option value="m">Mètres (m)</option>
+                        <option value="pouces">Pouces (in)</option>
+                    </select>
+
+                    <button class="primary-btn" onclick="app.calculator.convertUnits()"
+                            style="width: 100%; margin-bottom: 20px;">
+                        🔄 Convertir
+                    </button>
+
+                    <div id="unit-result" style="padding: 20px; background: #f5f5f5; border-radius: 8px; text-align: center; display: none;">
+                        <div style="font-size: 2em; font-weight: bold; color: #667eea; margin-bottom: 5px;" id="unit-result-value"></div>
+                        <div style="color: #666;" id="unit-result-unit"></div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <strong>💡 Conversions courantes</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>1 pouce = 25.4 mm</li>
+                        <li>1 m = 100 cm = 1000 mm</li>
+                        <li>3/4" = 19.05 mm</li>
+                        <li>1/2" = 12.7 mm</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+
+    convertUnits() {
+        const value = parseFloat(document.getElementById('unit-value').value);
+        const from = document.getElementById('unit-from').value;
+        const to = document.getElementById('unit-to').value;
+
+        if (isNaN(value)) {
+            alert('Veuillez entrer une valeur valide');
+            return;
+        }
+
+        const conversions = {
+            'mm': { mm: 1, cm: 0.1, m: 0.001, pouces: 0.0393701 },
+            'cm': { mm: 10, cm: 1, m: 0.01, pouces: 0.393701 },
+            'm': { mm: 1000, cm: 100, m: 1, pouces: 39.3701 },
+            'pouces': { mm: 25.4, cm: 2.54, m: 0.0254, pouces: 1 }
+        };
+
+        const result = value * conversions[from][to];
+        const units = { mm: 'mm', cm: 'cm', m: 'm', pouces: 'pouces' };
+
+        document.getElementById('unit-result').style.display = 'block';
+        document.getElementById('unit-result-value').textContent = result.toFixed(2);
+        document.getElementById('unit-result-unit').textContent = units[to];
+    }
+
+    showHeatingPowerCalc() {
+        document.getElementById('calculator-tab').innerHTML = `
+            <div style="max-width: 500px; margin: 0 auto;">
+                <button class="answer-btn" onclick="app.calculator.showMenu()"
+                        style="margin-bottom: 20px;">
+                    ← Retour
+                </button>
+
+                <h2 style="text-align: center; margin-bottom: 10px;">🔥 Puissance de chauffage</h2>
+                <p style="color: #666; text-align: center; margin-bottom: 30px;">
+                    Calculer la puissance nécessaire
+                </p>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Surface (m²)</label>
+                    <input type="number" id="heating-surface" placeholder="Ex: 50"
+                           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1.1em; margin-bottom: 20px;">
+
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Hauteur sous plafond (m)</label>
+                    <input type="number" id="heating-height" placeholder="Ex: 2.5" value="2.5"
+                           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1.1em; margin-bottom: 20px;">
+
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Isolation</label>
+                    <select id="heating-insulation"
+                            style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; margin-bottom: 20px;">
+                        <option value="100">Mauvaise (100 W/m³)</option>
+                        <option value="60" selected>Moyenne (60 W/m³)</option>
+                        <option value="40">Bonne (40 W/m³)</option>
+                        <option value="30">Excellente (30 W/m³)</option>
+                    </select>
+
+                    <button class="primary-btn" onclick="app.calculator.calculateHeatingPower()"
+                            style="width: 100%; margin-bottom: 20px;">
+                        🔥 Calculer
+                    </button>
+
+                    <div id="heating-result" style="padding: 20px; background: #f5f5f5; border-radius: 8px; display: none;">
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <div style="font-size: 2.5em; font-weight: bold; color: #ff6b6b;" id="heating-result-kw"></div>
+                            <div style="color: #666; font-size: 1.1em;">Puissance recommandée</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Volume :</span>
+                                <strong id="heating-volume"></strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Puissance :</span>
+                                <strong id="heating-watts"></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <strong>💡 Coefficients d'isolation</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Mauvaise :</strong> Bâtiment ancien, simple vitrage</li>
+                        <li><strong>Moyenne :</strong> Double vitrage, isolation standard</li>
+                        <li><strong>Bonne :</strong> RT 2012, double vitrage performant</li>
+                        <li><strong>Excellente :</strong> Maison passive, BBC</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+
+    calculateHeatingPower() {
+        const surface = parseFloat(document.getElementById('heating-surface').value);
+        const height = parseFloat(document.getElementById('heating-height').value);
+        const insulationCoeff = parseFloat(document.getElementById('heating-insulation').value);
+
+        if (isNaN(surface) || isNaN(height)) {
+            alert('Veuillez entrer des valeurs valides');
+            return;
+        }
+
+        const volume = surface * height;
+        const powerWatts = volume * insulationCoeff;
+        const powerKw = powerWatts / 1000;
+
+        document.getElementById('heating-result').style.display = 'block';
+        document.getElementById('heating-result-kw').textContent = powerKw.toFixed(1) + ' kW';
+        document.getElementById('heating-volume').textContent = volume.toFixed(1) + ' m³';
+        document.getElementById('heating-watts').textContent = powerWatts.toFixed(0) + ' W';
+    }
+
+    showFlowCalc() {
+        document.getElementById('calculator-tab').innerHTML = `
+            <div style="max-width: 500px; margin: 0 auto;">
+                <button class="answer-btn" onclick="app.calculator.showMenu()"
+                        style="margin-bottom: 20px;">
+                    ← Retour
+                </button>
+
+                <h2 style="text-align: center; margin-bottom: 10px;">💧 Débit d'eau</h2>
+                <p style="color: #666; text-align: center; margin-bottom: 30px;">
+                    Convertir les unités de débit
+                </p>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Valeur</label>
+                    <input type="number" id="flow-value" placeholder="Ex: 10"
+                           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1.1em; margin-bottom: 20px;">
+
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Unité</label>
+                    <select id="flow-unit"
+                            style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; margin-bottom: 20px;">
+                        <option value="lmin">Litres/minute (L/min)</option>
+                        <option value="lh">Litres/heure (L/h)</option>
+                        <option value="m3h">Mètres cubes/heure (m³/h)</option>
+                    </select>
+
+                    <button class="primary-btn" onclick="app.calculator.calculateFlow()"
+                            style="width: 100%; margin-bottom: 20px;">
+                        💧 Convertir
+                    </button>
+
+                    <div id="flow-result" style="padding: 20px; background: #f5f5f5; border-radius: 8px; display: none;">
+                        <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>L/min :</span>
+                                <strong id="flow-lmin"></strong>
+                            </div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>L/h :</span>
+                                <strong id="flow-lh"></strong>
+                            </div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>m³/h :</span>
+                                <strong id="flow-m3h"></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <strong>💡 Débits courants</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Lavabo : 6-12 L/min</li>
+                        <li>Évier : 12-15 L/min</li>
+                        <li>Douche : 12-20 L/min</li>
+                        <li>Baignoire : 20-30 L/min</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+
+    calculateFlow() {
+        const value = parseFloat(document.getElementById('flow-value').value);
+        const unit = document.getElementById('flow-unit').value;
+
+        if (isNaN(value)) {
+            alert('Veuillez entrer une valeur valide');
+            return;
+        }
+
+        let lmin, lh, m3h;
+
+        if (unit === 'lmin') {
+            lmin = value;
+            lh = value * 60;
+            m3h = value * 0.06;
+        } else if (unit === 'lh') {
+            lmin = value / 60;
+            lh = value;
+            m3h = value / 1000;
+        } else { // m3h
+            lmin = value * 1000 / 60;
+            lh = value * 1000;
+            m3h = value;
+        }
+
+        document.getElementById('flow-result').style.display = 'block';
+        document.getElementById('flow-lmin').textContent = lmin.toFixed(2) + ' L/min';
+        document.getElementById('flow-lh').textContent = lh.toFixed(2) + ' L/h';
+        document.getElementById('flow-m3h').textContent = m3h.toFixed(3) + ' m³/h';
+    }
+
+    showSlopeCalc() {
+        document.getElementById('calculator-tab').innerHTML = `
+            <div style="max-width: 500px; margin: 0 auto;">
+                <button class="answer-btn" onclick="app.calculator.showMenu()"
+                        style="margin-bottom: 20px;">
+                    ← Retour
+                </button>
+
+                <h2 style="text-align: center; margin-bottom: 10px;">↘️ Pente d'évacuation</h2>
+                <p style="color: #666; text-align: center; margin-bottom: 30px;">
+                    Calculer le dénivelé nécessaire
+                </p>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Longueur de canalisation (m)</label>
+                    <input type="number" id="slope-length" placeholder="Ex: 5"
+                           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1.1em; margin-bottom: 20px;">
+
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Pente souhaitée (%)</label>
+                    <input type="number" id="slope-percent" placeholder="Ex: 1" value="1"
+                           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1.1em; margin-bottom: 20px;">
+
+                    <button class="primary-btn" onclick="app.calculator.calculateSlope()"
+                            style="width: 100%; margin-bottom: 20px;">
+                        ↘️ Calculer
+                    </button>
+
+                    <div id="slope-result" style="padding: 20px; background: #f5f5f5; border-radius: 8px; text-align: center; display: none;">
+                        <div style="font-size: 2.5em; font-weight: bold; color: #667eea; margin-bottom: 5px;" id="slope-result-cm"></div>
+                        <div style="color: #666; font-size: 1.1em;">Dénivelé à prévoir</div>
+                        <div style="margin-top: 15px; font-size: 0.9em; color: #999;" id="slope-formula"></div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <strong>💡 Pentes minimales</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Eaux usées :</strong> 1 cm/m minimum (1%)</li>
+                        <li><strong>DN 100 :</strong> 1-3 cm/m</li>
+                        <li><strong>DN 125 :</strong> 0.5-2 cm/m</li>
+                        <li><strong>DN 160 :</strong> 0.5-1.5 cm/m</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+
+    calculateSlope() {
+        const length = parseFloat(document.getElementById('slope-length').value);
+        const percent = parseFloat(document.getElementById('slope-percent').value);
+
+        if (isNaN(length) || isNaN(percent)) {
+            alert('Veuillez entrer des valeurs valides');
+            return;
+        }
+
+        const drop = length * (percent / 100);
+        const dropCm = drop * 100;
+
+        document.getElementById('slope-result').style.display = 'block';
+        document.getElementById('slope-result-cm').textContent = dropCm.toFixed(1) + ' cm';
+        document.getElementById('slope-formula').textContent =
+            `${length} m × ${percent}% = ${drop.toFixed(2)} m`;
+    }
+
+    showPipeDiameterCalc() {
+        document.getElementById('calculator-tab').innerHTML = `
+            <div style="max-width: 600px; margin: 0 auto;">
+                <button class="answer-btn" onclick="app.calculator.showMenu()"
+                        style="margin-bottom: 20px;">
+                    ← Retour
+                </button>
+
+                <h2 style="text-align: center; margin-bottom: 10px;">🔧 Diamètres de tuyauterie</h2>
+                <p style="color: #666; text-align: center; margin-bottom: 30px;">
+                    Équivalences et correspondances
+                </p>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 15px;">Cuivre (DN nominal)</h3>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="background: #f5f5f5; font-weight: bold;">
+                            <td style="padding: 10px; border: 1px solid #ddd;">Pouces</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">DN</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Diamètre (mm)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">3/8"</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">10</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">12 mm</td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 10px; border: 1px solid #ddd;">1/2"</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">14</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">14 mm</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">3/4"</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">16</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">16 mm</td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 10px; border: 1px solid #ddd;">1"</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">20</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">22 mm</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">1"1/4</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">26</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">28 mm</td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 10px; border: 1px solid #ddd;">1"1/2</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">33</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">35 mm</td>
+                        </tr>
+                    </table>
+
+                    <h3 style="margin: 25px 0 15px 0;">Évacuation PVC</h3>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="background: #f5f5f5; font-weight: bold;">
+                            <td style="padding: 10px; border: 1px solid #ddd;">Type</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Diamètre</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Usage</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">DN 32</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">32 mm</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Lavabo, bidet</td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 10px; border: 1px solid #ddd;">DN 40</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">40 mm</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Évier, douche</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">DN 100</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">100 mm</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">WC, chute</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        `;
+    }
+
+    showAreaVolumeCalc() {
+        document.getElementById('calculator-tab').innerHTML = `
+            <div style="max-width: 500px; margin: 0 auto;">
+                <button class="answer-btn" onclick="app.calculator.showMenu()"
+                        style="margin-bottom: 20px;">
+                    ← Retour
+                </button>
+
+                <h2 style="text-align: center; margin-bottom: 10px;">📐 Surface et Volume</h2>
+                <p style="color: #666; text-align: center; margin-bottom: 30px;">
+                    Calculer surface et volume
+                </p>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 15px;">Rectangle / Pièce</h3>
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Longueur (m)</label>
+                    <input type="number" id="area-length" placeholder="Ex: 5"
+                           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1.1em; margin-bottom: 15px;">
+
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Largeur (m)</label>
+                    <input type="number" id="area-width" placeholder="Ex: 4"
+                           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1.1em; margin-bottom: 15px;">
+
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Hauteur (m) - optionnel pour volume</label>
+                    <input type="number" id="area-height" placeholder="Ex: 2.5"
+                           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1.1em; margin-bottom: 20px;">
+
+                    <button class="primary-btn" onclick="app.calculator.calculateArea()"
+                            style="width: 100%; margin-bottom: 20px;">
+                        📐 Calculer
+                    </button>
+
+                    <div id="area-result" style="display: none;">
+                        <div style="padding: 20px; background: #f5f5f5; border-radius: 8px; margin-bottom: 10px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 2em; font-weight: bold; color: #667eea;" id="area-result-surface"></div>
+                                <div style="color: #666;">Surface</div>
+                            </div>
+                        </div>
+                        <div id="volume-display" style="padding: 20px; background: #f5f5f5; border-radius: 8px; display: none;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 2em; font-weight: bold; color: #ff6b6b;" id="area-result-volume"></div>
+                                <div style="color: #666;">Volume</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <strong>💡 Formules</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Surface :</strong> Longueur × Largeur</li>
+                        <li><strong>Volume :</strong> Longueur × Largeur × Hauteur</li>
+                        <li><strong>Cylindre :</strong> π × r² × hauteur</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+
+    calculateArea() {
+        const length = parseFloat(document.getElementById('area-length').value);
+        const width = parseFloat(document.getElementById('area-width').value);
+        const height = parseFloat(document.getElementById('area-height').value);
+
+        if (isNaN(length) || isNaN(width)) {
+            alert('Veuillez entrer longueur et largeur');
+            return;
+        }
+
+        const surface = length * width;
+
+        document.getElementById('area-result').style.display = 'block';
+        document.getElementById('area-result-surface').textContent = surface.toFixed(2) + ' m²';
+
+        if (!isNaN(height) && height > 0) {
+            const volume = surface * height;
+            document.getElementById('volume-display').style.display = 'block';
+            document.getElementById('area-result-volume').textContent = volume.toFixed(2) + ' m³';
+        } else {
+            document.getElementById('volume-display').style.display = 'none';
+        }
+    }
+}
+
 // Application principale
 class SpacedRepetitionApp {
     constructor() {
@@ -55,6 +939,11 @@ class SpacedRepetitionApp {
         this.currentIndex = 0;
         this.answered = false;
         this.sessionStats = { correct: 0, incorrect: 0, total: 0 };
+
+        // Initialiser les nouveaux modes
+        this.quiz = new QuizMode(this);
+        this.calculator = new ConstructionCalculator(this);
+
         this.loadData();
         this.updateDashboard();
         this.showDailyTab();
@@ -590,6 +1479,14 @@ class SpacedRepetitionApp {
         `;
     }
 
+    showQuizTab() {
+        this.quiz.showCategorySelection();
+    }
+
+    showCalculatorTab() {
+        this.calculator.showMenu();
+    }
+
     async setupNotifications() {
         if ('Notification' in window && 'serviceWorker' in navigator) {
             const permission = await Notification.requestPermission();
@@ -694,6 +1591,9 @@ function switchTab(tabName) {
         case 'daily':
             app.showDailyTab();
             break;
+        case 'quiz':
+            app.showQuizTab();
+            break;
         case 'flashcards':
             app.showFlashcards();
             break;
@@ -702,6 +1602,9 @@ function switchTab(tabName) {
             break;
         case 'calendar':
             app.showCalendar();
+            break;
+        case 'calculator':
+            app.showCalculatorTab();
             break;
         case 'settings':
             app.showSettings();
