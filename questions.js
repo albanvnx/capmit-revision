@@ -8,7 +8,7 @@ const allQuestions = [
         category: "Stage 4 - Symboles",
         difficulty: "easy",
         question: "Voici une page de symboles de chauffage. Ces symboles sont utilisés pour représenter les différents composants d'une installation thermique sur un schéma de principe.",
-        image: "images/symboles/symboles-page-1.png",
+        image: "images/symboles/symbole-chauffage-1.png",
         imageAlt: "Page de symboles techniques de chauffage normalisés",
         answers: ["Vrai", "Faux", "Seulement pour le gaz", "Obsolète"],
         correct: 0,
@@ -20,7 +20,7 @@ const allQuestions = [
         category: "Stage 4 - Schémas",
         difficulty: "medium",
         question: "Ce schéma représente un principe d'installation de chauffage. Quelle est l'utilité d'un schéma de principe ?",
-        image: "images/schemas/schema-principe-1.png",
+        image: "images/schemas/schema-chauffage-1.png",
         imageAlt: "Schéma de principe d'une installation de chauffage",
         answers: [
             "Décorer le dossier technique",
@@ -37,7 +37,7 @@ const allQuestions = [
         category: "Stage 4 - Symboles",
         difficulty: "hard",
         question: "Sur les schémas techniques, pourquoi est-il crucial d'utiliser des symboles normalisés ?",
-        image: "images/symboles/symboles-page-2.png",
+        image: "images/symboles/symbole-chauffage-2.png",
         imageAlt: "Deuxième page de symboles techniques de chauffage",
         answers: [
             "C'est plus joli visuellement",
@@ -1508,10 +1508,575 @@ const allQuestions = [
     {
         id: 'q160',
         category: "Stage 4 - Installation",
+        difficulty: "medium",
         question: "Pourquoi faut-il désembouer un circuit avant mise en service chaudière neuve ?",
         answers: ["Pas nécessaire", "Boues anciennes détruiraient échangeur neuf", "Réglementation", "Esthétique"],
         correct: 1,
         explanation: "Les boues d'un ancien circuit encrassent et détruisent l'échangeur de la chaudière neuve.",
         keyPoints: ["Protection chaudière neuve", "Boues anciennes", "Désembouage chimique", "Rinçage", "Inhibiteur après"]
+    },
+
+    // ========== NOUVELLES QUESTIONS AVEC IMAGES (40 questions) ==========
+
+    // --- Symboles techniques (10 questions) ---
+    {
+        id: 'q161',
+        category: "Stage 4 - Symboles",
+        difficulty: "easy",
+        question: "Les symboles de chauffage permettent de représenter les installations sur des plans techniques. Sont-ils obligatoires sur les schémas professionnels ?",
+        image: "images/symboles/symbole-chauffage-3.png",
+        imageAlt: "Symboles normalisés de chauffage",
+        answers: ["Oui, normes obligatoires", "Non, facultatifs", "Seulement pour export", "Obsolètes"],
+        correct: 0,
+        explanation: "Les symboles normalisés sont obligatoires sur tous les schémas techniques professionnels pour garantir la compréhension universelle.",
+        keyPoints: ["Normes NF", "Obligatoire", "Compréhension universelle", "Sécurité"]
+    },
+    {
+        id: 'q162',
+        category: "Stage 4 - Symboles",
+        difficulty: "medium",
+        question: "Sur un schéma de chauffage, comment distingue-t-on généralement le circuit aller du circuit retour ?",
+        image: "images/symboles/symbole-chauffage-4.png",
+        imageAlt: "Symboles de circuits de chauffage",
+        answers: ["Par la couleur (rouge/bleu)", "Par l'épaisseur du trait", "Par des flèches", "Toutes ces réponses"],
+        correct: 3,
+        explanation: "Plusieurs conventions existent : couleurs (rouge=aller, bleu=retour), épaisseur de trait, ou flèches indiquant le sens de circulation.",
+        keyPoints: ["Rouge = aller", "Bleu = retour", "Sens circulation", "Conventions graphiques"]
+    },
+    {
+        id: 'q163',
+        category: "Stage 4 - Symboles",
+        difficulty: "easy",
+        question: "Que représente un symbole de radiateur sur un plan de chauffage ?",
+        image: "images/symboles/symbole-chauffage-5.png",
+        imageAlt: "Symboles d'émetteurs de chaleur",
+        answers: ["Un émetteur de chaleur", "Une chaudière", "Un circulateur", "Un vase d'expansion"],
+        correct: 0,
+        explanation: "Le radiateur est un émetteur de chaleur qui transfère l'énergie thermique de l'eau vers l'air ambiant.",
+        keyPoints: ["Émetteur", "Transfert thermique", "Air ambiant", "Convection et rayonnement"]
+    },
+    {
+        id: 'q164',
+        category: "Stage 4 - Symboles",
+        difficulty: "hard",
+        question: "Quelle est la différence entre un schéma de principe et un schéma d'exécution ?",
+        image: "images/symboles/symbole-chauffage-6.png",
+        imageAlt: "Types de schémas techniques",
+        answers: [
+            "Aucune différence",
+            "Le principe montre le fonctionnement, l'exécution donne les cotes exactes",
+            "Le principe est en couleur, l'exécution en noir et blanc",
+            "Le principe est pour le client, l'exécution pour l'installateur"
+        ],
+        correct: 1,
+        explanation: "Le schéma de principe explique le fonctionnement global sans détails précis. Le schéma d'exécution indique les dimensions, cotes et implantations exactes pour l'installation.",
+        keyPoints: ["Principe = fonctionnement", "Exécution = cotes précises", "Deux documents complémentaires", "Niveaux de détail différents"]
+    },
+    {
+        id: 'q165',
+        category: "Stage 4 - Schémas",
+        difficulty: "medium",
+        question: "Sur un schéma hydraulique, qu'indique une flèche sur une canalisation ?",
+        image: "images/schemas/schema-chauffage-2.png",
+        imageAlt: "Schéma hydraulique avec flèches",
+        answers: ["La pression", "Le sens de circulation du fluide", "Le diamètre", "La température"],
+        correct: 1,
+        explanation: "Les flèches indiquent toujours le sens de circulation du fluide (eau chaude ou froide) dans les canalisations.",
+        keyPoints: ["Sens de circulation", "Fluide", "Convention graphique", "Lecture du schéma"]
+    },
+    {
+        id: 'q166',
+        category: "Stage 4 - Schémas",
+        difficulty: "easy",
+        question: "À quoi sert un schéma isométrique en plomberie-chauffage ?",
+        image: "images/schemas/schema-chauffage-3.png",
+        imageAlt: "Schéma isométrique de tuyauterie",
+        answers: [
+            "Décoration du dossier",
+            "Visualiser l'installation en 3D avec les hauteurs et parcours",
+            "Calculer les pertes de charge",
+            "Remplacer les photos"
+        ],
+        correct: 1,
+        explanation: "Le schéma isométrique permet de représenter en 3D les canalisations avec leurs parcours exacts, changements de direction et hauteurs.",
+        keyPoints: ["Représentation 3D", "Hauteurs", "Parcours réels", "Angles 30°"]
+    },
+    {
+        id: 'q167',
+        category: "Stage 4 - Schémas",
+        difficulty: "hard",
+        question: "Dans un schéma de chauffage, que représente un triangle barré sur une canalisation ?",
+        image: "images/schemas/schema-chauffage-4.png",
+        imageAlt: "Symbole de vanne sur schéma",
+        answers: ["Un filtre", "Une vanne ou robinet", "Un clapet anti-retour", "Un purgeur"],
+        correct: 1,
+        explanation: "Le triangle barré est le symbole universel d'une vanne ou robinet permettant d'isoler une portion du circuit.",
+        keyPoints: ["Vanne", "Isolation", "Symbole triangle", "Maintenance"]
+    },
+    {
+        id: 'q168',
+        category: "Stage 4 - Schémas",
+        difficulty: "medium",
+        question: "Sur un schéma de principe, que signifie un cercle avec une hélice à l'intérieur ?",
+        image: "images/schemas/schema-chauffage-5.png",
+        imageAlt: "Symbole de circulateur",
+        answers: ["Un ventilateur", "Un circulateur (pompe)", "Un compteur", "Un disconnecteur"],
+        correct: 1,
+        explanation: "Ce symbole représente un circulateur, la pompe qui met en circulation l'eau chaude dans le circuit de chauffage.",
+        keyPoints: ["Circulateur", "Pompe", "Circulation forcée", "Débit"]
+    },
+    {
+        id: 'q169',
+        category: "Stage 2 - Raccords",
+        difficulty: "easy",
+        question: "Les raccords cuivre présentés ici sont indispensables en plomberie. Quelle est leur principale fonction ?",
+        image: "images/raccords/raccord-cuivre-1.png",
+        imageAlt: "Différents types de raccords cuivre",
+        answers: [
+            "Décoration des tuyaux",
+            "Assembler, changer de direction ou de diamètre",
+            "Augmenter la pression",
+            "Filtrer l'eau"
+        ],
+        correct: 1,
+        explanation: "Les raccords permettent d'assembler des tubes, de changer de direction (coudes), de diviser le flux (tés) ou de changer de diamètre (réductions).",
+        keyPoints: ["Assemblage", "Changement direction", "Changement diamètre", "Dérivation"]
+    },
+    {
+        id: 'q170',
+        category: "Stage 2 - Raccords",
+        difficulty: "medium",
+        question: "Quelle différence entre un coude 90° standard et un coude 90° grand rayon ?",
+        image: "images/raccords/raccord-cuivre-2.png",
+        imageAlt: "Coudes cuivre différents rayons",
+        answers: [
+            "Aucune différence",
+            "Le grand rayon réduit les pertes de charge",
+            "Le grand rayon est plus cher donc meilleur",
+            "Le standard est plus solide"
+        ],
+        correct: 1,
+        explanation: "Le coude grand rayon a un rayon de courbure plus important, ce qui réduit les turbulences et donc les pertes de charge.",
+        keyPoints: ["Grand rayon", "Pertes de charge réduites", "Meilleur débit", "Économie d'énergie"]
+    },
+
+    // --- Raccords acier (5 questions) ---
+    {
+        id: 'q171',
+        category: "Stage 2 - Raccords",
+        difficulty: "easy",
+        question: "Les raccords acier sont vissés contrairement au cuivre qui est brasé. Quel est l'avantage principal ?",
+        image: "images/raccords/raccord-acier-1.png",
+        imageAlt: "Raccords acier filetés",
+        answers: [
+            "Plus esthétique",
+            "Démontable sans couper le tube",
+            "Moins cher",
+            "Plus léger"
+        ],
+        correct: 1,
+        explanation: "Les raccords vissés sont démontables, ce qui facilite la maintenance et les modifications futures sans détruire les tuyaux.",
+        keyPoints: ["Vissage", "Démontable", "Maintenance facile", "Filetage"]
+    },
+    {
+        id: 'q172',
+        category: "Stage 2 - Raccords",
+        difficulty: "medium",
+        question: "Lors du montage de raccords acier filetés, que doit-on obligatoirement utiliser ?",
+        image: "images/raccords/raccord-acier-2.png",
+        imageAlt: "Assemblage raccords acier",
+        answers: [
+            "Rien de spécial",
+            "Un produit d'étanchéité (téflon, filasse + pâte)",
+            "De la colle",
+            "Du silicone"
+        ],
+        correct: 1,
+        explanation: "Les filetages nécessitent un produit d'étanchéité : bande téflon, ou filasse chanvre + pâte à joint pour garantir l'étanchéité.",
+        keyPoints: ["Téflon", "Filasse chanvre", "Pâte à joint", "Étanchéité obligatoire"]
+    },
+    {
+        id: 'q173',
+        category: "Stage 2 - Raccords",
+        difficulty: "hard",
+        question: "Dans quel sens enroule-t-on le téflon sur un filetage mâle ?",
+        answers: [
+            "N'importe quel sens",
+            "Sens des aiguilles d'une montre (sens du vissage)",
+            "Sens inverse des aiguilles d'une montre",
+            "En croisant dans les deux sens"
+        ],
+        correct: 1,
+        explanation: "Le téflon doit être enroulé dans le sens des aiguilles d'une montre (sens du vissage) pour ne pas se dérouler lors du montage.",
+        keyPoints: ["Sens horaire", "Sens du vissage", "2-3 tours", "Bien tendu"]
+    },
+    {
+        id: 'q174',
+        category: "Stage 2 - Raccords",
+        difficulty: "easy",
+        question: "Qu'est-ce qu'un manchon en plomberie ?",
+        answers: [
+            "Un outil de coupe",
+            "Un raccord droit pour assembler deux tubes de même diamètre",
+            "Un appareil de mesure",
+            "Un type de robinet"
+        ],
+        correct: 1,
+        explanation: "Le manchon est un raccord cylindrique droit permettant d'assembler bout à bout deux tubes de même diamètre.",
+        keyPoints: ["Raccord droit", "Même diamètre", "Assemblage bout à bout", "Cuivre ou acier"]
+    },
+    {
+        id: 'q175',
+        category: "Stage 2 - Raccords",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'une réduction en plomberie ?",
+        answers: [
+            "Un rabais commercial",
+            "Un raccord permettant de passer d'un diamètre à un autre",
+            "Un outil pour cintrer",
+            "Une diminution de pression"
+        ],
+        correct: 1,
+        explanation: "Une réduction est un raccord conique permettant de passer d'un gros diamètre à un petit diamètre (ou inversement avec une réduction excentrée).",
+        keyPoints: ["Changement diamètre", "Conique", "Réduction/augmentation", "Excentrée si besoin"]
+    },
+
+    // --- Solaire thermique CESI (8 questions) ---
+    {
+        id: 'q176',
+        category: "Stage 3 - Solaire",
+        difficulty: "easy",
+        question: "Que signifie l'acronyme CESI ?",
+        image: "images/solaire/cesi-01.png",
+        imageAlt: "Système CESI complet",
+        answers: [
+            "Chauffage Électrique Solaire Individuel",
+            "Chauffe-Eau Solaire Individuel",
+            "Capteur Énergétique Solaire Industriel",
+            "Circuit Eau Sanitaire Intégré"
+        ],
+        correct: 1,
+        explanation: "CESI = Chauffe-Eau Solaire Individuel. C'est un système utilisant l'énergie solaire pour produire de l'eau chaude sanitaire.",
+        keyPoints: ["Chauffe-Eau Solaire", "Individuel", "Eau chaude sanitaire", "Énergie gratuite"]
+    },
+    {
+        id: 'q177',
+        category: "Stage 3 - Solaire",
+        difficulty: "medium",
+        question: "Quel est le taux de couverture solaire moyen d'un CESI bien dimensionné en France ?",
+        image: "images/solaire/cesi-02.png",
+        imageAlt: "Rendement CESI",
+        answers: ["10-20%", "30-40%", "50-70%", "90-100%"],
+        correct: 2,
+        explanation: "Un CESI bien dimensionné couvre en moyenne 50 à 70% des besoins annuels en eau chaude sanitaire, le complément étant assuré par une énergie d'appoint.",
+        keyPoints: ["50-70% couverture", "Varie selon région", "Appoint nécessaire", "Économie substantielle"]
+    },
+    {
+        id: 'q178',
+        category: "Stage 3 - Solaire",
+        difficulty: "easy",
+        question: "Dans un CESI, quel fluide circule dans les capteurs solaires ?",
+        image: "images/solaire/cesi-03.png",
+        imageAlt: "Circuit primaire CESI",
+        answers: [
+            "Eau potable directement",
+            "Fluide caloporteur (eau + antigel)",
+            "Huile",
+            "Air chaud"
+        ],
+        correct: 1,
+        explanation: "Un fluide caloporteur (mélange eau + glycol antigel) circule dans les capteurs pour transférer la chaleur sans risque de gel.",
+        keyPoints: ["Fluide caloporteur", "Eau + glycol", "Protection gel", "Circuit primaire"]
+    },
+    {
+        id: 'q179',
+        category: "Stage 3 - Solaire",
+        difficulty: "medium",
+        question: "Quelle est l'orientation idéale des capteurs solaires en France métropolitaine ?",
+        image: "images/solaire/cesi-04.png",
+        imageAlt: "Orientation capteurs solaires",
+        answers: ["Nord", "Sud (±30°)", "Est", "Ouest"],
+        correct: 1,
+        explanation: "L'orientation Sud (±30°) est idéale pour capter un maximum d'ensoleillement toute l'année en France métropolitaine.",
+        keyPoints: ["Plein Sud optimal", "±30° acceptable", "Inclinaison 45°", "Éviter ombres"]
+    },
+    {
+        id: 'q180',
+        category: "Stage 3 - Solaire",
+        difficulty: "hard",
+        question: "Quelle inclinaison est recommandée pour des capteurs solaires thermiques en France ?",
+        image: "images/solaire/cesi-05.png",
+        imageAlt: "Inclinaison capteurs",
+        answers: ["0° (horizontal)", "20-30°", "45°", "90° (vertical)"],
+        correct: 2,
+        explanation: "Une inclinaison de 45° permet d'optimiser le rendement annuel en captant bien le soleil d'hiver (bas sur l'horizon) et d'été.",
+        keyPoints: ["45° optimal", "Latitude +10°", "Compromis été/hiver", "Rendement annuel"]
+    },
+    {
+        id: 'q181',
+        category: "Stage 3 - Solaire",
+        difficulty: "medium",
+        question: "Dans un CESI, à quoi sert le circulateur du circuit primaire ?",
+        image: "images/solaire/cesi-06.png",
+        imageAlt: "Circulateur circuit primaire",
+        answers: [
+            "Augmenter la pression",
+            "Faire circuler le fluide caloporteur entre capteurs et ballon",
+            "Filtrer l'eau",
+            "Chauffer l'eau"
+        ],
+        correct: 1,
+        explanation: "Le circulateur (pompe) fait circuler le fluide caloporteur du circuit primaire entre les capteurs (qui chauffent) et l'échangeur du ballon (qui restitue).",
+        keyPoints: ["Circulation forcée", "Capteurs vers ballon", "Régulation par sonde", "Circuit primaire"]
+    },
+    {
+        id: 'q182',
+        category: "Stage 3 - Solaire",
+        difficulty: "easy",
+        question: "Pourquoi un CESI nécessite-t-il toujours un système d'appoint ?",
+        image: "images/solaire/cesi-07.png",
+        imageAlt: "Système d'appoint CESI",
+        answers: [
+            "Ce n'est pas nécessaire",
+            "Pour couvrir les besoins quand le soleil est insuffisant",
+            "Pour augmenter la pression",
+            "Par obligation légale"
+        ],
+        correct: 1,
+        explanation: "L'appoint (électrique, gaz, bois...) prend le relais quand l'ensoleillement est insuffisant (nuit, hiver, mauvais temps) pour garantir l'eau chaude.",
+        keyPoints: ["Soleil insuffisant", "Nuit et hiver", "Confort garanti", "Électrique ou gaz"]
+    },
+    {
+        id: 'q183',
+        category: "Stage 3 - Solaire",
+        difficulty: "hard",
+        question: "Qu'est-ce que la surchauffe d'un CESI et comment l'éviter ?",
+        image: "images/solaire/cesi-08.png",
+        imageAlt: "Gestion surchauffe CESI",
+        answers: [
+            "Ça n'existe pas",
+            "Surchauffe en été : évacuer chaleur par dissipateur ou limiter capteurs",
+            "Trop de pression : purger",
+            "Manque d'eau : remplir"
+        ],
+        correct: 1,
+        explanation: "En été avec forte chaleur et faible consommation, le fluide peut surchauffer. On installe un dissipateur thermique ou on limite la surface de capteurs.",
+        keyPoints: ["Risque été", "Fort ensoleillement", "Dissipateur", "Protection installation"]
+    },
+
+    // --- Évacuation des eaux (7 questions) ---
+    {
+        id: 'q184',
+        category: "Stage 2 - Plomberie",
+        difficulty: "easy",
+        question: "Quelle est la pente minimale recommandée pour une canalisation d'eaux usées ?",
+        image: "images/evacuation/evacuation-1.png",
+        imageAlt: "Schéma de pentes d'évacuation",
+        answers: ["0% (horizontal)", "0.5%", "1% (1 cm/m)", "5%"],
+        correct: 2,
+        explanation: "La pente minimale est de 1% soit 1 cm par mètre. Cela garantit un écoulement correct sans stagnation ni dépôts.",
+        keyPoints: ["1 cm/m minimum", "Éviter stagnation", "Empêcher dépôts", "Autocurage"]
+    },
+    {
+        id: 'q185',
+        category: "Stage 2 - Plomberie",
+        difficulty: "medium",
+        question: "À quoi sert un siphon dans une évacuation sanitaire ?",
+        image: "images/evacuation/evacuation-2.png",
+        imageAlt: "Différents types de siphons",
+        answers: [
+            "Décoration",
+            "Empêcher les odeurs de remonter grâce à une garde d'eau",
+            "Filtrer les déchets",
+            "Augmenter la pression"
+        ],
+        correct: 1,
+        explanation: "Le siphon crée une garde d'eau qui empêche les gaz et odeurs de l'égout de remonter dans le logement.",
+        keyPoints: ["Garde d'eau", "Anti-odeurs", "Anti-retour gaz", "Démontable"]
+    },
+    {
+        id: 'q186',
+        category: "Stage 2 - Plomberie",
+        difficulty: "hard",
+        question: "Quelle est la hauteur minimale de garde d'eau d'un siphon ?",
+        image: "images/evacuation/evacuation-3.png",
+        imageAlt: "Garde d'eau d'un siphon",
+        answers: ["1 cm", "3 cm", "5 cm", "10 cm"],
+        correct: 2,
+        explanation: "La garde d'eau minimale est de 5 cm selon les normes. Cela garantit une protection efficace contre les remontées d'odeurs.",
+        keyPoints: ["5 cm minimum", "Norme DTU", "Protection odeurs", "Ne pas dépasser 10 cm"]
+    },
+    {
+        id: 'q187',
+        category: "Stage 2 - Plomberie",
+        difficulty: "easy",
+        question: "Pourquoi installe-t-on des évents (ventilations) sur les réseaux d'évacuation ?",
+        image: "images/evacuation/evacuation-4.png",
+        imageAlt: "Schéma de ventilation primaire",
+        answers: [
+            "Pour faire joli",
+            "Pour équilibrer les pressions et protéger les gardes d'eau",
+            "Pour refroidir les tuyaux",
+            "C'est obligatoire mais inutile"
+        ],
+        correct: 1,
+        explanation: "Les évents (ventilation primaire et secondaire) équilibrent les pressions, empêchent le désamorçage des siphons et évacuent les gaz.",
+        keyPoints: ["Équilibre pression", "Protège siphons", "Évacue gaz", "Ventilation primaire obligatoire"]
+    },
+    {
+        id: 'q188',
+        category: "Stage 2 - Plomberie",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'une chute en plomberie sanitaire ?",
+        image: "images/evacuation/evacuation-5.png",
+        imageAlt: "Chute d'eaux usées",
+        answers: [
+            "Une fuite",
+            "Une canalisation verticale collectant les eaux usées",
+            "Une pente trop forte",
+            "Un accident"
+        ],
+        correct: 1,
+        explanation: "La chute est la canalisation verticale qui collecte les eaux usées de tous les étages pour les acheminer vers l'égout.",
+        keyPoints: ["Canalisation verticale", "Collecte étages", "DN 100 minimum", "Évent en partie haute"]
+    },
+    {
+        id: 'q189',
+        category: "Stage 2 - Plomberie",
+        difficulty: "hard",
+        question: "Quel diamètre minimal pour une évacuation de WC ?",
+        image: "images/evacuation/evacuation-6.png",
+        imageAlt: "Diamètres d'évacuation",
+        answers: ["DN 32", "DN 40", "DN 100", "DN 125"],
+        correct: 2,
+        explanation: "Le diamètre minimal pour une évacuation de WC est de DN 100 (100 mm) pour permettre le passage des matières solides.",
+        keyPoints: ["DN 100 minimum", "Matières solides", "Norme DTU", "Pas de réduction"]
+    },
+    {
+        id: 'q190',
+        category: "Stage 2 - Plomberie",
+        difficulty: "medium",
+        question: "Quelle est la différence entre eaux usées (EU) et eaux vannes (EV) ?",
+        answers: [
+            "Aucune différence",
+            "EU = lavabos/douches, EV = WC",
+            "EU = chaudes, EV = froides",
+            "EU = cuisine, EV = salle de bain"
+        ],
+        correct: 1,
+        explanation: "Les eaux usées (EU) proviennent des lavabos, douches, éviers. Les eaux vannes (EV) proviennent des WC et contiennent des matières fécales.",
+        keyPoints: ["EU sans matières fécales", "EV avec matières fécales", "Parfois réseaux séparés", "Assainissement"]
+    },
+
+    // --- Calculs et dimensionnement (10 questions) ---
+    {
+        id: 'q191',
+        category: "Stage 2 - Dimensionnement",
+        difficulty: "easy",
+        question: "Pour chauffer une pièce de 20 m² avec 2.5 m de hauteur et isolation moyenne (60 W/m³), quelle puissance faut-il ?",
+        answers: ["1 kW", "3 kW", "5 kW", "10 kW"],
+        correct: 1,
+        explanation: "Volume = 20 × 2.5 = 50 m³. Puissance = 50 × 60 = 3000 W = 3 kW.",
+        keyPoints: ["Volume = Surface × Hauteur", "Puissance = Volume × Coefficient", "60 W/m³ isolation moyenne", "3 kW"]
+    },
+    {
+        id: 'q192',
+        category: "Stage 2 - Dimensionnement",
+        difficulty: "medium",
+        question: "Une canalisation d'évacuation de 8 mètres avec une pente de 1% a un dénivelé de combien ?",
+        answers: ["1 cm", "8 cm", "10 cm", "80 cm"],
+        correct: 1,
+        explanation: "Dénivelé = Longueur × (Pente/100) = 8 × 0.01 = 0.08 m = 8 cm.",
+        keyPoints: ["1% = 1 cm/m", "8 m × 1% = 8 cm", "Formule simple", "Pente minimale"]
+    },
+    {
+        id: 'q193',
+        category: "Stage 2 - Dimensionnement",
+        difficulty: "easy",
+        question: "Convertir 12 L/min en L/h :",
+        answers: ["12 L/h", "120 L/h", "720 L/h", "7200 L/h"],
+        correct: 2,
+        explanation: "12 L/min × 60 min = 720 L/h.",
+        keyPoints: ["×60 pour passer en heures", "720 L/h", "Débit d'eau", "Conversion simple"]
+    },
+    {
+        id: 'q194',
+        category: "Stage 2 - Dimensionnement",
+        difficulty: "medium",
+        question: "Un pouce (1\") équivaut approximativement à combien de millimètres ?",
+        answers: ["10 mm", "25.4 mm", "50 mm", "100 mm"],
+        correct: 1,
+        explanation: "1 pouce = 25.4 mm exactement. C'est une conversion fondamentale en plomberie.",
+        keyPoints: ["1\" = 25.4 mm", "Unité anglo-saxonne", "3/4\" = 19 mm", "1/2\" = 12.7 mm"]
+    },
+    {
+        id: 'q195',
+        category: "Stage 2 - Dimensionnement",
+        difficulty: "hard",
+        question: "Pour une maison de 120 m² avec 2.5 m de hauteur et bonne isolation (40 W/m³), quelle puissance de chaudière ?",
+        answers: ["5 kW", "8 kW", "12 kW", "20 kW"],
+        correct: 2,
+        explanation: "Volume = 120 × 2.5 = 300 m³. Puissance = 300 × 40 = 12000 W = 12 kW.",
+        keyPoints: ["Volume 300 m³", "40 W/m³ bonne isolation", "12 kW", "Surdimensionner légèrement"]
+    },
+    {
+        id: 'q196',
+        category: "Stage 2 - Dimensionnement",
+        difficulty: "medium",
+        question: "Convertir 1.5 m³/h en L/min :",
+        answers: ["15 L/min", "25 L/min", "90 L/min", "1500 L/min"],
+        correct: 1,
+        explanation: "1.5 m³/h = 1500 L/h. 1500 ÷ 60 = 25 L/min.",
+        keyPoints: ["1 m³ = 1000 L", "÷60 pour minutes", "25 L/min", "Débit circulateur"]
+    },
+    {
+        id: 'q197',
+        category: "Stage 2 - Dimensionnement",
+        difficulty: "easy",
+        question: "Une pièce rectangulaire de 5 m × 4 m a quelle surface ?",
+        answers: ["9 m²", "18 m²", "20 m²", "40 m²"],
+        correct: 2,
+        explanation: "Surface = Longueur × Largeur = 5 × 4 = 20 m².",
+        keyPoints: ["Rectangle", "L × l", "20 m²", "Calcul simple"]
+    },
+    {
+        id: 'q198',
+        category: "Stage 2 - Dimensionnement",
+        difficulty: "hard",
+        question: "Quelle pente en % pour une canalisation de 12 m avec un dénivelé de 18 cm ?",
+        answers: ["0.5%", "1%", "1.5%", "2%"],
+        correct: 2,
+        explanation: "Pente% = (Dénivelé/Longueur) × 100 = (0.18/12) × 100 = 1.5%.",
+        keyPoints: ["18 cm = 0.18 m", "0.18/12 = 0.015", "×100 = 1.5%", "Pente correcte"]
+    },
+    {
+        id: 'q199',
+        category: "Stage 1 - Éco-construction",
+        difficulty: "medium",
+        question: "Quel est l'avantage principal d'une isolation thermique performante ?",
+        answers: [
+            "Esthétique",
+            "Réduire les besoins en chauffage et les déperditions",
+            "Augmenter la valeur immobilière uniquement",
+            "Obligation légale sans intérêt"
+        ],
+        correct: 1,
+        explanation: "Une bonne isolation réduit drastiquement les déperditions thermiques, donc les besoins en chauffage, les coûts et l'impact environnemental.",
+        keyPoints: ["Déperditions réduites", "Économies énergie", "Confort", "RT 2012/RE2020"]
+    },
+    {
+        id: 'q200',
+        category: "Stage 1 - Éco-construction",
+        difficulty: "easy",
+        question: "Qu'est-ce qu'un matériau biosourcé ?",
+        answers: [
+            "Un matériau synthétique",
+            "Un matériau d'origine végétale ou animale",
+            "Un matériau importé",
+            "Un matériau recyclé uniquement"
+        ],
+        correct: 1,
+        explanation: "Un matériau biosourcé provient de la biomasse (végétale ou animale) : bois, chanvre, laine de mouton, paille, etc.",
+        keyPoints: ["Origine naturelle", "Végétal ou animal", "Renouvelable", "Faible impact carbone"]
     }
 ];
