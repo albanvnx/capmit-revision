@@ -1,6 +1,6 @@
 // Service Worker pour PWA - Fonctionnement hors ligne et notifications
 
-const CACHE_NAME = 'revision-cap-v1';
+const CACHE_NAME = 'revision-cap-v2.0';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -9,6 +9,7 @@ const urlsToCache = [
   '/manifest.json',
   '/icon-192.png',
   '/icon-512.png'
+  // Note: Images seront mises en cache dynamiquement via le fetch handler
 ];
 
 // Installation du Service Worker
@@ -40,15 +41,33 @@ self.addEventListener('activate', event => {
 
 // Stratégie Cache First, Network Fallback
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
+  // Cache dynamique spécial pour les images
+  if (event.request.url.includes('/images/')) {
+    event.respondWith(
+      caches.match(event.request).then(response => {
+        return response || fetch(event.request).then(fetchResponse => {
+          return caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, fetchResponse.clone());
+            return fetchResponse;
+          });
+        }).catch(() => {
+          // En cas d'échec réseau, retourner une réponse vide
+          return new Response('Image non disponible', { status: 503 });
+        });
       })
-  );
+    );
+  } else {
+    // Stratégie normale pour les autres ressources
+    event.respondWith(
+      caches.match(event.request)
+        .then(response => {
+          if (response) {
+            return response;
+          }
+          return fetch(event.request);
+        })
+    );
+  }
 });
 
 // Gestion des notifications push

@@ -2,10 +2,59 @@
 // 150+ questions couvrant tous les stages
 
 const allQuestions = [
+    // ========== QUESTIONS TEST AVEC IMAGES (3 questions) ==========
+    {
+        id: 'qtest1',
+        category: "Stage 4 - Symboles",
+        difficulty: "easy",
+        question: "Voici une page de symboles de chauffage. Ces symboles sont utilisés pour représenter les différents composants d'une installation thermique sur un schéma de principe.",
+        image: "images/symboles/symboles-page-1.png",
+        imageAlt: "Page de symboles techniques de chauffage normalisés",
+        answers: ["Vrai", "Faux", "Seulement pour le gaz", "Obsolète"],
+        correct: 0,
+        explanation: "Les symboles normalisés permettent une lecture universelle des plans de chauffage.",
+        keyPoints: ["Normes NF", "Schémas de principe", "Communication technique", "Plans d'exécution"]
+    },
+    {
+        id: 'qtest2',
+        category: "Stage 4 - Schémas",
+        difficulty: "medium",
+        question: "Ce schéma représente un principe d'installation de chauffage. Quelle est l'utilité d'un schéma de principe ?",
+        image: "images/schemas/schema-principe-1.png",
+        imageAlt: "Schéma de principe d'une installation de chauffage",
+        answers: [
+            "Décorer le dossier technique",
+            "Comprendre le fonctionnement global de l'installation",
+            "Calculer les dimensions exactes",
+            "Commander les matériaux"
+        ],
+        correct: 1,
+        explanation: "Le schéma de principe montre comment les différents éléments fonctionnent ensemble, sans les dimensions exactes.",
+        keyPoints: ["Vue d'ensemble", "Circulation des fluides", "Liens entre composants", "Base de travail"]
+    },
+    {
+        id: 'qtest3',
+        category: "Stage 4 - Symboles",
+        difficulty: "hard",
+        question: "Sur les schémas techniques, pourquoi est-il crucial d'utiliser des symboles normalisés ?",
+        image: "images/symboles/symboles-page-2.png",
+        imageAlt: "Deuxième page de symboles techniques de chauffage",
+        answers: [
+            "C'est plus joli visuellement",
+            "Pour assurer la compréhension universelle par tous les professionnels",
+            "Pour économiser de l'encre",
+            "C'est obligatoire seulement à l'export"
+        ],
+        correct: 1,
+        explanation: "Les symboles normalisés garantissent que tous les professionnels (plombiers, chauffagistes, contrôleurs) comprennent exactement la même chose.",
+        keyPoints: ["Langage universel", "Éviter les erreurs", "Normes françaises et européennes", "Sécurité"]
+    },
+
     // ========== STAGE 1 - SÉCURITÉ (15 questions) ==========
     {
         id: 'q1',
         category: "Stage 1 - Sécurité",
+        difficulty: "easy",
         question: "Que signifie l'acronyme EPI dans le contexte de la sécurité sur chantier ?",
         answers: ["Équipement de Protection Individuelle", "Entreprise de Plomberie Industrielle", "Évaluation des Procédures Internes", "Entretien et Prévention des Installations"],
         correct: 0,

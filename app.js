@@ -160,6 +160,38 @@ class SpacedRepetitionApp {
         const question = this.currentCard.question;
         const progress = ((this.currentIndex + 1) / this.todayCards.length) * 100;
 
+        // Image HTML si présente
+        const imageHTML = question.image ? `
+            <div style="margin-bottom: 20px; text-align: center;">
+                <img src="${question.image}"
+                     alt="${question.imageAlt || question.question}"
+                     style="max-width: 100%; height: auto; border-radius: 12px;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer;"
+                     onclick="this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)'; this.style.transition = 'transform 0.3s';">
+            </div>
+        ` : '';
+
+        // Badge de difficulté si présent
+        const difficultyBadge = question.difficulty ? `
+            <span style="
+                background: ${
+                    question.difficulty === 'easy' ? '#6bcf7f' :
+                    question.difficulty === 'medium' ? '#ffd93d' : '#ff6b6b'
+                };
+                color: ${question.difficulty === 'medium' ? '#333' : 'white'};
+                padding: 5px 12px;
+                border-radius: 12px;
+                font-size: 0.8em;
+                font-weight: bold;
+                margin-left: 10px;
+            ">
+                ${
+                    question.difficulty === 'easy' ? '😊 Facile' :
+                    question.difficulty === 'medium' ? '🤔 Moyen' : '😰 Difficile'
+                }
+            </span>
+        ` : '';
+
         document.getElementById('daily-tab').innerHTML = `
             <div style="text-align: center; margin-bottom: 15px; color: #666; font-size: 0.9em;">
                 Question ${this.currentIndex + 1} sur ${this.todayCards.length}
@@ -170,7 +202,10 @@ class SpacedRepetitionApp {
             </div>
 
             <div class="question-card">
-                <div class="category-badge">${question.category}</div>
+                <div class="category-badge">${question.category}${difficultyBadge}</div>
+
+                ${imageHTML}
+
                 <div class="question-text">${question.question}</div>
 
                 <div class="answers">
@@ -356,23 +391,54 @@ class SpacedRepetitionApp {
             <p style="color: #666; margin-bottom: 20px; font-size: 0.9em;">
                 Cliquez sur une fiche pour voir la réponse.
             </p>
-            ${difficultCards.map(card => `
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-front">
-                        <strong>${card.question.category}</strong><br>
-                        ${card.question.question}
+            ${difficultCards.map(card => {
+                const difficultyBadge = card.question.difficulty ? `
+                    <span style="
+                        background: ${
+                            card.question.difficulty === 'easy' ? '#6bcf7f' :
+                            card.question.difficulty === 'medium' ? '#ffd93d' : '#ff6b6b'
+                        };
+                        color: ${card.question.difficulty === 'medium' ? '#333' : 'white'};
+                        padding: 4px 10px;
+                        border-radius: 10px;
+                        font-size: 0.75em;
+                        font-weight: bold;
+                        margin-left: 8px;
+                    ">
+                        ${
+                            card.question.difficulty === 'easy' ? '😊' :
+                            card.question.difficulty === 'medium' ? '🤔' : '😰'
+                        }
+                    </span>
+                ` : '';
+
+                const imagePreview = card.question.image ? `
+                    <div style="margin-top: 10px;">
+                        <img src="${card.question.image}"
+                             alt="${card.question.imageAlt || card.question.question}"
+                             style="max-width: 100%; height: auto; border-radius: 8px; max-height: 150px; object-fit: cover;">
                     </div>
-                    <div class="flashcard-back">
-                        <strong>Réponse :</strong> ${card.question.answers[card.question.correct]}<br><br>
-                        ${card.question.explanation}
-                        ${card.question.keyPoints ? '<br><br><strong>Points clés :</strong><ul>' +
-                            card.question.keyPoints.map(p => `<li>${p}</li>`).join('') + '</ul>' : ''}
+                ` : '';
+
+                return `
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-front">
+                            <strong>${card.question.category}${difficultyBadge}</strong><br>
+                            ${card.question.question}
+                            ${imagePreview}
+                        </div>
+                        <div class="flashcard-back">
+                            <strong>Réponse :</strong> ${card.question.answers[card.question.correct]}<br><br>
+                            ${card.question.explanation}
+                            ${card.question.keyPoints ? '<br><br><strong>Points clés :</strong><ul>' +
+                                card.question.keyPoints.map(p => `<li>${p}</li>`).join('') + '</ul>' : ''}
+                        </div>
+                        <div style="font-size: 0.8em; color: #999; margin-top: 10px;">
+                            ${card.status === 'new' ? '🆕 Nouveau' : `Révisions : ${card.repetitions}`}
+                        </div>
                     </div>
-                    <div style="font-size: 0.8em; color: #999; margin-top: 10px;">
-                        ${card.status === 'new' ? '🆕 Nouveau' : `Révisions : ${card.repetitions}`}
-                    </div>
-                </div>
-            `).join('')}
+                `;
+            }).join('')}
         `;
     }
 
