@@ -1,175 +1,242 @@
-# Application de Révision CAP M.I.T FC - PWA
+# 🎓 Application de révision CAP M.I.T FC v2.0
 
-Application mobile de révision espacée pour le CAP Monteur en Installations Thermiques.
+Application Progressive Web App (PWA) pour réviser le **CAP Monteur en Installations Thermiques - Formation Continue**.
 
-## 🚀 Installation
-
-### Sur Android
-
-1. Ouvrez Chrome et naviguez vers l'application
-2. Appuyez sur le menu (⋮) en haut à droite
-3. Sélectionnez "Ajouter à l'écran d'accueil"
-4. Confirmez l'installation
-
-### Sur iPhone
-
-1. Ouvrez Safari et naviguez vers l'application
-2. Appuyez sur le bouton Partager (icône carré avec flèche)
-3. Faites défiler et sélectionnez "Sur l'écran d'accueil"
-4. Appuyez sur "Ajouter"
-
-## 📱 Fonctionnalités
-
-### ✅ Révision espacée intelligente
-- Algorithme SM-2 (comme Anki)
-- Intervalles adaptatifs selon vos performances
-- 5 nouvelles questions par jour automatiquement
-
-### 🔔 Notifications quotidiennes
-- Rappels personnalisables
-- Définissez votre heure de révision préférée
-- Notifications natives sur mobile
-
-### 📊 Suivi de progression
-- Statistiques détaillées
-- Calendrier des 30 derniers jours
-- Série de jours consécutifs
-- Taux de maîtrise
-
-### 🗂️ Fiches de révision
-- Fiches interactives pour concepts difficiles
-- Points clés et explications
-- Focus sur vos difficultés
-
-### 💾 Sauvegarde
-- Données stockées localement
-- Export/import de vos données
-- Fonctionne hors ligne
-
-## 🔧 Création des icônes
-
-Pour générer les icônes PNG depuis le SVG :
-
-### Option 1 : Avec Inkscape (gratuit)
-```bash
-# Installer Inkscape
-sudo apt install inkscape
-
-# Générer les icônes
-inkscape icon.svg --export-filename=icon-192.png --export-width=192 --export-height=192
-inkscape icon.svg --export-filename=icon-512.png --export-width=512 --export-height=512
-```
-
-### Option 2 : Avec ImageMagick
-```bash
-# Installer ImageMagick
-sudo apt install imagemagick
-
-# Générer les icônes
-convert -background none -resize 192x192 icon.svg icon-192.png
-convert -background none -resize 512x512 icon.svg icon-512.png
-```
-
-### Option 3 : En ligne
-1. Allez sur https://cloudconvert.com/svg-to-png
-2. Uploadez `icon.svg`
-3. Réglez la taille (192x192 puis 512x512)
-4. Téléchargez les fichiers
-
-## 🌐 Déploiement
-
-### Hébergement local
-```bash
-# Avec Python
-cd app-revision
-python3 -m http.server 8000
-# Ouvrez http://localhost:8000
-```
-
-### Hébergement en ligne (gratuit)
-
-#### GitHub Pages
-1. Créez un repo GitHub
-2. Uploadez tous les fichiers
-3. Activez GitHub Pages dans Settings
-4. Accédez via `https://votre-nom.github.io/nom-repo`
-
-#### Netlify
-1. Allez sur netlify.com
-2. Glissez-déposez le dossier `app-revision`
-3. Votre app est en ligne !
-
-#### Vercel
-```bash
-# Installer Vercel CLI
-npm i -g vercel
-
-# Déployer
-cd app-revision
-vercel
-```
-
-## 📚 Contenu
-
-L'application contient **30 questions** couvrant :
-
-- **Stage 1** : Sécurité, atelier, dessin technique, systèmes de base
-- **Stage 2** : Théorie, évacuation, émetteurs, sécurité, mesures
-- **Stage 3** : Gaz, solaire, ventilation, protection
-- **Stage 4** : Chauffage, circuits hydrauliques, régulation, générateurs
-
-Chaque question inclut :
-- 4 réponses possibles
-- Explication détaillée
-- Points clés à retenir
-
-## 🔒 Confidentialité
-
-- Toutes les données sont stockées **localement** sur votre appareil
-- Aucune donnée n'est envoyée à un serveur
-- Aucun compte requis
-- Aucun tracking
-
-## 🛠️ Technologies
-
-- **PWA** (Progressive Web App)
-- **Service Worker** pour fonctionnement hors ligne
-- **Web Push API** pour les notifications
-- **LocalStorage** pour la sauvegarde
-- **Vanilla JavaScript** (pas de framework)
-
-## 📖 Algorithme de répétition espacée
-
-L'application utilise une version simplifiée de l'algorithme **SM-2** (SuperMemo 2) :
-
-1. **Nouvelle carte** : Révision dans 1 jour
-2. **Première révision réussie** : Révision dans 6 jours
-3. **Révisions suivantes** : Intervalle × facteur de facilité (2.5 par défaut)
-4. **Échec** : Recommencer à 1 jour
-
-Le facteur de facilité s'ajuste selon votre évaluation (Difficile/Moyen/Facile).
-
-## 🎯 Conseils d'utilisation
-
-1. **Révisez chaque jour** pour maintenir votre série
-2. **Soyez honnête** avec l'évaluation de difficulté
-3. **Consultez les fiches** pour les concepts difficiles
-4. Une question est "maîtrisée" après plusieurs révisions espacées réussies
-5. **Activez les notifications** pour ne jamais oublier vos révisions
-
-## 🐛 Problèmes connus
-
-- Les notifications peuvent ne pas fonctionner sur iOS (limitation Safari)
-- Sur certains anciens navigateurs, l'installation PWA n'est pas disponible
-
-## 📞 Support
-
-Pour toute question ou problème, consultez la documentation du CAP M.I.T FC ou contactez votre formateur.
-
-## 📄 Licence
-
-Cette application est un outil pédagogique pour les étudiants du CAP M.I.T FC.
+🌐 **Accès en ligne** : [https://albanvnx.github.io/capmit-revision/](https://albanvnx.github.io/capmit-revision/)
 
 ---
 
-**Bonne révision ! 🎓**
+## ✨ Fonctionnalités v2.0
+
+### 📅 Révision espacée (SM-2)
+- **200 questions** réparties intelligemment dans le temps
+- Algorithme SM-2 optimisé pour la mémorisation long terme
+- Suivi de progression (nouveau, apprentissage, révision, maîtrisé)
+- Statistiques détaillées et série de jours
+
+### ❓ Mode Quiz libre (NOUVEAU)
+- **Entraînement sans impact** sur la révision espacée
+- Filtrage par **catégorie** (21 catégories au total)
+- Filtrage par **difficulté** (facile 😊 / moyen 🤔 / difficile 😰)
+- Questions **mélangées aléatoirement**
+- Score en temps réel et résultats détaillés
+
+### 🧮 Calculatrice de chantier (NOUVEAU)
+Six outils pratiques pour le terrain :
+1. **Convertisseur d'unités** : mm, cm, m, pouces
+2. **Puissance de chauffage** : dimensionnement selon isolation
+3. **Débit d'eau** : conversions de débits
+4. **Pente d'évacuation** : calcul de dénivelé
+5. **Diamètres tuyauterie** : équivalences cuivre/acier/PVC
+6. **Surface et volume** : calculs de pièces
+
+### 🖼️ Images techniques (NOUVEAU)
+- **33 images** haute qualité extraites des cours
+- Symboles de chauffage normalisés
+- Schémas hydrauliques et isométriques
+- Photos de raccords cuivre et acier
+- Systèmes solaires thermiques (CESI)
+- Réseaux d'évacuation des eaux
+- **Zoom au clic** sur les images
+
+### 🗂️ Fiches de révision
+- Flashcards pour les questions difficiles
+- Retournement carte au clic
+- Explication + points clés
+
+### 📊 Statistiques
+- Taux de maîtrise global
+- Répartition par statut (nouveau/apprentissage/révision/maîtrisé)
+- Série de jours de révision
+
+### 📆 Calendrier
+- Historique des sessions
+- Heatmap visuelle de l'activité
+
+### ⚙️ Réglages
+- Notifications quotidiennes programmables
+- Export des données
+- Réinitialisation
+
+---
+
+## 📚 Contenu pédagogique
+
+### 200 questions couvrant tous les stages :
+
+#### Stage 1 - Fondamentaux
+- **Sécurité** (15 questions) : EPI/EPC, amiante, plomb, PPSPS, déchets
+- **Outils et matériaux** (10 questions)
+- **Dessin technique** (5 questions)
+- **Éco-construction** (2 questions)
+
+#### Stage 2 - Techniques de base
+- **Plomberie sanitaire** (20 questions)
+- **Raccords cuivre/acier** (15 questions) 🖼️
+- **Dimensionnement** (11 questions)
+- **Production ECS** (10 questions)
+
+#### Stage 3 - Systèmes avancés
+- **Ventilation VMC** (15 questions)
+- **Solaire thermique** (13 questions) 🖼️
+- **Protection installations** (8 questions)
+
+#### Stage 4 - Chauffage
+- **Symboles** (13 questions) 🖼️
+- **Schémas de principe** (8 questions) 🖼️
+- **Isométrie** (5 questions)
+- **Installation et maintenance** (15 questions)
+- **Circulateurs** (5 questions)
+- **Régulation** (3 questions)
+
+🖼️ = Questions avec images techniques
+
+---
+
+## 📱 Installation
+
+### Sur Android :
+1. Ouvrir [l'application](https://albanvnx.github.io/capmit-revision/) dans Chrome
+2. Menu **⋮** → **Ajouter à l'écran d'accueil**
+3. L'icône apparaît sur votre écran d'accueil
+
+### Sur iPhone/iPad :
+1. Ouvrir [l'application](https://albanvnx.github.io/capmit-revision/) dans Safari
+2. Bouton **Partager** → **Sur l'écran d'accueil**
+3. L'icône apparaît sur votre écran d'accueil
+
+### Sur PC/Mac :
+1. Ouvrir [l'application](https://albanvnx.github.io/capmit-revision/) dans Chrome/Edge
+2. Icône **+** dans la barre d'adresse → **Installer**
+3. L'application s'ouvre comme une application native
+
+---
+
+## 🔧 Utilisation
+
+### Mode Révision (révision espacée)
+1. Cliquer sur **📅 Révision**
+2. Le nombre de cartes du jour s'affiche
+3. Cliquer sur **Commencer la session**
+4. Répondre aux questions
+5. Noter la difficulté (Difficile / Moyen / Facile / Très facile)
+6. L'algorithme planifie automatiquement la prochaine révision
+
+### Mode Quiz (entraînement libre)
+1. Cliquer sur **❓ Quiz**
+2. Choisir une catégorie ou **Toutes les catégories**
+3. (Optionnel) Filtrer par difficulté
+4. Répondre aux questions mélangées
+5. Voir les résultats à la fin
+6. **Aucun impact** sur la révision espacée
+
+### Calculatrice
+1. Cliquer sur **🧮 Calcul**
+2. Choisir l'outil souhaité
+3. Entrer les valeurs
+4. Obtenir le résultat instantanément
+
+---
+
+## 🌐 Mode hors ligne
+
+✅ **Fonctionne 100% hors connexion** après la première visite
+
+Le Service Worker met en cache :
+- Toute l'application (HTML, CSS, JS)
+- Les 200 questions
+- Les 33 images techniques
+- Les données de progression (stockées localement)
+
+**Taille totale** : ~13 MB
+
+---
+
+## 🔄 Mises à jour
+
+L'application se met à jour automatiquement quand une nouvelle version est publiée sur GitHub.
+
+Pour forcer une mise à jour :
+1. **⚙️ Réglages**
+2. Vider le cache du navigateur
+3. Recharger la page
+
+---
+
+## 💾 Sauvegarde des données
+
+### Données sauvegardées localement :
+- Progression de chaque question
+- Statut (nouveau/apprentissage/révision/maîtrisé)
+- Dates de prochaine révision
+- Historique des sessions
+- Paramètres utilisateur
+
+### Export manuel :
+1. **⚙️ Réglages**
+2. **📥 Exporter mes données**
+3. Un fichier JSON est téléchargé avec toutes vos données
+
+⚠️ **Important** : Les données sont sauvegardées **uniquement sur votre appareil**. Pensez à les exporter régulièrement !
+
+---
+
+## 🤝 Partage avec collègues
+
+Pour partager l'application avec vos collègues de formation :
+
+1. Envoyer simplement le lien : **https://albanvnx.github.io/capmit-revision/**
+2. Expliquer comment installer la PWA (voir section Installation)
+3. Chaque personne aura sa propre progression indépendante
+
+---
+
+## 🛠️ Technologies utilisées
+
+- **HTML5 / CSS3 / JavaScript** (Vanilla, pas de framework)
+- **Service Worker** pour le mode hors ligne
+- **LocalStorage** pour la sauvegarde
+- **GitHub Pages** pour l'hébergement
+- **Progressive Web App (PWA)** pour l'installation
+
+---
+
+## 📊 Statistiques du projet
+
+- **200 questions** (vs 160 en v1.0)
+- **21 catégories** thématiques
+- **33 images** techniques
+- **6 calculatrices** pratiques
+- **3 niveaux** de difficulté
+- **7 onglets** fonctionnels
+- **0€** de coût d'hébergement
+
+---
+
+## 📄 Licence
+
+Application créée pour un usage personnel et pédagogique dans le cadre de la formation CAP M.I.T FC.
+
+Les contenus pédagogiques sont basés sur les cours officiels du programme CAP Monteur en Installations Thermiques.
+
+---
+
+## 👨‍💻 Développement
+
+**Version** : 2.0  
+**Date** : Février 2026  
+**Dépôt GitHub** : [albanvnx/capmit-revision](https://github.com/albanvnx/capmit-revision)
+
+Développé avec l'assistance de **Claude Sonnet 4.5** (Anthropic).
+
+---
+
+## 🐛 Bugs ou suggestions ?
+
+Pour signaler un bug ou suggérer une amélioration :
+- Créer une issue sur [GitHub](https://github.com/albanvnx/capmit-revision/issues)
+- Ou noter vos retours dans un document personnel
+
+---
+
+**Bonne révision pour votre CAP M.I.T FC ! 🎯🔥💧**
