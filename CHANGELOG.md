@@ -1,5 +1,82 @@
 # Changelog - Application de révision CAP M.I.T FC
 
+## Version 2.2 - 2026-02-14 (Phase 2)
+
+### 🚀 Enrichissement massif du contenu
+
+#### **121 nouvelles questions de qualité professionnelle**
+Extraction depuis les PDFs officiels des cours CAP M.I.T FC
+
+### 📚 Nouvelles questions par stage :
+
+#### Stage 2 - Systèmes Thermiques (+50 questions, q231-q280)
+- **Évacuation des eaux** (15 questions) : EU/EV/EP, pentes, diamètres, vitesses, DTU 60.11
+- **Production ECS** (18 questions) : ballons, groupe de sécurité, températures, soupapes, dimensionnement
+- **Émetteurs de chaleur** (10 questions) : radiateurs, plancher chauffant, températures, calculs
+- **Sécurité et mesure** (7 questions) : vases d'expansion, soupapes, disconnecteurs, thermomètres
+
+#### Stage 3 - Systèmes Avancés (+36 questions, q281-q316)
+- **Gaz et ventilation** (10 questions) : volumes minimaux, amenées d'air, tirage naturel, VMC gaz, implantation
+- **Solaire thermique CESI** (16 questions) :
+  - Systèmes : thermosiphon monobloc, circulation forcée (auto-vidangeable et sous pression)
+  - Régulation : Tc, Tb, ΔT, appoint, antigel
+  - Implantation : toiture, terrasse, sol, positions capteurs
+- **VMC** (5 questions) : simple flux, double flux, bouches d'extraction, hygro-réglable
+- **Organes de protection** (5 questions) : disconnecteur, TH (dureté eau), vases, groupe sécurité
+
+#### Stage 4 - Chauffage (+35 questions, q321-q355)
+- **Circuits hydrauliques** (5 questions) : pentes, modes de distribution, calculs débit, raccordements
+- **Radiateurs** (5 questions) : matériaux, désignation, calcul Δt, transmission chaleur
+- **Circulateurs** (5 questions) : position, hauteur manométrique, NPSH, dimensionnement, symboles
+- **Générateurs** (5 questions) : types chaudières, foyers, rendement condensation (100-110% sur PCI)
+- **Régulation** (6 questions) : loi d'eau, boucles fermées/ouvertes, différentiel statique, PID
+- **Remplissage et purge** (5 questions) : pression d'essai, bouteilles de purge, purgeurs automatiques
+- **Environnement** (4 questions) : GES, émissions CO2, TEP, impact carbone
+
+### 📊 Statistiques finales v2.2
+
+- **Total questions** : **354** (230 + 121 + 3 test)
+- **Augmentation** : +54% de contenu (121/230)
+- **Questions avec images** : 28
+- **Catégories** : 25+ catégories enrichies
+- **Stages couverts** : 4 stages complets
+- **Formules** : 7 sections complètes
+- **Taille questions.js** : 199 KB
+
+### 🎯 Répartition finale par stage
+
+| Stage | Questions | Pourcentage |
+|-------|-----------|-------------|
+| Fondamentaux & Sécurité | ~72 | 20% |
+| Systèmes Thermiques | ~97 | 27% |
+| Systèmes Avancés | ~89 | 25% |
+| Chauffage | ~66 | 19% |
+| Conversions | 30 | 9% |
+
+### 🔧 Améliorations techniques
+
+- **Service Worker v2.2** : cache mis à jour
+- **Qualité des questions** :
+  - Explications détaillées basées sur PDFs officiels
+  - 4 points clés par question
+  - Répartition équilibrée : 30% facile, 50% moyen, 20% difficile
+  - Valeurs techniques précises (normes DTU, températures, pressions, débits)
+  - Formules et calculs pratiques
+
+### 📝 Sources documentaires
+
+Questions créées à partir des PDFs officiels :
+- Stage 2 : Évacuation, ECS, émetteurs, sécurité (M1 et M2)
+- Stage 3 : Gaz, solaire, VMC, protection
+- Stage 4 : Circuits, générateurs, régulation, environnement
+
+### 🚀 Déploiement
+
+- **URL** : https://albanvnx.github.io/capmit-revision/
+- **Mise à jour** : automatique via service worker v2.2
+
+---
+
 ## Version 2.1 - 2026-02-14
 
 ### 🎉 Nouvelles fonctionnalités majeures

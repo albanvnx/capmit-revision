@@ -1,8 +1,37 @@
-# 🎓 Application de révision CAP M.I.T FC v2.1
+# 🎓 Application de révision CAP M.I.T FC v2.2
 
 Application Progressive Web App (PWA) pour réviser le **CAP Monteur en Installations Thermiques - Formation Continue**.
 
 🌐 **Accès en ligne** : [https://albanvnx.github.io/capmit-revision/](https://albanvnx.github.io/capmit-revision/)
+
+---
+
+## ⭐ Nouveautés v2.2 (2026-02-14)
+
+### 🚀 PHASE 2 : Enrichissement massif du contenu
+- **121 nouvelles questions** extraites des PDFs de cours
+- **354 questions au total** (vs 230 avant)
+- Couverture complète des 4 stages
+- Questions basées sur les cours officiels
+
+### 📚 Nouvelles questions par stage :
+- **Stage 2 (Systèmes Thermiques)** : +50 questions
+  - Évacuation EU/EV/EP (15 questions)
+  - Production ECS (18 questions)
+  - Émetteurs de chaleur (10 questions)
+  - Sécurité et mesure (7 questions)
+
+- **Stage 3 (Systèmes Avancés)** : +36 questions
+  - Gaz et ventilation (10 questions)
+  - Solaire thermique CESI (16 questions)
+  - VMC (5 questions)
+  - Organes de protection (5 questions)
+
+- **Stage 4 (Chauffage)** : +35 questions
+  - Circuits hydrauliques, radiateurs, circulateurs
+  - Générateurs et rendement
+  - Régulation et loi d'eau
+  - Remplissage, purge, environnement
 
 ---
 
@@ -23,14 +52,14 @@ Application Progressive Web App (PWA) pour réviser le **CAP Monteur en Installa
 ### 🔢 30 nouvelles questions de conversion
 - mm/cm/m/pouces, L/min/L/h/m³/h, kW/W, bar/Pa
 - Surfaces, volumes, pentes
-- **230 questions au total** (200 + 30 conversions)
+- **354 questions au total** (230 base + 121 nouvelles + 3 test)
 
 ---
 
 ## ✨ Fonctionnalités complètes
 
 ### 📅 Révision espacée (SM-2)
-- **230 questions** réparties intelligemment dans le temps
+- **354 questions** réparties intelligemment dans le temps
 - Algorithme SM-2 optimisé pour la mémorisation long terme
 - Suivi de progression (nouveau, apprentissage, révision, maîtrisé)
 - Statistiques détaillées et série de jours
@@ -38,7 +67,7 @@ Application Progressive Web App (PWA) pour réviser le **CAP Monteur en Installa
 
 ### ❓ Mode Quiz libre
 - **Entraînement sans impact** sur la révision espacée
-- Filtrage par **catégorie** (22 catégories au total)
+- Filtrage par **catégorie** (25+ catégories au total)
 - Filtrage par **difficulté** (facile 😊 / moyen 🤔 / difficile 😰)
 - Filtrage par **stages actifs**
 - Questions **mélangées aléatoirement**

@@ -2380,5 +2380,1247 @@ const allQuestions = [
         correct: 1,
         explanation: "1 cm/m × 8 m = 8 cm de dénivelé total.",
         keyPoints: ["Pente × longueur", "1 cm/m × 8 m", "= 8 cm", "Évacuation EU"]
+    },
+
+    // ========== STAGE 2 - SYSTÈMES THERMIQUES (50 questions) ==========
+    {
+        id: 'q231',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "easy",
+        question: "Que signifie l'acronyme EU dans un réseau d'évacuation ?",
+        answers: ["Eaux Usagées", "Eaux Usées", "Eaux Ménagères", "Eaux Uniques"],
+        correct: 2,
+        explanation: "EU signifie Eaux Ménagères, c'est-à-dire l'ensemble des eaux provenant des salles de bains, cuisine, lavabos (sauf WC).",
+        keyPoints: ["EU = Eaux Ménagères", "Exclut les WC", "Salles de bains et cuisine", "Différent des eaux vannes"]
+    },
+    {
+        id: 'q232',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "easy",
+        question: "Quelles sont les eaux vannes ?",
+        answers: ["Eaux de pluie", "Eaux des WC et urinoirs", "Eaux des lavabos", "Eaux des douches"],
+        correct: 1,
+        explanation: "Les eaux vannes (EV) proviennent des WC et urinoirs. On distingue parfois les eaux noires (avec matières fécales) et les eaux grises (sans matières fécales).",
+        keyPoints: ["EV = WC + urinoirs", "Eaux noires vs grises", "Séparées des eaux ménagères", "Circuit spécifique"]
+    },
+    {
+        id: 'q233',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "medium",
+        question: "Quelle est la pente minimale recommandée pour les collecteurs d'immeubles ?",
+        answers: ["1 cm/m", "2 cm/m", "3 cm/m", "5 cm/m"],
+        correct: 2,
+        explanation: "La pente des collecteurs d'immeubles doit être de 3 cm par mètre au minimum pour assurer un bon écoulement et éviter les stagnations.",
+        keyPoints: ["Pente minimale 3 cm/m", "Évite stagnations", "Assure bon écoulement", "Norme DTU 60.11"]
+    },
+    {
+        id: 'q234',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "medium",
+        question: "Quelle vitesse d'écoulement est considérée comme convenable pour l'évacuation des eaux usées ?",
+        answers: ["0,5 à 1 m/s", "1 à 2 m/s", "2 à 3 m/s", "3 à 4 m/s"],
+        correct: 1,
+        explanation: "Une vitesse comprise entre 1 et 2 m/s est convenable. Un débit trop important entraîne un désamorçage des siphons, un débit trop faible entraîne le colmatage.",
+        keyPoints: ["Vitesse idéale 1-2 m/s", "Trop rapide = désamorçage siphons", "Trop lent = colmatage", "Équilibre important"]
+    },
+    {
+        id: 'q235',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "medium",
+        question: "Quel est le diamètre extérieur utilisé en pratique pour l'évacuation d'un lavabo ?",
+        answers: ["32 mm", "40 mm", "50 mm", "63 mm"],
+        correct: 1,
+        explanation: "Pour un lavabo, le diamètre extérieur utilisé en pratique est de 32 mm ou 40 mm (diamètre intérieur minimal de 30 mm selon DTU 60.11).",
+        keyPoints: ["Lavabo: Ø32 ou 40 mm", "Diamètre intérieur 30 mm", "Pente 1-3 cm/m", "Selon DTU 60.11"]
+    },
+    {
+        id: 'q236',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "hard",
+        question: "Quel diamètre intérieur minimal est requis pour un WC à chasse directe ?",
+        answers: ["60 mm", "70 mm", "80 mm", "90 mm"],
+        correct: 2,
+        explanation: "Pour un WC à chasse directe, le diamètre intérieur minimal est de 80 mm pour les tuyauteries horizontales, soit un diamètre extérieur de 100 mm en pratique.",
+        keyPoints: ["WC chasse directe: Ø int. 80 mm", "Ø ext. pratique 100 mm", "Tuyauteries horizontales", "Plus grand que WC siphonique"]
+    },
+    {
+        id: 'q237',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "medium",
+        question: "Que signifie 'chute' dans un réseau d'évacuation ?",
+        answers: ["Canalisation horizontale", "Canalisation verticale", "Siphon de sol", "Collecteur principal"],
+        correct: 1,
+        explanation: "Une chute (ou descente) est une canalisation verticale utilisée pour l'évacuation des eaux usées des étages vers le collecteur principal.",
+        keyPoints: ["Chute = canalisation verticale", "Évacuation des étages", "Différent du collecteur", "Raccordée au collecteur"]
+    },
+    {
+        id: 'q238',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "easy",
+        question: "Qu'est-ce qu'un collecteur d'appareils ?",
+        answers: ["Canalisation verticale", "Canalisation horizontale raccordant les appareils", "Égout public", "Système de ventilation"],
+        correct: 1,
+        explanation: "Un collecteur d'appareils est une canalisation d'allure horizontale raccordant les appareils sanitaires ou les tuyaux de chutes.",
+        keyPoints: ["Collecteur = horizontal", "Raccorde les appareils", "Vers chute ou collecteur principal", "Pente minimale 3 cm/m"]
+    },
+    {
+        id: 'q239',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "medium",
+        question: "Pour une baignoire de plus de 1 mètre, quel diamètre extérieur est recommandé ?",
+        answers: ["32 mm", "40 mm", "50 mm", "63 mm"],
+        correct: 2,
+        explanation: "Pour une baignoire dont la longueur est supérieure à 1 m, le diamètre extérieur utilisé est de 40 mm ou parfois 50 mm (diamètre intérieur 38 mm).",
+        keyPoints: ["Baignoire >1m: Ø40-50 mm", "Baignoire <1m: Ø40 mm", "Diamètre intérieur 38 mm si >1m", "Selon longueur baignoire"]
+    },
+    {
+        id: 'q240',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "hard",
+        question: "Dans un système séparatif, est-il autorisé de raccorder les eaux pluviales sur le réseau d'évacuation des eaux usées ?",
+        answers: ["Oui, toujours", "Oui, avec autorisation", "Non, strictement interdit", "Oui, si diamètre suffisant"],
+        correct: 2,
+        explanation: "Dans un système séparatif, il est strictement interdit de raccorder les eaux pluviales sur le réseau d'évacuation des eaux usées. Les réseaux doivent rester séparés.",
+        keyPoints: ["Séparatif = réseaux séparés", "Interdiction stricte", "EP ≠ EU", "Vérifier avec mairie"]
+    },
+    {
+        id: 'q241',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "medium",
+        question: "Quel est le diamètre minimal pour un collecteur desservant 4 à 10 appareils (hors WC) dont 2 baignoires maximum ?",
+        answers: ["50 mm", "65 mm", "80 mm", "100 mm"],
+        correct: 2,
+        explanation: "Pour 4 à 10 appareils (hors WC) dont 2 baignoires maximum, le diamètre intérieur minimal est de 65 mm, soit 80 mm en diamètre extérieur pratique.",
+        keyPoints: ["4-10 appareils: Ø65/80 mm", "Maximum 2 baignoires", "Hors WC", "Diamètre croissant selon nombre"]
+    },
+    {
+        id: 'q242',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "easy",
+        question: "Quel DTU régit les installations d'évacuation des eaux usées ?",
+        answers: ["DTU 60.1 et 60.11", "DTU 65.10", "DTU 68.3", "DTU 24.1"],
+        correct: 0,
+        explanation: "Les DTU 60.1 et 60.11 régissent les installations de plomberie sanitaire et d'évacuation des eaux usées et pluviales.",
+        keyPoints: ["DTU 60.1 et 60.11", "Plomberie sanitaire", "Évacuation EU et EP", "Norme obligatoire"]
+    },
+    {
+        id: 'q243',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'une chute unique ?",
+        answers: ["Chute d'eaux ménagères seule", "Chute d'eaux vannes seule", "Chute mixte EU + EV avec système agréé", "Chute d'eaux pluviales"],
+        correct: 2,
+        explanation: "Une chute unique est une canalisation verticale qui évacue à la fois les eaux ménagères et les eaux vannes, avec un tube et des culottes agréées (ex: Chutunic de Nicoll).",
+        keyPoints: ["Chute mixte EU + EV", "Système agréé obligatoire", "Ex: Chutunic Nicoll", "Alternative aux chutes séparées"]
+    },
+    {
+        id: 'q244',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "medium",
+        question: "Pour un groupe de sécurité avec partie verticale >1m, quel diamètre extérieur utiliser ?",
+        answers: ["25 mm", "32 mm", "40 mm", "50 mm"],
+        correct: 1,
+        explanation: "Pour un groupe de sécurité avec une partie verticale dont la longueur est supérieure à 1 m, le diamètre intérieur minimal est de 20 mm, soit 32 mm en diamètre extérieur.",
+        keyPoints: ["Partie verticale >1m: Ø32 mm", "Partie verticale <1m: Ø32 mm (25 int.)", "Évacuation groupe sécurité", "Dimensionnement selon hauteur"]
+    },
+    {
+        id: 'q245',
+        category: "Systèmes Thermiques - Évacuation",
+        difficulty: "hard",
+        question: "Quelle est la pente minimale d'un égout public selon les normes ?",
+        answers: ["0,01 m/m (1 cm/m)", "0,03 m/m (3 cm/m)", "0,05 m/m (5 cm/m)", "0,1 m/m (10 cm/m)"],
+        correct: 0,
+        explanation: "Un égout public doit avoir une pente minimale de 0,01 m par mètre (soit 1 cm/m), inférieure à celle des collecteurs d'immeubles (3 cm/m).",
+        keyPoints: ["Égout public: 1 cm/m", "Collecteur immeuble: 3 cm/m", "Pente minimale", "Assure écoulement gravitaire"]
+    },
+
+    // === PRODUCTION ECS (18 questions) ===
+    {
+        id: 'q246',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "easy",
+        question: "Que signifie l'acronyme ECS ?",
+        answers: ["Eau Chaude Solaire", "Eau Chaude Sanitaire", "Évacuation Chaude Séparée", "Échangeur Chauffage Solaire"],
+        correct: 1,
+        explanation: "ECS signifie Eau Chaude Sanitaire, c'est-à-dire l'eau potable chauffée destinée aux usages domestiques (douche, lavabo, cuisine...).",
+        keyPoints: ["ECS = Eau Chaude Sanitaire", "Eau potable chauffée", "Usages domestiques", "Différent du chauffage"]
+    },
+    {
+        id: 'q247',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "easy",
+        question: "Quels sont les trois principaux types de production d'ECS ?",
+        answers: ["Instantanée, accumulation, mixte", "Instantanée, accumulation, semi-accumulation", "Électrique, gaz, solaire", "Directe, indirecte, mixte"],
+        correct: 1,
+        explanation: "Les trois procédés de production d'ECS sont : la production instantanée (sans réserve), l'accumulation (stockage journalier), et la semi-accumulation/semi-instantanée (ballon tampon).",
+        keyPoints: ["3 procédés principaux", "Instantanée (sans réserve)", "Accumulation (stockage)", "Semi-accumulation (tampon)"]
+    },
+    {
+        id: 'q248',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "À quelle température est préréglé en usine le thermostat d'un ballon électrique ?",
+        answers: ["50°C", "55°C", "60°C", "65°C"],
+        correct: 2,
+        explanation: "Le thermostat d'un ballon électrique est préréglé en usine à 60°C. Cette température permet d'éviter le développement de légionelles tout en limitant les risques de brûlure.",
+        keyPoints: ["Préréglage usine 60°C", "Prévention légionellose", "Compromis sécurité/hygiène", "Température minimale recommandée"]
+    },
+    {
+        id: 'q249',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "Quel est l'avantage principal d'un système de production ECS à accumulation ?",
+        answers: ["Faible encombrement", "Prix d'achat réduit", "Puissance nécessaire faible", "Production continue 24h/24"],
+        correct: 2,
+        explanation: "L'accumulation nécessite une puissance faible car l'eau est chauffée progressivement sur une longue période. Elle permet aussi de profiter d'énergie à prix réduit (heures creuses).",
+        keyPoints: ["Puissance nécessaire faible", "Chauffe progressive", "Heures creuses possibles", "Adapté consommation espacée"]
+    },
+    {
+        id: 'q250',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "hard",
+        question: "Dans un ballon électrique, quel est le rôle de l'anode ?",
+        answers: ["Chauffer l'eau", "Protéger la cuve de la corrosion", "Réguler la température", "Évacuer le calcaire"],
+        correct: 1,
+        explanation: "L'anode est une tige de métal destinée à protéger la cuve du réservoir des courants vagabonds et des phénomènes d'électrolyse. Le métal utilisé (magnésium) est sacrificiel et doit être remplacé quand il est consommé.",
+        keyPoints: ["Protection contre corrosion", "Métal sacrificiel (magnésium)", "Protège la cuve", "Doit être remplacée régulièrement"]
+    },
+    {
+        id: 'q251',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "Qu'est-ce que la stratification dans un ballon d'eau chaude ?",
+        answers: ["Accumulation de calcaire", "Superposition de couches d'eau à températures différentes", "Corrosion de la cuve", "Formation de bulles d'air"],
+        correct: 1,
+        explanation: "La stratification est la superposition de lames d'eau à des températures croissantes du bas vers le haut du réservoir. L'eau chaude, plus légère, monte naturellement vers le haut.",
+        keyPoints: ["Couches à températures différentes", "Eau chaude en haut (60°C)", "Eau froide en bas (15°C)", "Phénomène naturel de densité"]
+    },
+    {
+        id: 'q252',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "À quel endroit du ballon est placée la canne de prise d'eau chaude ?",
+        answers: ["En bas du ballon", "Au milieu du ballon", "En haut du ballon", "Sur le côté du ballon"],
+        correct: 2,
+        explanation: "La canne de prise d'eau chaude est placée en haut du ballon, au point où l'eau est la plus chaude grâce à la stratification thermique.",
+        keyPoints: ["Canne en haut du ballon", "Point le plus chaud", "Profite de la stratification", "Température maximale (60°C)"]
+    },
+    {
+        id: 'q253',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "hard",
+        question: "Combien de fonctions assure le groupe de sécurité d'un ballon ECS ?",
+        answers: ["3 fonctions", "4 fonctions", "5 fonctions", "6 fonctions"],
+        correct: 2,
+        explanation: "Le groupe de sécurité assure 5 fonctions : 1) vanne de fermeture, 2) filtre, 3) clapet anti-retour, 4) vanne de vidange, 5) soupape de sécurité tarée à 7 bars.",
+        keyPoints: ["5 fonctions distinctes", "Fermeture + protection", "Soupape 7 bars", "Élément de sécurité obligatoire"]
+    },
+    {
+        id: 'q254',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "À quelle pression est tarée la soupape de sécurité d'un groupe de sécurité ECS ?",
+        answers: ["3 bars", "5 bars", "7 bars", "10 bars"],
+        correct: 2,
+        explanation: "La soupape de sécurité du groupe de sécurité est tarée à 7 bars. Elle permet d'évacuer le surplus de pression dû à l'expansion de l'eau lors du chauffage.",
+        keyPoints: ["Tarage à 7 bars", "Évacue surplus de pression", "Protection contre surpression", "Partie du groupe de sécurité"]
+    },
+    {
+        id: 'q255',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "easy",
+        question: "Quels sont les deux types d'accumulateurs ECS à accumulation ?",
+        answers: ["Horizontal et vertical", "Blindé et stéatite", "Électriques et à gaz", "Simple et double paroi"],
+        correct: 2,
+        explanation: "On rencontre deux types de préparateurs ECS à accumulation : les accumulateurs électriques et les accumulateurs à gaz.",
+        keyPoints: ["Électriques", "À gaz", "Principe d'accumulation", "Deux sources d'énergie différentes"]
+    },
+    {
+        id: 'q256',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "Quelle est la différence entre une résistance blindée et une résistance stéatite ?",
+        answers: ["La tension électrique", "Le contact avec l'eau", "La puissance", "La durée de vie"],
+        correct: 1,
+        explanation: "La résistance blindée est directement plongée dans l'eau. La résistance stéatite est placée dans un doigt de gant et n'est pas en contact direct avec l'eau, ce qui permet de l'intervenir sans vider le réservoir.",
+        keyPoints: ["Blindée = contact direct eau", "Stéatite = dans doigt de gant", "Stéatite permet intervention", "Stéatite protégée du calcaire"]
+    },
+    {
+        id: 'q257',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "hard",
+        question: "Quel est le besoin journalier moyen en ECS à 60°C pour 3-4 personnes avec évier et lavabo ?",
+        answers: ["36 litres en pointe", "50 litres en pointe", "88 litres en moyenne", "120 litres en pointe"],
+        correct: 3,
+        explanation: "Pour 3-4 personnes au foyer avec évier et lavabo, les besoins sont de 88 litres/jour en moyenne et 120 litres en pointe à 60°C selon les tableaux d'évaluation.",
+        keyPoints: ["3-4 personnes: 88L moyenne", "120L en pointe", "À 60°C", "Évier + lavabo"]
+    },
+    {
+        id: 'q258',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "easy",
+        question: "Quel est l'inconvénient principal d'un système de production ECS instantanée ?",
+        answers: ["Encombrement important", "Prix élevé", "Puissance nécessaire importante", "Entretien complexe"],
+        correct: 2,
+        explanation: "Le principal inconvénient de la production instantanée est la puissance nécessaire importante, parfois supérieure à la puissance requise pour chauffer les locaux.",
+        keyPoints: ["Puissance importante requise", "Peut dépasser puissance chauffage", "Faible encombrement (avantage)", "Adapté petits débits fréquents"]
+    },
+    {
+        id: 'q259',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un système de production ECS semi-accumulation ?",
+        answers: ["Production alternée jour/nuit", "Production + stockage dans ballon tampon", "Deux ballons en série", "Système mixte gaz + électricité"],
+        correct: 1,
+        explanation: "La semi-accumulation produit l'ECS instantanément et la stocke dans un ballon tampon dimensionné pour assurer un débit de pointe de 10 minutes. Cela permet de réduire la puissance de la chaudière.",
+        keyPoints: ["Production instantanée + stockage", "Ballon tampon pour pointe", "Réduit puissance chaudière", "Compromis instantané/accumulation"]
+    },
+    {
+        id: 'q260',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "Pour un préparateur ECS instantané, l'échangeur doit satisfaire les pointes de consommation de quelle durée ?",
+        answers: ["5 minutes", "10 minutes", "15 minutes", "20 minutes"],
+        correct: 1,
+        explanation: "L'échangeur d'un système instantané doit avoir une puissance suffisante pour satisfaire les pointes de consommation de 10 minutes.",
+        keyPoints: ["Pointe de 10 minutes", "Puissance suffisante requise", "Production instantanée", "Sans limitation de durée totale"]
+    },
+    {
+        id: 'q261',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "hard",
+        question: "Dans un ballon électrique, à quelle tension peut fonctionner la résistance de chauffe ?",
+        answers: ["Uniquement 230V", "Uniquement 380V", "230V ou 380V selon modèle", "12V sécurisé"],
+        correct: 2,
+        explanation: "La résistance peut être alimentée en 230V ou en 380V selon les cas. Certains appareils fonctionnent avec les deux tensions (tous courants). Une manipulation dans le boîtier électrique permet d'adapter la résistance à la tension fournie.",
+        keyPoints: ["230V ou 380V", "Adaptation possible", "Appareils 'tous courants'", "Configuration dans boîtier"]
+    },
+    {
+        id: 'q262',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "Quel est le rôle du raccord diélectrique sur un ballon ECS ?",
+        answers: ["Réguler la température", "Protéger de l'électrolyse", "Réduire le bruit", "Filtrer l'eau"],
+        correct: 1,
+        explanation: "Le raccord diélectrique placé sur la sortie d'eau chaude protège le réservoir de l'électrolyse. Ce phénomène se produit lorsque différents métaux sont employés sur le réseau de distribution (ex: cuve acier + canalisation cuivre).",
+        keyPoints: ["Protection contre électrolyse", "Joint isolant électrique", "Métaux différents = risque", "Sur sortie ECS"]
+    },
+    {
+        id: 'q263',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "hard",
+        question: "Dans un ballon à gaz à accumulation, où est situé le tube de fumées ?",
+        answers: ["À l'extérieur du ballon", "Sur le côté du ballon", "Au centre du réservoir", "Sous le ballon"],
+        correct: 2,
+        explanation: "Le tube de fumées est situé au centre du réservoir. Les gaz de combustion évacués par ce tube sont ralentis par des turbulateurs placés à l'intérieur pour favoriser l'échange de chaleur entre l'eau et les fumées.",
+        keyPoints: ["Tube au centre du réservoir", "Turbulateurs pour échange", "Ralentit les fumées", "Optimise rendement"]
+    },
+
+    // === ÉMETTEURS DE CHALEUR (10 questions) ===
+    {
+        id: 'q264',
+        category: "Systèmes Thermiques - Émetteurs",
+        difficulty: "easy",
+        question: "Quels sont les trois principaux types d'émetteurs de chaleur ?",
+        answers: ["Radiateurs, convecteurs, climatiseurs", "Radiateurs, plancher chauffant, ventilo-convecteurs", "Chaudières, pompes, radiateurs", "Poêles, inserts, radiateurs"],
+        correct: 1,
+        explanation: "Les trois principaux types d'émetteurs de chaleur sont : les radiateurs (fonte, acier, aluminium), le plancher chauffant (basse température), et les ventilo-convecteurs (pulsent l'air).",
+        keyPoints: ["Radiateurs (différents matériaux)", "Plancher chauffant", "Ventilo-convecteurs", "Diffusion chaleur dans locaux"]
+    },
+    {
+        id: 'q265',
+        category: "Systèmes Thermiques - Émetteurs",
+        difficulty: "medium",
+        question: "Quel est l'avantage principal du plancher chauffant ?",
+        answers: ["Installation rapide", "Coût minimal", "Température basse et confort optimal", "Aucun entretien"],
+        correct: 2,
+        explanation: "Le plancher chauffant fonctionne à basse température (35-40°C) et offre un confort optimal avec une répartition homogène de la chaleur et une sensation de bien-être au niveau des pieds.",
+        keyPoints: ["Basse température (35-40°C)", "Confort optimal", "Répartition homogène", "Économies d'énergie"]
+    },
+    {
+        id: 'q266',
+        category: "Systèmes Thermiques - Émetteurs",
+        difficulty: "medium",
+        question: "Quel matériau de radiateur offre la meilleure inertie thermique ?",
+        answers: ["Aluminium", "Acier", "Fonte", "Cuivre"],
+        correct: 2,
+        explanation: "Les radiateurs en fonte offrent la meilleure inertie thermique. Ils accumulent la chaleur et continuent à chauffer même après l'arrêt de la chaudière, mais sont plus lourds et longs à chauffer.",
+        keyPoints: ["Fonte = meilleure inertie", "Continue à chauffer après arrêt", "Lourd et massif", "Chauffe lente"]
+    },
+    {
+        id: 'q267',
+        category: "Systèmes Thermiques - Émetteurs",
+        difficulty: "easy",
+        question: "Quel type de radiateur chauffe le plus rapidement ?",
+        answers: ["Radiateur en fonte", "Radiateur en aluminium", "Radiateur en acier", "Tous identiques"],
+        correct: 1,
+        explanation: "Les radiateurs en aluminium chauffent le plus rapidement grâce à leur faible masse et leur excellente conductivité thermique, mais ont peu d'inertie.",
+        keyPoints: ["Aluminium = chauffe rapide", "Faible masse", "Bonne conductivité", "Peu d'inertie"]
+    },
+    {
+        id: 'q268',
+        category: "Systèmes Thermiques - Émetteurs",
+        difficulty: "medium",
+        question: "Quelle est la température maximale du plancher chauffant dans les pièces principales ?",
+        answers: ["28°C", "35°C", "40°C", "45°C"],
+        correct: 0,
+        explanation: "Dans les pièces principales (séjour, chambres), la température de surface du plancher chauffant ne doit pas dépasser 28°C pour éviter la sensation de jambes lourdes et assurer le confort.",
+        keyPoints: ["Maximum 28°C en surface", "Pièces principales", "Confort et santé", "Norme réglementaire"]
+    },
+    {
+        id: 'q269',
+        category: "Systèmes Thermiques - Émetteurs",
+        difficulty: "hard",
+        question: "Quelle est la différence entre un radiateur haute température et basse température ?",
+        answers: ["Le matériau utilisé", "La température de l'eau (70-90°C vs 45-55°C)", "La forme du radiateur", "Le mode de fixation"],
+        correct: 1,
+        explanation: "Un radiateur haute température fonctionne avec une eau à 70-90°C (chaudières classiques), tandis qu'un radiateur basse température fonctionne à 45-55°C (chaudières à condensation, pompes à chaleur). Les radiateurs BT sont plus grands.",
+        keyPoints: ["HT: 70-90°C", "BT: 45-55°C", "BT plus grands", "BT adaptés condensation/PAC"]
+    },
+    {
+        id: 'q270',
+        category: "Systèmes Thermiques - Émetteurs",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un ventilo-convecteur ?",
+        answers: ["Un radiateur sans eau", "Un émetteur avec ventilateur intégré", "Un système de ventilation", "Une chaudière mobile"],
+        correct: 1,
+        explanation: "Un ventilo-convecteur est un émetteur de chaleur équipé d'un ventilateur qui pulse l'air à travers une batterie d'échange. Il permet une montée en température rapide et peut aussi rafraîchir en été (réversible).",
+        keyPoints: ["Ventilateur intégré", "Montée rapide en température", "Peut être réversible", "Batterie d'échange"]
+    },
+    {
+        id: 'q271',
+        category: "Systèmes Thermiques - Émetteurs",
+        difficulty: "easy",
+        question: "Où doivent être placés les radiateurs dans une pièce ?",
+        answers: ["Au centre de la pièce", "Sous les fenêtres", "Près de la porte", "N'importe où"],
+        correct: 1,
+        explanation: "Les radiateurs doivent être placés sous les fenêtres pour contrer les déperditions thermiques par les vitrages (pont froid) et créer un rideau d'air chaud.",
+        keyPoints: ["Sous les fenêtres", "Contre déperditions", "Rideau d'air chaud", "Optimise confort"]
+    },
+    {
+        id: 'q272',
+        category: "Systèmes Thermiques - Émetteurs",
+        difficulty: "medium",
+        question: "Quel est l'inconvénient principal des radiateurs en acier ?",
+        answers: ["Poids élevé", "Coût important", "Faible inertie thermique", "Corrosion rapide"],
+        correct: 2,
+        explanation: "Les radiateurs en acier ont une faible inertie thermique : ils chauffent et refroidissent rapidement. Ils sont cependant légers, économiques et offrent un bon compromis pour la plupart des installations.",
+        keyPoints: ["Faible inertie", "Chauffe/refroidit vite", "Léger et économique", "Bon compromis"]
+    },
+    {
+        id: 'q273',
+        category: "Systèmes Thermiques - Émetteurs",
+        difficulty: "hard",
+        question: "Pourquoi le plancher chauffant est-il compatible avec les pompes à chaleur ?",
+        answers: ["Installation facile", "Coût réduit", "Fonctionne à basse température", "Entretien simplifié"],
+        correct: 2,
+        explanation: "Le plancher chauffant est idéal avec les pompes à chaleur car il fonctionne à basse température (35-40°C). Les PAC sont plus efficaces (meilleur COP) lorsqu'elles produisent de l'eau à basse température.",
+        keyPoints: ["Compatible basse température", "Optimise COP de la PAC", "Eau 35-40°C", "Solution économique"]
+    },
+
+    // === SÉCURITÉ ET ORGANES (7 questions) ===
+    {
+        id: 'q274',
+        category: "Systèmes Thermiques - Sécurité",
+        difficulty: "medium",
+        question: "Quel est le rôle d'un vase d'expansion dans une installation de chauffage ?",
+        answers: ["Filtrer l'eau", "Compenser la dilatation de l'eau", "Augmenter la pression", "Purger l'air"],
+        correct: 1,
+        explanation: "Le vase d'expansion compense l'augmentation de volume de l'eau lors du chauffage (dilatation thermique). Il absorbe le surplus de volume pour éviter une surpression dans le circuit.",
+        keyPoints: ["Compense dilatation eau", "Évite surpression", "Volume variable", "Obligatoire sur circuits fermés"]
+    },
+    {
+        id: 'q275',
+        category: "Systèmes Thermiques - Sécurité",
+        difficulty: "hard",
+        question: "À quelle pression est généralement tarée une soupape de sécurité sur une installation de chauffage domestique ?",
+        answers: ["1,5 bar", "3 bars", "7 bars", "10 bars"],
+        correct: 1,
+        explanation: "Une soupape de sécurité sur une installation de chauffage domestique est généralement tarée à 3 bars (parfois 2,5 bars). Elle protège l'installation contre les surpressions dangereuses.",
+        keyPoints: ["Tarage 3 bars (chauffage)", "7 bars (ECS)", "Protection surpression", "Évacue excès de pression"]
+    },
+    {
+        id: 'q276',
+        category: "Systèmes Thermiques - Sécurité",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un purgeur automatique ?",
+        answers: ["Une vanne de vidange", "Un dispositif d'évacuation d'air automatique", "Un filtre à boues", "Une soupape de sécurité"],
+        correct: 1,
+        explanation: "Un purgeur automatique est un dispositif qui évacue automatiquement l'air présent dans le circuit de chauffage. Il se place aux points hauts de l'installation pour éliminer les bulles d'air qui nuisent à la circulation.",
+        keyPoints: ["Évacuation air automatique", "Points hauts de l'installation", "Améliore circulation", "Évite bouchons d'air"]
+    },
+    {
+        id: 'q277',
+        category: "Systèmes Thermiques - Sécurité",
+        difficulty: "easy",
+        question: "Quel est le rôle d'un disconnecteur ?",
+        answers: ["Réguler la température", "Empêcher le retour d'eau contaminée", "Filtrer les impuretés", "Réduire la pression"],
+        correct: 1,
+        explanation: "Un disconnecteur empêche le retour d'eau potentiellement contaminée dans le réseau d'eau potable. Il protège le réseau public contre les pollutions accidentelles provenant des installations privées.",
+        keyPoints: ["Protection eau potable", "Empêche retour eau contaminée", "Obligatoire selon installations", "Zone de rupture de charge"]
+    },
+    {
+        id: 'q278',
+        category: "Systèmes Thermiques - Sécurité",
+        difficulty: "medium",
+        question: "Où doit être placé le vase d'expansion dans un circuit de chauffage ?",
+        answers: ["Sur le départ chaudière", "Sur le retour chaudière avant circulateur", "À l'étage le plus haut", "Indifférent"],
+        correct: 1,
+        explanation: "Le vase d'expansion doit être placé sur le retour chaudière, avant le circulateur, en zone froide. Cela évite les variations de pression dues au pompage et assure un fonctionnement optimal.",
+        keyPoints: ["Retour chaudière", "Avant circulateur", "Zone froide", "Optimal pour régulation"]
+    },
+    {
+        id: 'q279',
+        category: "Systèmes Thermiques - Sécurité",
+        difficulty: "hard",
+        question: "Quelle est la différence entre un vase d'expansion ouvert et fermé ?",
+        answers: ["Le matériau de fabrication", "Le contact avec l'atmosphère", "La capacité", "La pression de service"],
+        correct: 1,
+        explanation: "Un vase ouvert est en contact avec l'atmosphère (pression atmosphérique), placé en hauteur, plus simple mais risque de corrosion. Un vase fermé est pressurisé, avec membrane, plus compact, obligatoire sur installations modernes.",
+        keyPoints: ["Ouvert = contact atmosphère", "Fermé = pressurisé, membrane", "Fermé plus compact", "Fermé obligatoire installations modernes"]
+    },
+    {
+        id: 'q280',
+        category: "Systèmes Thermiques - Sécurité",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un clapet anti-retour ?",
+        answers: ["Un dispositif de filtration", "Un dispositif empêchant l'inversion du flux", "Une soupape de sécurité", "Un régulateur de débit"],
+        correct: 1,
+        explanation: "Un clapet anti-retour est un dispositif qui autorise le passage de l'eau dans un seul sens et empêche le retour en sens inverse. Il est essentiel pour protéger certains équipements et éviter les inversions de flux.",
+        keyPoints: ["Passage unidirectionnel", "Empêche retour", "Protection équipements", "Partie du groupe de sécurité"]
+    },
+
+    // ========== STAGE 3 - SYSTÈMES AVANCÉS (36 questions) ==========
+    {
+        id: 'q281',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "medium",
+        question: "Pour un appareil à gaz non raccordé seul dans un logement construit avant 1969, quel est le volume minimal requis pour le local ?",
+        answers: ["4 m³", "6 m³", "8 m³", "10 m³"],
+        correct: 2,
+        explanation: "Le volume minimal requis est de 8 m³ pour installer un appareil à gaz non raccordé seul dans un logement ancien. C'est une exigence de sécurité fondamentale.",
+        keyPoints: ["Volume ≥ 8 m³", "Logements avant 1969", "Appareil non raccordé", "Ventilation obligatoire"]
+    },
+    {
+        id: 'q282',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "easy",
+        question: "Quelle est la section minimale de l'amenée d'air directe pour un appareil à gaz non raccordé ?",
+        answers: ["50 cm²", "100 cm²", "150 cm²", "200 cm²"],
+        correct: 1,
+        explanation: "L'amenée d'air directe doit avoir une section minimale de 100 cm² pour assurer une combustion correcte et la sécurité de l'installation.",
+        keyPoints: ["100 cm² minimum", "Amenée d'air directe", "Combustion sûre", "Norme obligatoire"]
+    },
+    {
+        id: 'q283',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "medium",
+        question: "À quelle hauteur minimale doit se situer la sortie d'air pour un appareil à gaz non raccordé ?",
+        answers: ["1,20 m", "1,50 m", "1,80 m", "2,00 m"],
+        correct: 2,
+        explanation: "La sortie d'air doit être à minimum 1,80 m du sol pour éviter les courants d'air bas et assurer une évacuation correcte des produits de combustion.",
+        keyPoints: ["Hauteur ≥ 1,80 m", "Sortie d'air haute", "Sécurité combustion", "Évacuation efficace"]
+    },
+    {
+        id: 'q284',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "hard",
+        question: "Dans un placard cuisine avec appareil gaz, quelle distance maximale entre l'appareil et la porte permet la dispense d'ouvrant et volume ?",
+        answers: ["20 cm", "30 cm", "40 cm", "50 cm"],
+        correct: 1,
+        explanation: "Pour bénéficier de la dispense, la bande de sol entre l'appareil et la porte doit être ≤ 30 cm, ce qui empêche d'y séjourner porte fermée.",
+        keyPoints: ["≤ 30 cm", "Dispense ouvrant/volume", "Placard cuisine", "Kitchenette"]
+    },
+    {
+        id: 'q285',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "medium",
+        question: "Pour deux locaux contigus considérés comme local unique, quelle surface minimale de baie les reliant est requise ?",
+        answers: ["1 m²", "2 m²", "3 m²", "4 m²"],
+        correct: 2,
+        explanation: "Une baie de surface libre ≥ 3 m² permet de considérer deux locaux contigus comme un local unique pour l'installation d'appareils à gaz.",
+        keyPoints: ["Baie ≥ 3 m²", "Locaux contigus", "Local unique", "V.A.S.O. ensemble"]
+    },
+    {
+        id: 'q286',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "hard",
+        question: "Pour une véranda, quelle relation mathématique permet de vérifier l'aération correcte de la cuisine adjacente ?",
+        answers: ["Sc + Sv ≥ 0,16", "(Sc² x Sv²) / (Sc² + Sv²) ≥ 0,16", "Sc x Sv ≥ 0,16", "Sc² + Sv² ≥ 0,16"],
+        correct: 1,
+        explanation: "La formule (Sc² x Sv²) / (Sc² + Sv²) ≥ 0,16 permet de vérifier que les ouvrants cuisine/véranda assurent une aération suffisante.",
+        keyPoints: ["Formule véranda", "Sc = surface cuisine", "Sv = surface véranda", "≥ 0,16 requis"]
+    },
+    {
+        id: 'q287',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "easy",
+        question: "Depuis le 1er janvier 2006, est-il autorisé d'installer un appareil de chauffage non étanche dans une salle de bain neuve ?",
+        answers: ["Oui, sans restriction", "Oui, avec autorisation", "Non, interdit", "Oui, si volume > 10 m³"],
+        correct: 2,
+        explanation: "Il est strictement interdit en installation neuve de poser un appareil de chauffage ou ECS non étanche dans une salle de bain (arrêté du 5 octobre 2005).",
+        keyPoints: ["Interdit depuis 2006", "Installation neuve", "Salle de bain/douche", "Étanche autorisée"]
+    },
+    {
+        id: 'q288',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "medium",
+        question: "Pour un appareil raccordé seul avec sécurité de flamme et contrôle du tirage, quelle dérogation est accordée ?",
+        answers: ["Volume seul", "Ouvrant et volume", "Sortie d'air seule", "Amenée d'air seule"],
+        correct: 1,
+        explanation: "Un appareil raccordé avec sécurité de flamme (thermocouple/ionisation) et contrôle du tirage (spott) bénéficie d'une dérogation pour l'ouvrant et le volume.",
+        keyPoints: ["Dérogation ouvrant/volume", "Sécurité flamme", "Contrôle tirage (spott)", "Appareil raccordé"]
+    },
+    {
+        id: 'q289',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "hard",
+        question: "En tirage naturel avec Pu = 28 kW, quelle valeur minimale doit atteindre la somme des modules d'amenée d'air ?",
+        answers: ["90", "134", "173,6", "259"],
+        correct: 2,
+        explanation: "En tirage naturel, le calcul est 6,2 x Pu. Donc 6,2 x 28 = 173,6. La somme des modules doit être ≥ à cette valeur pour assurer la combustion.",
+        keyPoints: ["Formule: 6,2 x Pu", "Tirage naturel", "Modules d'amenée d'air", "Ventilation suffisante"]
+    },
+    {
+        id: 'q290',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "medium",
+        question: "En VMC avec Pu = 18 kW, quelle formule permet de calculer le débit d'amenée d'air minimal requis ?",
+        answers: ["6,2 x Pu", "3,1 x Pu", "4,5 x Pu", "2,0 x Pu"],
+        correct: 1,
+        explanation: "Pour une extraction mécanique (VMC), la formule est 3,1 x Pu. Donc 3,1 x 18 = 55,8. Cette formule réduite tient compte de l'assistance mécanique.",
+        keyPoints: ["Formule VMC: 3,1 x Pu", "Extraction mécanique", "Débit réduit vs naturel", "M ≥ 45 minimum"]
+    },
+
+    // ===== SOLAIRE - CESI (13 questions) =====
+    {
+        id: 'q291',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "easy",
+        question: "Que signifie l'acronyme C.E.S.I. ?",
+        answers: ["Capteur d'Énergie Solaire Intégré", "Chauffe-Eau Solaire Individuel", "Circuit d'Eau Sanitaire Intelligent", "Centrale d'Énergie Solaire Installée"],
+        correct: 1,
+        explanation: "C.E.S.I. signifie Chauffe-Eau Solaire Individuel. C'est un système qui utilise l'énergie solaire pour produire de l'eau chaude sanitaire pour une habitation.",
+        keyPoints: ["Chauffe-Eau Solaire", "Individuel", "ECS solaire", "Installation domestique"]
+    },
+    {
+        id: 'q292',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "easy",
+        question: "Combien de grandes familles de systèmes C.E.S.I. existe-t-il ?",
+        answers: ["1 famille", "2 familles", "3 familles", "4 familles"],
+        correct: 1,
+        explanation: "Il existe deux grandes familles de systèmes CESI : THERMOSIPHON (circulation naturelle) et CIRCULATION FORCÉE (avec circulateur).",
+        keyPoints: ["2 familles", "Thermosiphon", "Circulation forcée", "Principes différents"]
+    },
+    {
+        id: 'q293',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "medium",
+        question: "Quel est le principe de fonctionnement d'un CESI thermosiphon monobloc ?",
+        answers: ["Circulateur électrique", "Hauteur d'eau naturelle", "Pression forcée", "Pompe solaire"],
+        correct: 1,
+        explanation: "Le thermosiphon utilise la différence de hauteur : le liquide chaud monte naturellement vers le ballon de stockage, le froid redescend vers les capteurs. Pas de régulation électrique.",
+        keyPoints: ["Circulation naturelle", "Pas de circulateur", "Ballon sur toiture", "Simple et économique"]
+    },
+    {
+        id: 'q294',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "easy",
+        question: "Quels sont les 5 éléments successifs composant une installation C.E.S.I. ?",
+        answers: ["Captage, Transfert, Échange & Stockage, Appoint, Distribution", "Captage, Pompe, Ballon, Chaudière, Robinet", "Panneau, Tuyau, Réservoir, Chauffage, Eau", "Soleil, Circuit, Eau, Gaz, Maison"],
+        correct: 0,
+        explanation: "Les 5 éléments sont : 1) Captage (capteur solaire), 2) Transfert (circuit caloporteur), 3) Échange & Stockage (échangeur + ballon), 4) Appoint (résistance/chaudière), 5) Distribution (ECS).",
+        keyPoints: ["5 éléments", "Captage → Distribution", "Circuit complet", "Appoint nécessaire"]
+    },
+    {
+        id: 'q295',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "hard",
+        question: "Dans un CESI thermosiphon monobloc, où doit obligatoirement se situer le ballon de stockage par rapport au capteur ?",
+        answers: ["En dessous du capteur", "Au même niveau", "Plus haut que le capteur", "N'importe où"],
+        correct: 2,
+        explanation: "Le stockage doit être directement sur la toiture avec le capteur, plus haut pour que le thermosiphon fonctionne. Il faut respecter une pente vers le stockage pour la circulation naturelle.",
+        keyPoints: ["Ballon plus haut", "Sur toiture", "Pente vers stockage", "Circulation naturelle"]
+    },
+    {
+        id: 'q296',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "medium",
+        question: "Quelle est la principale différence entre un CESI thermosiphon et un CESI à circulation forcée ?",
+        answers: ["La couleur des capteurs", "La présence d'un circulateur", "La taille du ballon", "Le type de toit"],
+        correct: 1,
+        explanation: "Le CESI à circulation forcée utilise un circulateur piloté pour provoquer la circulation du fluide caloporteur, contrairement au thermosiphon qui fonctionne naturellement.",
+        keyPoints: ["Circulateur piloté", "Régulation électronique", "Ballon séparé possible", "Plus flexible"]
+    },
+    {
+        id: 'q297',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "medium",
+        question: "Dans un système CESI à éléments séparés, où peut se situer le ballon de stockage ?",
+        answers: ["Uniquement sur le toit", "Uniquement au sol", "Plus haut ou plus bas que le capteur", "Obligatoirement en cave"],
+        correct: 2,
+        explanation: "Dans un système à éléments séparés, le ballon peut être installé plus haut OU plus bas que le capteur. Il peut s'intégrer dans une installation existante et nécessite une régulation.",
+        keyPoints: ["Ballon séparé", "Position flexible", "Intégration existante", "Régulation nécessaire"]
+    },
+    {
+        id: 'q298',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "hard",
+        question: "Dans un CESI à circulation forcée auto-vidangeable, que se passe-t-il lors de l'arrêt du circulateur ?",
+        answers: ["Le système explose", "Le fluide se refugie dans l'échangeur", "Les capteurs se vident automatiquement", "Rien de spécial"],
+        correct: 2,
+        explanation: "Quand le circulateur s'arrête, le fluide caloporteur se réfugie spontanément vers l'échangeur et les capteurs se vident automatiquement. Cela protège contre la surchauffe et le gel.",
+        keyPoints: ["Auto-vidangeable", "Protection gel", "Protection surchauffe", "Capteurs vides à l'arrêt"]
+    },
+    {
+        id: 'q299',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "medium",
+        question: "Quelles sont les deux températures mesurées par la régulation d'un CESI à circulation forcée ?",
+        answers: ["Tc (capteur) et Tb (ballon)", "T1 (entrée) et T2 (sortie)", "Ta (air) et Te (eau)", "Th (haut) et Tb (bas)"],
+        correct: 0,
+        explanation: "La régulation mesure Tc (température point haut du capteur) et Tb (température du ballon à l'échangeur). Elle calcule le ΔT pour piloter le circulateur.",
+        keyPoints: ["Tc = température capteur", "Tb = température ballon", "Calcul ΔT = Tc - Tb", "Pilotage circulateur"]
+    },
+    {
+        id: 'q300',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "hard",
+        question: "À partir de quel différentiel de température (ΔT) le circulateur d'un CESI démarre-t-il généralement ?",
+        answers: ["ΔT > 2°C (DD)", "ΔT > 5°C (DD)", "ΔT > 10°C (DD)", "ΔT > 15°C (DD)"],
+        correct: 1,
+        explanation: "Le circulateur démarre quand ΔT = Tc - Tb > DD (Différentiel de Démarrage), généralement réglé autour de 5-8°C. Il s'arrête quand ΔT < DA (Différentiel d'Arrêt).",
+        keyPoints: ["DD = Différentiel Démarrage", "ΔT > DD → ON", "ΔT < DA → OFF", "Valeurs réglables"]
+    },
+    {
+        id: 'q301',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "medium",
+        question: "Quelle solution permet de fournir de l'ECS quand l'énergie solaire n'est pas suffisante ?",
+        answers: ["L'appoint", "Le complément", "Le supplément", "Le renfort"],
+        correct: 0,
+        explanation: "L'APPOINT (résistance électrique, chaudière, PAC) prend le relais quand le capteur solaire ne peut fournir l'énergie nécessaire (nuit, hiver, météo défavorable).",
+        keyPoints: ["Appoint indispensable", "Résistance électrique", "Chaudière ou PAC", "Complète le solaire"]
+    },
+    {
+        id: 'q302',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "hard",
+        question: "Dans un système CESI à circulation forcée sous pression, que se passe-t-il quand la température du ballon atteint 65°C ?",
+        answers: ["Le système s'arrête", "Le circulateur refroidit la nuit", "Le capteur peut surchauffer", "L'appoint démarre"],
+        correct: 2,
+        explanation: "À 65°C dans le ballon, la régulation arrête le circulateur pour protéger l'ECS, mais le capteur reste exposé au soleil. Sa température peut continuer d'augmenter et le fluide caloporteur peut se vaporiser (protection nécessaire).",
+        keyPoints: ["Arrêt à 65-85°C", "Capteur exposé", "Risque surchauffe", "Vaporisation possible"]
+    },
+    {
+        id: 'q303',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "medium",
+        question: "Quel type d'antigel DOIT être utilisé dans un circuit de CESI ?",
+        answers: ["Éthylène glycol", "Mono propylène glycol (MPG)", "Alcool à 90°", "Eau pure"],
+        correct: 1,
+        explanation: "On DOIT utiliser un antigel alimentaire comme le mono propylène glycol (MPG), jamais d'éthylène glycol. L'antigel ne doit EN AUCUN CAS être jeté à l'égout.",
+        keyPoints: ["MPG alimentaire", "Jamais éthylène glycol", "Protection gel/corrosion", "Ne pas jeter égout"]
+    },
+
+    // ===== SOLAIRE - Implantation (3 questions) =====
+    {
+        id: 'q304',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "easy",
+        question: "Quels sont les types d'implantation possibles pour des capteurs solaires ? (Sélectionnez la réponse la plus complète)",
+        answers: ["Toiture uniquement", "Toiture et terrasse", "Toiture, terrasse, auvent, sol, local secondaire", "Toiture intégrée uniquement"],
+        correct: 2,
+        explanation: "Les capteurs peuvent être implantés : en toiture (superposés ou intégrés), sur terrasse, en auvent (fixé à la façade), au sol, ou sur un local secondaire.",
+        keyPoints: ["6 types d'implantation", "Toiture (superposé/intégré)", "Terrasse, sol, auvent", "Local secondaire"]
+    },
+    {
+        id: 'q305',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "medium",
+        question: "Pour une implantation optimale en toiture, comment doit être positionné le capteur solaire ?",
+        answers: ["Capteur perpendiculaire à la toiture", "Capteur superposé par rapport à la toiture", "Capteur intégré à la toiture", "Les options B et C sont correctes"],
+        correct: 3,
+        explanation: "Le capteur peut être soit superposé (fixé au-dessus de la toiture existante), soit intégré (remplace une partie de la couverture). Les deux méthodes sont valables.",
+        keyPoints: ["Superposé ou intégré", "Orientation sud idéale", "Inclinaison 30-45°", "Pas d'ombrage"]
+    },
+    {
+        id: 'q306',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "hard",
+        question: "Quel est le principal avantage d'une implantation en auvent (fixé à la façade) ?",
+        answers: ["Meilleure performance", "Installation moins chère", "Pas besoin d'accès toiture", "Plus esthétique"],
+        correct: 2,
+        explanation: "L'implantation en auvent permet d'installer les capteurs sans accéder à la toiture, ce qui peut être pratique pour certaines configurations ou contraintes bâtimentaires.",
+        keyPoints: ["Fixation façade", "Pas d'accès toiture", "Vertical possible", "Solution alternative"]
+    },
+
+    // ===== VENTILATION - VMC et systèmes (5 questions) =====
+    {
+        id: 'q307',
+        category: "Systèmes Avancés - Ventilation",
+        difficulty: "easy",
+        question: "Que signifie l'acronyme V.M.C. ?",
+        answers: ["Ventilation Mécanique Centralisée", "Ventilation Mécanique Contrôlée", "Vérification Mécanique Continue", "Volume Minimal de Circulation"],
+        correct: 1,
+        explanation: "V.M.C. signifie Ventilation Mécanique Contrôlée. C'est un système qui assure le renouvellement de l'air intérieur de manière automatique et continue.",
+        keyPoints: ["Ventilation Mécanique", "Contrôlée", "Renouvellement d'air", "Automatique"]
+    },
+    {
+        id: 'q308',
+        category: "Systèmes Avancés - Ventilation",
+        difficulty: "medium",
+        question: "Quelle est la différence entre une VMC simple flux et une VMC double flux ?",
+        answers: ["La puissance", "La récupération de chaleur", "La couleur", "Le prix"],
+        correct: 1,
+        explanation: "La VMC double flux récupère la chaleur de l'air extrait pour préchauffer l'air entrant, contrairement à la simple flux qui évacue directement l'air vicié sans récupération.",
+        keyPoints: ["Simple flux: extraction", "Double flux: échange chaleur", "Économies d'énergie", "Échangeur thermique"]
+    },
+    {
+        id: 'q309',
+        category: "Systèmes Avancés - Ventilation",
+        difficulty: "medium",
+        question: "Dans une installation VMC, où sont généralement situées les bouches d'extraction ?",
+        answers: ["Dans les pièces de vie (salon, chambres)", "Dans les pièces humides (cuisine, SDB, WC)", "Dans toutes les pièces", "Uniquement dans la cuisine"],
+        correct: 1,
+        explanation: "Les bouches d'extraction VMC sont placées dans les pièces humides (cuisine, salle de bain, WC) pour évacuer l'air vicié et l'humidité. L'air neuf entre dans les pièces sèches.",
+        keyPoints: ["Extraction pièces humides", "Cuisine, SDB, WC", "Entrée air pièces sèches", "Balayage du logement"]
+    },
+    {
+        id: 'q310',
+        category: "Systèmes Avancés - Ventilation",
+        difficulty: "hard",
+        question: "Pourquoi est-il déconseillé d'installer un appareil à gaz raccordé à un conduit de fumée à tirage naturel avec une VMC ?",
+        answers: ["C'est trop cher", "La VMC crée une dépression qui contrarie le tirage", "C'est interdit", "Ça consomme trop"],
+        correct: 1,
+        explanation: "La dépression créée par la VMC risque de contrarier le tirage naturel de l'appareil à gaz, pouvant causer un refoulement des fumées. Cette configuration est à proscrire pour la sécurité.",
+        keyPoints: ["Dépression VMC", "Contrarie tirage naturel", "Risque refoulement", "Configuration à proscrire"]
+    },
+    {
+        id: 'q311',
+        category: "Systèmes Avancés - Ventilation",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'une VMC hygro-réglable ?",
+        answers: ["VMC qui mesure la température", "VMC qui ajuste le débit selon l'humidité", "VMC avec filtre HEPA", "VMC silencieuse"],
+        correct: 1,
+        explanation: "Une VMC hygro-réglable adapte automatiquement son débit de ventilation en fonction du taux d'humidité détecté, ce qui optimise la qualité d'air et les économies d'énergie.",
+        keyPoints: ["Débit variable", "Détection humidité", "Économies d'énergie", "Confort optimisé"]
+    },
+
+    // ===== ORGANES DE PROTECTION (5 questions) =====
+    {
+        id: 'q312',
+        category: "Systèmes Avancés - Protection",
+        difficulty: "easy",
+        question: "Quel est le rôle principal d'un disconnecteur dans une installation sanitaire ?",
+        answers: ["Augmenter la pression", "Empêcher le retour d'eau polluée vers le réseau", "Filtrer l'eau", "Chauffer l'eau"],
+        correct: 1,
+        explanation: "Le disconnecteur protège le réseau public d'eau potable contre les retours d'eau potentiellement polluée provenant d'une installation privée (phénomène de siphonage).",
+        keyPoints: ["Protection réseau public", "Anti-retour", "Eau potable", "Obligatoire selon usage"]
+    },
+    {
+        id: 'q313',
+        category: "Systèmes Avancés - Protection",
+        difficulty: "medium",
+        question: "Qu'est-ce que le TH (Titre Hydrotimétrique) de l'eau ?",
+        answers: ["La température de l'eau", "La dureté de l'eau (teneur en calcaire)", "La pression de l'eau", "Le pH de l'eau"],
+        correct: 1,
+        explanation: "Le TH (Titre Hydrotimétrique) mesure la dureté de l'eau, c'est-à-dire sa teneur en ions calcium et magnésium (calcaire). Il s'exprime en degrés français (°f).",
+        keyPoints: ["TH = dureté", "Teneur calcaire", "°f (degrés français)", "Cause entartrage"]
+    },
+    {
+        id: 'q314',
+        category: "Systèmes Avancés - Protection",
+        difficulty: "medium",
+        question: "À partir de quelle valeur de TH une eau est-elle considérée comme dure (nécessitant un traitement) ?",
+        answers: ["TH > 10°f", "TH > 15°f", "TH > 20°f", "TH > 30°f"],
+        correct: 2,
+        explanation: "Une eau est considérée comme dure au-delà de 20°f. Elle nécessite généralement un traitement (adoucisseur) pour protéger les installations thermiques de l'entartrage.",
+        keyPoints: ["TH > 20°f = eau dure", "Risque entartrage", "Traitement recommandé", "Protection installation"]
+    },
+    {
+        id: 'q315',
+        category: "Systèmes Avancés - Protection",
+        difficulty: "hard",
+        question: "Dans une installation de chauffage, quel organe protège contre les surpressions dues à la dilatation de l'eau ?",
+        answers: ["Le disconnecteur", "Le groupe de sécurité", "Le vase d'expansion", "Le clapet anti-retour"],
+        correct: 2,
+        explanation: "Le vase d'expansion (ou vase d'expansion fermé) compense l'augmentation de volume de l'eau lors de la chauffe, évitant ainsi les surpressions dangereuses dans le circuit.",
+        keyPoints: ["Vase d'expansion", "Compensation dilatation", "Protection surpression", "Circuit fermé chauffage"]
+    },
+    {
+        id: 'q316',
+        category: "Systèmes Avancés - Protection",
+        difficulty: "medium",
+        question: "Quel est le rôle d'un groupe de sécurité sur un chauffe-eau ?",
+        answers: ["Filtrer l'eau", "Protéger contre surpression et permettre la vidange", "Adoucir l'eau", "Réchauffer l'eau"],
+        correct: 1,
+        explanation: "Le groupe de sécurité protège le chauffe-eau contre les surpressions (soupape taré à 7 bars), permet la vidange de l'appareil et l'évacuation de l'eau lors de la dilatation.",
+        keyPoints: ["Protection surpression", "Soupape 7 bars", "Vidange possible", "Évacuation dilatation"]
+    },
+
+    // ========== STAGE 4 - CHAUFFAGE (35 questions) ==========
+    {
+        id: 'q321',
+        category: "Chauffage - Circuits",
+        difficulty: "easy",
+        question: "Quelle est la pente recommandée pour une tuyauterie de chauffage ?",
+        answers: ["0,5 à 1 mm/m", "1 à 2 mm/m", "3 à 5 mm/m", "5 à 10 mm/m"],
+        correct: 1,
+        explanation: "La pente d'une installation de chauffage est de 1 à 2 millimètres par mètre pour permettre l'évacuation de l'air vers les points hauts.",
+        keyPoints: ["Pente : 1 à 2 mm/m", "Évacuation de l'air", "Vers les points hauts", "Indépendante du sens du fluide"]
+    },
+    {
+        id: 'q322',
+        category: "Chauffage - Circuits",
+        difficulty: "medium",
+        question: "Quel est le rôle principal du circulateur dans une installation de chauffage ?",
+        answers: ["Chauffer l'eau", "Faire circuler l'eau dans le réseau", "Réguler la température", "Purger l'air"],
+        correct: 1,
+        explanation: "Le circulateur sert à donner de la force motrice à l'eau pour qu'elle puisse irriguer tous les corps de chauffe (radiateurs) du réseau.",
+        keyPoints: ["Force motrice", "Circulation de l'eau", "Irrigation des émetteurs", "Position sur l'ALLER"]
+    },
+    {
+        id: 'q323',
+        category: "Chauffage - Circuits",
+        difficulty: "medium",
+        question: "Dans quel mode de distribution l'eau traverse-t-elle successivement tous les radiateurs ?",
+        answers: ["Bi-tubes", "Mono-tube", "Mono-tube dérivation", "Collecteur"],
+        correct: 1,
+        explanation: "En distribution mono-tube, l'eau passe successivement dans chaque radiateur. Ce système ne permet pas de robinets sur les radiateurs.",
+        keyPoints: ["Circuit série", "Pas de robinets", "Un seul tuyau", "Température décroissante"]
+    },
+    {
+        id: 'q324',
+        category: "Chauffage - Circuits",
+        difficulty: "hard",
+        question: "Quelle est la formule pour calculer le débit Q d'un circulateur ?",
+        answers: ["Q = P / (Δt × Cm)", "Q = P × Δt × Cm", "Q = Δt / (P × Cm)", "Q = Cm / (P × Δt)"],
+        correct: 0,
+        explanation: "Le débit Q = P / (Δt × Cm) où P = puissance en kW, Δt = écart de température en Kelvin, Cm = chaleur massique (1,163 kWh/t.K).",
+        keyPoints: ["Q en t/h (tours par heure)", "P en kW", "Δt en Kelvin", "Cm = 1,163 kWh/t.K"]
+    },
+    {
+        id: 'q325',
+        category: "Chauffage - Circuits",
+        difficulty: "medium",
+        question: "Si l'ALLER d'un radiateur est raccordé vers le bas, que faut-il obligatoirement installer ?",
+        answers: ["Un robinet thermostatique", "Un purgeur", "Une vanne de réglage", "Un clapet anti-retour"],
+        correct: 1,
+        explanation: "Si l'ALLER d'un radiateur est raccordé vers le bas, un purgeur est obligatoire car l'air ne peut pas s'évacuer naturellement vers le haut.",
+        keyPoints: ["Raccordement par le bas", "Purgeur obligatoire", "Air emprisonné", "Évacuation impossible"]
+    },
+
+    // RADIATEURS (5 questions)
+    {
+        id: 'q326',
+        category: "Chauffage - Radiateurs",
+        difficulty: "easy",
+        question: "Quel matériau offre le meilleur échange thermique pour un générateur de chaleur ?",
+        answers: ["Acier", "Inox", "Fonte", "Cuivre"],
+        correct: 2,
+        explanation: "La fonte offre un très bon échange entre la flamme et le fluide, avec un rendement élevé. C'est le matériau idéal pour les générateurs.",
+        keyPoints: ["Fonte = meilleur échange", "Rendement élevé", "Résistance thermique", "Durabilité"]
+    },
+    {
+        id: 'q327',
+        category: "Chauffage - Radiateurs",
+        difficulty: "medium",
+        question: "Comment désigne-t-on un radiateur en fonte de 12 éléments, 3 branches et 700 mm de hauteur ?",
+        answers: ["12-3-700", "12 S 3 700", "700-12-3", "S 700 12 3"],
+        correct: 1,
+        explanation: "La désignation fournisseur est : 12 S 3 700 (12 éléments, S pour le nom du constructeur, 3 branches, 700 mm de hauteur).",
+        keyPoints: ["12 éléments", "S = constructeur", "3 branches", "700 mm hauteur"]
+    },
+    {
+        id: 'q328',
+        category: "Chauffage - Radiateurs",
+        difficulty: "medium",
+        question: "Quelle est la formule pour calculer le Δt (Delta T) d'un radiateur ?",
+        answers: ["Δt = T°moyenne - T°ambiante", "Δt = T°aller - T°retour", "Δt = T°ambiante - T°moyenne", "Δt = (T°aller + T°ambiante) / 2"],
+        correct: 0,
+        explanation: "Le Δt = Température MOYENNE - Température AMBIANTE, où T°moyenne = (T°aller + T°retour) / 2. La température ambiante de référence est 20°C.",
+        keyPoints: ["Δt = Tmoy - Tamb", "Tmoy = (Taller + Tretour)/2", "Tambiante = 20°C", "Nécessaire au choix du radiateur"]
+    },
+    {
+        id: 'q329',
+        category: "Chauffage - Radiateurs",
+        difficulty: "easy",
+        question: "Quels sont les trois modes de transmission de la chaleur ?",
+        answers: ["Convection, conduction, rayonnement", "Radiation, circulation, émission", "Absorption, diffusion, réflexion", "Chauffage, refroidissement, ventilation"],
+        correct: 0,
+        explanation: "Les trois modes de transmission sont : la convection (circulation d'air), la conduction (contact), et le rayonnement (ondes électromagnétiques).",
+        keyPoints: ["Convection : circulation air", "Conduction : contact", "Rayonnement : ondes", "Du chaud vers le froid"]
+    },
+    {
+        id: 'q330',
+        category: "Chauffage - Radiateurs",
+        difficulty: "hard",
+        question: "Avec un circuit 80°C aller / 60°C retour dans une pièce à 20°C, quel est le Δt ?",
+        answers: ["40°C", "50°C", "60°C", "70°C"],
+        correct: 1,
+        explanation: "Tmoyenne = (80+60)/2 = 70°C. Donc Δt = 70-20 = 50°C. Ce Δt est nécessaire pour choisir la puissance du radiateur dans le catalogue.",
+        keyPoints: ["Tmoy = (80+60)/2 = 70°C", "Δt = 70-20 = 50°C", "Base catalogue", "T ambiante = 20°C"]
+    },
+
+    // CIRCULATEURS (5 questions)
+    {
+        id: 'q331',
+        category: "Chauffage - Circulateurs",
+        difficulty: "easy",
+        question: "Sur quelle partie du circuit le circulateur doit-il être positionné ?",
+        answers: ["Sur le retour", "Sur l'aller", "Indifférent", "Avant le vase d'expansion"],
+        correct: 1,
+        explanation: "Le circulateur se positionne sur l'ALLER d'une installation de chauffage, après le générateur de chaleur.",
+        keyPoints: ["Position sur ALLER", "Après générateur", "Force motrice", "Irrigation du réseau"]
+    },
+    {
+        id: 'q332',
+        category: "Chauffage - Circulateurs",
+        difficulty: "medium",
+        question: "Qu'est-ce que la hauteur manométrique (Hm) d'un circulateur ?",
+        answers: ["La hauteur du bâtiment", "La différence de pression entre aspiration et refoulement", "La pression maximale", "Le débit maximal"],
+        correct: 1,
+        explanation: "La hauteur manométrique (Hm) est la différence de pression entre l'aspiration et le refoulement de la pompe, exprimée en mCE (mètres de colonne d'eau).",
+        keyPoints: ["Hm en mCE", "Différence de pression", "Aspiration vs refoulement", "Pertes de charge du réseau"]
+    },
+    {
+        id: 'q333',
+        category: "Chauffage - Circulateurs",
+        difficulty: "hard",
+        question: "Que signifie le NPSH d'un circulateur ?",
+        answers: ["Niveau de puissance sonore horaire", "Net Positive Suction Head - charge nette absolue minimum", "Nombre de passages par seconde haute vitesse", "Nouvelle pompe sanitaire hydraulique"],
+        correct: 1,
+        explanation: "Le NPSH (Net Positive Suction Head) indique la charge nette absolue minimum à l'entrée de la pompe pour éviter la cavitation (formation de bulles de vapeur).",
+        keyPoints: ["Charge minimum entrée", "Évite cavitation", "Varie selon débit", "CMA = 10,33 - NPSH"]
+    },
+    {
+        id: 'q334',
+        category: "Chauffage - Circulateurs",
+        difficulty: "medium",
+        question: "Quelles sont les conséquences d'un circulateur sous-dimensionné ?",
+        answers: ["Tous les radiateurs ne chauffent pas", "Les débits et vitesses sont élevés", "Le circulateur engendre des bruits", "La consommation électrique augmente"],
+        correct: 0,
+        explanation: "Un circulateur sous-dimensionné ne permet pas d'irriguer correctement tous les radiateurs. Les radiateurs les plus éloignés ne chaufferont pas.",
+        keyPoints: ["Radiateurs non irrigués", "Les plus loin ne chauffent pas", "Débit insuffisant", "Pression insuffisante"]
+    },
+    {
+        id: 'q335',
+        category: "Chauffage - Circulateurs",
+        difficulty: "easy",
+        question: "Quel est le symbole normalisé d'un circulateur sur un schéma ?",
+        answers: ["Un cercle avec une flèche", "Un triangle dans un cercle avec le sens du fluide", "Un carré avec une pompe", "Une étoile"],
+        correct: 1,
+        explanation: "Le circulateur est représenté par un triangle noir dans un cercle, avec une flèche indiquant le sens de circulation du fluide.",
+        keyPoints: ["Triangle dans cercle", "Flèche de sens", "Symbole normalisé", "Sens du fluide"]
+    },
+
+    // GÉNÉRATEURS (5 questions)
+    {
+        id: 'q336',
+        category: "Chauffage - Générateurs",
+        difficulty: "easy",
+        question: "Quel est le rôle principal d'un générateur de chaleur ?",
+        answers: ["Distribuer la chaleur", "Transformer une énergie en chaleur pour un fluide caloporteur", "Réguler la température", "Purger le circuit"],
+        correct: 1,
+        explanation: "Le générateur transforme une énergie (combustible) en chaleur et la transmet à un fluide caloporteur (eau) qui circule dans le réseau.",
+        keyPoints: ["Transformation énergie", "Vers fluide caloporteur", "Combustible → chaleur", "Eau chauffée"]
+    },
+    {
+        id: 'q337',
+        category: "Chauffage - Générateurs",
+        difficulty: "medium",
+        question: "Quelle est la différence entre une chaudière simple service et double service ?",
+        answers: ["La puissance", "Simple = chauffage / Double = chauffage + ECS", "Le nombre de brûleurs", "La pression de service"],
+        correct: 1,
+        explanation: "Une chaudière simple service produit uniquement du chauffage. Une chaudière double service (ou mixte) produit le chauffage ET l'eau chaude sanitaire (ECS).",
+        keyPoints: ["Simple = chauffage seul", "Double = chauffage + ECS", "Système intégré", "ECS prioritaire"]
+    },
+    {
+        id: 'q338',
+        category: "Chauffage - Générateurs",
+        difficulty: "medium",
+        question: "Quelle est la différence entre un foyer atmosphérique et pressurisé ?",
+        answers: ["La température de combustion", "Atmosphérique = tirage naturel / Pressurisé = air pulsé par brûleur", "La pression de service", "Le type de combustible"],
+        correct: 1,
+        explanation: "Le foyer atmosphérique fonctionne par tirage naturel (dépression de la cheminée). Le foyer pressurisé utilise un brûleur à air pulsé pour un meilleur rendement.",
+        keyPoints: ["Atmosphérique = tirage naturel", "Pressurisé = air pulsé", "Brûleur forcé", "Meilleur rendement"]
+    },
+    {
+        id: 'q339',
+        category: "Chauffage - Générateurs",
+        difficulty: "hard",
+        question: "Quel rendement peut atteindre une chaudière à condensation (sur PCI) ?",
+        answers: ["70-80%", "80-90%", "90-100%", "100-110%"],
+        correct: 3,
+        explanation: "Une chaudière à condensation peut atteindre 100 à 110% de rendement sur PCI grâce à la récupération de la chaleur latente de condensation des fumées.",
+        keyPoints: ["Rendement > 100% sur PCI", "Condensation vapeur d'eau", "Récupération chaleur latente", "Haute performance énergétique"]
+    },
+    {
+        id: 'q340',
+        category: "Chauffage - Générateurs",
+        difficulty: "easy",
+        question: "Quels sont les principaux matériaux utilisés pour les générateurs ?",
+        answers: ["Plastique et aluminium", "Fonte, acier, inox, cuivre", "Bois et céramique", "Zinc et plomb"],
+        correct: 1,
+        explanation: "Les générateurs sont fabriqués en fonte (excellent échange thermique), acier (prix attractif), inox (anti-corrosion), ou cuivre (excellent échange mais cher).",
+        keyPoints: ["Fonte = bon échange", "Acier = économique", "Inox = anti-corrosion", "Cuivre = cher, risque électrolyse"]
+    },
+
+    // RÉGULATION (6 questions)
+    {
+        id: 'q341',
+        category: "Chauffage - Régulation",
+        difficulty: "easy",
+        question: "Quels sont les trois mots clés qui résument le rôle de la régulation ?",
+        answers: ["Chauffer, distribuer, économiser", "Mesurer, comparer, corriger", "Allumer, éteindre, régler", "Calculer, installer, maintenir"],
+        correct: 1,
+        explanation: "L'objectif de la régulation est de mesurer une grandeur, la comparer à la consigne, puis corriger automatiquement l'écart.",
+        keyPoints: ["Mesurer la grandeur", "Comparer à consigne", "Corriger l'écart", "Automatique"]
+    },
+    {
+        id: 'q342',
+        category: "Chauffage - Régulation",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'une boucle fermée en régulation ?",
+        answers: ["Un circuit sans purge", "La mesure est la grandeur à régler", "Un circuit sans vase d'expansion", "Une régulation manuelle"],
+        correct: 1,
+        explanation: "Une boucle fermée (ou longue/lente) mesure la grandeur à régler elle-même (température ambiante). Elle prend en compte les apports internes.",
+        keyPoints: ["Mesure = grandeur à régler", "Température ambiante", "Apports internes pris en compte", "Boucle longue/lente"]
+    },
+    {
+        id: 'q343',
+        category: "Chauffage - Régulation",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'une boucle ouverte (ou loi d'eau) en régulation ?",
+        answers: ["Un circuit avec fuite", "La mesure n'est pas la grandeur à régler", "Un système sans thermostat", "Une régulation mécanique"],
+        correct: 1,
+        explanation: "Une boucle ouverte mesure la température extérieure pour déterminer la température de départ d'eau. C'est une régulation rapide mais qui ne prend pas en compte les apports internes.",
+        keyPoints: ["Mesure ≠ grandeur à régler", "Température extérieure", "Loi d'eau (courbe)", "Boucle courte/rapide"]
+    },
+    {
+        id: 'q344',
+        category: "Chauffage - Régulation",
+        difficulty: "hard",
+        question: "Avec une loi d'eau de pente 2, si la température extérieure baisse de 1°C, de combien augmente la température de départ ?",
+        answers: ["1°C", "2°C", "3°C", "4°C"],
+        correct: 1,
+        explanation: "La pente 2 signifie : pour 1°C de baisse extérieure, la température de départ augmente de 2°C. Exemple : ext -10°C → départ 80°C / ext 20°C → départ 20°C.",
+        keyPoints: ["Pente = coefficient", "Pente 2 = 2°C départ / 1°C ext", "Courbe de chauffe", "Adapte température départ"]
+    },
+    {
+        id: 'q345',
+        category: "Chauffage - Régulation",
+        difficulty: "medium",
+        question: "Qu'est-ce que le différentiel statique (Sd) d'un thermostat ?",
+        answers: ["La différence entre ouvert et fermé", "L'écart entre enclenchement et déclenchement", "La pression du système", "Le temps de réponse"],
+        correct: 1,
+        explanation: "Le Sd est l'écart entre l'enclenchement et le déclenchement de l'organe de réglage. Exemple : sur un thermostat d'ambiance, Sd = 0,5°C.",
+        keyPoints: ["Écart ON/OFF", "Sd = 0,5°C thermostat", "Différentiel statique", "Évite cycles courts"]
+    },
+    {
+        id: 'q346',
+        category: "Chauffage - Régulation",
+        difficulty: "hard",
+        question: "Dans une régulation PID, que signifie 'I' (action intégrale) ?",
+        answers: ["Vitesse de correction proportionnelle à l'écart", "Vitesse proportionnelle au temps passé en écart", "Vitesse de variation de l'écart", "Vitesse constante"],
+        correct: 1,
+        explanation: "L'action intégrale (I) : la vitesse pour atteindre la consigne est proportionnelle à l'écart mesuré multiplié par le temps. Plus l'écart dure, plus la correction est rapide.",
+        keyPoints: ["Proportionnel au temps d'écart", "Rattrape écart permanent", "Élimine l'erreur statique", "Lent au démarrage"]
+    },
+
+    // REMPLISSAGE ET PURGE (5 questions)
+    {
+        id: 'q347',
+        category: "Chauffage - Remplissage/Purge",
+        difficulty: "easy",
+        question: "Quelle est la pression d'essai recommandée pour un réseau de chauffage ?",
+        answers: ["1 bar", "1,5 bars", "Le double de la pression statique", "10 bars"],
+        correct: 2,
+        explanation: "La pression d'essai correspond généralement au double de la pression statique moyenne en service. Une mise en pression de 12 heures est suffisante.",
+        keyPoints: ["Double pression service", "Vérifier étanchéité", "12 heures minimum", "Avant mise en service"]
+    },
+    {
+        id: 'q348',
+        category: "Chauffage - Remplissage/Purge",
+        difficulty: "medium",
+        question: "Pourquoi faut-il purger l'air d'une installation de chauffage ?",
+        answers: ["Pour réduire la consommation", "Pour éviter la corrosion et les poches de gaz compressibles", "Pour augmenter la température", "Pour nettoyer le circuit"],
+        correct: 1,
+        explanation: "L'air forme des poches de gaz compressibles qui empêchent la circulation. L'oxygène provoque aussi la corrosion. L'hydrogène se forme par réaction électrochimique (fer, aluminium, cuivre).",
+        keyPoints: ["Poches de gaz", "Bloque circulation", "Corrosion", "Hydrogène formé"]
+    },
+    {
+        id: 'q349',
+        category: "Chauffage - Remplissage/Purge",
+        difficulty: "medium",
+        question: "À quelle vitesse l'eau doit-elle circuler dans une bouteille de purge pour favoriser la séparation du gaz ?",
+        answers: ["0,01 m/s", "0,1 m/s", "1 m/s", "10 m/s"],
+        correct: 1,
+        explanation: "Pour favoriser la séparation du gaz, la vitesse de l'eau doit être réduite à environ 0,1 m/s dans les bouteilles de purge et séparateurs d'air/eau.",
+        keyPoints: ["Vitesse réduite 0,1 m/s", "Séparation par gravité", "Bouteille casse-pression", "Gaz monte naturellement"]
+    },
+    {
+        id: 'q350',
+        category: "Chauffage - Remplissage/Purge",
+        difficulty: "easy",
+        question: "Quel appareil permet d'éliminer automatiquement l'air d'une installation sans intervention manuelle ?",
+        answers: ["Robinet de purge manuel", "Purgeur automatique", "Soupape de sécurité", "Disconnecteur"],
+        correct: 1,
+        explanation: "Le purgeur automatique élimine automatiquement les gaz se trouvant dans l'installation sans intervention manuelle. Le débit de purge n'est pas élevé.",
+        keyPoints: ["Élimination automatique", "Sans intervention", "Débit faible", "Points hauts installation"]
+    },
+    {
+        id: 'q351',
+        category: "Chauffage - Remplissage/Purge",
+        difficulty: "hard",
+        question: "Quel est l'avantage principal d'un séparateur d'air/eau par rapport à un purgeur simple ?",
+        answers: ["Plus esthétique", "Utilise la force centrifuge pour séparer les gaz", "Moins cher", "Plus petit"],
+        correct: 1,
+        explanation: "Les séparateurs d'air/eau utilisent la force centrifuge pour dissocier les gaz de l'eau. Ils sont placés à l'origine de l'installation, en partie haute, avec un purgeur automatique.",
+        keyPoints: ["Force centrifuge", "Séparation efficace", "Partie haute installation", "Avec purgeur automatique"]
+    },
+
+    // ENVIRONNEMENT & ÉNERGIE (4 questions)
+    {
+        id: 'q352',
+        category: "Chauffage - Environnement",
+        difficulty: "medium",
+        question: "Quels sont les principaux gaz à effet de serre (GES) visés par le protocole de Kyoto ?",
+        answers: ["O2, N2, Ar", "CO2, CH4, N2O, HFC, PFC, SF6", "H2O, CO, NO", "He, Ne, Kr"],
+        correct: 1,
+        explanation: "Les 6 gaz visés sont : le dioxyde de carbone (CO2, 63% des GES), le méthane (CH4, 18%), le protoxyde d'azote (N2O, 7%), et les gaz fluorés (HFC, PFC, SF6).",
+        keyPoints: ["CO2 = 63% des GES", "CH4 = 18% (élevage)", "N2O = 7% (engrais)", "Gaz fluorés = industrie"]
+    },
+    {
+        id: 'q353',
+        category: "Chauffage - Environnement",
+        difficulty: "easy",
+        question: "Quelle source d'énergie émet le plus de CO2 par type d'énergie (en équivalent TEP) ?",
+        answers: ["Gaz naturel", "Diesel/Fuel", "Charbon", "Nucléaire"],
+        correct: 2,
+        explanation: "Le charbon émet le plus de CO2 (1123 kg eq. carbone par TEP), suivi du diesel/fuel (856), puis du gaz naturel (651). Le nucléaire émet très peu (19).",
+        keyPoints: ["Charbon = 1123 kg/TEP", "Diesel = 856 kg/TEP", "Gaz = 651 kg/TEP", "Nucléaire = 19 kg/TEP"]
+    },
+    {
+        id: 'q354',
+        category: "Chauffage - Environnement",
+        difficulty: "medium",
+        question: "Quel est le rôle de l'effet de serre naturel pour la Terre ?",
+        answers: ["Détruire l'ozone", "Maintenir une température moyenne de +15°C au lieu de -18°C", "Créer des tempêtes", "Faire fondre les glaces"],
+        correct: 1,
+        explanation: "L'effet de serre naturel est essentiel : il permet d'avoir une température moyenne de +15°C sur Terre au lieu de -18°C. Le problème est l'excès de GES d'origine humaine.",
+        keyPoints: ["Phénomène naturel essentiel", "+15°C au lieu de -18°C", "Retient chaleur solaire", "Excès humain = problème"]
+    },
+    {
+        id: 'q355',
+        category: "Chauffage - Environnement",
+        difficulty: "hard",
+        question: "Qu'est-ce que la TEP (Tonne d'Équivalent Pétrole) ?",
+        answers: ["Une unité de pression", "Une unité permettant de comparer les combustibles", "Une taxe environnementale", "Un type de chaudière"],
+        correct: 1,
+        explanation: "La TEP (Tonne d'Équivalent Pétrole) est une unité dans un bilan énergétique permettant de comparer des quantités de combustibles solides, liquides, gazeux et d'électricité.",
+        keyPoints: ["Unité bilan énergétique", "Compare combustibles", "Référence = pétrole", "Quantités comparables"]
     }
 ];
