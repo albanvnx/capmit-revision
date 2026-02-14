@@ -1,4 +1,91 @@
-# Changelog - Application de révision CAP M.I.T FC v2.0
+# Changelog - Application de révision CAP M.I.T FC
+
+## Version 2.1 - 2026-02-14
+
+### 🎉 Nouvelles fonctionnalités majeures
+
+#### 1. Système de progression par stages 📚
+- **Sélection des stages à réviser** : choisissez quels stages activer selon votre progression
+- **4 stages renommés** selon leur contenu réel :
+  - 🎓 **Fondamentaux & Sécurité** (ex-Stage 1) : Atelier, dessin, sécurité, bases
+  - 🔧 **Systèmes Thermiques** (ex-Stage 2) : ECS, évacuation, émetteurs
+  - ⚙️ **Systèmes Avancés** (ex-Stage 3) : Gaz, solaire, VMC
+  - 🔥 **Chauffage** (ex-Stage 4) : Circuits, régulation, dimensionnement
+- **Par défaut** : seul "Fondamentaux & Sécurité" activé pour les débutants
+- **Filtrage automatique** : questions filtrées selon les stages sélectionnés
+- **Progression sauvegardée** : préférences stockées dans localStorage
+
+#### 2. Nouvel onglet "Formules" 📐
+Toutes les formules essentielles pour le CAP M.I.T FC organisées par sections :
+- **🔄 Conversions courantes** : longueurs, volumes, débits, puissance, pression, température
+- **🔧 Diamètres cuivre** : tableau complet DN avec équivalences pouces et usage
+- **📏 Formules cintrage cuivre** : périmètre, longueur développée, rayon minimum, matrices
+- **🔩 Acier et taraudage** : diamètres, filetages gaz ISO 228, longueur de filetage
+- **🔥 Formules chauffage** : puissance, déperditions, coefficients isolation, débit circulation
+- **💧 Formules hydraulique** : débit, vitesse, pression hydrostatique, perte de charge
+- **↘️ Évacuation - Pentes** : calcul pentes, pentes minimales EU, diamètres évacuation
+- **📐 Surfaces et volumes** : rectangle, cercle, parallélépipède, cylindre, périmètre
+
+#### 3. 30 nouvelles questions de conversion 🔢
+Questions QCM sur les conversions les plus courantes :
+- mm/cm/m/pouces (q201-q203, q208, q215, q219)
+- L/min ↔ L/h ↔ m³/h (q204-q205, q220)
+- kW/W (q206-q207, q225)
+- bar/Pa/kPa (q212-q213)
+- °C/K (q214)
+- Surfaces et volumes (q210-q211, q216-q217, q226)
+- Pentes (q218, q230)
+- Calculs pratiques (q221-q224, q227-q229)
+
+**Total : 230 questions** (200 avant + 30 conversions)
+
+### 🔧 Améliorations techniques
+
+- **Service Worker v2.1** : cache mis à jour
+- **Architecture** : méthode `getFilteredQuestions()` dans QuizMode
+- **Persistance** : préférences de stages dans localStorage
+- **Filtrage intelligent** : les "Conversions" sont toujours incluses quel que soit le stage
+- **UI/UX** : section sélection de stages dans Réglages avec badges visuels
+- **Performance** : filtrage optimisé des questions
+
+### 📊 Statistiques finales v2.1
+
+- **Total questions** : 230 (200 + 30 conversions)
+- **Questions avec images** : 28
+- **Catégories** : 22 (21 + Conversions)
+- **Stages** : 4 (progression par étape)
+- **Outils de calcul** : 6
+- **Formules** : 7 sections complètes
+- **Taille totale** : ~13 MB (app + images)
+
+### 🎨 Interface
+
+Nouveaux onglets :
+- 📐 **Formules** : toutes les formules essentielles
+
+Onglets existants améliorés :
+- ⚙️ **Réglages** : nouvelle section "Stages à réviser"
+- ❓ **Quiz** : filtrage selon stages actifs
+- 📅 **Révision** : questions filtrées selon stages
+
+### 🚀 Déploiement
+
+- **URL** : https://albanvnx.github.io/capmit-revision/
+- **Mise à jour** : automatique via service worker v2.1
+
+### 📝 Notes de mise à jour
+
+**Pour les nouveaux utilisateurs** :
+- Par défaut, seul le stage "Fondamentaux & Sécurité" est activé
+- Activez les stages suivants au fur et à mesure de votre progression
+- 30 questions de conversion toujours disponibles
+
+**Pour les utilisateurs existants** :
+- Vos données de progression sont conservées
+- Par défaut, seul le stage 1 sera activé au premier lancement v2.1
+- Activez les autres stages dans Réglages selon votre niveau
+
+---
 
 ## Version 2.0 - 2026-02-09
 

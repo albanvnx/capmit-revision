@@ -5,7 +5,7 @@ const allQuestions = [
     // ========== QUESTIONS TEST AVEC IMAGES (3 questions) ==========
     {
         id: 'qtest1',
-        category: "Stage 4 - Symboles",
+        category: "Chauffage - Symboles",
         difficulty: "easy",
         question: "Voici une page de symboles de chauffage. Ces symboles sont utilisés pour représenter les différents composants d'une installation thermique sur un schéma de principe.",
         image: "images/symboles/symbole-chauffage-1.png",
@@ -17,7 +17,7 @@ const allQuestions = [
     },
     {
         id: 'qtest2',
-        category: "Stage 4 - Schémas",
+        category: "Chauffage - Schémas",
         difficulty: "medium",
         question: "Ce schéma représente un principe d'installation de chauffage. Quelle est l'utilité d'un schéma de principe ?",
         image: "images/schemas/schema-chauffage-1.png",
@@ -34,7 +34,7 @@ const allQuestions = [
     },
     {
         id: 'qtest3',
-        category: "Stage 4 - Symboles",
+        category: "Chauffage - Symboles",
         difficulty: "hard",
         question: "Sur les schémas techniques, pourquoi est-il crucial d'utiliser des symboles normalisés ?",
         image: "images/symboles/symbole-chauffage-2.png",
@@ -53,7 +53,7 @@ const allQuestions = [
     // ========== STAGE 1 - SÉCURITÉ (15 questions) ==========
     {
         id: 'q1',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         difficulty: "easy",
         question: "Que signifie l'acronyme EPI dans le contexte de la sécurité sur chantier ?",
         answers: ["Équipement de Protection Individuelle", "Entreprise de Plomberie Industrielle", "Évaluation des Procédures Internes", "Entretien et Prévention des Installations"],
@@ -63,7 +63,7 @@ const allQuestions = [
     },
     {
         id: 'q2',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Quel matériau dangereux nécessite des précautions spéciales lors de travaux sur d'anciennes installations ?",
         answers: ["Le cuivre", "L'amiante", "L'acier galvanisé", "Le PVC"],
         correct: 1,
@@ -72,7 +72,7 @@ const allQuestions = [
     },
     {
         id: 'q3',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Que signifie EPC en matière de sécurité ?",
         answers: ["Équipement de Protection Collective", "Entreprise de Plomberie Certifiée", "Évaluation des Procédures de Chantier", "Entretien Préventif et Correctif"],
         correct: 0,
@@ -81,7 +81,7 @@ const allQuestions = [
     },
     {
         id: 'q4',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Quelle est la première action en cas d'accident sur chantier ?",
         answers: ["Appeler l'entreprise", "Protéger-Alerter-Secourir", "Déplacer la victime", "Prendre des photos"],
         correct: 1,
@@ -90,7 +90,7 @@ const allQuestions = [
     },
     {
         id: 'q5',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "À quelle hauteur doit-on obligatoirement utiliser un harnais de sécurité ?",
         answers: ["À partir de 1 mètre", "À partir de 2 mètres", "À partir de 3 mètres", "À partir de 5 mètres"],
         correct: 2,
@@ -99,7 +99,7 @@ const allQuestions = [
     },
     {
         id: 'q6',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Que contient le PPSPS (Plan Particulier de Sécurité et de Protection de la Santé) ?",
         answers: ["Les salaires", "L'analyse des risques et mesures de prévention", "Les horaires", "Le planning"],
         correct: 1,
@@ -108,7 +108,7 @@ const allQuestions = [
     },
     {
         id: 'q7',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Quelle couleur identifie le plomb dans les canalisations anciennes ?",
         answers: ["Rouge", "Gris mat", "Blanc", "Bleu"],
         correct: 1,
@@ -117,7 +117,7 @@ const allQuestions = [
     },
     {
         id: 'q8',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Quelle est la concentration maximale autorisée de plomb dans l'eau potable ?",
         answers: ["5 µg/L", "10 µg/L", "25 µg/L", "50 µg/L"],
         correct: 1,
@@ -126,7 +126,7 @@ const allQuestions = [
     },
     {
         id: 'q9',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Quels sont les principaux risques liés aux colles et adhésifs ?",
         answers: ["Incendie uniquement", "Intoxication et irritation", "Électrocution", "Brûlures thermiques"],
         correct: 1,
@@ -135,7 +135,7 @@ const allQuestions = [
     },
     {
         id: 'q10',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Comment doit-on gérer les déchets de chantier ?",
         answers: ["Tout jeter ensemble", "Tri sélectif selon catégories", "Brûler sur place", "Enfouir"],
         correct: 1,
@@ -144,7 +144,7 @@ const allQuestions = [
     },
     {
         id: 'q11',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Qu'est-ce qu'un BSD (Bordereau de Suivi de Déchets) ?",
         answers: ["Un plan de chantier", "Un document de traçabilité des déchets dangereux", "Un bon de livraison", "Un certificat"],
         correct: 1,
@@ -153,7 +153,7 @@ const allQuestions = [
     },
     {
         id: 'q12',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Quelle est la durée de validité d'une autorisation de conduite de nacelle ?",
         answers: ["1 an", "3 ans", "5 ans", "10 ans"],
         correct: 2,
@@ -162,7 +162,7 @@ const allQuestions = [
     },
     {
         id: 'q13',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Quelles sont les zones à risque sur un chantier ?",
         answers: ["Uniquement en hauteur", "Hauteur, électricité, machines, produits dangereux", "Seulement près des machines", "Partout de la même façon"],
         correct: 1,
@@ -171,7 +171,7 @@ const allQuestions = [
     },
     {
         id: 'q14',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Que faire avant d'intervenir sur un réseau de gaz ?",
         answers: ["Rien de spécial", "Obtenir permis feu + consignation", "Juste fermer la vanne", "Aérer la pièce"],
         correct: 1,
@@ -180,7 +180,7 @@ const allQuestions = [
     },
     {
         id: 'q15',
-        category: "Stage 1 - Sécurité",
+        category: "Fondamentaux & Sécurité - Sécurité",
         question: "Quelle est la principale cause d'accidents mortels sur les chantiers ?",
         answers: ["Électrocution", "Chutes de hauteur", "Intoxication", "Écrasement"],
         correct: 1,
@@ -191,7 +191,7 @@ const allQuestions = [
     // ========== STAGE 1 - ATELIER (20 questions) ==========
     {
         id: 'q16',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Quels sont les deux types principaux de brasure pour tubes cuivre ?",
         answers: ["Brasure forte et tendre", "Brasure chaude et froide", "Brasure électrique et thermique", "Brasure primaire et secondaire"],
         correct: 0,
@@ -200,7 +200,7 @@ const allQuestions = [
     },
     {
         id: 'q17',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Quel est le rayon de cintrage minimum pour un tube cuivre Ø12 ?",
         answers: ["2 fois le diamètre", "3 fois le diamètre", "4 fois le diamètre", "5 fois le diamètre"],
         correct: 1,
@@ -209,7 +209,7 @@ const allQuestions = [
     },
     {
         id: 'q18',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Qu'est-ce que le taraudage ?",
         answers: ["Percer un trou", "Créer un filetage intérieur", "Couper un tube", "Souder deux pièces"],
         correct: 1,
@@ -218,7 +218,7 @@ const allQuestions = [
     },
     {
         id: 'q19',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Qu'est-ce que le filage ?",
         answers: ["Couper un fil", "Créer un filetage extérieur", "Tirer un câble", "Limer une pièce"],
         correct: 1,
@@ -227,7 +227,7 @@ const allQuestions = [
     },
     {
         id: 'q20',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Pourquoi doit-on ébavurer un tube après la coupe ?",
         answers: ["Pour l'esthétique", "Pour éviter turbulences et fuites", "Par obligation légale", "Pour le poids"],
         correct: 1,
@@ -236,7 +236,7 @@ const allQuestions = [
     },
     {
         id: 'q21',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Quelle est la température de fusion de la brasure tendre (étain) ?",
         answers: ["183°C", "250°C", "450°C", "650°C"],
         correct: 0,
@@ -245,7 +245,7 @@ const allQuestions = [
     },
     {
         id: 'q22',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Quelle est la température de fusion de la brasure forte (argent) ?",
         answers: ["450°C", "650°C", "750°C", "850°C"],
         correct: 2,
@@ -254,7 +254,7 @@ const allQuestions = [
     },
     {
         id: 'q23',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "À quoi sert le décapant (flux) en brasure ?",
         answers: ["Refroidir", "Dissoudre les oxydes et faciliter l'accroche", "Colorer", "Renforcer"],
         correct: 1,
@@ -263,7 +263,7 @@ const allQuestions = [
     },
     {
         id: 'q24',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Quelle est la bonne méthode pour braser un raccord cuivre ?",
         answers: ["Chauffer le métal d'apport", "Chauffer le tube, le métal d'apport fond au contact", "Chauffer les deux", "Utiliser un fer à souder"],
         correct: 1,
@@ -272,7 +272,7 @@ const allQuestions = [
     },
     {
         id: 'q25',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Quel outil utilise-t-on pour couper un tube cuivre proprement ?",
         answers: ["Scie à métaux", "Coupe-tube à molette", "Meuleuse", "Cisailles"],
         correct: 1,
@@ -281,7 +281,7 @@ const allQuestions = [
     },
     {
         id: 'q26',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Qu'est-ce qu'un collet battu ?",
         answers: ["Un raccord vissé", "Une extrémité de tube évasée pour joint", "Un type de soudure", "Un outil"],
         correct: 1,
@@ -290,7 +290,7 @@ const allQuestions = [
     },
     {
         id: 'q27',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Quelle est la pente minimale pour une évacuation d'eaux usées ?",
         answers: ["0,5 cm/m", "1 cm/m", "2 cm/m", "5 cm/m"],
         correct: 1,
@@ -299,7 +299,7 @@ const allQuestions = [
     },
     {
         id: 'q28',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Quel type de flamme utilise-t-on avec un chalumeau oxyacétylénique ?",
         answers: ["Oxydante", "Réductrice", "Neutre", "Carburante"],
         correct: 2,
@@ -308,7 +308,7 @@ const allQuestions = [
     },
     {
         id: 'q29',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Comment reconnaît-on un tube cuivre écroui ?",
         answers: ["Il est rouge", "Il est dur et difficile à cintrer", "Il est mou", "Il est rayé"],
         correct: 1,
@@ -317,7 +317,7 @@ const allQuestions = [
     },
     {
         id: 'q30',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Comment reconnaît-on un tube cuivre recuit ?",
         answers: ["Il est noir", "Il est mou et facile à cintrer", "Il est carré", "Il est fileté"],
         correct: 1,
@@ -326,7 +326,7 @@ const allQuestions = [
     },
     {
         id: 'q31',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Qu'est-ce qu'un raccord bicône ?",
         answers: ["Un raccord soudé", "Un raccord à compression avec deux cônes", "Un raccord fileté", "Un raccord PVC"],
         correct: 1,
@@ -335,7 +335,7 @@ const allQuestions = [
     },
     {
         id: 'q32',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Quelle est la différence entre un té égal et un té réduit ?",
         answers: ["La forme", "Les diamètres : égaux ou différents", "Le matériau", "Le prix"],
         correct: 1,
@@ -344,7 +344,7 @@ const allQuestions = [
     },
     {
         id: 'q33',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Pourquoi utilise-t-on une presse à sertir pour les multicouches ?",
         answers: ["C'est obligatoire", "Étanchéité garantie sans flamme", "C'est moins cher", "C'est plus rapide"],
         correct: 1,
@@ -353,7 +353,7 @@ const allQuestions = [
     },
     {
         id: 'q34',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Qu'est-ce que le PER (tube) ?",
         answers: ["Polyéthylène Renforcé", "Polyéthylène Réticulé", "Polypropylène Extrudé", "Polyester Résistant"],
         correct: 1,
@@ -362,7 +362,7 @@ const allQuestions = [
     },
     {
         id: 'q35',
-        category: "Stage 1 - Atelier",
+        category: "Fondamentaux & Sécurité - Atelier",
         question: "Quels sont les avantages du tube multicouche ?",
         answers: ["Moins cher", "Résiste température, pas de dilatation, garde forme", "Plus joli", "Plus léger"],
         correct: 1,
@@ -373,7 +373,7 @@ const allQuestions = [
     // ========== STAGE 1 - DESSIN TECHNIQUE (10 questions) ==========
     {
         id: 'q36',
-        category: "Stage 1 - Dessin",
+        category: "Fondamentaux & Sécurité - Dessin",
         question: "Qu'est-ce qu'un cartouche sur un plan technique ?",
         answers: ["Un type de fixation", "Le cadre avec infos du plan", "Un raccord", "Un outil"],
         correct: 1,
@@ -382,7 +382,7 @@ const allQuestions = [
     },
     {
         id: 'q37',
-        category: "Stage 1 - Dessin",
+        category: "Fondamentaux & Sécurité - Dessin",
         question: "Que signifie une échelle 1:50 ?",
         answers: ["Agrandi 50 fois", "Réduit 50 fois", "Taille réelle", "50 cm = 1 m"],
         correct: 1,
@@ -391,7 +391,7 @@ const allQuestions = [
     },
     {
         id: 'q38',
-        category: "Stage 1 - Dessin",
+        category: "Fondamentaux & Sécurité - Dessin",
         question: "Quelle est la différence entre un plan de masse et un plan de situation ?",
         answers: ["Aucune", "Masse : terrain, Situation : quartier", "Masse : intérieur, Situation : extérieur", "L'échelle"],
         correct: 1,
@@ -400,7 +400,7 @@ const allQuestions = [
     },
     {
         id: 'q39',
-        category: "Stage 1 - Dessin",
+        category: "Fondamentaux & Sécurité - Dessin",
         question: "Que représente un trait mixte fin sur un plan ?",
         answers: ["Un mur", "Un axe ou élément caché", "Une porte", "Une fenêtre"],
         correct: 1,
@@ -409,7 +409,7 @@ const allQuestions = [
     },
     {
         id: 'q40',
-        category: "Stage 1 - Dessin",
+        category: "Fondamentaux & Sécurité - Dessin",
         question: "Que représente un trait continu fort ?",
         answers: ["Un axe", "Un contour visible", "Un élément caché", "Une cote"],
         correct: 1,
@@ -418,7 +418,7 @@ const allQuestions = [
     },
     {
         id: 'q41',
-        category: "Stage 1 - Dessin",
+        category: "Fondamentaux & Sécurité - Dessin",
         question: "Comment représente-t-on une cote sur un plan ?",
         answers: ["Trait épais", "Trait fin avec flèches et valeur", "Trait mixte", "Trait pointillé"],
         correct: 1,
@@ -427,7 +427,7 @@ const allQuestions = [
     },
     {
         id: 'q42',
-        category: "Stage 1 - Dessin",
+        category: "Fondamentaux & Sécurité - Dessin",
         question: "Qu'est-ce qu'une vue en coupe ?",
         answers: ["Vue extérieure", "Vue après découpe selon un plan", "Vue de dessus", "Vue 3D"],
         correct: 1,
@@ -436,7 +436,7 @@ const allQuestions = [
     },
     {
         id: 'q43',
-        category: "Stage 1 - Dessin",
+        category: "Fondamentaux & Sécurité - Dessin",
         question: "Combien y a-t-il de vues principales en projection orthogonale ?",
         answers: ["3", "4", "6", "8"],
         correct: 2,
@@ -445,7 +445,7 @@ const allQuestions = [
     },
     {
         id: 'q44',
-        category: "Stage 1 - Dessin",
+        category: "Fondamentaux & Sécurité - Dessin",
         question: "Qu'est-ce qu'un plan isométrique ?",
         answers: ["Plan 2D", "Plan 3D avec angles à 30°", "Plan de façade", "Plan électrique"],
         correct: 1,
@@ -454,7 +454,7 @@ const allQuestions = [
     },
     {
         id: 'q45',
-        category: "Stage 1 - Dessin",
+        category: "Fondamentaux & Sécurité - Dessin",
         question: "Que signifie NGF sur un plan de bâtiment ?",
         answers: ["Niveau de Garantie Fondation", "Nivellement Général de la France", "Norme Générale Française", "Niveau de Gaz en Français"],
         correct: 1,
@@ -465,7 +465,7 @@ const allQuestions = [
     // ========== STAGE 1 - SYSTÈMES & EAU (15 questions) ==========
     {
         id: 'q46',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Que signifie ECS ?",
         answers: ["Énergie Calorifique Solaire", "Eau Chaude Sanitaire", "Équipement Chauffage Statique", "Expansion Circuit Secondaire"],
         correct: 1,
@@ -474,7 +474,7 @@ const allQuestions = [
     },
     {
         id: 'q47',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Quelle température doit avoir l'ECS pour éviter la légionellose ?",
         answers: ["40°C", "50°C", "60°C", "70°C"],
         correct: 2,
@@ -483,7 +483,7 @@ const allQuestions = [
     },
     {
         id: 'q48',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Quel est le rôle d'un circulateur ?",
         answers: ["Chauffer l'eau", "Faire circuler l'eau", "Filtrer l'eau", "Réguler température"],
         correct: 1,
@@ -492,7 +492,7 @@ const allQuestions = [
     },
     {
         id: 'q49',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Quelle est la pression normale du réseau d'eau potable ?",
         answers: ["0,5-1 bar", "3-4 bars", "10-15 bars", "20-25 bars"],
         correct: 1,
@@ -501,7 +501,7 @@ const allQuestions = [
     },
     {
         id: 'q50',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Qu'est-ce qu'un réducteur de pression ?",
         answers: ["Augmente pression", "Stabilise et réduit la pression", "Filtre eau", "Chauffe eau"],
         correct: 1,
@@ -510,7 +510,7 @@ const allQuestions = [
     },
     {
         id: 'q51',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "À quoi sert un disconnecteur ?",
         answers: ["Déconnecter l'eau", "Empêcher retour eau polluée", "Couper électricité", "Ventiler"],
         correct: 1,
@@ -519,7 +519,7 @@ const allQuestions = [
     },
     {
         id: 'q52',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Quelle est la différence entre eau dure et eau douce ?",
         answers: ["Température", "Teneur en calcaire (TH)", "Couleur", "Goût"],
         correct: 1,
@@ -528,7 +528,7 @@ const allQuestions = [
     },
     {
         id: 'q53',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Que mesure le TH (Titre Hydrotimétrique) ?",
         answers: ["Température", "Dureté (calcaire)", "Pression", "Débit"],
         correct: 1,
@@ -537,7 +537,7 @@ const allQuestions = [
     },
     {
         id: 'q54',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "À quoi sert un adoucisseur d'eau ?",
         answers: ["Chauffer l'eau", "Réduire le calcaire", "Filtrer impuretés", "Augmenter pression"],
         correct: 1,
@@ -546,7 +546,7 @@ const allQuestions = [
     },
     {
         id: 'q55',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Qu'est-ce qu'un ballon tampon dans un circuit de chauffage ?",
         answers: ["Réserve eau sanitaire", "Stockage inertie thermique", "Filtre à eau", "Pompe"],
         correct: 1,
@@ -555,7 +555,7 @@ const allQuestions = [
     },
     {
         id: 'q56',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Qu'est-ce qu'un groupe de sécurité chauffe-eau ?",
         answers: ["Alarme", "Sécurité surpression + vidange", "Interrupteur", "Thermostat"],
         correct: 1,
@@ -564,7 +564,7 @@ const allQuestions = [
     },
     {
         id: 'q57',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Pourquoi le groupe de sécurité goutte-t-il légèrement ?",
         answers: ["Fuite", "Dilatation eau chauffée (normal)", "Défaut", "Trop de pression"],
         correct: 1,
@@ -573,7 +573,7 @@ const allQuestions = [
     },
     {
         id: 'q58',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Quelle est la capacité d'un chauffe-eau pour 4 personnes ?",
         answers: ["50L", "100L", "200L", "500L"],
         correct: 2,
@@ -582,7 +582,7 @@ const allQuestions = [
     },
     {
         id: 'q59',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Quelle est la différence entre production instantanée et accumulation ?",
         answers: ["Aucune", "Instantanée : chauffe à la demande, Accumulation : stocke", "Prix", "Taille"],
         correct: 1,
@@ -591,7 +591,7 @@ const allQuestions = [
     },
     {
         id: 'q60',
-        category: "Stage 1 - Systèmes",
+        category: "Fondamentaux & Sécurité - Systèmes",
         question: "Qu'est-ce qu'un mitigeur thermostatique ?",
         answers: ["Robinet simple", "Mélange eau chaude/froide à T° fixe", "Vanne électrique", "Filtre"],
         correct: 1,
@@ -602,7 +602,7 @@ const allQuestions = [
     // ========== STAGE 1 - COMBUSTION & ÉNERGIE (10 questions) ==========
     {
         id: 'q61',
-        category: "Stage 1 - Combustion",
+        category: "Fondamentaux & Sécurité - Combustion",
         question: "Quels sont les 3 éléments du triangle du feu ?",
         answers: ["Eau, air, chaleur", "Combustible, comburant, énergie", "Gaz, électricité, ventilation", "Feu, fumée, cendres"],
         correct: 1,
@@ -611,7 +611,7 @@ const allQuestions = [
     },
     {
         id: 'q62',
-        category: "Stage 1 - Combustion",
+        category: "Fondamentaux & Sécurité - Combustion",
         question: "Quel gaz toxique se forme lors d'une combustion incomplète ?",
         answers: ["CO2", "CO (monoxyde de carbone)", "O2", "H2O"],
         correct: 1,
@@ -620,7 +620,7 @@ const allQuestions = [
     },
     {
         id: 'q63',
-        category: "Stage 1 - Combustion",
+        category: "Fondamentaux & Sécurité - Combustion",
         question: "Quel est le pourcentage d'oxygène dans l'air ?",
         answers: ["10%", "21%", "50%", "78%"],
         correct: 1,
@@ -629,7 +629,7 @@ const allQuestions = [
     },
     {
         id: 'q64',
-        category: "Stage 1 - Combustion",
+        category: "Fondamentaux & Sécurité - Combustion",
         question: "Qu'est-ce que le PCI (Pouvoir Calorifique Inférieur) ?",
         answers: ["Prix du combustible", "Énergie libérée sans condensation vapeur", "Température de combustion", "Volume gaz"],
         correct: 1,
@@ -638,7 +638,7 @@ const allQuestions = [
     },
     {
         id: 'q65',
-        category: "Stage 1 - Combustion",
+        category: "Fondamentaux & Sécurité - Combustion",
         question: "Qu'est-ce que le PCS (Pouvoir Calorifique Supérieur) ?",
         answers: ["Prix maximum", "Énergie avec récupération chaleur vapeur", "Température max", "Pression max"],
         correct: 1,
@@ -647,7 +647,7 @@ const allQuestions = [
     },
     {
         id: 'q66',
-        category: "Stage 1 - Combustion",
+        category: "Fondamentaux & Sécurité - Combustion",
         question: "Quels sont les principaux combustibles utilisés en chauffage ?",
         answers: ["Uniquement gaz", "Gaz, fioul, bois, électricité", "Seulement électricité", "Charbon uniquement"],
         correct: 1,
@@ -656,7 +656,7 @@ const allQuestions = [
     },
     {
         id: 'q67',
-        category: "Stage 1 - Combustion",
+        category: "Fondamentaux & Sécurité - Combustion",
         question: "Qu'est-ce qu'une chaudière à condensation ?",
         answers: ["Chaudière ancienne", "Récupère chaleur des fumées", "Chaudière électrique", "Chaudière gaz uniquement"],
         correct: 1,
@@ -665,7 +665,7 @@ const allQuestions = [
     },
     {
         id: 'q68',
-        category: "Stage 1 - Combustion",
+        category: "Fondamentaux & Sécurité - Combustion",
         question: "Pourquoi dit-on qu'une chaudière condensation a un rendement > 100% ?",
         answers: ["Erreur de mesure", "Référence au PCI, récupère + d'énergie", "Créé de l'énergie", "Calcul faux"],
         correct: 1,
@@ -674,7 +674,7 @@ const allQuestions = [
     },
     {
         id: 'q69',
-        category: "Stage 1 - Combustion",
+        category: "Fondamentaux & Sécurité - Combustion",
         question: "Quelle est la température des fumées d'une chaudière condensation ?",
         answers: ["300°C", "150°C", "50°C", "10°C"],
         correct: 2,
@@ -683,7 +683,7 @@ const allQuestions = [
     },
     {
         id: 'q70',
-        category: "Stage 1 - Éco-construction",
+        category: "Fondamentaux & Sécurité - Éco-construction",
         question: "Qu'est-ce qu'un matériau biosourcé ?",
         answers: ["Matériau chimique", "Matériau d'origine végétale ou animale", "Matériau recyclé", "Matériau minéral"],
         correct: 1,
@@ -694,7 +694,7 @@ const allQuestions = [
     // ========== STAGE 2 - THÉORIE & ÉVACUATION (15 questions) ==========
     {
         id: 'q71',
-        category: "Stage 2 - Évacuation",
+        category: "Systèmes Thermiques - Évacuation",
         question: "Quel est le rôle d'un siphon ?",
         answers: ["Augmenter pression", "Garde d'eau anti-odeurs", "Filtrer", "Réguler débit"],
         correct: 1,
@@ -703,7 +703,7 @@ const allQuestions = [
     },
     {
         id: 'q72',
-        category: "Stage 2 - Évacuation",
+        category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce qu'une chute d'eaux usées ?",
         answers: ["Fuite", "Canalisation verticale évacuation", "Robinet", "Pompe"],
         correct: 1,
@@ -712,7 +712,7 @@ const allQuestions = [
     },
     {
         id: 'q73',
-        category: "Stage 2 - Évacuation",
+        category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce que la ventilation primaire ?",
         answers: ["VMC", "Prolongement chute au-dessus toit", "Extracteur", "Fenêtre"],
         correct: 1,
@@ -721,7 +721,7 @@ const allQuestions = [
     },
     {
         id: 'q74',
-        category: "Stage 2 - Évacuation",
+        category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce que la ventilation secondaire ?",
         answers: ["VMC", "Tuyau équilibrant pression siphons éloignés", "Aération naturelle", "Climatisation"],
         correct: 1,
@@ -730,7 +730,7 @@ const allQuestions = [
     },
     {
         id: 'q75',
-        category: "Stage 2 - Évacuation",
+        category: "Systèmes Thermiques - Évacuation",
         question: "Quelle est la pente d'une évacuation horizontale ?",
         answers: ["0 cm/m", "1 cm/m", "5 cm/m", "10 cm/m"],
         correct: 1,
@@ -739,7 +739,7 @@ const allQuestions = [
     },
     {
         id: 'q76',
-        category: "Stage 2 - Évacuation",
+        category: "Systèmes Thermiques - Évacuation",
         question: "Pourquoi ne doit-on pas mettre d'angle à 90° sur une évacuation ?",
         answers: ["Esthétique", "Risque bouchons et turbulences", "Plus cher", "Pas de raison"],
         correct: 1,
@@ -748,7 +748,7 @@ const allQuestions = [
     },
     {
         id: 'q77',
-        category: "Stage 2 - Évacuation",
+        category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce qu'un séparateur de graisses ?",
         answers: ["Filtre eau", "Dispositif séparant graisses eaux usées", "Pompe", "Siphon"],
         correct: 1,
@@ -757,7 +757,7 @@ const allQuestions = [
     },
     {
         id: 'q78',
-        category: "Stage 2 - Évacuation",
+        category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce qu'un regard de visite ?",
         answers: ["Fenêtre", "Accès canalisation pour entretien", "Siphon", "Vanne"],
         correct: 1,
@@ -766,7 +766,7 @@ const allQuestions = [
     },
     {
         id: 'q79',
-        category: "Stage 2 - Évacuation",
+        category: "Systèmes Thermiques - Évacuation",
         question: "Quelle est la différence entre eaux vannes (EV) et eaux usées (EU) ?",
         answers: ["Aucune", "EV : WC, EU : lavabo/douche", "EV : chaudes, EU : froides", "EV : propres, EU : sales"],
         correct: 1,
@@ -775,7 +775,7 @@ const allQuestions = [
     },
     {
         id: 'q80',
-        category: "Stage 2 - Évacuation",
+        category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce qu'un avaloir ?",
         answers: ["Robinet", "Grille collectant eaux pluviales", "Siphon", "Tuyau"],
         correct: 1,
@@ -784,7 +784,7 @@ const allQuestions = [
     },
     {
         id: 'q81',
-        category: "Stage 2 - Émetteurs",
+        category: "Systèmes Thermiques - Émetteurs",
         question: "Quels sont les principaux types d'émetteurs de chaleur ?",
         answers: ["Chaudières, PAC", "Radiateurs, planchers chauffants, convecteurs", "Tuyaux, vannes", "Thermostats, sondes"],
         correct: 1,
@@ -793,7 +793,7 @@ const allQuestions = [
     },
     {
         id: 'q82',
-        category: "Stage 2 - Émetteurs",
+        category: "Systèmes Thermiques - Émetteurs",
         question: "Quelle est la température de régime d'un plancher chauffant ?",
         answers: ["90/70°C", "75/65°C", "35/30°C", "20/15°C"],
         correct: 2,
@@ -802,7 +802,7 @@ const allQuestions = [
     },
     {
         id: 'q83',
-        category: "Stage 2 - Émetteurs",
+        category: "Systèmes Thermiques - Émetteurs",
         question: "Quelle est la température maximale au sol d'un plancher chauffant ?",
         answers: ["20°C", "28°C", "35°C", "40°C"],
         correct: 1,
@@ -811,7 +811,7 @@ const allQuestions = [
     },
     {
         id: 'q84',
-        category: "Stage 2 - Émetteurs",
+        category: "Systèmes Thermiques - Émetteurs",
         question: "Quel est l'avantage d'un radiateur basse température ?",
         answers: ["Moins cher", "Compatible chaudière condensation", "Plus petit", "Plus léger"],
         correct: 1,
@@ -820,7 +820,7 @@ const allQuestions = [
     },
     {
         id: 'q85',
-        category: "Stage 2 - Dimensionnement",
+        category: "Systèmes Thermiques - Dimensionnement",
         question: "Comment dimensionne-t-on un réseau sanitaire ?",
         answers: ["Au hasard", "Selon débit simultané et perte de charge", "Toujours Ø20", "À l'œil"],
         correct: 1,
@@ -831,7 +831,7 @@ const allQuestions = [
     // ========== STAGE 2 - SÉCURITÉ & MESURE (10 questions) ==========
     {
         id: 'q86',
-        category: "Stage 2 - Sécurité",
+        category: "Systèmes Thermiques - Sécurité",
         question: "Qu'est-ce qu'un disconnecteur ?",
         answers: ["Interrupteur", "Anti-retour protégeant eau potable", "Outil", "Ventilation"],
         correct: 1,
@@ -840,7 +840,7 @@ const allQuestions = [
     },
     {
         id: 'q87',
-        category: "Stage 2 - Sécurité",
+        category: "Systèmes Thermiques - Sécurité",
         question: "Quels sont les types de disconnecteurs selon le risque ?",
         answers: ["BA, CA, EA", "Type 1, 2, 3", "A, B, C", "Rouge, jaune, vert"],
         correct: 0,
@@ -849,7 +849,7 @@ const allQuestions = [
     },
     {
         id: 'q88',
-        category: "Stage 2 - Sécurité",
+        category: "Systèmes Thermiques - Sécurité",
         question: "Qu'est-ce qu'un clapet anti-retour ?",
         answers: ["Vanne manuelle", "Dispositif empêchant retour d'eau", "Filtre", "Pompe"],
         correct: 1,
@@ -858,7 +858,7 @@ const allQuestions = [
     },
     {
         id: 'q89',
-        category: "Stage 2 - Sécurité",
+        category: "Systèmes Thermiques - Sécurité",
         question: "Qu'est-ce qu'une soupape de sécurité ?",
         answers: ["Thermostat", "Sécurité surpression (7 bars)", "Pompe", "Filtre"],
         correct: 1,
@@ -867,7 +867,7 @@ const allQuestions = [
     },
     {
         id: 'q90',
-        category: "Stage 2 - Sécurité",
+        category: "Systèmes Thermiques - Sécurité",
         question: "Qu'est-ce qu'une soupape thermique ?",
         answers: ["Thermostat", "Sécurité surchauffe (100-110°C)", "Vanne", "Capteur"],
         correct: 1,
@@ -876,7 +876,7 @@ const allQuestions = [
     },
     {
         id: 'q91',
-        category: "Stage 2 - Mesure",
+        category: "Systèmes Thermiques - Mesure",
         question: "À quoi sert un manomètre ?",
         answers: ["Mesurer température", "Mesurer pression", "Mesurer débit", "Mesurer niveau"],
         correct: 1,
@@ -885,7 +885,7 @@ const allQuestions = [
     },
     {
         id: 'q92',
-        category: "Stage 2 - Mesure",
+        category: "Systèmes Thermiques - Mesure",
         question: "À quoi sert un thermomètre ?",
         answers: ["Mesurer pression", "Mesurer température", "Mesurer débit", "Mesurer pH"],
         correct: 1,
@@ -894,7 +894,7 @@ const allQuestions = [
     },
     {
         id: 'q93',
-        category: "Stage 2 - Mesure",
+        category: "Systèmes Thermiques - Mesure",
         question: "Qu'est-ce qu'un débitmètre ?",
         answers: ["Mesure pression", "Mesure débit d'eau", "Mesure température", "Mesure pH"],
         correct: 1,
@@ -903,7 +903,7 @@ const allQuestions = [
     },
     {
         id: 'q94',
-        category: "Stage 2 - Sécurité",
+        category: "Systèmes Thermiques - Sécurité",
         question: "Qu'est-ce qu'un purgeur automatique ?",
         answers: ["Vanne manuelle", "Purge air automatiquement", "Pompe", "Filtre"],
         correct: 1,
@@ -912,7 +912,7 @@ const allQuestions = [
     },
     {
         id: 'q95',
-        category: "Stage 2 - Sécurité",
+        category: "Systèmes Thermiques - Sécurité",
         question: "Où place-t-on les purgeurs automatiques ?",
         answers: ["Points bas", "Points hauts du circuit", "N'importe où", "Sur chaudière uniquement"],
         correct: 1,
@@ -923,7 +923,7 @@ const allQuestions = [
     // ========== STAGE 3 - GAZ (15 questions) ==========
     {
         id: 'q96',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Quelle ventilation est obligatoire pour une installation gaz ?",
         answers: ["Aucune", "Haute et basse", "Uniquement haute", "Uniquement basse"],
         correct: 1,
@@ -932,7 +932,7 @@ const allQuestions = [
     },
     {
         id: 'q97',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Quelle est la pression d'un réseau gaz naturel en ville ?",
         answers: ["20 mbar", "300 mbar", "4 bar", "10 bar"],
         correct: 0,
@@ -941,7 +941,7 @@ const allQuestions = [
     },
     {
         id: 'q98',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Comment teste-t-on l'étanchéité d'une installation gaz ?",
         answers: ["Visuellement", "Test pression 150 mbar pendant 5 min", "Eau savonneuse seulement", "Pas nécessaire"],
         correct: 1,
@@ -950,7 +950,7 @@ const allQuestions = [
     },
     {
         id: 'q99',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'un détendeur gaz ?",
         answers: ["Pompe", "Réduit pression bouteille vers pression d'usage", "Vanne", "Filtre"],
         correct: 1,
@@ -959,7 +959,7 @@ const allQuestions = [
     },
     {
         id: 'q100',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Quelle est la différence entre butane et propane ?",
         answers: ["Couleur", "Température d'évaporation", "Goût", "Aucune"],
         correct: 1,
@@ -968,7 +968,7 @@ const allQuestions = [
     },
     {
         id: 'q101',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'un robinet de barrage gaz ?",
         answers: ["Robinet cuisine", "Vanne coupure totale installation", "Détendeur", "Filtre"],
         correct: 1,
@@ -977,7 +977,7 @@ const allQuestions = [
     },
     {
         id: 'q102',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'un coupe-tirage sur un appareil gaz ?",
         answers: ["Vanne", "Ouverture admettant air dilution fumées", "Filtre", "Thermostat"],
         correct: 1,
@@ -986,7 +986,7 @@ const allQuestions = [
     },
     {
         id: 'q103',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'un appareil de type B (gaz) ?",
         answers: ["Étanche", "Non étanche, prélève air pièce", "Électrique", "Solaire"],
         correct: 1,
@@ -995,7 +995,7 @@ const allQuestions = [
     },
     {
         id: 'q104',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'un appareil de type C (gaz) ?",
         answers: ["Non étanche", "Étanche, circuit fermé air/fumées", "Ouvert", "Sans évacuation"],
         correct: 1,
@@ -1004,7 +1004,7 @@ const allQuestions = [
     },
     {
         id: 'q105',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'une ventouse (gaz) ?",
         answers: ["Outil", "Conduit concentrique étanche (air/fumées)", "Vanne", "Siphon"],
         correct: 1,
@@ -1013,7 +1013,7 @@ const allQuestions = [
     },
     {
         id: 'q106',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Quelle est la couleur réglementaire des tuyaux gaz apparents ?",
         answers: ["Rouge", "Jaune", "Bleu", "Noir"],
         correct: 1,
@@ -1022,7 +1022,7 @@ const allQuestions = [
     },
     {
         id: 'q107',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce que le GN (Gaz Naturel) ?",
         answers: ["Gaz en bouteille", "Méthane distribué par réseau", "Propane", "Butane"],
         correct: 1,
@@ -1031,7 +1031,7 @@ const allQuestions = [
     },
     {
         id: 'q108',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Le gaz naturel est-il plus lourd ou plus léger que l'air ?",
         answers: ["Plus lourd", "Plus léger", "Même densité", "Dépend de la température"],
         correct: 1,
@@ -1040,7 +1040,7 @@ const allQuestions = [
     },
     {
         id: 'q109',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Le propane et le butane sont-ils plus lourds ou plus légers que l'air ?",
         answers: ["Plus légers", "Plus lourds", "Même densité", "Variable"],
         correct: 1,
@@ -1049,7 +1049,7 @@ const allQuestions = [
     },
     {
         id: 'q110',
-        category: "Stage 3 - Gaz",
+        category: "Systèmes Avancés - Gaz",
         question: "Que faire en cas de fuite de gaz détectée ?",
         answers: ["Allumer lumière", "Ne pas toucher électricité, aérer, couper, évacuer, appeler", "Fumer dehors", "Ignorer"],
         correct: 1,
@@ -1060,7 +1060,7 @@ const allQuestions = [
     // ========== STAGE 3 - SOLAIRE (10 questions) ==========
     {
         id: 'q111',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         question: "Que signifie CESI ?",
         answers: ["Centrale Électrique Solaire", "Chauffe-Eau Solaire Individuel", "Circuit Énergie Solaire", "Capteur Électrique"],
         correct: 1,
@@ -1069,7 +1069,7 @@ const allQuestions = [
     },
     {
         id: 'q112',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         question: "Quel fluide circule dans les capteurs solaires thermiques ?",
         answers: ["Eau pure", "Eau + glycol", "Huile", "Air"],
         correct: 1,
@@ -1078,7 +1078,7 @@ const allQuestions = [
     },
     {
         id: 'q113',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         question: "Quelle est la surface de capteurs pour 4 personnes ?",
         answers: ["1 m²", "3-5 m²", "10 m²", "20 m²"],
         correct: 1,
@@ -1087,7 +1087,7 @@ const allQuestions = [
     },
     {
         id: 'q114',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         question: "Quel est le taux de couverture moyen d'un CESI en France ?",
         answers: ["20-30%", "50-70%", "90-100%", "10%"],
         correct: 1,
@@ -1096,7 +1096,7 @@ const allQuestions = [
     },
     {
         id: 'q115',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         question: "Pourquoi un appoint est-il nécessaire sur un CESI ?",
         answers: ["Pas nécessaire", "Soleil insuffisant en hiver", "Pour le prix", "Réglementation"],
         correct: 1,
@@ -1105,7 +1105,7 @@ const allQuestions = [
     },
     {
         id: 'q116',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         question: "Quelle est l'orientation idéale des capteurs solaires ?",
         answers: ["Nord", "Sud", "Est", "Ouest"],
         correct: 1,
@@ -1114,7 +1114,7 @@ const allQuestions = [
     },
     {
         id: 'q117',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         question: "Qu'est-ce qu'un ballon solaire double échangeur ?",
         answers: ["Deux ballons", "Un ballon avec échangeur solaire + appoint", "Ballon électrique", "Pompe"],
         correct: 1,
@@ -1123,7 +1123,7 @@ const allQuestions = [
     },
     {
         id: 'q118',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         question: "Qu'est-ce que la stagnation d'une installation solaire ?",
         answers: ["Arrêt circulation", "Surchauffe capteurs sans soutirage", "Gel", "Fuite"],
         correct: 1,
@@ -1132,7 +1132,7 @@ const allQuestions = [
     },
     {
         id: 'q119',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         question: "Qu'est-ce qu'un SSC (Système Solaire Combiné) ?",
         answers: ["CESI simple", "Solaire pour ECS + chauffage", "Photovoltaïque", "Éolienne"],
         correct: 1,
@@ -1141,7 +1141,7 @@ const allQuestions = [
     },
     {
         id: 'q120',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         question: "Quelle différence entre solaire thermique et photovoltaïque ?",
         answers: ["Aucune", "Thermique : chaleur, Photovoltaïque : électricité", "Couleur", "Prix"],
         correct: 1,
@@ -1152,7 +1152,7 @@ const allQuestions = [
     // ========== STAGE 3 - VENTILATION (15 questions) ==========
     {
         id: 'q121',
-        category: "Stage 3 - VMC",
+        category: "Systèmes Avancés - VMC",
         question: "Que signifie VMC ?",
         answers: ["Ventilation Murale", "Ventilation Mécanique Contrôlée", "Ventilateur Moteur", "Volume Minimal"],
         correct: 1,
@@ -1161,7 +1161,7 @@ const allQuestions = [
     },
     {
         id: 'q122',
-        category: "Stage 3 - VMC",
+        category: "Systèmes Avancés - VMC",
         question: "Différence entre VMC simple flux et double flux ?",
         answers: ["Aucune", "Simple : extraction, Double : extraction + insufflation", "Prix", "Couleur"],
         correct: 1,
@@ -1170,7 +1170,7 @@ const allQuestions = [
     },
     {
         id: 'q123',
-        category: "Stage 3 - VMC",
+        category: "Systèmes Avancés - VMC",
         question: "Où extrait-on l'air vicié avec une VMC ?",
         answers: ["Chambres", "Cuisine, SDB, WC", "Salon", "Toutes pièces"],
         correct: 1,
@@ -1179,7 +1179,7 @@ const allQuestions = [
     },
     {
         id: 'q124',
-        category: "Stage 3 - VMC",
+        category: "Systèmes Avancés - VMC",
         question: "Où place-t-on les entrées d'air avec une VMC ?",
         answers: ["Cuisine", "Pièces principales (salon, chambres)", "SDB", "Toutes pièces"],
         correct: 1,
@@ -1188,7 +1188,7 @@ const allQuestions = [
     },
     {
         id: 'q125',
-        category: "Stage 3 - VMC",
+        category: "Systèmes Avancés - VMC",
         question: "Qu'est-ce que le détalonnage des portes ?",
         answers: ["Décoration", "Espace sous porte pour circulation air", "Serrure", "Peinture"],
         correct: 1,
@@ -1197,7 +1197,7 @@ const allQuestions = [
     },
     {
         id: 'q126',
-        category: "Stage 3 - VMC",
+        category: "Systèmes Avancés - VMC",
         question: "Pourquoi entretenir une VMC régulièrement ?",
         answers: ["Pas nécessaire", "Filtres encrassés réduisent débit et consomment plus", "Esthétique", "Réglementation uniquement"],
         correct: 1,
@@ -1206,7 +1206,7 @@ const allQuestions = [
     },
     {
         id: 'q127',
-        category: "Stage 3 - VMC",
+        category: "Systèmes Avancés - VMC",
         question: "Qu'est-ce qu'une VMC hygroréglable ?",
         answers: ["VMC à piles", "Débit adapté selon humidité", "VMC silencieuse", "VMC colorée"],
         correct: 1,
@@ -1215,7 +1215,7 @@ const allQuestions = [
     },
     {
         id: 'q128',
-        category: "Stage 3 - VMC",
+        category: "Systèmes Avancés - VMC",
         question: "Quelle est la durée de vie moyenne d'une VMC ?",
         answers: ["5 ans", "10-15 ans", "30 ans", "50 ans"],
         correct: 1,
@@ -1224,7 +1224,7 @@ const allQuestions = [
     },
     {
         id: 'q129',
-        category: "Stage 3 - VMC",
+        category: "Systèmes Avancés - VMC",
         question: "Pourquoi une VMC double flux est-elle plus économe ?",
         answers: ["Elle consomme moins", "Échangeur récupère calories air extrait", "Elle est plus petite", "Moins de gaines"],
         correct: 1,
@@ -1233,7 +1233,7 @@ const allQuestions = [
     },
     {
         id: 'q130',
-        category: "Stage 3 - Ventilation",
+        category: "Systèmes Avancés - Ventilation",
         question: "Qu'est-ce qu'un diagramme psychrométrique ?",
         answers: ["Schéma électrique", "Graphique propriétés air humide", "Plan bâtiment", "Outil calcul débit"],
         correct: 1,
@@ -1242,7 +1242,7 @@ const allQuestions = [
     },
     {
         id: 'q131',
-        category: "Stage 3 - Ventilation",
+        category: "Systèmes Avancés - Ventilation",
         question: "Qu'est-ce que l'humidité relative ?",
         answers: ["Quantité d'eau", "Rapport humidité actuelle / humidité max (%)", "Température", "Pression"],
         correct: 1,
@@ -1251,7 +1251,7 @@ const allQuestions = [
     },
     {
         id: 'q132',
-        category: "Stage 3 - Ventilation",
+        category: "Systèmes Avancés - Ventilation",
         question: "Qu'est-ce que le point de rosée ?",
         answers: ["Température extérieure", "Température où vapeur condense", "Pression atmosphérique", "Humidité maximale"],
         correct: 1,
@@ -1260,7 +1260,7 @@ const allQuestions = [
     },
     {
         id: 'q133',
-        category: "Stage 3 - Ventilation",
+        category: "Systèmes Avancés - Ventilation",
         question: "Pourquoi ventiler un logement ?",
         answers: ["Pour le bruit", "Évacuer humidité, CO2, polluants", "Chauffer", "Décoration"],
         correct: 1,
@@ -1269,7 +1269,7 @@ const allQuestions = [
     },
     {
         id: 'q134',
-        category: "Stage 3 - Ventilation",
+        category: "Systèmes Avancés - Ventilation",
         question: "Quel est le débit minimal de ventilation par occupant ?",
         answers: ["5 m³/h", "15 m³/h", "30 m³/h", "50 m³/h"],
         correct: 2,
@@ -1278,7 +1278,7 @@ const allQuestions = [
     },
     {
         id: 'q135',
-        category: "Stage 3 - Ventilation",
+        category: "Systèmes Avancés - Ventilation",
         question: "Qu'est-ce qu'une ventilation naturelle assistée ?",
         answers: ["VMC", "Tirage naturel + extraction mécanique ponctuellement", "Fenêtre", "Climatisation"],
         correct: 1,
@@ -1289,7 +1289,7 @@ const allQuestions = [
     // ========== STAGE 3 - PROTECTION & TRAITEMENT (5 questions) ==========
     {
         id: 'q136',
-        category: "Stage 3 - Protection",
+        category: "Systèmes Avancés - Protection",
         question: "Pourquoi traiter l'eau d'un circuit de chauffage ?",
         answers: ["Goût", "Éviter tartre, corrosion, boues", "Augmenter pression", "Réduire consommation"],
         correct: 1,
@@ -1298,7 +1298,7 @@ const allQuestions = [
     },
     {
         id: 'q137',
-        category: "Stage 3 - Protection",
+        category: "Systèmes Avancés - Protection",
         question: "Qu'est-ce qu'un inhibiteur de corrosion ?",
         answers: ["Acide", "Produit chimique protégeant métaux", "Filtre", "Pompe"],
         correct: 1,
@@ -1307,7 +1307,7 @@ const allQuestions = [
     },
     {
         id: 'q138',
-        category: "Stage 3 - Protection",
+        category: "Systèmes Avancés - Protection",
         question: "Qu'est-ce qu'un pot à boues (bouteille de décantation) ?",
         answers: ["Filtre café", "Collecteur boues et impuretés par décantation", "Réservoir", "Pompe"],
         correct: 1,
@@ -1316,7 +1316,7 @@ const allQuestions = [
     },
     {
         id: 'q139',
-        category: "Stage 3 - Protection",
+        category: "Systèmes Avancés - Protection",
         question: "Qu'est-ce qu'un filtre désemboueur magnétique ?",
         answers: ["Filtre eau potable", "Filtre + aimant captant particules fer", "Filtre café", "Adoucisseur"],
         correct: 1,
@@ -1325,7 +1325,7 @@ const allQuestions = [
     },
     {
         id: 'q140',
-        category: "Stage 3 - Protection",
+        category: "Systèmes Avancés - Protection",
         question: "Quelle est la bonne qualité d'eau pour un circuit de chauffage ?",
         answers: ["Eau dure", "Eau adoucie TH 10-15°f, pH 7-8", "Eau distillée", "Eau de pluie"],
         correct: 1,
@@ -1336,7 +1336,7 @@ const allQuestions = [
     // ========== STAGE 4 - CHAUFFAGE & CIRCUITS (20 questions) ==========
     {
         id: 'q141',
-        category: "Stage 4 - Chauffage",
+        category: "Chauffage - Chauffage",
         question: "Qu'est-ce qu'un circuit monotube ?",
         answers: ["Un radiateur", "Radiateurs en série sur même tuyau", "Un tuyau cuivre", "Une chaudière"],
         correct: 1,
@@ -1345,7 +1345,7 @@ const allQuestions = [
     },
     {
         id: 'q142',
-        category: "Stage 4 - Chauffage",
+        category: "Chauffage - Chauffage",
         question: "Qu'est-ce qu'un circuit bitube ?",
         answers: ["Deux chaudières", "Aller + retour, radiateurs en parallèle", "Deux étages", "Deux pompes"],
         correct: 1,
@@ -1354,7 +1354,7 @@ const allQuestions = [
     },
     {
         id: 'q143',
-        category: "Stage 4 - Chauffage",
+        category: "Chauffage - Chauffage",
         question: "Quel est le rôle d'un vase d'expansion ?",
         answers: ["Augmenter pression", "Absorber dilatation eau", "Filtrer", "Stocker ECS"],
         correct: 1,
@@ -1363,7 +1363,7 @@ const allQuestions = [
     },
     {
         id: 'q144',
-        category: "Stage 4 - Chauffage",
+        category: "Chauffage - Chauffage",
         question: "Quelle est la pression normale d'un circuit de chauffage à froid ?",
         answers: ["0,5 bar", "1-1,5 bar", "3 bars", "5 bars"],
         correct: 1,
@@ -1372,7 +1372,7 @@ const allQuestions = [
     },
     {
         id: 'q145',
-        category: "Stage 4 - Chauffage",
+        category: "Chauffage - Chauffage",
         question: "Quelle est la pression normale d'un circuit de chauffage à chaud ?",
         answers: ["1 bar", "2-2,5 bars", "5 bars", "10 bars"],
         correct: 1,
@@ -1381,7 +1381,7 @@ const allQuestions = [
     },
     {
         id: 'q146',
-        category: "Stage 4 - Chauffage",
+        category: "Chauffage - Chauffage",
         question: "Comment purger un radiateur ?",
         answers: ["Ouvrir robinet", "Purgeur en haut, réservoir dessous, ouvrir jusqu'à eau", "Vidanger tout", "Démonter"],
         correct: 1,
@@ -1390,7 +1390,7 @@ const allQuestions = [
     },
     {
         id: 'q147',
-        category: "Stage 4 - Chauffage",
+        category: "Chauffage - Chauffage",
         question: "Pourquoi purger les radiateurs ?",
         answers: ["Augmenter poids", "Éliminer air qui bloque circulation", "Changer eau", "Nettoyer extérieur"],
         correct: 1,
@@ -1399,7 +1399,7 @@ const allQuestions = [
     },
     {
         id: 'q148',
-        category: "Stage 4 - Chauffage",
+        category: "Chauffage - Chauffage",
         question: "Qu'est-ce qu'un collecteur en chauffage ?",
         answers: ["Outil", "Distributeur alimentant plusieurs circuits", "Vanne", "Radiateur"],
         correct: 1,
@@ -1408,7 +1408,7 @@ const allQuestions = [
     },
     {
         id: 'q149',
-        category: "Stage 4 - Chauffage",
+        category: "Chauffage - Chauffage",
         question: "Qu'est-ce qu'une vanne d'équilibrage ?",
         answers: ["Vanne marche/arrêt", "Vanne réglant débit pour équilibrer circuit", "Thermostat", "Filtre"],
         correct: 1,
@@ -1417,7 +1417,7 @@ const allQuestions = [
     },
     {
         id: 'q150',
-        category: "Stage 4 - Chauffage",
+        category: "Chauffage - Chauffage",
         question: "Qu'est-ce qu'un robinet thermostatique ?",
         answers: ["Robinet cuisine", "Vanne régulant débit selon température pièce", "Thermostat mural", "Vanne manuelle"],
         correct: 1,
@@ -1426,7 +1426,7 @@ const allQuestions = [
     },
     {
         id: 'q151',
-        category: "Stage 4 - Régulation",
+        category: "Chauffage - Régulation",
         question: "À quoi sert une sonde extérieure ?",
         answers: ["Mesurer température extérieure pour adapter chauffe", "Détecter fuites", "Mesurer consommation", "Ventilation"],
         correct: 0,
@@ -1435,7 +1435,7 @@ const allQuestions = [
     },
     {
         id: 'q152',
-        category: "Stage 4 - Régulation",
+        category: "Chauffage - Régulation",
         question: "Qu'est-ce que la régulation par loi d'eau ?",
         answers: ["Réglementation", "Température eau adaptée selon température extérieure", "Débit eau", "Qualité eau"],
         correct: 1,
@@ -1444,7 +1444,7 @@ const allQuestions = [
     },
     {
         id: 'q153',
-        category: "Stage 4 - Régulation",
+        category: "Chauffage - Régulation",
         question: "Qu'est-ce qu'un thermostat d'ambiance ?",
         answers: ["Thermomètre", "Régulateur température intérieure agissant sur chaudière", "Vanne radiateur", "Sonde"],
         correct: 1,
@@ -1453,7 +1453,7 @@ const allQuestions = [
     },
     {
         id: 'q154',
-        category: "Stage 4 - Régulation",
+        category: "Chauffage - Régulation",
         question: "Où placer un thermostat d'ambiance ?",
         answers: ["Cuisine", "Pièce de référence, ni soleil ni courant d'air", "SDB", "Extérieur"],
         correct: 1,
@@ -1462,7 +1462,7 @@ const allQuestions = [
     },
     {
         id: 'q155',
-        category: "Stage 4 - Générateurs",
+        category: "Chauffage - Générateurs",
         question: "Quels sont les principaux types de générateurs de chaleur ?",
         answers: ["Radiateurs", "Chaudières gaz/fioul/bois, PAC, électrique", "Tuyaux", "Thermostats"],
         correct: 1,
@@ -1471,7 +1471,7 @@ const allQuestions = [
     },
     {
         id: 'q156',
-        category: "Stage 4 - Générateurs",
+        category: "Chauffage - Générateurs",
         question: "Qu'est-ce que le COP d'une pompe à chaleur ?",
         answers: ["Rapport énergie produite / énergie consommée", "Puissance max", "Temps chauffe", "Niveau sonore"],
         correct: 0,
@@ -1480,7 +1480,7 @@ const allQuestions = [
     },
     {
         id: 'q157',
-        category: "Stage 4 - Générateurs",
+        category: "Chauffage - Générateurs",
         question: "Pourquoi le COP d'une PAC diminue quand il fait froid ?",
         answers: ["Défaut PAC", "Plus difficile extraire chaleur si T° ext basse", "Normal", "Réglage"],
         correct: 1,
@@ -1489,7 +1489,7 @@ const allQuestions = [
     },
     {
         id: 'q158',
-        category: "Stage 4 - Isométrie",
+        category: "Chauffage - Isométrie",
         question: "Qu'est-ce qu'un dessin isométrique ?",
         answers: ["Perspective 3D tuyauteries avec axes 30°", "Façade", "Schéma électrique", "Plan géographique"],
         correct: 0,
@@ -1498,7 +1498,7 @@ const allQuestions = [
     },
     {
         id: 'q159',
-        category: "Stage 4 - Installation",
+        category: "Chauffage - Installation",
         question: "Comment remplir un circuit de chauffage ?",
         answers: ["Robinet quelconque", "Robinet remplissage, ouvrir lentement, purger radiateurs", "Tuyau arrosage", "Pompe"],
         correct: 1,
@@ -1507,7 +1507,7 @@ const allQuestions = [
     },
     {
         id: 'q160',
-        category: "Stage 4 - Installation",
+        category: "Chauffage - Installation",
         difficulty: "medium",
         question: "Pourquoi faut-il désembouer un circuit avant mise en service chaudière neuve ?",
         answers: ["Pas nécessaire", "Boues anciennes détruiraient échangeur neuf", "Réglementation", "Esthétique"],
@@ -1521,7 +1521,7 @@ const allQuestions = [
     // --- Symboles techniques (10 questions) ---
     {
         id: 'q161',
-        category: "Stage 4 - Symboles",
+        category: "Chauffage - Symboles",
         difficulty: "easy",
         question: "Les symboles de chauffage permettent de représenter les installations sur des plans techniques. Sont-ils obligatoires sur les schémas professionnels ?",
         image: "images/symboles/symbole-chauffage-3.png",
@@ -1533,7 +1533,7 @@ const allQuestions = [
     },
     {
         id: 'q162',
-        category: "Stage 4 - Symboles",
+        category: "Chauffage - Symboles",
         difficulty: "medium",
         question: "Sur un schéma de chauffage, comment distingue-t-on généralement le circuit aller du circuit retour ?",
         image: "images/symboles/symbole-chauffage-4.png",
@@ -1545,7 +1545,7 @@ const allQuestions = [
     },
     {
         id: 'q163',
-        category: "Stage 4 - Symboles",
+        category: "Chauffage - Symboles",
         difficulty: "easy",
         question: "Que représente un symbole de radiateur sur un plan de chauffage ?",
         image: "images/symboles/symbole-chauffage-5.png",
@@ -1557,7 +1557,7 @@ const allQuestions = [
     },
     {
         id: 'q164',
-        category: "Stage 4 - Symboles",
+        category: "Chauffage - Symboles",
         difficulty: "hard",
         question: "Quelle est la différence entre un schéma de principe et un schéma d'exécution ?",
         image: "images/symboles/symbole-chauffage-6.png",
@@ -1574,7 +1574,7 @@ const allQuestions = [
     },
     {
         id: 'q165',
-        category: "Stage 4 - Schémas",
+        category: "Chauffage - Schémas",
         difficulty: "medium",
         question: "Sur un schéma hydraulique, qu'indique une flèche sur une canalisation ?",
         image: "images/schemas/schema-chauffage-2.png",
@@ -1586,7 +1586,7 @@ const allQuestions = [
     },
     {
         id: 'q166',
-        category: "Stage 4 - Schémas",
+        category: "Chauffage - Schémas",
         difficulty: "easy",
         question: "À quoi sert un schéma isométrique en plomberie-chauffage ?",
         image: "images/schemas/schema-chauffage-3.png",
@@ -1603,7 +1603,7 @@ const allQuestions = [
     },
     {
         id: 'q167',
-        category: "Stage 4 - Schémas",
+        category: "Chauffage - Schémas",
         difficulty: "hard",
         question: "Dans un schéma de chauffage, que représente un triangle barré sur une canalisation ?",
         image: "images/schemas/schema-chauffage-4.png",
@@ -1615,7 +1615,7 @@ const allQuestions = [
     },
     {
         id: 'q168',
-        category: "Stage 4 - Schémas",
+        category: "Chauffage - Schémas",
         difficulty: "medium",
         question: "Sur un schéma de principe, que signifie un cercle avec une hélice à l'intérieur ?",
         image: "images/schemas/schema-chauffage-5.png",
@@ -1627,7 +1627,7 @@ const allQuestions = [
     },
     {
         id: 'q169',
-        category: "Stage 2 - Raccords",
+        category: "Systèmes Thermiques - Raccords",
         difficulty: "easy",
         question: "Les raccords cuivre présentés ici sont indispensables en plomberie. Quelle est leur principale fonction ?",
         image: "images/raccords/raccord-cuivre-1.png",
@@ -1644,7 +1644,7 @@ const allQuestions = [
     },
     {
         id: 'q170',
-        category: "Stage 2 - Raccords",
+        category: "Systèmes Thermiques - Raccords",
         difficulty: "medium",
         question: "Quelle différence entre un coude 90° standard et un coude 90° grand rayon ?",
         image: "images/raccords/raccord-cuivre-2.png",
@@ -1663,7 +1663,7 @@ const allQuestions = [
     // --- Raccords acier (5 questions) ---
     {
         id: 'q171',
-        category: "Stage 2 - Raccords",
+        category: "Systèmes Thermiques - Raccords",
         difficulty: "easy",
         question: "Les raccords acier sont vissés contrairement au cuivre qui est brasé. Quel est l'avantage principal ?",
         image: "images/raccords/raccord-acier-1.png",
@@ -1680,7 +1680,7 @@ const allQuestions = [
     },
     {
         id: 'q172',
-        category: "Stage 2 - Raccords",
+        category: "Systèmes Thermiques - Raccords",
         difficulty: "medium",
         question: "Lors du montage de raccords acier filetés, que doit-on obligatoirement utiliser ?",
         image: "images/raccords/raccord-acier-2.png",
@@ -1697,7 +1697,7 @@ const allQuestions = [
     },
     {
         id: 'q173',
-        category: "Stage 2 - Raccords",
+        category: "Systèmes Thermiques - Raccords",
         difficulty: "hard",
         question: "Dans quel sens enroule-t-on le téflon sur un filetage mâle ?",
         answers: [
@@ -1712,7 +1712,7 @@ const allQuestions = [
     },
     {
         id: 'q174',
-        category: "Stage 2 - Raccords",
+        category: "Systèmes Thermiques - Raccords",
         difficulty: "easy",
         question: "Qu'est-ce qu'un manchon en plomberie ?",
         answers: [
@@ -1727,7 +1727,7 @@ const allQuestions = [
     },
     {
         id: 'q175',
-        category: "Stage 2 - Raccords",
+        category: "Systèmes Thermiques - Raccords",
         difficulty: "medium",
         question: "Qu'est-ce qu'une réduction en plomberie ?",
         answers: [
@@ -1744,7 +1744,7 @@ const allQuestions = [
     // --- Solaire thermique CESI (8 questions) ---
     {
         id: 'q176',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         difficulty: "easy",
         question: "Que signifie l'acronyme CESI ?",
         image: "images/solaire/cesi-01.png",
@@ -1761,7 +1761,7 @@ const allQuestions = [
     },
     {
         id: 'q177',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         difficulty: "medium",
         question: "Quel est le taux de couverture solaire moyen d'un CESI bien dimensionné en France ?",
         image: "images/solaire/cesi-02.png",
@@ -1773,7 +1773,7 @@ const allQuestions = [
     },
     {
         id: 'q178',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         difficulty: "easy",
         question: "Dans un CESI, quel fluide circule dans les capteurs solaires ?",
         image: "images/solaire/cesi-03.png",
@@ -1790,7 +1790,7 @@ const allQuestions = [
     },
     {
         id: 'q179',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         difficulty: "medium",
         question: "Quelle est l'orientation idéale des capteurs solaires en France métropolitaine ?",
         image: "images/solaire/cesi-04.png",
@@ -1802,7 +1802,7 @@ const allQuestions = [
     },
     {
         id: 'q180',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         difficulty: "hard",
         question: "Quelle inclinaison est recommandée pour des capteurs solaires thermiques en France ?",
         image: "images/solaire/cesi-05.png",
@@ -1814,7 +1814,7 @@ const allQuestions = [
     },
     {
         id: 'q181',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         difficulty: "medium",
         question: "Dans un CESI, à quoi sert le circulateur du circuit primaire ?",
         image: "images/solaire/cesi-06.png",
@@ -1831,7 +1831,7 @@ const allQuestions = [
     },
     {
         id: 'q182',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         difficulty: "easy",
         question: "Pourquoi un CESI nécessite-t-il toujours un système d'appoint ?",
         image: "images/solaire/cesi-07.png",
@@ -1848,7 +1848,7 @@ const allQuestions = [
     },
     {
         id: 'q183',
-        category: "Stage 3 - Solaire",
+        category: "Systèmes Avancés - Solaire",
         difficulty: "hard",
         question: "Qu'est-ce que la surchauffe d'un CESI et comment l'éviter ?",
         image: "images/solaire/cesi-08.png",
@@ -1867,7 +1867,7 @@ const allQuestions = [
     // --- Évacuation des eaux (7 questions) ---
     {
         id: 'q184',
-        category: "Stage 2 - Plomberie",
+        category: "Systèmes Thermiques - Plomberie",
         difficulty: "easy",
         question: "Quelle est la pente minimale recommandée pour une canalisation d'eaux usées ?",
         image: "images/evacuation/evacuation-1.png",
@@ -1879,7 +1879,7 @@ const allQuestions = [
     },
     {
         id: 'q185',
-        category: "Stage 2 - Plomberie",
+        category: "Systèmes Thermiques - Plomberie",
         difficulty: "medium",
         question: "À quoi sert un siphon dans une évacuation sanitaire ?",
         image: "images/evacuation/evacuation-2.png",
@@ -1896,7 +1896,7 @@ const allQuestions = [
     },
     {
         id: 'q186',
-        category: "Stage 2 - Plomberie",
+        category: "Systèmes Thermiques - Plomberie",
         difficulty: "hard",
         question: "Quelle est la hauteur minimale de garde d'eau d'un siphon ?",
         image: "images/evacuation/evacuation-3.png",
@@ -1908,7 +1908,7 @@ const allQuestions = [
     },
     {
         id: 'q187',
-        category: "Stage 2 - Plomberie",
+        category: "Systèmes Thermiques - Plomberie",
         difficulty: "easy",
         question: "Pourquoi installe-t-on des évents (ventilations) sur les réseaux d'évacuation ?",
         image: "images/evacuation/evacuation-4.png",
@@ -1925,7 +1925,7 @@ const allQuestions = [
     },
     {
         id: 'q188',
-        category: "Stage 2 - Plomberie",
+        category: "Systèmes Thermiques - Plomberie",
         difficulty: "medium",
         question: "Qu'est-ce qu'une chute en plomberie sanitaire ?",
         image: "images/evacuation/evacuation-5.png",
@@ -1942,7 +1942,7 @@ const allQuestions = [
     },
     {
         id: 'q189',
-        category: "Stage 2 - Plomberie",
+        category: "Systèmes Thermiques - Plomberie",
         difficulty: "hard",
         question: "Quel diamètre minimal pour une évacuation de WC ?",
         image: "images/evacuation/evacuation-6.png",
@@ -1954,7 +1954,7 @@ const allQuestions = [
     },
     {
         id: 'q190',
-        category: "Stage 2 - Plomberie",
+        category: "Systèmes Thermiques - Plomberie",
         difficulty: "medium",
         question: "Quelle est la différence entre eaux usées (EU) et eaux vannes (EV) ?",
         answers: [
@@ -1971,7 +1971,7 @@ const allQuestions = [
     // --- Calculs et dimensionnement (10 questions) ---
     {
         id: 'q191',
-        category: "Stage 2 - Dimensionnement",
+        category: "Systèmes Thermiques - Dimensionnement",
         difficulty: "easy",
         question: "Pour chauffer une pièce de 20 m² avec 2.5 m de hauteur et isolation moyenne (60 W/m³), quelle puissance faut-il ?",
         answers: ["1 kW", "3 kW", "5 kW", "10 kW"],
@@ -1981,7 +1981,7 @@ const allQuestions = [
     },
     {
         id: 'q192',
-        category: "Stage 2 - Dimensionnement",
+        category: "Systèmes Thermiques - Dimensionnement",
         difficulty: "medium",
         question: "Une canalisation d'évacuation de 8 mètres avec une pente de 1% a un dénivelé de combien ?",
         answers: ["1 cm", "8 cm", "10 cm", "80 cm"],
@@ -1991,7 +1991,7 @@ const allQuestions = [
     },
     {
         id: 'q193',
-        category: "Stage 2 - Dimensionnement",
+        category: "Systèmes Thermiques - Dimensionnement",
         difficulty: "easy",
         question: "Convertir 12 L/min en L/h :",
         answers: ["12 L/h", "120 L/h", "720 L/h", "7200 L/h"],
@@ -2001,7 +2001,7 @@ const allQuestions = [
     },
     {
         id: 'q194',
-        category: "Stage 2 - Dimensionnement",
+        category: "Systèmes Thermiques - Dimensionnement",
         difficulty: "medium",
         question: "Un pouce (1\") équivaut approximativement à combien de millimètres ?",
         answers: ["10 mm", "25.4 mm", "50 mm", "100 mm"],
@@ -2011,7 +2011,7 @@ const allQuestions = [
     },
     {
         id: 'q195',
-        category: "Stage 2 - Dimensionnement",
+        category: "Systèmes Thermiques - Dimensionnement",
         difficulty: "hard",
         question: "Pour une maison de 120 m² avec 2.5 m de hauteur et bonne isolation (40 W/m³), quelle puissance de chaudière ?",
         answers: ["5 kW", "8 kW", "12 kW", "20 kW"],
@@ -2021,7 +2021,7 @@ const allQuestions = [
     },
     {
         id: 'q196',
-        category: "Stage 2 - Dimensionnement",
+        category: "Systèmes Thermiques - Dimensionnement",
         difficulty: "medium",
         question: "Convertir 1.5 m³/h en L/min :",
         answers: ["15 L/min", "25 L/min", "90 L/min", "1500 L/min"],
@@ -2031,7 +2031,7 @@ const allQuestions = [
     },
     {
         id: 'q197',
-        category: "Stage 2 - Dimensionnement",
+        category: "Systèmes Thermiques - Dimensionnement",
         difficulty: "easy",
         question: "Une pièce rectangulaire de 5 m × 4 m a quelle surface ?",
         answers: ["9 m²", "18 m²", "20 m²", "40 m²"],
@@ -2041,7 +2041,7 @@ const allQuestions = [
     },
     {
         id: 'q198',
-        category: "Stage 2 - Dimensionnement",
+        category: "Systèmes Thermiques - Dimensionnement",
         difficulty: "hard",
         question: "Quelle pente en % pour une canalisation de 12 m avec un dénivelé de 18 cm ?",
         answers: ["0.5%", "1%", "1.5%", "2%"],
@@ -2051,7 +2051,7 @@ const allQuestions = [
     },
     {
         id: 'q199',
-        category: "Stage 1 - Éco-construction",
+        category: "Fondamentaux & Sécurité - Éco-construction",
         difficulty: "medium",
         question: "Quel est l'avantage principal d'une isolation thermique performante ?",
         answers: [
@@ -2066,7 +2066,7 @@ const allQuestions = [
     },
     {
         id: 'q200',
-        category: "Stage 1 - Éco-construction",
+        category: "Fondamentaux & Sécurité - Éco-construction",
         difficulty: "easy",
         question: "Qu'est-ce qu'un matériau biosourcé ?",
         answers: [
@@ -2078,5 +2078,307 @@ const allQuestions = [
         correct: 1,
         explanation: "Un matériau biosourcé provient de la biomasse (végétale ou animale) : bois, chanvre, laine de mouton, paille, etc.",
         keyPoints: ["Origine naturelle", "Végétal ou animal", "Renouvelable", "Faible impact carbone"]
+    },
+
+    // ========== CONVERSIONS ET CALCULS (30 questions) ==========
+    {
+        id: 'q201',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien de millimètres dans 1 mètre ?",
+        answers: ["10 mm", "100 mm", "1000 mm", "10000 mm"],
+        correct: 2,
+        explanation: "1 mètre = 1000 millimètres (1 m = 1000 mm).",
+        keyPoints: ["1 m = 100 cm", "1 m = 1000 mm", "1 cm = 10 mm"]
+    },
+    {
+        id: 'q202',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien vaut 1 pouce en millimètres ?",
+        answers: ["10 mm", "25.4 mm", "30 mm", "50 mm"],
+        correct: 1,
+        explanation: "1 pouce (1\") = 25.4 mm exactement. C'est une conversion fondamentale en plomberie.",
+        keyPoints: ["1\" = 25.4 mm", "3/4\" = 19.05 mm", "1/2\" = 12.7 mm"]
+    },
+    {
+        id: 'q203',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Un tube cuivre de 3/4\" correspond à quel diamètre en mm ?",
+        answers: ["12 mm", "14 mm", "16 mm", "19 mm"],
+        correct: 2,
+        explanation: "Un tube 3/4\" correspond à environ 16 mm de diamètre nominal (DN 16).",
+        keyPoints: ["3/4\" ≈ 19 mm (calcul exact)", "DN 16 pour cuivre", "Tube 16 mm extérieur"]
+    },
+    {
+        id: 'q204',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien de litres par heure dans 10 L/min ?",
+        answers: ["60 L/h", "100 L/h", "600 L/h", "1000 L/h"],
+        correct: 2,
+        explanation: "10 L/min × 60 minutes = 600 L/h.",
+        keyPoints: ["1 min = 60 secondes", "1 heure = 60 min", "Multiplier par 60"]
+    },
+    {
+        id: 'q205',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Un débit de 1 m³/h équivaut à combien de L/min ?",
+        answers: ["10 L/min", "16.67 L/min", "60 L/min", "100 L/min"],
+        correct: 1,
+        explanation: "1 m³ = 1000 L. Donc 1000 L/h ÷ 60 min = 16.67 L/min.",
+        keyPoints: ["1 m³ = 1000 L", "Diviser par 60 pour L/min", "16.67 L/min"]
+    },
+    {
+        id: 'q206',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien de watts dans 1 kilowatt (kW) ?",
+        answers: ["10 W", "100 W", "1000 W", "10000 W"],
+        correct: 2,
+        explanation: "1 kW = 1000 W (kilo = mille).",
+        keyPoints: ["1 kW = 1000 W", "Puissance chauffage", "k = kilo = ×1000"]
+    },
+    {
+        id: 'q207',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Une chaudière de 24 kW équivaut à combien de watts ?",
+        answers: ["2400 W", "24000 W", "240 W", "240000 W"],
+        correct: 1,
+        explanation: "24 kW × 1000 = 24000 W.",
+        keyPoints: ["Multiplier par 1000", "24 kW = 24000 W", "Puissance typique chaudière"]
+    },
+    {
+        id: 'q208',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien de centimètres dans 2.5 mètres ?",
+        answers: ["25 cm", "250 cm", "2.5 cm", "2500 cm"],
+        correct: 1,
+        explanation: "2.5 m × 100 = 250 cm.",
+        keyPoints: ["1 m = 100 cm", "Multiplier par 100", "2.5 × 100 = 250"]
+    },
+    {
+        id: 'q209',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Un raccord de 1/2\" correspond à quel DN (diamètre nominal) en cuivre ?",
+        answers: ["DN 10", "DN 12", "DN 14", "DN 16"],
+        correct: 2,
+        explanation: "1/2\" correspond à un DN 14 en tuyauterie cuivre (tube de 14 mm).",
+        keyPoints: ["1/2\" = DN 14", "Tube cuivre 14 mm", "Usage sanitaire courant"]
+    },
+    {
+        id: 'q210',
+        category: "Conversions",
+        difficulty: "hard",
+        question: "Quelle est la surface d'une pièce de 4.5 m × 3.2 m ?",
+        answers: ["13.5 m²", "14.4 m²", "15.2 m²", "16.8 m²"],
+        correct: 1,
+        explanation: "Surface = Longueur × Largeur = 4.5 × 3.2 = 14.4 m².",
+        keyPoints: ["S = L × l", "4.5 × 3.2", "= 14.4 m²", "Calcul de surface"]
+    },
+    {
+        id: 'q211',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Quel est le volume d'une pièce de 5 m × 4 m avec 2.5 m de hauteur ?",
+        answers: ["40 m³", "50 m³", "45 m³", "60 m³"],
+        correct: 1,
+        explanation: "Volume = Longueur × Largeur × Hauteur = 5 × 4 × 2.5 = 50 m³.",
+        keyPoints: ["V = L × l × h", "5 × 4 × 2.5", "= 50 m³", "Calcul chauffage"]
+    },
+    {
+        id: 'q212',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien de bar dans 1 bar ?",
+        answers: ["1 bar = 100 Pa", "1 bar = 1000 Pa", "1 bar = 100000 Pa", "1 bar = 10000 Pa"],
+        correct: 2,
+        explanation: "1 bar = 100000 Pa = 100 kPa = 0.1 MPa.",
+        keyPoints: ["1 bar = 10⁵ Pa", "1 bar ≈ 1 atm", "Pression eau", "100 kPa"]
+    },
+    {
+        id: 'q213',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Une pression de 3 bar équivaut à combien de kPa ?",
+        answers: ["30 kPa", "300 kPa", "3000 kPa", "3 kPa"],
+        correct: 1,
+        explanation: "3 bar × 100 kPa/bar = 300 kPa.",
+        keyPoints: ["1 bar = 100 kPa", "Multiplier par 100", "3 bar = 300 kPa"]
+    },
+    {
+        id: 'q214',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "À combien de Kelvin correspond 20°C ?",
+        answers: ["253 K", "273 K", "293 K", "313 K"],
+        correct: 2,
+        explanation: "T(K) = T(°C) + 273.15. Donc 20 + 273 = 293 K.",
+        keyPoints: ["K = °C + 273", "0°C = 273 K", "20°C = 293 K", "Échelle absolue"]
+    },
+    {
+        id: 'q215',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Combien de mm fait 3.5 pouces ?",
+        answers: ["35 mm", "88.9 mm", "70 mm", "100 mm"],
+        correct: 1,
+        explanation: "3.5\" × 25.4 mm/\" = 88.9 mm.",
+        keyPoints: ["1\" = 25.4 mm", "3.5 × 25.4", "= 88.9 mm"]
+    },
+    {
+        id: 'q216',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien de litres dans 1 m³ ?",
+        answers: ["10 L", "100 L", "1000 L", "10000 L"],
+        correct: 2,
+        explanation: "1 m³ = 1000 litres (1 m³ = 1000 L).",
+        keyPoints: ["1 m³ = 1000 L", "1 L = 1 dm³", "Volume d'eau"]
+    },
+    {
+        id: 'q217',
+        category: "Conversions",
+        difficulty: "hard",
+        question: "Un ballon de 300 L correspond à combien de m³ ?",
+        answers: ["0.03 m³", "0.3 m³", "3 m³", "30 m³"],
+        correct: 1,
+        explanation: "300 L ÷ 1000 = 0.3 m³.",
+        keyPoints: ["Diviser par 1000", "300 L = 0.3 m³", "Ballon ECS"]
+    },
+    {
+        id: 'q218',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Quelle est la pente en % pour un dénivelé de 5 cm sur 2.5 m ?",
+        answers: ["1%", "2%", "5%", "10%"],
+        correct: 1,
+        explanation: "Pente (%) = (dénivelé / longueur) × 100 = (0.05 / 2.5) × 100 = 2%.",
+        keyPoints: ["5 cm = 0.05 m", "0.05/2.5 = 0.02", "×100 = 2%", "Évacuation"]
+    },
+    {
+        id: 'q219',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien fait 150 cm en mètres ?",
+        answers: ["0.15 m", "1.5 m", "15 m", "150 m"],
+        correct: 1,
+        explanation: "150 cm ÷ 100 = 1.5 m.",
+        keyPoints: ["Diviser par 100", "150 cm = 1.5 m", "cm → m"]
+    },
+    {
+        id: 'q220',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Un débit de 600 L/h équivaut à combien de L/min ?",
+        answers: ["6 L/min", "10 L/min", "60 L/min", "100 L/min"],
+        correct: 1,
+        explanation: "600 L/h ÷ 60 min = 10 L/min.",
+        keyPoints: ["Diviser par 60", "600/60 = 10", "L/h → L/min"]
+    },
+    {
+        id: 'q221',
+        category: "Conversions",
+        difficulty: "hard",
+        question: "Pour chauffer 50 m³ avec une isolation moyenne (60 W/m³), quelle puissance faut-il ?",
+        answers: ["2 kW", "3 kW", "5 kW", "10 kW"],
+        correct: 1,
+        explanation: "Puissance = Volume × Coefficient = 50 m³ × 60 W/m³ = 3000 W = 3 kW.",
+        keyPoints: ["P = V × coef", "50 × 60 = 3000 W", "= 3 kW", "Calcul puissance"]
+    },
+    {
+        id: 'q222',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien de secondes dans 1 minute ?",
+        answers: ["10 s", "30 s", "60 s", "100 s"],
+        correct: 2,
+        explanation: "1 minute = 60 secondes.",
+        keyPoints: ["1 min = 60 s", "1 h = 60 min", "1 h = 3600 s"]
+    },
+    {
+        id: 'q223',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Quel est le périmètre d'un cercle de diamètre 100 mm ? (π ≈ 3.14)",
+        answers: ["314 mm", "200 mm", "100 mm", "628 mm"],
+        correct: 0,
+        explanation: "Périmètre = π × diamètre = 3.14 × 100 = 314 mm.",
+        keyPoints: ["P = π × D", "3.14 × 100", "= 314 mm", "Cintrage cuivre"]
+    },
+    {
+        id: 'q224',
+        category: "Conversions",
+        difficulty: "hard",
+        question: "Un tube de DN 40 peut-il remplacer un tube de 1\"1/2 ?",
+        answers: ["Oui, équivalent", "Non, 1\"1/2 = DN 33", "Non, 1\"1/2 = DN 50", "Oui mais surdimensionné"],
+        correct: 1,
+        explanation: "1\"1/2 (un pouce et demi) correspond à DN 33, pas DN 40. DN 40 est surdimensionné.",
+        keyPoints: ["1\"1/2 = DN 33", "DN 40 > DN 33", "Vérifier équivalences"]
+    },
+    {
+        id: 'q225',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Combien de kWh pour 2000 Wh ?",
+        answers: ["0.2 kWh", "2 kWh", "20 kWh", "200 kWh"],
+        correct: 1,
+        explanation: "2000 Wh ÷ 1000 = 2 kWh.",
+        keyPoints: ["Diviser par 1000", "Wh → kWh", "2000 Wh = 2 kWh", "Consommation"]
+    },
+    {
+        id: 'q226',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien de mm² dans 1 cm² ?",
+        answers: ["10 mm²", "100 mm²", "1000 mm²", "10000 mm²"],
+        correct: 1,
+        explanation: "1 cm = 10 mm, donc 1 cm² = 10 × 10 = 100 mm².",
+        keyPoints: ["1 cm = 10 mm", "1 cm² = 100 mm²", "Surface au carré"]
+    },
+    {
+        id: 'q227',
+        category: "Conversions",
+        difficulty: "hard",
+        question: "Un radiateur émet 1200 W. Combien émet-il en kcal/h ? (1 W ≈ 0.86 kcal/h)",
+        answers: ["860 kcal/h", "1032 kcal/h", "1400 kcal/h", "1200 kcal/h"],
+        correct: 1,
+        explanation: "1200 W × 0.86 = 1032 kcal/h.",
+        keyPoints: ["1 W ≈ 0.86 kcal/h", "1200 × 0.86", "= 1032 kcal/h", "Ancienne unité"]
+    },
+    {
+        id: 'q228',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Quelle est la vitesse de l'eau si 10 L/min passe dans un tube de section 1 cm² ?",
+        answers: ["0.17 m/s", "1.67 m/s", "10 m/s", "100 m/s"],
+        correct: 1,
+        explanation: "10 L/min = 10000 cm³/min = 166.7 cm³/s. Vitesse = Débit/Section = 166.7/1 = 166.7 cm/s = 1.67 m/s.",
+        keyPoints: ["v = Q/S", "10 L/min = 166.7 cm³/s", "v = 1.67 m/s", "Vitesse recommandée < 2 m/s"]
+    },
+    {
+        id: 'q229',
+        category: "Conversions",
+        difficulty: "easy",
+        question: "Combien de minutes dans 2 heures ?",
+        answers: ["60 min", "100 min", "120 min", "200 min"],
+        correct: 2,
+        explanation: "2 heures × 60 minutes/heure = 120 minutes.",
+        keyPoints: ["1 h = 60 min", "2 × 60 = 120", "Temps de travail"]
+    },
+    {
+        id: 'q230',
+        category: "Conversions",
+        difficulty: "medium",
+        question: "Pour une pente de 1 cm/m, quel dénivelé sur 8 mètres ?",
+        answers: ["1 cm", "8 cm", "10 cm", "80 cm"],
+        correct: 1,
+        explanation: "1 cm/m × 8 m = 8 cm de dénivelé total.",
+        keyPoints: ["Pente × longueur", "1 cm/m × 8 m", "= 8 cm", "Évacuation EU"]
     }
 ];

@@ -56,9 +56,23 @@ class QuizMode {
         this.quizStats = { total: 0, correct: 0, incorrect: 0 };
     }
 
+    getFilteredQuestions() {
+        // Récupérer les stages actifs
+        const defaultStages = JSON.stringify(['Fondamentaux & Sécurité']);
+        const activeStages = JSON.parse(localStorage.getItem('active-stages') || defaultStages);
+
+        // Filtrer les questions selon les stages actifs
+        return allQuestions.filter(q =>
+            q.category === 'Conversions' ||
+            activeStages.some(stage => q.category.startsWith(stage))
+        );
+    }
+
     showCategorySelection() {
-        // Extraire toutes les catégories uniques
-        const categories = [...new Set(allQuestions.map(q => q.category))].sort();
+        const filteredQuestions = this.getFilteredQuestions();
+
+        // Extraire toutes les catégories uniques depuis les questions filtrées
+        const categories = [...new Set(filteredQuestions.map(q => q.category))].sort();
 
         document.getElementById('quiz-tab').innerHTML = `
             <div style="text-align: center;">
@@ -71,11 +85,11 @@ class QuizMode {
                     <h3 style="margin-bottom: 15px; font-size: 1.1em;">Choisir une catégorie</h3>
                     <button class="primary-btn" onclick="app.quiz.startQuiz('all', null)"
                             style="margin-bottom: 15px; width: 100%; max-width: 400px;">
-                        🎯 Toutes les catégories (${allQuestions.length} questions)
+                        🎯 Toutes les catégories (${filteredQuestions.length} questions)
                     </button>
 
                     ${categories.map(cat => {
-                        const count = allQuestions.filter(q => q.category === cat).length;
+                        const count = filteredQuestions.filter(q => q.category === cat).length;
                         return `
                             <button class="answer-btn"
                                     onclick="app.quiz.showDifficultySelection('${cat.replace(/'/g, "\\'")}')"
@@ -108,7 +122,8 @@ class QuizMode {
     }
 
     showDifficultySelection(category) {
-        const categoryQuestions = allQuestions.filter(q => q.category === category);
+        const filteredQuestions = this.getFilteredQuestions();
+        const categoryQuestions = filteredQuestions.filter(q => q.category === category);
         const easyCount = categoryQuestions.filter(q => q.difficulty === 'easy').length;
         const mediumCount = categoryQuestions.filter(q => q.difficulty === 'medium').length;
         const hardCount = categoryQuestions.filter(q => q.difficulty === 'hard').length;
@@ -156,8 +171,8 @@ class QuizMode {
     }
 
     startQuiz(category, difficulty) {
-        // Filtrer les questions
-        let questions = allQuestions;
+        // Filtrer les questions selon les stages actifs
+        let questions = this.getFilteredQuestions();
 
         if (category !== 'all') {
             questions = questions.filter(q => q.category === category);
@@ -951,18 +966,33 @@ class SpacedRepetitionApp {
     }
 
     loadData() {
+        // Récupérer les stages actifs (par défaut : seul stage 1)
+        const defaultStages = JSON.stringify(['Fondamentaux & Sécurité']);
+        const activeStages = JSON.parse(localStorage.getItem('active-stages') || defaultStages);
+
+        // Filtrer les questions selon les stages actifs + Conversions toujours incluses
+        const filteredQuestions = allQuestions.filter(q =>
+            q.category === 'Conversions' ||
+            activeStages.some(stage => q.category.startsWith(stage))
+        );
+
         const saved = localStorage.getItem('spaced-repetition-data');
         if (saved) {
             const data = JSON.parse(saved);
-            this.cards = data.cards.map(c => {
-                const card = new Card(allQuestions.find(q => q.id === c.id));
-                Object.assign(card, c);
-                card.nextReview = new Date(c.nextReview);
-                card.lastReview = c.lastReview ? new Date(c.lastReview) : null;
-                return card;
-            });
+            // Filtrer les cartes sauvegardées selon les stages actifs
+            this.cards = data.cards
+                .map(c => {
+                    const question = filteredQuestions.find(q => q.id === c.id);
+                    if (!question) return null;
+                    const card = new Card(question);
+                    Object.assign(card, c);
+                    card.nextReview = new Date(c.nextReview);
+                    card.lastReview = c.lastReview ? new Date(c.lastReview) : null;
+                    return card;
+                })
+                .filter(c => c !== null);
         } else {
-            this.cards = allQuestions.map(q => new Card(q));
+            this.cards = filteredQuestions.map(q => new Card(q));
             this.cards.forEach((card, index) => {
                 const dayOffset = Math.floor(index / 15);
                 card.nextReview = new Date();
@@ -1428,8 +1458,49 @@ class SpacedRepetitionApp {
         const notificationsEnabled = localStorage.getItem('notifications-enabled') === 'true';
         const notificationTime = localStorage.getItem('notification-time') || '09:00';
 
+        // Récupérer les stages actifs (par défaut : seul stage 1)
+        const defaultStages = JSON.stringify(['Fondamentaux & Sécurité']);
+        const activeStages = JSON.parse(localStorage.getItem('active-stages') || defaultStages);
+
+        const stages = [
+            { key: 'Fondamentaux & Sécurité', name: 'Fondamentaux & Sécurité', icon: '🎓', desc: 'Atelier, dessin, sécurité, bases' },
+            { key: 'Systèmes Thermiques', name: 'Systèmes Thermiques', icon: '🔧', desc: 'ECS, évacuation, émetteurs' },
+            { key: 'Systèmes Avancés', name: 'Systèmes Avancés', icon: '⚙️', desc: 'Gaz, solaire, VMC' },
+            { key: 'Chauffage', name: 'Chauffage', icon: '🔥', desc: 'Circuits, régulation, dimensionnement' }
+        ];
+
         document.getElementById('settings-tab').innerHTML = `
             <h2 style="margin-bottom: 20px;">⚙️ Réglages</h2>
+
+            <!-- SÉLECTION DES STAGES -->
+            <div class="info-box" style="margin-bottom: 20px; background: #e8f4ff; border-left: 4px solid #667eea;">
+                <h3 style="margin-bottom: 10px;">📚 Stages à réviser</h3>
+                <p style="color: #666; margin-bottom: 15px; font-size: 0.9em;">
+                    Sélectionnez les stages selon votre progression
+                </p>
+                ${stages.map(stage => {
+                    const isActive = activeStages.includes(stage.key);
+                    const questionCount = allQuestions.filter(q => q.category.startsWith(stage.key)).length;
+                    return `
+                        <div class="notification-toggle" style="margin-bottom: 10px;">
+                            <div class="info" style="flex: 1;">
+                                <h3 style="font-size: 1em; margin-bottom: 3px;">${stage.icon} ${stage.name}</h3>
+                                <p style="font-size: 0.85em;">${stage.desc} (${questionCount} questions)</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox"
+                                       id="stage-${stage.key.replace(/[^a-z0-9]/gi, '')}"
+                                       ${isActive ? 'checked' : ''}
+                                       onchange="app.toggleStage('${stage.key}')">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    `;
+                }).join('')}
+                <p style="color: #999; margin-top: 15px; font-size: 0.85em;">
+                    💡 Les questions seront filtrées selon les stages activés
+                </p>
+            </div>
 
             <div class="notification-toggle">
                 <div class="info">
@@ -1479,12 +1550,309 @@ class SpacedRepetitionApp {
         `;
     }
 
+    toggleStage(stageKey) {
+        const defaultStages = JSON.stringify(['Fondamentaux & Sécurité']);
+        let activeStages = JSON.parse(localStorage.getItem('active-stages') || defaultStages);
+
+        if (activeStages.includes(stageKey)) {
+            // Désactiver le stage
+            activeStages = activeStages.filter(s => s !== stageKey);
+            // Empêcher de désactiver tous les stages
+            if (activeStages.length === 0) {
+                alert('⚠️ Au moins un stage doit rester activé !');
+                document.getElementById('stage-' + stageKey.replace(/[^a-z0-9]/gi, '')).checked = true;
+                return;
+            }
+        } else {
+            // Activer le stage
+            activeStages.push(stageKey);
+        }
+
+        localStorage.setItem('active-stages', JSON.stringify(activeStages));
+
+        // Recharger les cartes filtrées
+        this.loadData();
+        this.updateDashboard();
+
+        // Afficher confirmation
+        const count = allQuestions.filter(q =>
+            activeStages.some(stage => q.category.startsWith(stage))
+        ).length;
+
+        setTimeout(() => {
+            alert(`✅ ${activeStages.length} stage(s) activé(s) - ${count} questions disponibles`);
+        }, 100);
+    }
+
     showQuizTab() {
         this.quiz.showCategorySelection();
     }
 
     showCalculatorTab() {
         this.calculator.showMenu();
+    }
+
+    showFormulas() {
+        document.getElementById('formulas-tab').innerHTML = `
+            <h2 style="text-align: center; margin-bottom: 20px;">📐 Formules essentielles</h2>
+            <p style="color: #666; text-align: center; margin-bottom: 30px; font-size: 0.9em;">
+                Toutes les formules à connaître pour le CAP M.I.T FC
+            </p>
+
+            <!-- CONVERSIONS COURANTES -->
+            <div class="info-box" style="margin-bottom: 20px;">
+                <h3 style="margin-bottom: 15px; color: #667eea;">🔄 Conversions courantes</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <strong>Longueurs :</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>1 m = 100 cm = 1000 mm</li>
+                            <li>1\" (pouce) = 25.4 mm</li>
+                            <li>1/2\" = 12.7 mm</li>
+                            <li>3/4\" = 19.05 mm</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Volumes :</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>1 m³ = 1000 litres</li>
+                            <li>1 L = 1 dm³</li>
+                            <li>1 L = 1000 cm³</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Débits :</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>L/min × 60 = L/h</li>
+                            <li>m³/h ÷ 60 = L/min</li>
+                            <li>1 m³/h = 16.67 L/min</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Puissance :</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>1 kW = 1000 W</li>
+                            <li>1 W ≈ 0.86 kcal/h</li>
+                            <li>1 kWh = 3600 kJ</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Pression :</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>1 bar = 100 kPa</li>
+                            <li>1 bar = 100000 Pa</li>
+                            <li>1 bar ≈ 1 atm</li>
+                            <li>10 m CE = 1 bar</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Température :</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>K = °C + 273</li>
+                            <li>0°C = 273 K</li>
+                            <li>20°C = 293 K</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIAMÈTRES CUIVRE -->
+            <div class="info-box" style="margin-bottom: 20px; background: #fff3e0; border-left: 4px solid #ff9800;">
+                <h3 style="margin-bottom: 15px; color: #ff9800;">🔧 Diamètres cuivre (DN nominal)</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
+                    <tr style="background: #fff; font-weight: bold;">
+                        <td style="padding: 8px; border: 1px solid #ddd;">Pouces</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">DN</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Ø ext (mm)</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Usage</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">3/8"</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">10</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">12</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Alimentation</td>
+                    </tr>
+                    <tr style="background: #fafafa;">
+                        <td style="padding: 8px; border: 1px solid #ddd;">1/2"</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">14</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">14</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Sanitaire</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">3/4"</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">16</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">16</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Distribution</td>
+                    </tr>
+                    <tr style="background: #fafafa;">
+                        <td style="padding: 8px; border: 1px solid #ddd;">1"</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">20</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">22</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Nourrice</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">1"1/4</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">26</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">28</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Collecteur</td>
+                    </tr>
+                    <tr style="background: #fafafa;">
+                        <td style="padding: 8px; border: 1px solid #ddd;">1"1/2</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">33</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">35</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Principal</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">2"</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">40</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">42</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Colonne</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- CINTRAGE CUIVRE -->
+            <div class="info-box" style="margin-bottom: 20px;">
+                <h3 style="margin-bottom: 15px; color: #667eea;">📏 Formules cintrage cuivre</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li><strong>Périmètre du cercle :</strong> P = π × D (π ≈ 3.14)</li>
+                    <li><strong>Longueur développée d'un coude 90° :</strong> L = (π × D) / 4</li>
+                    <li><strong>Rayon de cintrage minimum :</strong> R = 3.5 × D (tube recuit)</li>
+                    <li><strong>Angle de cintrage max :</strong> 90° sans déformation</li>
+                    <li><strong>Matrice :</strong> Rayon = 3 à 5 × Ø extérieur du tube</li>
+                </ul>
+            </div>
+
+            <!-- ACIER ET TARAUDAGE -->
+            <div class="info-box" style="margin-bottom: 20px; background: #e8f5e9; border-left: 4px solid #4caf50;">
+                <h3 style="margin-bottom: 15px; color: #4caf50;">🔩 Acier - Diamètres et taraudage</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9em; margin-bottom: 15px;">
+                    <tr style="background: #fff; font-weight: bold;">
+                        <td style="padding: 8px; border: 1px solid #ddd;">Pouces</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">DN</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Ø ext (mm)</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Filetage</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">1/2"</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">15</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">21.3</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">20/27</td>
+                    </tr>
+                    <tr style="background: #f5f5f5;">
+                        <td style="padding: 8px; border: 1px solid #ddd;">3/4"</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">20</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">26.9</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">26/34</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">1"</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">25</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">33.7</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">33/42</td>
+                    </tr>
+                    <tr style="background: #f5f5f5;">
+                        <td style="padding: 8px; border: 1px solid #ddd;">1"1/4</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">32</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">42.4</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">40/49</td>
+                    </tr>
+                </table>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li><strong>Filetage gaz ISO 228 :</strong> pas de 11 filets/pouce pour 1/2" à 2"</li>
+                    <li><strong>Longueur de filetage :</strong> 6 à 9 filets minimum pour étanchéité</li>
+                    <li><strong>Taraudage :</strong> Ø perçage = Ø nominal - pas du filet</li>
+                </ul>
+            </div>
+
+            <!-- CHAUFFAGE -->
+            <div class="info-box" style="margin-bottom: 20px; background: #ffebee; border-left: 4px solid #f44336;">
+                <h3 style="margin-bottom: 15px; color: #f44336;">🔥 Formules chauffage</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li><strong>Puissance nécessaire :</strong> P (W) = Volume (m³) × Coef isolation (W/m³)</li>
+                    <li><strong>Coefficients isolation :</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>Mauvaise : 100 W/m³</li>
+                            <li>Moyenne : 60 W/m³</li>
+                            <li>Bonne : 40 W/m³</li>
+                            <li>Excellente (BBC) : 30 W/m³</li>
+                        </ul>
+                    </li>
+                    <li><strong>Déperditions par m² :</strong> Q = K × S × ΔT
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>K = coefficient déperdition (W/m²·K)</li>
+                            <li>S = surface (m²)</li>
+                            <li>ΔT = différence de température (K)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Débit de circulation :</strong> Q (L/h) = P (W) / (1.16 × ΔT)
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>P = puissance (W)</li>
+                            <li>ΔT = écart température départ/retour (°C)</li>
+                            <li>1.16 = chaleur volumique eau</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- HYDRAULIQUE -->
+            <div class="info-box" style="margin-bottom: 20px;">
+                <h3 style="margin-bottom: 15px; color: #667eea;">💧 Formules hydraulique</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li><strong>Débit :</strong> Q = S × v
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>Q = débit (m³/s ou L/s)</li>
+                            <li>S = section (m² ou cm²)</li>
+                            <li>v = vitesse (m/s)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Vitesse recommandée :</strong> 1 à 2 m/s (sanitaire)</li>
+                    <li><strong>Pression hydrostatique :</strong> P (bar) = ρ × g × h / 100000
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>10 m de hauteur d'eau = 1 bar</li>
+                            <li>1 m CE (colonne d'eau) = 0.1 bar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Perte de charge linéaire :</strong> Consulter abaques selon Ø et débit</li>
+                </ul>
+            </div>
+
+            <!-- ÉVACUATION -->
+            <div class="info-box" style="margin-bottom: 20px; background: #f3e5f5; border-left: 4px solid #9c27b0;">
+                <h3 style="margin-bottom: 15px; color: #9c27b0;">↘️ Évacuation - Pentes</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li><strong>Pente (%) :</strong> (dénivelé / longueur) × 100</li>
+                    <li><strong>Pente (cm/m) :</strong> dénivelé (cm) / longueur (m)</li>
+                    <li><strong>Pentes minimales eaux usées :</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>DN 32-40 : 2 à 3 cm/m (2-3%)</li>
+                            <li>DN 100 : 1 à 3 cm/m (1-3%)</li>
+                            <li>DN 125 : 0.5 à 2 cm/m</li>
+                            <li>DN 160 : 0.5 à 1.5 cm/m</li>
+                        </ul>
+                    </li>
+                    <li><strong>Diamètres évacuation :</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
+                            <li>Lavabo, bidet : DN 32</li>
+                            <li>Évier, douche : DN 40</li>
+                            <li>WC, chute : DN 100</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SURFACES ET VOLUMES -->
+            <div class="info-box">
+                <h3 style="margin-bottom: 15px; color: #667eea;">📐 Surfaces et volumes</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li><strong>Rectangle :</strong> S = L × l</li>
+                    <li><strong>Cercle :</strong> S = π × r²</li>
+                    <li><strong>Parallélépipède :</strong> V = L × l × h</li>
+                    <li><strong>Cylindre :</strong> V = π × r² × h</li>
+                    <li><strong>Périmètre cercle :</strong> P = π × D = 2 × π × r</li>
+                </ul>
+            </div>
+        `;
     }
 
     async setupNotifications() {
@@ -1593,6 +1961,9 @@ function switchTab(tabName) {
             break;
         case 'quiz':
             app.showQuizTab();
+            break;
+        case 'formulas':
+            app.showFormulas();
             break;
         case 'flashcards':
             app.showFlashcards();

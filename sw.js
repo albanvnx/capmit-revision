@@ -1,6 +1,6 @@
 // Service Worker pour PWA - Fonctionnement hors ligne et notifications
 
-const CACHE_NAME = 'revision-cap-v2.0';
+const CACHE_NAME = 'revision-cap-v2.1';
 const urlsToCache = [
   '/',
   '/index.html',

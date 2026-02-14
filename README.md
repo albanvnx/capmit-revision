@@ -1,4 +1,4 @@
-# 🎓 Application de révision CAP M.I.T FC v2.0
+# 🎓 Application de révision CAP M.I.T FC v2.1
 
 Application Progressive Web App (PWA) pour réviser le **CAP Monteur en Installations Thermiques - Formation Continue**.
 
@@ -6,20 +6,49 @@ Application Progressive Web App (PWA) pour réviser le **CAP Monteur en Installa
 
 ---
 
-## ✨ Fonctionnalités v2.0
+## ⭐ Nouveautés v2.1 (2026-02-14)
+
+### 📚 Progression par stages
+- **Sélectionnez vos stages** selon votre progression
+- **4 stages renommés** : Fondamentaux & Sécurité, Systèmes Thermiques, Systèmes Avancés, Chauffage
+- **Débutants** : commencez avec le Stage 1 uniquement, activez les suivants au fur et à mesure
+- **Filtrage automatique** : seules les questions des stages actifs apparaissent
+
+### 📐 Nouvel onglet "Formules"
+- **Toutes les formules essentielles** pour le CAP M.I.T FC
+- Conversions, diamètres, cintrage, taraudage, chauffage, hydraulique, évacuation
+- **Tableaux complets** cuivre et acier avec équivalences
+- Formules de calcul avec explications
+
+### 🔢 30 nouvelles questions de conversion
+- mm/cm/m/pouces, L/min/L/h/m³/h, kW/W, bar/Pa
+- Surfaces, volumes, pentes
+- **230 questions au total** (200 + 30 conversions)
+
+---
+
+## ✨ Fonctionnalités complètes
 
 ### 📅 Révision espacée (SM-2)
-- **200 questions** réparties intelligemment dans le temps
+- **230 questions** réparties intelligemment dans le temps
 - Algorithme SM-2 optimisé pour la mémorisation long terme
 - Suivi de progression (nouveau, apprentissage, révision, maîtrisé)
 - Statistiques détaillées et série de jours
+- **Filtrage par stages** : révisez selon votre progression
 
-### ❓ Mode Quiz libre (NOUVEAU)
+### ❓ Mode Quiz libre
 - **Entraînement sans impact** sur la révision espacée
-- Filtrage par **catégorie** (21 catégories au total)
+- Filtrage par **catégorie** (22 catégories au total)
 - Filtrage par **difficulté** (facile 😊 / moyen 🤔 / difficile 😰)
+- Filtrage par **stages actifs**
 - Questions **mélangées aléatoirement**
 - Score en temps réel et résultats détaillés
+
+### 📐 Formules essentielles
+- **7 sections complètes** : conversions, cuivre, acier, chauffage, hydraulique, évacuation, surfaces
+- Tableaux de diamètres cuivre et acier
+- Formules de cintrage et taraudage
+- Toujours accessible depuis l'onglet Formules
 
 ### 🧮 Calculatrice de chantier (NOUVEAU)
 Six outils pratiques pour le terrain :
@@ -54,6 +83,7 @@ Six outils pratiques pour le terrain :
 - Heatmap visuelle de l'activité
 
 ### ⚙️ Réglages
+- **Sélection des stages** : activez/désactivez selon votre progression
 - Notifications quotidiennes programmables
 - Export des données
 - Réinitialisation
@@ -62,7 +92,7 @@ Six outils pratiques pour le terrain :
 
 ## 📚 Contenu pédagogique
 
-### 200 questions couvrant tous les stages :
+### 230 questions couvrant tous les stages + conversions :
 
 #### Stage 1 - Fondamentaux
 - **Sécurité** (15 questions) : EPI/EPC, amiante, plomb, PPSPS, déchets
