@@ -57,9 +57,17 @@ class QuizMode {
     }
 
     getFilteredQuestions() {
+        // Vérifier le statut premium
+        const isPremium = localStorage.getItem('premium-activated') === 'true';
+
         // Récupérer les stages actifs
         const defaultStages = JSON.stringify(['Fondamentaux & Sécurité']);
-        const activeStages = JSON.parse(localStorage.getItem('active-stages') || defaultStages);
+        let activeStages = JSON.parse(localStorage.getItem('active-stages') || defaultStages);
+
+        // Si pas premium, forcer Stage 1 uniquement
+        if (!isPremium) {
+            activeStages = ['Fondamentaux & Sécurité'];
+        }
 
         // Filtrer les questions selon les stages actifs
         return allQuestions.filter(q =>
@@ -963,12 +971,92 @@ class SpacedRepetitionApp {
         this.updateDashboard();
         this.showDailyTab();
         this.setupNotifications();
+        this.updatePremiumBadge();
+    }
+
+    updatePremiumBadge() {
+        const badge = document.getElementById('premium-badge');
+        if (badge && this.isPremium()) {
+            badge.style.display = 'inline';
+        }
+    }
+
+    // ========== SYSTÈME PREMIUM ==========
+    isPremium() {
+        return localStorage.getItem('premium-activated') === 'true';
+    }
+
+    validateCode(code) {
+        // Liste des codes valides (tu peux en générer plus)
+        const validCodes = [
+            'CAPMIT-2024-PREMIUM',
+            'STAGE-COMPLET-2024',
+            'FORMATION-PRO-2024',
+            'PLOMBIER-MASTER-2024',
+            'THERMIQUE-EXPERT-2024'
+        ];
+
+        // Validation du code (insensible à la casse)
+        return validCodes.includes(code.toUpperCase().trim());
+    }
+
+    activatePremium(code) {
+        if (this.validateCode(code)) {
+            localStorage.setItem('premium-activated', 'true');
+            localStorage.setItem('premium-code', code.toUpperCase().trim());
+            localStorage.setItem('premium-date', new Date().toISOString());
+            return true;
+        }
+        return false;
+    }
+
+    deactivatePremium() {
+        localStorage.removeItem('premium-activated');
+        localStorage.removeItem('premium-code');
+        localStorage.removeItem('premium-date');
+    }
+
+    enterPremiumCode() {
+        const input = document.getElementById('premium-code-input');
+        const code = input.value.trim();
+
+        if (!code) {
+            alert("Veuillez entrer un code d'activation.");
+            return;
+        }
+
+        if (this.activatePremium(code)) {
+            alert('Premium activé avec succès !\n\n✅ Tous les stages sont maintenant débloqués.\n✅ 354 questions disponibles.\n\nL\'application va se recharger...');
+            setTimeout(() => {
+                location.reload();
+            }, 1500);
+        } else {
+            alert('Code invalide.\n\nVeuillez vérifier votre code et réessayer.\n\nExemple de code valide :\nCAPMIT-2024-PREMIUM');
+            input.value = '';
+            input.focus();
+        }
+    }
+
+    deactivatePremiumAndReload() {
+        this.deactivatePremium();
+        alert('Premium désactivé.\n\nRetour à la version gratuite.\n\nL\'application va se recharger...');
+        setTimeout(() => {
+            location.reload();
+        }, 1000);
     }
 
     loadData() {
+        // Vérifier le statut premium
+        const isPremium = this.isPremium();
+
         // Récupérer les stages actifs (par défaut : seul stage 1)
         const defaultStages = JSON.stringify(['Fondamentaux & Sécurité']);
-        const activeStages = JSON.parse(localStorage.getItem('active-stages') || defaultStages);
+        let activeStages = JSON.parse(localStorage.getItem('active-stages') || defaultStages);
+
+        // Si pas premium, forcer Stage 1 uniquement
+        if (!isPremium) {
+            activeStages = ['Fondamentaux & Sécurité'];
+        }
 
         // Filtrer les questions selon les stages actifs + Conversions toujours incluses
         const filteredQuestions = allQuestions.filter(q =>
@@ -1457,20 +1545,63 @@ class SpacedRepetitionApp {
     showSettings() {
         const notificationsEnabled = localStorage.getItem('notifications-enabled') === 'true';
         const notificationTime = localStorage.getItem('notification-time') || '09:00';
+        const isPremium = this.isPremium();
+        const premiumCode = localStorage.getItem('premium-code') || '';
 
         // Récupérer les stages actifs (par défaut : seul stage 1)
         const defaultStages = JSON.stringify(['Fondamentaux & Sécurité']);
         const activeStages = JSON.parse(localStorage.getItem('active-stages') || defaultStages);
 
         const stages = [
-            { key: 'Fondamentaux & Sécurité', name: 'Fondamentaux & Sécurité', icon: '🎓', desc: 'Atelier, dessin, sécurité, bases' },
-            { key: 'Systèmes Thermiques', name: 'Systèmes Thermiques', icon: '🔧', desc: 'ECS, évacuation, émetteurs' },
-            { key: 'Systèmes Avancés', name: 'Systèmes Avancés', icon: '⚙️', desc: 'Gaz, solaire, VMC' },
-            { key: 'Chauffage', name: 'Chauffage', icon: '🔥', desc: 'Circuits, régulation, dimensionnement' }
+            { key: 'Fondamentaux & Sécurité', name: 'Fondamentaux & Sécurité', icon: '🎓', desc: 'Atelier, dessin, sécurité, bases', free: true },
+            { key: 'Systèmes Thermiques', name: 'Systèmes Thermiques', icon: '🔧', desc: 'ECS, évacuation, émetteurs', free: false },
+            { key: 'Systèmes Avancés', name: 'Systèmes Avancés', icon: '⚙️', desc: 'Gaz, solaire, VMC', free: false },
+            { key: 'Chauffage', name: 'Chauffage', icon: '🔥', desc: 'Circuits, régulation, dimensionnement', free: false }
         ];
 
         document.getElementById('settings-tab').innerHTML = `
             <h2 style="margin-bottom: 20px;">⚙️ Réglages</h2>
+
+            <!-- STATUT VERSION -->
+            <div class="info-box" style="margin-bottom: 20px; background: ${isPremium ? '#e7f9eb' : '#fff3e0'}; border-left: 4px solid ${isPremium ? '#4caf50' : '#ff9800'};">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h3 style="margin: 0;">${isPremium ? '✅ Version Premium' : '🆓 Version Gratuite'}</h3>
+                    ${isPremium ? '<span style="background: #4caf50; color: white; padding: 5px 12px; border-radius: 12px; font-size: 0.85em; font-weight: bold;">PREMIUM</span>' : ''}
+                </div>
+
+                ${!isPremium ? `
+                    <p style="color: #666; margin-bottom: 15px; font-size: 0.95em;">
+                        📚 Accès limité au <strong>Stage 1</strong> (Fondamentaux & Sécurité) + Conversions<br>
+                        🔒 Stages 2, 3, 4 bloqués (<strong>252 questions</strong> premium)
+                    </p>
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">🔑 Code d'activation Premium :</label>
+                        <input type="text" id="premium-code-input" placeholder="Entrez votre code (ex: CAPMIT-2024-PREMIUM)"
+                               style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; margin-bottom: 10px;">
+                        <button onclick="app.enterPremiumCode()"
+                                style="width: 100%; padding: 12px; background: #4caf50; color: white; border: none; border-radius: 8px; font-size: 1em; font-weight: bold; cursor: pointer;">
+                            🚀 Activer Premium
+                        </button>
+                    </div>
+                    <p style="color: #999; font-size: 0.85em; text-align: center;">
+                        💡 La version Premium débloque les 354 questions complètes
+                    </p>
+                ` : `
+                    <p style="color: #2e7d32; margin-bottom: 10px;">
+                        🎉 <strong>Toutes les fonctionnalités débloquées !</strong><br>
+                        ✅ 354 questions • 4 stages complets
+                    </p>
+                    <div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="color: #666; font-size: 0.9em;">
+                            Code : <strong>${premiumCode.substring(0, 6)}***${premiumCode.slice(-3)}</strong>
+                        </div>
+                    </div>
+                    <button onclick="if(confirm('Êtes-vous sûr de vouloir désactiver Premium ?')) app.deactivatePremiumAndReload()"
+                            style="padding: 8px 16px; background: #ff6b6b; color: white; border: none; border-radius: 6px; font-size: 0.9em; cursor: pointer;">
+                        Désactiver Premium
+                    </button>
+                `}
+            </div>
 
             <!-- SÉLECTION DES STAGES -->
             <div class="info-box" style="margin-bottom: 20px; background: #e8f4ff; border-left: 4px solid #667eea;">
@@ -1481,16 +1612,21 @@ class SpacedRepetitionApp {
                 ${stages.map(stage => {
                     const isActive = activeStages.includes(stage.key);
                     const questionCount = allQuestions.filter(q => q.category.startsWith(stage.key)).length;
+                    const isLocked = !stage.free && !isPremium;
                     return `
-                        <div class="notification-toggle" style="margin-bottom: 10px;">
+                        <div class="notification-toggle" style="margin-bottom: 10px; ${isLocked ? 'opacity: 0.6;' : ''}">
                             <div class="info" style="flex: 1;">
-                                <h3 style="font-size: 1em; margin-bottom: 3px;">${stage.icon} ${stage.name}</h3>
+                                <h3 style="font-size: 1em; margin-bottom: 3px;">
+                                    ${stage.icon} ${stage.name}
+                                    ${isLocked ? '<span style="background: #ff9800; color: white; padding: 2px 8px; border-radius: 8px; font-size: 0.75em; margin-left: 8px;">🔒 PREMIUM</span>' : ''}
+                                </h3>
                                 <p style="font-size: 0.85em;">${stage.desc} (${questionCount} questions)</p>
                             </div>
                             <label class="switch">
                                 <input type="checkbox"
                                        id="stage-${stage.key.replace(/[^a-z0-9]/gi, '')}"
                                        ${isActive ? 'checked' : ''}
+                                       ${isLocked ? 'disabled' : ''}
                                        onchange="app.toggleStage('${stage.key}')">
                                 <span class="slider"></span>
                             </label>
