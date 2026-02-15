@@ -967,11 +967,24 @@ class SpacedRepetitionApp {
         this.quiz = new QuizMode(this);
         this.calculator = new ConstructionCalculator(this);
 
+        // VERSION PREMIUM : Activer automatiquement le premium
+        this.autoActivatePremium();
+
         this.loadData();
         this.updateDashboard();
         this.showDailyTab();
         this.setupNotifications();
         this.updatePremiumBadge();
+    }
+
+    autoActivatePremium() {
+        // Activer premium automatiquement si pas déjà fait
+        if (!this.isPremium()) {
+            localStorage.setItem('premium-activated', 'true');
+            localStorage.setItem('premium-code', 'PREMIUM-APK-VERSION');
+            localStorage.setItem('premium-date', new Date().toISOString());
+            console.log('✅ Version Premium APK - Accès complet activé');
+        }
     }
 
     updatePremiumBadge() {
@@ -1620,19 +1633,24 @@ class SpacedRepetitionApp {
                         💡 La version Premium débloque les 200 questions complètes
                     </p>
                 ` : `
-                    <p style="color: #2e7d32; margin-bottom: 10px;">
-                        🎉 <strong>Toutes les fonctionnalités débloquées !</strong><br>
-                        ✅ 200 questions • 4 stages complets
+                    <p style="color: #2e7d32; margin-bottom: 15px; line-height: 1.6;">
+                        🎉 <strong>Version Premium APK - Accès Complet !</strong><br><br>
+                        ✅ <strong>200 questions</strong> de révision<br>
+                        ✅ <strong>4 stages complets</strong> débloqués<br>
+                        ✅ <strong>21 catégories</strong> de questions<br>
+                        ✅ <strong>33 images techniques</strong> haute qualité<br>
+                        ✅ <strong>Révision espacée</strong> intelligente<br>
+                        ✅ <strong>Calculatrice de chantier</strong> (6 outils)<br>
+                        ✅ <strong>Accès à vie</strong>, hors ligne
                     </p>
-                    <div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
+                    <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                        <div style="color: #4caf50; font-size: 1.1em; font-weight: bold; margin-bottom: 5px;">
+                            💯 Merci pour ton achat !
+                        </div>
                         <div style="color: #666; font-size: 0.9em;">
-                            Code : <strong>${premiumCode.substring(0, 6)}***${premiumCode.slice(-3)}</strong>
+                            Bon courage pour ton CAP M.I.T FC ! 🎓
                         </div>
                     </div>
-                    <button onclick="if(confirm('Êtes-vous sûr de vouloir désactiver Premium ?')) app.deactivatePremiumAndReload()"
-                            style="padding: 8px 16px; background: #ff6b6b; color: white; border: none; border-radius: 6px; font-size: 0.9em; cursor: pointer;">
-                        Désactiver Premium
-                    </button>
                 `}
             </div>
 
