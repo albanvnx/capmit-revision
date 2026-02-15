@@ -987,17 +987,32 @@ class SpacedRepetitionApp {
     }
 
     validateCode(code) {
-        // Liste des codes valides (tu peux en générer plus)
-        const validCodes = [
+        // Accepter les codes générés par Gumroad
+        // Format : XXXX-XXXX-XXXX-XXXX ou licence keys Gumroad
+        const trimmedCode = code.trim();
+
+        // Vérifier longueur minimale (au moins 10 caractères)
+        if (trimmedCode.length < 10) {
+            return false;
+        }
+
+        // Vérifier que le code contient des lettres et chiffres (pas que des espaces)
+        const hasValidChars = /[A-Za-z0-9]/.test(trimmedCode);
+        if (!hasValidChars) {
+            return false;
+        }
+
+        // Accepter tout code valide de Gumroad
+        // Format attendu : contient lettres/chiffres, tirets optionnels
+        const isValidFormat = /^[A-Za-z0-9\-]{10,}$/.test(trimmedCode);
+
+        // Codes de démonstration aussi acceptés (pour tests)
+        const demoCodes = [
             'CAPMIT-2024-PREMIUM',
-            'STAGE-COMPLET-2024',
-            'FORMATION-PRO-2024',
-            'PLOMBIER-MASTER-2024',
-            'THERMIQUE-EXPERT-2024'
+            'DEMO-TEST-CODE'
         ];
 
-        // Validation du code (insensible à la casse)
-        return validCodes.includes(code.toUpperCase().trim());
+        return isValidFormat || demoCodes.includes(code.toUpperCase().trim());
     }
 
     activatePremium(code) {
@@ -1026,12 +1041,12 @@ class SpacedRepetitionApp {
         }
 
         if (this.activatePremium(code)) {
-            alert('Premium activé avec succès !\n\n✅ Tous les stages sont maintenant débloqués.\n✅ 354 questions disponibles.\n\nL\'application va se recharger...');
+            alert('🎉 Premium activé avec succès !\n\n✅ Tous les stages sont maintenant débloqués\n✅ 200 questions disponibles\n✅ Accès complet à vie\n\nL\'application va se recharger...');
             setTimeout(() => {
                 location.reload();
             }, 1500);
         } else {
-            alert('Code invalide.\n\nVeuillez vérifier votre code et réessayer.\n\nExemple de code valide :\nCAPMIT-2024-PREMIUM');
+            alert('❌ Code invalide\n\nVeuillez vérifier votre code et réessayer.\n\nLe code doit contenir au moins 10 caractères (lettres, chiffres, tirets).\n\nExemple : ABCD-1234-EFGH-5678\n\nVous n\'avez pas de code ?\nAchetez Premium sur Gumroad pour recevoir votre code par email.');
             input.value = '';
             input.focus();
         }
@@ -1576,20 +1591,38 @@ class SpacedRepetitionApp {
                     </p>
                     <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
                         <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">🔑 Code d'activation Premium :</label>
-                        <input type="text" id="premium-code-input" placeholder="Entrez votre code (ex: CAPMIT-2024-PREMIUM)"
+                        <input type="text" id="premium-code-input" placeholder="Entrez votre code Gumroad (ex: ABCD-1234-EFGH-5678)"
                                style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; margin-bottom: 10px;">
                         <button onclick="app.enterPremiumCode()"
                                 style="width: 100%; padding: 12px; background: #4caf50; color: white; border: none; border-radius: 8px; font-size: 1em; font-weight: bold; cursor: pointer;">
                             🚀 Activer Premium
                         </button>
                     </div>
-                    <p style="color: #999; font-size: 0.85em; text-align: center;">
-                        💡 La version Premium débloque les 354 questions complètes
+
+                    <!-- BOUTON ACHAT GUMROAD -->
+                    <div style="background: linear-gradient(135deg, #FFD700, #FFA500); padding: 20px; border-radius: 12px; margin-top: 15px; text-align: center; box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);">
+                        <div style="font-size: 1.2em; font-weight: bold; color: white; margin-bottom: 8px;">
+                            ✨ Pas encore de code ?
+                        </div>
+                        <p style="color: white; margin-bottom: 15px; font-size: 0.9em; line-height: 1.4;">
+                            Débloquez les <strong>200 questions</strong> et tous les stages !
+                        </p>
+                        <button onclick="window.open('https://albanuxem.gumroad.com/l/srojao', '_blank')"
+                                style="width: 100%; padding: 15px; background: white; color: #FF8C00; border: none; border-radius: 8px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            💳 Acheter Premium (9,99€)
+                        </button>
+                        <p style="color: rgba(255,255,255,0.9); margin-top: 12px; font-size: 0.8em;">
+                            ⚡ Code envoyé instantanément par email
+                        </p>
+                    </div>
+
+                    <p style="color: #999; font-size: 0.85em; text-align: center; margin-top: 15px;">
+                        💡 La version Premium débloque les 200 questions complètes
                     </p>
                 ` : `
                     <p style="color: #2e7d32; margin-bottom: 10px;">
                         🎉 <strong>Toutes les fonctionnalités débloquées !</strong><br>
-                        ✅ 354 questions • 4 stages complets
+                        ✅ 200 questions • 4 stages complets
                     </p>
                     <div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
                         <div style="color: #666; font-size: 0.9em;">
