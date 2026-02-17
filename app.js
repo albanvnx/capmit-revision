@@ -972,12 +972,21 @@ class SpacedRepetitionApp {
         this.showDailyTab();
         this.setupNotifications();
         this.updatePremiumBadge();
+        this.updatePremiumBanner();
     }
 
     updatePremiumBadge() {
         const badge = document.getElementById('premium-badge');
         if (badge && this.isPremium()) {
             badge.style.display = 'inline';
+        }
+    }
+
+    updatePremiumBanner() {
+        const banner = document.getElementById('premium-banner');
+        // Afficher la bannière uniquement si l'utilisateur n'est PAS premium
+        if (banner && !this.isPremium()) {
+            banner.classList.add('show');
         }
     }
 
@@ -1058,6 +1067,28 @@ class SpacedRepetitionApp {
         setTimeout(() => {
             location.reload();
         }, 1000);
+    }
+
+    showUpgradeOptions() {
+        // Afficher une alerte avec les options
+        const choice = confirm(
+            '✨ Passer à Premium\n\n' +
+            '🔓 Débloquez 252 questions supplémentaires\n' +
+            '✅ Accès aux Stages 2, 3 et 4\n' +
+            '💰 Prix : 9,99€\n\n' +
+            'Cliquez sur OK pour acheter sur Gumroad\n' +
+            'ou Annuler pour entrer un code d\'activation'
+        );
+
+        if (choice) {
+            // Ouvrir Gumroad dans un nouvel onglet
+            window.open('https://albanuxem.gumroad.com/l/srojao', '_blank');
+        } else {
+            // Basculer vers l'onglet Réglages
+            switchTab('settings');
+            // Scroller vers le haut pour voir la section Premium
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     }
 
     loadData() {

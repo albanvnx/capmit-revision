@@ -88,6 +88,56 @@
             padding: 0;
         }
 
+        .premium-banner {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            margin: 15px 15px 0 15px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+            display: none;
+        }
+
+        .premium-banner.show {
+            display: block;
+        }
+
+        .premium-banner h3 {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .premium-banner p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .premium-banner .upgrade-btn {
+            background: white;
+            color: #FF8C00;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 25px;
+            font-size: 1.05em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .premium-banner .upgrade-btn:active {
+            transform: scale(0.98);
+        }
+
         .dashboard {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -586,6 +636,16 @@
                 <div class="label">En cours</div>
                 <div class="value" id="learning-count">0</div>
             </div>
+        </div>
+
+        <!-- Bannière Premium (affichée uniquement en version gratuite) -->
+        <div class="premium-banner" id="premium-banner">
+            <h3>✨ Passez à Premium</h3>
+            <p><strong>🔒 252 questions bloquées</strong><br>
+            Débloquez les Stages 2, 3 et 4 pour accéder aux 200 questions complètes !</p>
+            <button class="upgrade-btn" onclick="app.showUpgradeOptions()">
+                💎 Upgrader maintenant
+            </button>
         </div>
 
         <div class="main-content">
