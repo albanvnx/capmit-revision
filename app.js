@@ -29,7 +29,7 @@ class Card {
                 this.status = 'review';
             } else {
                 this.interval = Math.round(this.interval * this.easeFactor);
-                if (this.interval > 30) {
+                if (this.interval >= 15) {  // Réduit de 30 à 15 jours pour progression plus rapide
                     this.status = 'mastered';
                 } else {
                     this.status = 'review';
@@ -967,12 +967,18 @@ class SpacedRepetitionApp {
         this.quiz = new QuizMode(this);
         this.calculator = new ConstructionCalculator(this);
 
+        // 🎮 Initialiser le système Gaming
+        this.gaming = new GamingSystem();
+
         this.loadData();
         this.updateDashboard();
         this.showDailyTab();
         this.setupNotifications();
         this.updatePremiumBadge();
         this.updatePremiumBanner();
+
+        // 🎮 Vérifier objectif streak
+        this.gaming.updateDailyGoal('maintain_streak', 1);
     }
 
     updatePremiumBadge() {
@@ -1309,6 +1315,9 @@ class SpacedRepetitionApp {
             this.sessionStats.incorrect++;
         }
 
+        // 🎮 Enregistrer la réponse dans le système Gaming
+        this.gaming.recordAnswer(isCorrect);
+
         const answerButtons = document.querySelectorAll('.answer-btn');
         answerButtons.forEach((btn, i) => {
             btn.classList.add('disabled');
@@ -1345,7 +1354,14 @@ class SpacedRepetitionApp {
     }
 
     rateCard(quality) {
+        const wasNew = this.currentCard.status === 'new' || this.currentCard.status === 'learning';
         this.currentCard.review(quality);
+
+        // 🎮 Vérifier si la carte est devenue "mastered"
+        if (this.currentCard.status === 'mastered' && wasNew) {
+            this.gaming.recordMasteredCard();
+        }
+
         this.saveData();
         this.currentIndex++;
         this.updateDashboard();
@@ -1568,6 +1584,14 @@ class SpacedRepetitionApp {
                 </ul>
             </div>
         `;
+    }
+
+    // ========================================
+    // 🎮 ONGLET GAMING
+    // ========================================
+
+    showGaming() {
+        document.getElementById('gaming-tab').innerHTML = this.gaming.renderGamingDashboard();
     }
 
     showCalendar() {
@@ -2186,6 +2210,9 @@ function switchTab(tabName) {
     switch(tabName) {
         case 'daily':
             app.showDailyTab();
+            break;
+        case 'gaming':
+            app.showGaming();
             break;
         case 'quiz':
             app.showQuizTab();
