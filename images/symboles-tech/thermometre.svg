@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- Cercle -->
+  <circle cx="40" cy="40" r="30" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- T ou θ au centre -->
+  <text x="40" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333" text-anchor="middle">T</text>
+</svg>

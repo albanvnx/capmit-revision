@@ -1125,7 +1125,28 @@ class SpacedRepetitionApp {
                     return card;
                 })
                 .filter(c => c !== null);
+
+            // ✨ NOUVEAU : Détecter et ajouter les nouvelles questions des stages activés
+            const existingIds = new Set(this.cards.map(c => c.id));
+            const newQuestions = filteredQuestions.filter(q => !existingIds.has(q.id));
+
+            if (newQuestions.length > 0) {
+                console.log(`🆕 Ajout de ${newQuestions.length} nouvelles questions des stages activés`);
+
+                // Ajouter les nouvelles questions avec dates étalées sur 3 jours max
+                const newCards = newQuestions.map((q, index) => {
+                    const card = new Card(q);
+                    const dayOffset = Math.floor(index / 20); // 20 questions par jour
+                    card.nextReview = new Date();
+                    card.nextReview.setDate(card.nextReview.getDate() + Math.min(dayOffset, 3)); // Max 3 jours
+                    return card;
+                });
+
+                // Mélanger les nouvelles cartes avec les anciennes
+                this.cards = [...this.cards, ...newCards];
+            }
         } else {
+            // Premier lancement : créer toutes les cartes
             this.cards = filteredQuestions.map(q => new Card(q));
             this.cards.forEach((card, index) => {
                 const dayOffset = Math.floor(index / 15);
@@ -1770,17 +1791,24 @@ class SpacedRepetitionApp {
 
         localStorage.setItem('active-stages', JSON.stringify(activeStages));
 
-        // Recharger les cartes filtrées
+        // Compter les cartes avant rechargement
+        const cardsBefore = this.cards.length;
+
+        // Recharger les cartes filtrées et ajouter les nouvelles questions
         this.loadData();
+        this.saveData(); // ✨ Sauvegarder les nouvelles cartes ajoutées
         this.updateDashboard();
 
-        // Afficher confirmation
-        const count = allQuestions.filter(q =>
-            activeStages.some(stage => q.category.startsWith(stage))
-        ).length;
+        // Calculer les nouvelles questions ajoutées
+        const cardsAfter = this.cards.length;
+        const newQuestionsAdded = cardsAfter - cardsBefore;
 
         setTimeout(() => {
-            alert(`✅ ${activeStages.length} stage(s) activé(s) - ${count} questions disponibles`);
+            if (newQuestionsAdded > 0) {
+                alert(`✅ ${activeStages.length} stage(s) activé(s)\n\n🆕 ${newQuestionsAdded} nouvelles questions ajoutées !\n📚 Total : ${cardsAfter} questions disponibles\n\n💡 Les nouvelles questions seront étalées sur 3 jours max`);
+            } else {
+                alert(`✅ ${activeStages.length} stage(s) activé(s) - ${cardsAfter} questions disponibles`);
+            }
         }, 100);
     }
 

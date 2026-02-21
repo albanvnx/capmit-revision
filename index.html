@@ -14,9 +14,13 @@
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
 
-    <!-- Icônes pour différentes plateformes -->
+    <!-- Favicons (ordre important : SVG en premier pour navigateurs modernes) -->
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon-192.png">
     <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+
+    <!-- Apple Touch Icon (pour écran d'accueil iOS) -->
     <link rel="apple-touch-icon" href="icon-192.png">
 
     <style>

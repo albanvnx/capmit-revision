@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- Cercle -->
+  <circle cx="40" cy="40" r="30" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- P au centre -->
+  <text x="40" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333" text-anchor="middle">P</text>
+  <!-- Graduations -->
+  <line x1="25" y1="20" x2="28" y2="23" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="15" x2="40" y2="20" stroke="#333" stroke-width="1"/>
+  <line x1="55" y1="20" x2="52" y2="23" stroke="#333" stroke-width="1"/>
+</svg>

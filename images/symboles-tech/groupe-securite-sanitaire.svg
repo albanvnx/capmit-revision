@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40" width="80" height="40">
+  <!-- Rectangle avec GS -->
+  <rect x="10" y="10" width="60" height="20" rx="2" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="40" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">GS</text>
+  <!-- Flèche vidange -->
+  <line x1="40" y1="30" x2="40" y2="35" stroke="#333" stroke-width="1.5"/>
+</svg>

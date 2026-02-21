@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 60" width="140" height="60">
+  <!-- Forme ovale allongée -->
+  <ellipse cx="70" cy="30" rx="60" ry="20" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Bonde -->
+  <circle cx="110" cy="30" r="3" fill="#333"/>
+</svg>

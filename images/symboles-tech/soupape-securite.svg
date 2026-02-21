@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" width="80" height="100">
+  <!-- Vanne en losange -->
+  <path d="M 40 30 L 50 40 L 40 50 L 30 40 Z" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Ressort -->
+  <path d="M 40 10 L 40 30" stroke="#333" stroke-width="2"/>
+  <path d="M 35 10 L 35 5 L 45 5 L 45 10" fill="none" stroke="#333" stroke-width="1.5"/>
+  <!-- Flèche vers le haut -->
+  <path d="M 40 50 L 40 70" stroke="#333" stroke-width="2"/>
+  <path d="M 40 70 L 35 65 M 40 70 L 45 65" stroke="#333" stroke-width="2" fill="none"/>
+</svg>

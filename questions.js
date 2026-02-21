@@ -1,5 +1,5 @@
-// Base de données des questions CAP M.I.T FC - VERSION COMPLÈTE
-// 150+ questions couvrant tous les stages
+// Base de données des questions CAP M.I.T FC - VERSION COMPLÈTE v3.0
+// 439 questions couvrant tous les stages + 59 symboles techniques + 25 schémas
 
 const allQuestions = [
     // ========== QUESTIONS TEST AVEC IMAGES (3 questions) ==========
@@ -3622,5 +3622,998 @@ const allQuestions = [
         correct: 1,
         explanation: "La TEP (Tonne d'Équivalent Pétrole) est une unité dans un bilan énergétique permettant de comparer des quantités de combustibles solides, liquides, gazeux et d'électricité.",
         keyPoints: ["Unité bilan énergétique", "Compare combustibles", "Référence = pétrole", "Quantités comparables"]
+    },
+
+    // ========================================
+    // ✨ NOUVELLES QUESTIONS - SYMBOLES TECHNIQUES (59 questions)
+    // ========================================
+
+    // ========== SYMBOLES SANITAIRES (11 questions) ==========
+    {
+        id: 'sym001',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        question: "Quel équipement sanitaire est représenté par le symbole montrant un rectangle avec un égouttoir à droite ?",
+        answers: ["Évier 1 bac + 1 égouttoir à droite", "Évier 2 bacs", "Lavabo simple", "Plan de travail"],
+        correct: 0,
+        explanation: "Ce symbole représente un évier avec 1 bac et 1 égouttoir positionné à droite.",
+        keyPoints: ["Symbole sanitaire", "Évier", "Égouttoir", "Plan de cuisine"]
+    },
+    {
+        id: 'sym002',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        question: "Quel équipement sanitaire comporte 2 bacs et un égouttoir à gauche ?",
+        answers: ["Évier 2 bacs + 1 égouttoir à gauche", "Double lavabo", "Évier 1 bac", "Bac à laver"],
+        correct: 0,
+        explanation: "Ce symbole représente un évier avec 2 bacs et 1 égouttoir positionné à gauche.",
+        keyPoints: ["Symbole sanitaire", "Évier double", "Égouttoir gauche", "Installation cuisine"]
+    },
+    {
+        id: 'sym003',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        question: "Le symbole ovale allongé sur un plan représente quel équipement ?",
+        answers: ["Baignoire", "Receveur de douche", "Lavabo", "Bac à douche"],
+        correct: 0,
+        explanation: "Ce symbole ovale allongé représente une baignoire. Il permet de situer le vidage et la robinetterie.",
+        keyPoints: ["Symbole sanitaire", "Baignoire", "Salle de bain", "Vidage"]
+    },
+    {
+        id: 'sym004',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        question: "Le symbole carré avec indication de la bonde représente quel équipement ?",
+        answers: ["Receveur de douche", "Baignoire", "Bac de lavage", "Évier"],
+        correct: 0,
+        explanation: "Ce symbole carré avec indication de la bonde représente un receveur de douche. Attention à la position de la bonde !",
+        keyPoints: ["Symbole sanitaire", "Receveur douche", "Position bonde", "Salle de bain"]
+    },
+    {
+        id: 'sym005',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        question: "Quel équipement est représenté par un symbole en forme de demi-cercle ?",
+        answers: ["Lavabo", "Vasque sur meuble", "Évier", "Lave-mains"],
+        correct: 0,
+        explanation: "Ce symbole en forme de demi-cercle représente un lavabo simple.",
+        keyPoints: ["Symbole sanitaire", "Lavabo", "Salle de bain", "Point d'eau"]
+    },
+    {
+        id: 'sym006',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        question: "Le symbole circulaire dans un rectangle représente quel équipement ?",
+        answers: ["Vasque sur meuble", "Lavabo suspendu", "Lave-mains", "Évier encastré"],
+        correct: 0,
+        explanation: "Ce symbole circulaire dans un rectangle représente une vasque (lavabo rond) posée sur un meuble.",
+        keyPoints: ["Symbole sanitaire", "Vasque", "Meuble", "Encastrement"]
+    },
+    {
+        id: 'sym007',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        question: "Quel équipement sanitaire utilise le symbole en forme de cuvette avec réservoir ?",
+        answers: ["WC (Water Closet)", "Bidet", "Urinoir", "Cuvette de lavage"],
+        correct: 0,
+        explanation: "Ce symbole représente un WC (toilettes). La forme indique la cuvette et le réservoir.",
+        keyPoints: ["Symbole sanitaire", "WC", "Toilettes", "Évacuation EU"]
+    },
+    {
+        id: 'sym008',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        question: "Quel est le symbole d'un bidet ?",
+        answers: ["Bidet", "WC", "Lave-pieds", "Cuvette"],
+        correct: 0,
+        explanation: "Ce symbole représente un bidet, appareil sanitaire de lavage intime.",
+        keyPoints: ["Symbole sanitaire", "Bidet", "Obsolète", "Eau chaude/froide"]
+    },
+    {
+        id: 'sym009',
+        category: "Symboles - Sanitaire",
+        difficulty: "medium",
+        question: "Le symbole triangulaire noir sur un plan représente quoi ?",
+        answers: ["Cheminée", "Conduit de ventilation", "Sortie VMC", "Gaine technique"],
+        correct: 0,
+        explanation: "Ce symbole triangulaire noir représente une cheminée sur un plan architectural.",
+        keyPoints: ["Symbole", "Cheminée", "Conduit fumées", "Chauffage bois"]
+    },
+    {
+        id: 'sym010',
+        category: "Symboles - Sanitaire",
+        difficulty: "medium",
+        question: "Le symbole avec 4 cercles représente quel équipement de cuisine ?",
+        answers: ["Gazinière (plaque de cuisson gaz)", "Four électrique", "Hotte aspirante", "Plaque induction"],
+        correct: 0,
+        explanation: "Ce symbole avec 4 cercles représente une gazinière (plaque de cuisson au gaz) avec 4 feux.",
+        keyPoints: ["Symbole", "Gazinière", "Gaz de ville", "Cuisine"]
+    },
+    {
+        id: 'sym011',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        question: "Le symbole avec une flèche vers le bas représente quoi en général ?",
+        answers: ["Générateur de chaleur", "Chaudière murale", "Ballon ECS", "Radiateur"],
+        correct: 0,
+        explanation: "Ce symbole avec une flèche vers le bas représente un générateur de chaleur en général (chaudière, etc.).",
+        keyPoints: ["Symbole chauffage", "Générateur", "Production chaleur", "Chaudière"]
+    },
+
+    // ========== SYMBOLES CHAUFFAGE (15 questions) ==========
+    {
+        id: 'sym012',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Quel symbole représente une chaudière à combustible liquide ou gazeux ?",
+        answers: ["Rectangle avec symbole flamme", "Cercle simple", "Carré", "Triangle"],
+        correct: 0,
+        explanation: "Ce symbole représente une chaudière fonctionnant au fioul, gaz ou autre combustible liquide/gazeux.",
+        keyPoints: ["Symbole chauffage", "Chaudière", "Combustible", "Fioul/Gaz"]
+    },
+    {
+        id: 'sym013',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Le symbole en rectangle allongé avec flèches représente quel type d'échangeur ?",
+        answers: ["Échangeur de chaleur tubulaire", "Radiateur", "Batterie chaude", "Condenseur"],
+        correct: 0,
+        explanation: "Ce symbole représente un échangeur de chaleur de type tubulaire, utilisé pour transférer la chaleur entre deux fluides.",
+        keyPoints: ["Symbole chauffage", "Échangeur", "Transfert thermique", "Tubulaire"]
+    },
+    {
+        id: 'sym014',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Le symbole en losange représente quel type d'échangeur ?",
+        answers: ["Échangeur de chaleur à plaques", "Radiateur panneau", "Batterie froide", "Condenseur"],
+        correct: 0,
+        explanation: "Ce symbole losange représente un échangeur de chaleur à plaques, très utilisé en chauffage et ECS.",
+        keyPoints: ["Symbole chauffage", "Échangeur plaques", "Transfert thermique", "Compact"]
+    },
+    {
+        id: 'sym015',
+        category: "Symboles - Chauffage",
+        difficulty: "easy",
+        question: "Le symbole rectangulaire avec ailettes représente quoi ?",
+        answers: ["Radiateur", "Convecteur", "Sèche-serviettes", "Plancher chauffant"],
+        correct: 0,
+        explanation: "Ce symbole rectangulaire avec ailettes représente un radiateur (émetteur de chaleur).",
+        keyPoints: ["Symbole chauffage", "Radiateur", "Émetteur", "Chauffage central"]
+    },
+    {
+        id: 'sym016',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Le symbole avec ressort et flèche vers le haut représente quoi ?",
+        answers: ["Soupape de sécurité", "Soupape différentielle", "Vanne de régulation", "Clapet anti-retour"],
+        correct: 0,
+        explanation: "Ce symbole avec ressort et flèche représente une soupape de sécurité, organe obligatoire sur circuit de chauffage.",
+        keyPoints: ["Symbole chauffage", "Soupape sécurité", "Protection", "3 bars chauffage"]
+    },
+    {
+        id: 'sym017',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Le symbole représentant une soupape avec deux pressions représente quoi ?",
+        answers: ["Soupape à pression différentielle (soupape de décharge)", "Soupape de sécurité", "Vanne 3 voies", "Régulateur de pression"],
+        correct: 0,
+        explanation: "Ce symbole représente une soupape à pression différentielle, aussi appelée soupape de décharge, qui équilibre les pressions.",
+        keyPoints: ["Symbole chauffage", "Soupape différentielle", "Décharge", "Équilibrage"]
+    },
+    {
+        id: 'sym018',
+        category: "Symboles - Chauffage",
+        difficulty: "easy",
+        question: "Le symbole avec flèche et triangle représente quoi ?",
+        answers: ["Clapet anti-retour", "Vanne d'arrêt", "Filtre à tamis", "Régulateur de débit"],
+        correct: 0,
+        explanation: "Ce symbole avec flèche et triangle représente un clapet anti-retour. Le fluide circule dans le sens de la flèche uniquement.",
+        keyPoints: ["Symbole", "Clapet anti-retour", "Sens unique", "Protection retour"]
+    },
+    {
+        id: 'sym019',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Le symbole circulaire avec membrane représente quoi ?",
+        answers: ["Vase d'expansion fermé (membrane)", "Vase d'expansion ouvert", "Ballon tampon", "Réservoir sous pression"],
+        correct: 0,
+        explanation: "Ce symbole circulaire avec membrane représente un vase d'expansion fermé à membrane, obligatoire sur circuit fermé de chauffage.",
+        keyPoints: ["Symbole chauffage", "Vase expansion", "Membrane", "Circuit fermé"]
+    },
+    {
+        id: 'sym020',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Le symbole rectangulaire ouvert vers le haut représente quoi ?",
+        answers: ["Vase d'expansion ouvert", "Vase d'expansion fermé", "Ballon ECS", "Réservoir de stockage"],
+        correct: 0,
+        explanation: "Ce symbole rectangulaire ouvert représente un vase d'expansion ouvert, aujourd'hui rare (installations anciennes).",
+        keyPoints: ["Symbole chauffage", "Vase expansion ouvert", "Obsolète", "Circuit ouvert"]
+    },
+    {
+        id: 'sym021',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Le symbole rectangulaire simple représente quel appareil de mesure ?",
+        answers: ["Compteur volumétrique", "Débitmètre", "Manomètre", "Thermomètre"],
+        correct: 0,
+        explanation: "Ce symbole rectangulaire représente un compteur volumétrique d'eau (compteur d'eau froide ou chaude).",
+        keyPoints: ["Symbole", "Compteur eau", "Volume", "m³"]
+    },
+    {
+        id: 'sym022',
+        category: "Symboles - Chauffage",
+        difficulty: "easy",
+        question: "Le symbole circulaire avec 'T' ou 'θ' représente quoi ?",
+        answers: ["Thermomètre", "Manomètre", "Thermostat", "Sonde de température"],
+        correct: 0,
+        explanation: "Ce symbole circulaire avec 'T' ou 'θ' représente un thermomètre (mesure de température).",
+        keyPoints: ["Symbole", "Thermomètre", "Température", "Mesure °C"]
+    },
+    {
+        id: 'sym023',
+        category: "Symboles - Chauffage",
+        difficulty: "easy",
+        question: "Le symbole circulaire avec 'P' ou 'μ' représente quoi ?",
+        answers: ["Manomètre", "Thermomètre", "Pressostat", "Débitmètre"],
+        correct: 0,
+        explanation: "Ce symbole circulaire avec 'P' ou 'μ' représente un manomètre (mesure de pression).",
+        keyPoints: ["Symbole", "Manomètre", "Pression", "Mesure bars"]
+    },
+    {
+        id: 'sym024',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Le symbole rectangulaire avec 'TA' et flèche représente quoi ?",
+        answers: ["Thermostat d'ambiance", "Thermomètre", "Sonde extérieure", "Programmateur"],
+        correct: 0,
+        explanation: "Ce symbole rectangulaire avec 'TA' et flèche représente un thermostat d'ambiance qui régule la température de la pièce.",
+        keyPoints: ["Symbole chauffage", "Thermostat ambiance", "Régulation", "Confort"]
+    },
+    {
+        id: 'sym025',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Le symbole rectangulaire avec 'D' représente quoi ?",
+        answers: ["Débitmètre", "Compteur volumétrique", "Manomètre", "Régulateur de débit"],
+        correct: 0,
+        explanation: "Ce symbole rectangulaire avec 'D' représente un débitmètre qui mesure le débit du fluide (L/h ou m³/h).",
+        keyPoints: ["Symbole", "Débitmètre", "Débit", "Mesure L/h"]
+    },
+    {
+        id: 'sym026',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        question: "Le symbole rectangulaire avec 'P' représente un appareil de contrôle automatique. Lequel ?",
+        answers: ["Pressostat", "Manomètre", "Régulateur de pression", "Soupape de sécurité"],
+        correct: 0,
+        explanation: "Ce symbole rectangulaire avec 'P' représente un pressostat qui contrôle automatiquement la pression.",
+        keyPoints: ["Symbole", "Pressostat", "Contrôle pression", "Automatisme"]
+    },
+
+    // ========== SYMBOLES VANNES (8 questions) ==========
+    {
+        id: 'sym027',
+        category: "Symboles - Vannes",
+        difficulty: "easy",
+        question: "Le symbole en losange avec deux traits représente quelle vanne ?",
+        answers: ["Vanne d'arrêt manuelle", "Vanne motorisée", "Vanne 3 voies", "Robinet à tournant"],
+        correct: 0,
+        explanation: "Ce symbole en losange avec deux traits représente une vanne d'arrêt manuelle (tout ou rien : ouverte ou fermée).",
+        keyPoints: ["Symbole", "Vanne d'arrêt", "Manuelle", "Isolation"]
+    },
+    {
+        id: 'sym028',
+        category: "Symboles - Vannes",
+        difficulty: "medium",
+        question: "Le symbole en T avec losange représente quelle vanne ?",
+        answers: ["Vanne 3 voies", "Vanne 4 voies", "Té de raccordement", "Vanne mélangeuse"],
+        correct: 0,
+        explanation: "Ce symbole en T avec losange représente une vanne 3 voies qui peut mélanger ou dériver 3 circuits.",
+        keyPoints: ["Symbole", "Vanne 3 voies", "Mélange", "Dérivation"]
+    },
+    {
+        id: 'sym029',
+        category: "Symboles - Vannes",
+        difficulty: "medium",
+        question: "Le symbole en croix avec losange représente quelle vanne ?",
+        answers: ["Vanne 4 voies", "Vanne 3 voies", "Croisement", "Vanne de mélange"],
+        correct: 0,
+        explanation: "Ce symbole en croix avec losange représente une vanne 4 voies qui peut inverser les circuits.",
+        keyPoints: ["Symbole", "Vanne 4 voies", "Inversion", "Circuits multiples"]
+    },
+    {
+        id: 'sym030',
+        category: "Symboles - Vannes",
+        difficulty: "medium",
+        question: "Le symbole avec losange et 'M' représente quelle vanne ?",
+        answers: ["Vanne motorisée", "Vanne manuelle", "Vanne thermostatique", "Électrovanne"],
+        correct: 0,
+        explanation: "Ce symbole avec losange et 'M' représente une vanne motorisée commandée électriquement.",
+        keyPoints: ["Symbole", "Vanne motorisée", "Automatisme", "Régulation"]
+    },
+    {
+        id: 'sym031',
+        category: "Symboles - Vannes",
+        difficulty: "medium",
+        question: "Le symbole en losange avec trait incliné représente quelle vanne ?",
+        answers: ["Vanne de réglage (pointeau)", "Vanne d'arrêt", "Vanne thermostatique", "Robinet de puisage"],
+        correct: 0,
+        explanation: "Ce symbole en losange avec trait incliné représente une vanne de réglage (pointeau) pour ajuster le débit.",
+        keyPoints: ["Symbole", "Vanne de réglage", "Pointeau", "Équilibrage"]
+    },
+    {
+        id: 'sym032',
+        category: "Symboles - Vannes",
+        difficulty: "medium",
+        question: "Le symbole rectangulaire avec 'DISC' représente quoi ?",
+        answers: ["Disconnecteur", "Clapet anti-retour", "Vanne d'isolement", "Régulateur de pression"],
+        correct: 0,
+        explanation: "Ce symbole rectangulaire avec 'DISC' représente un disconnecteur, protection contre le retour d'eau polluée.",
+        keyPoints: ["Symbole", "Disconnecteur", "Protection", "Anti-pollution"]
+    },
+    {
+        id: 'sym033',
+        category: "Symboles - Vannes",
+        difficulty: "medium",
+        question: "Le symbole en U inversé représente quoi ?",
+        answers: ["Vidange siphonnée", "Siphon de sol", "Regard de visite", "Té de branchement"],
+        correct: 0,
+        explanation: "Ce symbole en U inversé représente une vidange siphonnée qui évacue l'eau tout en gardant une garde d'eau.",
+        keyPoints: ["Symbole", "Vidange", "Siphon", "Garde d'eau"]
+    },
+    {
+        id: 'sym034',
+        category: "Symboles - Vannes",
+        difficulty: "medium",
+        question: "Le symbole en L avec trait vertical représente quoi ?",
+        answers: ["Robinet de puisage", "Vanne d'arrêt", "Robinet thermostatique", "Mitigeur"],
+        correct: 0,
+        explanation: "Ce symbole en L avec trait vertical représente un robinet de puisage (point de tirage d'eau).",
+        keyPoints: ["Symbole", "Robinet", "Puisage", "Point d'eau"]
+    },
+
+    // ========== SYMBOLES ÉQUIPEMENTS (12 questions) ==========
+    {
+        id: 'sym035',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        question: "Le symbole circulaire avec flèche et triangle noir représente quoi ?",
+        answers: ["Pompe (circulateur) avec sens du fluide", "Ventilateur", "Compresseur", "Turbine"],
+        correct: 0,
+        explanation: "Ce symbole circulaire avec flèche et triangle noir représente une pompe/circulateur. La flèche indique le sens de circulation.",
+        keyPoints: ["Symbole", "Pompe", "Circulateur", "Sens circulation"]
+    },
+    {
+        id: 'sym036',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        question: "Le symbole avec tamis incliné représente quoi ?",
+        answers: ["Filtre à tamis", "Crépine", "Pot à boue", "Adoucisseur"],
+        correct: 0,
+        explanation: "Ce symbole avec tamis incliné représente un filtre à tamis qui retient les impuretés solides.",
+        keyPoints: ["Symbole", "Filtre", "Tamis", "Protection circuit"]
+    },
+    {
+        id: 'sym037',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        question: "Le symbole conique (rétrécissement) représente quoi ?",
+        answers: ["Venturi (effet venturi)", "Réducteur de pression", "Diaphragme", "Convergent"],
+        correct: 0,
+        explanation: "Ce symbole conique représente un venturi, dispositif créant une dépression par rétrécissement de section.",
+        keyPoints: ["Symbole", "Venturi", "Dépression", "Effet Bernoulli"]
+    },
+    {
+        id: 'sym038',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        question: "Le symbole avec arc de cercle (deux tubes qui se croisent sans se toucher) représente quoi ?",
+        answers: ["Croisement sans mélange (chapeau de gendarme)", "Vanne 4 voies", "Té double", "Jonction"],
+        correct: 0,
+        explanation: "Ce symbole avec arc de cercle représente un croisement de canalisations SANS mélange des fluides (chapeau de gendarme).",
+        keyPoints: ["Symbole", "Croisement", "Chapeau gendarme", "Sans mélange"]
+    },
+    {
+        id: 'sym039',
+        category: "Symboles - Équipements",
+        difficulty: "easy",
+        question: "Le symbole en T simple (raccordement 90°) représente quel raccord ?",
+        answers: ["Té 130 (raccordement 90°)", "Té 131", "Coude 90°", "Té réduit"],
+        correct: 0,
+        explanation: "Ce symbole en T simple représente un Té 130, raccord permettant de dériver un circuit à 90°.",
+        keyPoints: ["Symbole", "Té 130", "Raccord 90°", "Dérivation"]
+    },
+    {
+        id: 'sym040',
+        category: "Symboles - Équipements",
+        difficulty: "easy",
+        question: "Le symbole avec trait vertical descendant oblique représente quel raccord ?",
+        answers: ["Té 131 (pied de biche)", "Té 130", "Té 132", "Culotte 45°"],
+        correct: 0,
+        explanation: "Ce symbole avec trait vertical représente un Té 131 ou 'pied de biche', raccord oblique descendant.",
+        keyPoints: ["Symbole", "Té 131", "Pied de biche", "Raccord oblique"]
+    },
+    {
+        id: 'sym041',
+        category: "Symboles - Équipements",
+        difficulty: "easy",
+        question: "Le symbole en Y inversé (deux départs obliques) représente quel raccord ?",
+        answers: ["Té 132 (paire de fesses)", "Culotte 45°", "Té 131", "Y double"],
+        correct: 0,
+        explanation: "Ce symbole en Y inversé représente un Té 132 ou 'paire de fesses', raccord à deux départs obliques.",
+        keyPoints: ["Symbole", "Té 132", "Paire de fesses", "Double oblique"]
+    },
+    {
+        id: 'sym042',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        question: "Le symbole avec filetage des deux côtés (D-G) représente quoi ?",
+        answers: ["Manchon D-G (droite-gauche)", "Manchon simple", "Manchon réduit", "Raccord union"],
+        correct: 0,
+        explanation: "Ce symbole avec filetage des deux côtés représente un manchon D-G permettant de raccorder deux tubes filetés.",
+        keyPoints: ["Symbole", "Manchon D-G", "Filetage", "Assemblage"]
+    },
+    {
+        id: 'sym043',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        question: "Le symbole avec un seul type de filetage (double droite) représente quoi ?",
+        answers: ["Manchon D-D (double droite)", "Manchon D-G", "Manchon lisse", "Raccord femelle-femelle"],
+        correct: 0,
+        explanation: "Ce symbole avec un seul type de filetage représente un manchon D-D (double droite), tous deux filetés à droite.",
+        keyPoints: ["Symbole", "Manchon D-D", "Double droite", "Filetage identique"]
+    },
+    {
+        id: 'sym044',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        question: "Le symbole rectangulaire avec 'T' (dans l'eau) représente quoi ?",
+        answers: ["Aquastat (thermostat plongeur)", "Thermostat d'ambiance", "Sonde de température", "Thermomètre"],
+        correct: 0,
+        explanation: "Ce symbole rectangulaire avec 'T' représente un aquastat, thermostat plongeur qui contrôle la température de l'eau.",
+        keyPoints: ["Symbole", "Aquastat", "Thermostat plongeur", "Régulation eau"]
+    },
+    {
+        id: 'sym045',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        question: "Le symbole circulaire avec flèche vers le haut représente quoi ?",
+        answers: ["Purgeur automatique d'air", "Soupape de sécurité", "Clapet de ventilation", "Évent manuel"],
+        correct: 0,
+        explanation: "Ce symbole circulaire avec flèche vers le haut représente un purgeur automatique qui évacue l'air du circuit.",
+        keyPoints: ["Symbole", "Purgeur air", "Automatique", "Dégazage"]
+    },
+    {
+        id: 'sym046',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        question: "Le symbole rectangulaire arrondi représente quoi ?",
+        answers: ["Réservoir de liquide", "Ballon tampon", "Cuve de stockage", "Vase d'expansion"],
+        correct: 0,
+        explanation: "Ce symbole rectangulaire arrondi représente un réservoir de stockage de liquide.",
+        keyPoints: ["Symbole", "Réservoir", "Stockage", "Liquide"]
+    },
+
+    // ========== SYMBOLES PROTECTION (7 questions) ==========
+    {
+        id: 'sym047',
+        category: "Symboles - Protection",
+        difficulty: "medium",
+        question: "Le symbole avec 'GS' représente quoi ?",
+        answers: ["Groupe de sécurité sanitaire", "Soupape de sécurité chauffage", "Réducteur de pression", "Disconnecteur"],
+        correct: 0,
+        explanation: "Ce symbole avec 'GS' représente un groupe de sécurité sanitaire, obligatoire sur ballon ECS (limite 7 bars).",
+        keyPoints: ["Symbole", "Groupe sécurité", "GS", "Ballon ECS"]
+    },
+    {
+        id: 'sym048',
+        category: "Symboles - Protection",
+        difficulty: "medium",
+        question: "Le symbole d'amortisseur de coups de bélier est ?",
+        answers: ["Anti-bélier", "Vase d'expansion", "Clapet anti-retour", "Limiteur de pression"],
+        correct: 0,
+        explanation: "Ce symbole représente un anti-bélier qui absorbe les coups de bélier (surpressions brutales).",
+        keyPoints: ["Symbole", "Anti-bélier", "Coup de bélier", "Protection"]
+    },
+    {
+        id: 'sym049',
+        category: "Symboles - Protection",
+        difficulty: "medium",
+        question: "Le symbole conique avec flèche vers le bas représente quoi ?",
+        answers: ["Détendeur (réducteur de pression)", "Surpresseur", "Régulateur de débit", "Vanne de réglage"],
+        correct: 0,
+        explanation: "Ce symbole conique avec flèche représente un détendeur/réducteur de pression qui abaisse la pression du réseau.",
+        keyPoints: ["Symbole", "Détendeur", "Réducteur pression", "3 bars"]
+    },
+    {
+        id: 'sym050',
+        category: "Symboles - Protection",
+        difficulty: "medium",
+        question: "Le symbole conique inversé avec flèche vers le haut représente quoi ?",
+        answers: ["Surpresseur", "Détendeur", "Pompe de relevage", "Compresseur"],
+        correct: 0,
+        explanation: "Ce symbole conique inversé avec flèche représente un surpresseur qui augmente la pression du réseau.",
+        keyPoints: ["Symbole", "Surpresseur", "Augmentation pression", "Pompage"]
+    },
+    {
+        id: 'sym051',
+        category: "Symboles - Protection",
+        difficulty: "hard",
+        question: "Le symbole en X dans un cadre représente quoi ?",
+        answers: ["Batterie chaude (ou froide)", "Échangeur à plaques", "Radiateur", "Convecteur"],
+        correct: 0,
+        explanation: "Ce symbole en X dans un cadre représente une batterie chaude ou froide utilisée en climatisation/CTA.",
+        keyPoints: ["Symbole", "Batterie chaude/froide", "Climatisation", "CTA"]
+    },
+    {
+        id: 'sym052',
+        category: "Symboles - Protection",
+        difficulty: "hard",
+        question: "Le symbole circulaire avec pales représente quoi ?",
+        answers: ["Ventilateur", "Extracteur d'air", "Pompe", "Circulateur"],
+        correct: 0,
+        explanation: "Ce symbole circulaire avec pales représente un ventilateur pour extraction ou insufflation d'air.",
+        keyPoints: ["Symbole VMC", "Ventilateur", "Extraction air", "Ventilation"]
+    },
+    {
+        id: 'sym053',
+        category: "Symboles - Protection",
+        difficulty: "hard",
+        question: "Le symbole avec ventilateur et batterie représente quoi ?",
+        answers: ["Ventilo-convecteur", "Radiateur soufflant", "Convecteur électrique", "Aérotherme"],
+        correct: 0,
+        explanation: "Ce symbole avec ventilateur et batterie représente un ventilo-convecteur (chauffage + ventilation).",
+        keyPoints: ["Symbole", "Ventilo-convecteur", "Chauffage soufflé", "Climatisation"]
+    },
+
+    // ========== SYMBOLES RÉFRIGÉRATION (6 questions) ==========
+    {
+        id: 'sym054',
+        category: "Symboles - Réfrigération",
+        difficulty: "hard",
+        question: "Le symbole d'aérotherme (air pulsé) est utilisé pour ?",
+        answers: ["Chauffage par air pulsé (industrie)", "Ventilo-convecteur", "Batterie chaude", "Radiateur soufflant"],
+        correct: 0,
+        explanation: "Ce symbole représente un aérotherme, appareil de chauffage par air pulsé (industrie, ateliers).",
+        keyPoints: ["Symbole", "Aérotherme", "Air pulsé", "Industrie"]
+    },
+    {
+        id: 'sym055',
+        category: "Symboles - Réfrigération",
+        difficulty: "hard",
+        question: "Le symbole en zigzag représente quel type de filtre ?",
+        answers: ["Filtre aéraulique (filtre à air)", "Filtre à tamis", "Filtre hydraulique", "Grille de ventilation"],
+        correct: 0,
+        explanation: "Ce symbole en zigzag représente un filtre aéraulique qui filtre l'air en ventilation/climatisation.",
+        keyPoints: ["Symbole VMC", "Filtre air", "Aéraulique", "Ventilation"]
+    },
+    {
+        id: 'sym056',
+        category: "Symboles - Réfrigération",
+        difficulty: "hard",
+        question: "Le symbole circulaire avec flèche (groupe frigorifique) représente quoi ?",
+        answers: ["Compresseur frigorifique", "Pompe", "Circulateur", "Turbine"],
+        correct: 0,
+        explanation: "Ce symbole circulaire avec flèche représente un compresseur frigorifique (PAC, climatisation).",
+        keyPoints: ["Symbole", "Compresseur", "Froid", "PAC"]
+    },
+    {
+        id: 'sym057',
+        category: "Symboles - Réfrigération",
+        difficulty: "hard",
+        question: "Le symbole en X barré (transformation gaz→liquide) représente quoi ?",
+        answers: ["Condenseur", "Évaporateur", "Échangeur", "Radiateur"],
+        correct: 0,
+        explanation: "Ce symbole en X barré représente un condenseur qui transforme le gaz en liquide (cycle frigorifique).",
+        keyPoints: ["Symbole", "Condenseur", "Cycle froid", "Liquéfaction"]
+    },
+    {
+        id: 'sym058',
+        category: "Symboles - Réfrigération",
+        difficulty: "hard",
+        question: "Le symbole en X (transformation liquide→gaz) représente quoi ?",
+        answers: ["Évaporateur", "Condenseur", "Batterie froide", "Échangeur"],
+        correct: 0,
+        explanation: "Ce symbole en X représente un évaporateur qui transforme le liquide en gaz (cycle frigorifique).",
+        keyPoints: ["Symbole", "Évaporateur", "Cycle froid", "Vaporisation"]
+    },
+    {
+        id: 'sym059',
+        category: "Symboles - Réfrigération",
+        difficulty: "medium",
+        question: "Le symbole circulaire double (contrôle visuel) représente quoi ?",
+        answers: ["Voyant (indicateur visuel de fluide)", "Hublot", "Regard", "Témoin lumineux"],
+        correct: 0,
+        explanation: "Ce symbole circulaire double représente un voyant permettant de voir le fluide circuler.",
+        keyPoints: ["Symbole", "Voyant", "Contrôle visuel", "Fluide"]
+    },
+
+    // ========================================
+    // ✨ NOUVELLES QUESTIONS - SCHÉMAS (25 questions)
+    // ========================================
+
+    // ========== SCHÉMA INSTALLATION COMPLÈTE DE CHAUFFAGE (10 questions) ==========
+    {
+        id: 'sch001',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "medium",
+        question: "Sur un schéma d'installation de chauffage, le composant principal qui produit la chaleur est ?",
+        answers: [
+            "Chaudière - Production de chaleur",
+            "Circulateur - Circulation du fluide",
+            "Radiateur - Émission de chaleur",
+            "Vase d'expansion - Compensation dilatation"
+        ],
+        correct: 0,
+        explanation: "La chaudière est le générateur de chaleur qui produit l'eau chaude pour le circuit de chauffage.",
+        keyPoints: ["Schéma chauffage", "Chaudière", "Générateur", "Production chaleur"]
+    },
+    {
+        id: 'sch002',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "medium",
+        question: "Dans une installation de chauffage, l'émetteur de chaleur le plus courant est ?",
+        answers: [
+            "Radiateur à eau",
+            "Convecteur électrique",
+            "Plancher chauffant",
+            "Ventilo-convecteur"
+        ],
+        correct: 0,
+        explanation: "Le radiateur à eau (symbole rectangulaire avec ailettes) est l'émetteur principal en chauffage central.",
+        keyPoints: ["Schéma chauffage", "Radiateur", "Émetteur", "Chaleur par convection"]
+    },
+    {
+        id: 'sch003',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "hard",
+        question: "Quel organe de sécurité obligatoire protège l'installation contre les surpressions ?",
+        answers: [
+            "Soupape de sécurité",
+            "Vase d'expansion",
+            "Disconnecteur",
+            "Purgeur automatique"
+        ],
+        correct: 0,
+        explanation: "La soupape de sécurité est obligatoire et protège l'installation contre les surpressions (tarage 3 bars pour chauffage).",
+        keyPoints: ["Schéma chauffage", "Soupape sécurité", "3 bars", "Protection"]
+    },
+    {
+        id: 'sch004',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "hard",
+        question: "Le manomètre sur une installation de chauffage permet de contrôler ?",
+        answers: [
+            "La pression du circuit de chauffage",
+            "La température de l'eau",
+            "Le débit du circulateur",
+            "Le niveau d'eau"
+        ],
+        correct: 0,
+        explanation: "Le manomètre mesure la pression du circuit, normalement entre 1 et 2 bars à froid.",
+        keyPoints: ["Schéma chauffage", "Manomètre", "Pression", "1-2 bars"]
+    },
+    {
+        id: 'sch005',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "medium",
+        question: "Le robinet thermostatique sur un radiateur permet de ?",
+        answers: [
+            "Réguler la température de la pièce individuellement",
+            "Réguler la température globale de l'installation",
+            "Contrôler le débit global du circuit",
+            "Mesurer la pression du radiateur"
+        ],
+        correct: 0,
+        explanation: "Le robinet thermostatique régule automatiquement la température de chaque pièce en modulant le débit au radiateur.",
+        keyPoints: ["Schéma chauffage", "Robinet thermostatique", "Régulation pièce", "Confort"]
+    },
+    {
+        id: 'sch006',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "hard",
+        question: "Le vase d'expansion a pour rôle principal de ?",
+        answers: [
+            "Compenser la dilatation de l'eau lors de la chauffe",
+            "Stocker l'eau de chauffage",
+            "Filtrer l'eau du circuit",
+            "Évacuer l'air du circuit"
+        ],
+        correct: 0,
+        explanation: "Le vase d'expansion compense l'augmentation de volume de l'eau due à la dilatation thermique (environ 4% de 20°C à 80°C).",
+        keyPoints: ["Schéma chauffage", "Vase expansion", "Dilatation", "Volume variable"]
+    },
+    {
+        id: 'sch007',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "medium",
+        question: "Dans quel ordre logique circule l'eau dans un circuit de chauffage ?",
+        answers: [
+            "Chaudière → Circulateur → Radiateurs → Retour chaudière",
+            "Circulateur → Chaudière → Radiateurs → Retour",
+            "Radiateurs → Chaudière → Circulateur → Radiateurs",
+            "Vase expansion → Chaudière → Radiateurs"
+        ],
+        correct: 0,
+        explanation: "Le circuit logique : la chaudière chauffe l'eau, le circulateur la pousse vers les radiateurs, puis elle retourne à la chaudière.",
+        keyPoints: ["Schéma chauffage", "Circuit fermé", "Sens circulation", "Aller-retour"]
+    },
+    {
+        id: 'sch008',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "hard",
+        question: "Pourquoi place-t-on généralement le circulateur sur le retour (après les radiateurs) ?",
+        answers: [
+            "Pour pomper de l'eau plus froide et protéger le moteur",
+            "Pour augmenter la pression",
+            "Pour économiser de l'énergie",
+            "C'est une obligation réglementaire"
+        ],
+        correct: 0,
+        explanation: "Le circulateur sur retour aspire de l'eau plus froide (60-70°C vs 80-90°C aller), ce qui prolonge la durée de vie du moteur.",
+        keyPoints: ["Schéma chauffage", "Circulateur retour", "Eau froide", "Longévité"]
+    },
+    {
+        id: 'sch009',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "hard",
+        question: "Le disconnecteur sur l'alimentation en eau a pour rôle de ?",
+        answers: [
+            "Empêcher le retour d'eau du circuit de chauffage vers le réseau",
+            "Réduire la pression du réseau",
+            "Filtrer l'eau d'appoint",
+            "Mesurer la consommation d'eau"
+        ],
+        correct: 0,
+        explanation: "Le disconnecteur protège le réseau d'eau potable contre tout retour d'eau polluée du circuit de chauffage.",
+        keyPoints: ["Schéma chauffage", "Disconnecteur", "Protection réseau", "Anti-pollution"]
+    },
+    {
+        id: 'sch010',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "medium",
+        question: "Le purgeur automatique placé en point haut sert à ?",
+        answers: [
+            "Évacuer automatiquement l'air du circuit",
+            "Évacuer l'eau en cas de surpression",
+            "Réguler la pression",
+            "Contrôler la température"
+        ],
+        correct: 0,
+        explanation: "Le purgeur automatique évacue l'air qui s'accumule naturellement en point haut, évitant les bruits et mauvaise circulation.",
+        keyPoints: ["Schéma chauffage", "Purgeur air", "Point haut", "Dégazage"]
+    },
+
+    // ========== SCHÉMA ADOUCISSEUR (5 questions) ==========
+    {
+        id: 'sch011',
+        category: "Schémas - Adoucisseur",
+        difficulty: "medium",
+        question: "Dans quel ordre doit-on raccorder un adoucisseur d'eau ?",
+        answers: [
+            "Après le compteur général et avant la distribution",
+            "Après le ballon ECS",
+            "Uniquement sur l'eau chaude",
+            "En parallèle du circuit principal"
+        ],
+        correct: 0,
+        explanation: "L'adoucisseur se place après le compteur général et AVANT toute distribution, pour traiter toute l'eau de la maison.",
+        keyPoints: ["Adoucisseur", "Après compteur", "Avant distribution", "Eau générale"]
+    },
+    {
+        id: 'sch012',
+        category: "Schémas - Adoucisseur",
+        difficulty: "hard",
+        question: "Pourquoi faut-il prévoir un by-pass (dérivation) sur un adoucisseur ?",
+        answers: [
+            "Pour pouvoir isoler l'adoucisseur en cas de maintenance",
+            "Pour économiser le sel",
+            "Pour augmenter la pression",
+            "C'est obligatoire par la loi"
+        ],
+        correct: 0,
+        explanation: "Le by-pass permet d'isoler l'adoucisseur pour maintenance ou remplacement de résines sans couper l'eau de la maison.",
+        keyPoints: ["Adoucisseur", "By-pass", "Maintenance", "Isolation"]
+    },
+    {
+        id: 'sch013',
+        category: "Schémas - Adoucisseur",
+        difficulty: "medium",
+        question: "Quel est le rôle principal d'un adoucisseur d'eau ?",
+        answers: [
+            "Éliminer le calcaire (calcium et magnésium)",
+            "Filtrer les impuretés solides",
+            "Augmenter la pression de l'eau",
+            "Chauffer l'eau"
+        ],
+        correct: 0,
+        explanation: "L'adoucisseur élimine le calcaire (ions calcium Ca²⁺ et magnésium Mg²⁺) par échange d'ions avec du sodium.",
+        keyPoints: ["Adoucisseur", "Calcaire", "Échange d'ions", "Résines"]
+    },
+    {
+        id: 'sch014',
+        category: "Schémas - Adoucisseur",
+        difficulty: "hard",
+        question: "Pourquoi laisser un robinet d'eau froide NON adoucie (en amont de l'adoucisseur) ?",
+        answers: [
+            "Pour conserver une eau avec minéraux pour la consommation",
+            "Pour économiser le sel",
+            "Pour augmenter la pression",
+            "Ce n'est pas nécessaire"
+        ],
+        correct: 0,
+        explanation: "On laisse souvent un robinet d'eau dure (non adoucie) pour la boisson, car l'eau adoucie contient plus de sodium et moins de minéraux.",
+        keyPoints: ["Adoucisseur", "Eau dure", "Minéraux", "Santé"]
+    },
+    {
+        id: 'sch015',
+        category: "Schémas - Adoucisseur",
+        difficulty: "medium",
+        question: "À quelle fréquence un adoucisseur effectue-t-il une régénération ?",
+        answers: [
+            "Selon le volume d'eau traitée (automatique ou programmée)",
+            "Une fois par jour obligatoirement",
+            "Une fois par mois",
+            "Uniquement manuellement"
+        ],
+        correct: 0,
+        explanation: "La régénération se déclenche selon le volume d'eau traité (compteur volumétrique) ou par programmation horaire, pour régénérer les résines avec du sel.",
+        keyPoints: ["Adoucisseur", "Régénération", "Résines", "Sel"]
+    },
+
+    // ========== SCHÉMA GROUPE DE SÉCURITÉ (5 questions) ==========
+    {
+        id: 'sch016',
+        category: "Schémas - Groupe de Sécurité",
+        difficulty: "medium",
+        question: "Où doit obligatoirement être installé le groupe de sécurité sur un ballon ECS ?",
+        answers: [
+            "Sur l'arrivée d'eau froide du ballon (partie haute)",
+            "Sur la sortie d'eau chaude",
+            "Sur le retour de chauffage",
+            "Au point le plus bas"
+        ],
+        correct: 0,
+        explanation: "Le groupe de sécurité se monte TOUJOURS sur l'arrivée d'eau froide du ballon, en partie haute, sans vanne d'arrêt entre lui et le ballon.",
+        keyPoints: ["Groupe sécurité", "Arrivée EF", "Partie haute", "Obligatoire"]
+    },
+    {
+        id: 'sch017',
+        category: "Schémas - Groupe de Sécurité",
+        difficulty: "hard",
+        question: "Quel est le tarage (pression d'ouverture) standard d'un groupe de sécurité sanitaire ?",
+        answers: [
+            "7 bars",
+            "3 bars",
+            "10 bars",
+            "1,5 bar"
+        ],
+        correct: 0,
+        explanation: "Le groupe de sécurité sanitaire est taré à 7 bars, contrairement à la soupape de chauffage tarée à 3 bars.",
+        keyPoints: ["Groupe sécurité", "7 bars", "Tarage", "ECS"]
+    },
+    {
+        id: 'sch018',
+        category: "Schémas - Groupe de Sécurité",
+        difficulty: "medium",
+        question: "Pourquoi le groupe de sécurité goutte-t-il régulièrement (quelques gouttes) ?",
+        answers: [
+            "C'est normal : évacuation de la dilatation lors de la chauffe",
+            "Le groupe est défectueux",
+            "La pression du réseau est trop forte",
+            "Le ballon fuit"
+        ],
+        correct: 0,
+        explanation: "L'eau se dilate de 2-3% en chauffant. Le groupe de sécurité évacue ce surplus par son orifice de vidange (goutte-à-goutte normal).",
+        keyPoints: ["Groupe sécurité", "Dilatation", "Goutte-à-goutte", "Normal"]
+    },
+    {
+        id: 'sch019',
+        category: "Schémas - Groupe de Sécurité",
+        difficulty: "hard",
+        question: "Quelles sont les 3 fonctions principales d'un groupe de sécurité sanitaire ?",
+        answers: [
+            "Protection surpression, vidange ballon, anti-retour",
+            "Filtration, régulation, mesure",
+            "Chauffage, stockage, distribution",
+            "Détartrage, désinfection, filtration"
+        ],
+        correct: 0,
+        explanation: "Le groupe de sécurité assure 3 fonctions : 1) Soupape de sécurité (7 bars), 2) Vidange du ballon, 3) Clapet anti-retour.",
+        keyPoints: ["Groupe sécurité", "3 fonctions", "Soupape", "Vidange", "Anti-retour"]
+    },
+    {
+        id: 'sch020',
+        category: "Schémas - Groupe de Sécurité",
+        difficulty: "hard",
+        question: "Pourquoi ne doit-on JAMAIS mettre de vanne d'arrêt entre le groupe de sécurité et le ballon ?",
+        answers: [
+            "Risque d'explosion si vanne fermée et surpression",
+            "Pour des raisons esthétiques",
+            "Pour faciliter la maintenance",
+            "Ce n'est pas interdit"
+        ],
+        correct: 0,
+        explanation: "Une vanne fermée entre GS et ballon empêcherait l'évacuation de pression → risque d'explosion du ballon ! C'est STRICTEMENT INTERDIT.",
+        keyPoints: ["Groupe sécurité", "Pas de vanne", "Sécurité", "Explosion"]
+    },
+
+    // ========== SCHÉMA CIRCUIT PRIMAIRE / SECONDAIRE (5 questions) ==========
+    {
+        id: 'sch021',
+        category: "Schémas - Primaire Secondaire",
+        difficulty: "hard",
+        question: "Qu'est-ce qu'un circuit primaire dans une installation de chauffage ?",
+        answers: [
+            "Le circuit entre la chaudière et le ballon tampon/échangeur",
+            "Le circuit de distribution vers les radiateurs",
+            "Le circuit d'eau froide",
+            "Le circuit de sécurité"
+        ],
+        correct: 0,
+        explanation: "Le circuit primaire est le circuit fermé entre la chaudière et le ballon tampon ou l'échangeur. Il fonctionne indépendamment du secondaire.",
+        keyPoints: ["Circuit primaire", "Chaudière", "Ballon tampon", "Production"]
+    },
+    {
+        id: 'sch022',
+        category: "Schémas - Primaire Secondaire",
+        difficulty: "hard",
+        question: "Qu'est-ce qu'un circuit secondaire dans une installation de chauffage ?",
+        answers: [
+            "Le circuit de distribution du ballon tampon vers les émetteurs",
+            "Le circuit de production (chaudière)",
+            "Le circuit d'eau sanitaire",
+            "Le circuit de sécurité"
+        ],
+        correct: 0,
+        explanation: "Le circuit secondaire distribue l'eau chaude du ballon tampon vers les différents émetteurs (radiateurs, plancher chauffant, etc.).",
+        keyPoints: ["Circuit secondaire", "Distribution", "Émetteurs", "Ballon tampon"]
+    },
+    {
+        id: 'sch023',
+        category: "Schémas - Primaire Secondaire",
+        difficulty: "hard",
+        question: "Quel est l'avantage principal de séparer primaire et secondaire avec un ballon tampon ?",
+        answers: [
+            "Découpler les débits et protéger la chaudière contre les retours froids",
+            "Augmenter la pression",
+            "Réduire la consommation",
+            "Faciliter l'installation"
+        ],
+        correct: 0,
+        explanation: "Le ballon tampon découple les circuits : la chaudière peut chauffer à son rythme optimal sans être perturbée par les variations de demande du secondaire.",
+        keyPoints: ["Primaire/Secondaire", "Découplage", "Ballon tampon", "Protection chaudière"]
+    },
+    {
+        id: 'sch024',
+        category: "Schémas - Primaire Secondaire",
+        difficulty: "hard",
+        question: "Pourquoi utilise-t-on souvent 2 circulateurs (un par circuit) en primaire-secondaire ?",
+        answers: [
+            "Pour gérer indépendamment les débits de chaque circuit",
+            "Pour doubler la puissance",
+            "Pour faire des économies d'énergie",
+            "C'est une obligation réglementaire"
+        ],
+        correct: 0,
+        explanation: "Chaque circuit (primaire et secondaire) a son propre circulateur pour gérer son débit de façon indépendante et optimale.",
+        keyPoints: ["Primaire/Secondaire", "2 circulateurs", "Débits indépendants", "Gestion"]
+    },
+    {
+        id: 'sch025',
+        category: "Schémas - Primaire Secondaire",
+        difficulty: "hard",
+        question: "Dans quel type d'installation retrouve-t-on souvent un circuit primaire-secondaire ?",
+        answers: [
+            "Chaudière bois/granulés avec plusieurs zones de chauffage",
+            "Petit appartement avec 3 radiateurs",
+            "Chauffe-eau électrique",
+            "VMC simple flux"
+        ],
+        correct: 0,
+        explanation: "Les circuits primaire-secondaire sont fréquents avec chaudières bois/granulés, PAC, ou installations complexes avec plusieurs zones (plancher + radiateurs).",
+        keyPoints: ["Primaire/Secondaire", "Chaudière bois", "Multi-zones", "Complexe"]
     }
 ];
