@@ -1,5 +1,5 @@
-// Base de données des questions CAP M.I.T FC - VERSION COMPLÈTE v3.0
-// 439 questions couvrant tous les stages + 59 symboles techniques + 25 schémas
+// Base de données des questions CAP M.I.T FC - VERSION COMPLÈTE v3.1
+// 497 questions : distracteurs techniques améliorés + 15 symboles visuels + 8 schémas ID + 25 terminologie bidirectionnelle
 
 const allQuestions = [
     // ========== QUESTIONS TEST AVEC IMAGES (3 questions) ==========
@@ -101,8 +101,8 @@ const allQuestions = [
         id: 'q6',
         category: "Fondamentaux & Sécurité - Sécurité",
         question: "Que contient le PPSPS (Plan Particulier de Sécurité et de Protection de la Santé) ?",
-        answers: ["Les salaires", "L'analyse des risques et mesures de prévention", "Les horaires", "Le planning"],
-        correct: 1,
+        answers: ["L'analyse des risques et mesures de prévention du chantier", "Le calendrier d'exécution des travaux par corps de métier", "La liste des sous-traitants et contrats d'interface", "Les procédures qualité de réception de chantier"],
+        correct: 0,
         explanation: "Le PPSPS identifie les risques du chantier et définit les mesures de prévention.",
         keyPoints: ["Obligatoire si > 1 entreprise", "Analyse risques", "Mesures prévention", "Coordonnateur SPS", "Organisation secours"]
     },
@@ -137,8 +137,8 @@ const allQuestions = [
         id: 'q10',
         category: "Fondamentaux & Sécurité - Sécurité",
         question: "Comment doit-on gérer les déchets de chantier ?",
-        answers: ["Tout jeter ensemble", "Tri sélectif selon catégories", "Brûler sur place", "Enfouir"],
-        correct: 1,
+        answers: ["Tri sélectif selon les catégories réglementaires (inertes, non dangereux, dangereux)", "Regrouper dans une benne unique pour traitement en centre de tri collectif", "Séparer uniquement les déchets dangereux, le reste en mélange autorisé", "Évacuer l'ensemble en déchetterie municipale en fin de chantier"],
+        correct: 0,
         explanation: "Tri obligatoire : métaux, bois, gravats, déchets dangereux, plastiques.",
         keyPoints: ["Tri sélectif", "Bennes séparées", "Déchets dangereux à part", "Traçabilité BSD", "Recyclage"]
     },
@@ -173,8 +173,8 @@ const allQuestions = [
         id: 'q14',
         category: "Fondamentaux & Sécurité - Sécurité",
         question: "Que faire avant d'intervenir sur un réseau de gaz ?",
-        answers: ["Rien de spécial", "Obtenir permis feu + consignation", "Juste fermer la vanne", "Aérer la pièce"],
-        correct: 1,
+        answers: ["Obtenir un permis de feu + consigner le réseau + utiliser un détecteur gaz", "Fermer la vanne principale et ventiler la pièce pendant 15 minutes", "Consigner le réseau et vérifier l'absence de gaz avec un détecteur uniquement", "Obtenir l'accord du responsable de chantier et couper l'alimentation électrique"],
+        correct: 0,
         explanation: "Permis de feu obligatoire + consignation du réseau + détecteur gaz.",
         keyPoints: ["Permis de feu", "Consignation", "Détecteur gaz", "Ventilation", "Extinction flammes"]
     },
@@ -229,8 +229,8 @@ const allQuestions = [
         id: 'q20',
         category: "Fondamentaux & Sécurité - Atelier",
         question: "Pourquoi doit-on ébavurer un tube après la coupe ?",
-        answers: ["Pour l'esthétique", "Pour éviter turbulences et fuites", "Par obligation légale", "Pour le poids"],
-        correct: 1,
+        answers: ["Pour éviter les turbulences, réduire les pertes de charge et permettre une bonne capillarité à la brasure", "Pour permettre l'insertion facile du tube dans les raccords à sertir sans forcer", "Pour respecter la longueur nominale d'emboîtement et les cotes des raccords", "Pour éviter la corrosion des bavures en contact avec l'eau"],
+        correct: 0,
         explanation: "Les bavures créent des turbulences, réduisent le débit et peuvent causer des fuites.",
         keyPoints: ["Enlève bavures", "Évite turbulences", "Meilleur débit", "Évite fuites", "Outil : ébavureur"]
     },
@@ -346,8 +346,8 @@ const allQuestions = [
         id: 'q33',
         category: "Fondamentaux & Sécurité - Atelier",
         question: "Pourquoi utilise-t-on une presse à sertir pour les multicouches ?",
-        answers: ["C'est obligatoire", "Étanchéité garantie sans flamme", "C'est moins cher", "C'est plus rapide"],
-        correct: 1,
+        answers: ["Étanchéité permanente garantie sans flamme, même en zone à risque incendie", "Résistance mécanique du sertissage supérieure à la brasure forte en traction", "Compatible avec tous types de tube dont le cuivre et l'acier fileté", "Étanchéité certifiée sans contrôle ultérieur quel que soit l'opérateur"],
+        correct: 0,
         explanation: "Le sertissage assure une étanchéité permanente sans risque d'incendie (pas de flamme).",
         keyPoints: ["Sans flamme", "Étanchéité garantie", "Indémontable", "Mâchoires adaptées", "Sécurité chantier"]
     },
@@ -364,8 +364,8 @@ const allQuestions = [
         id: 'q35',
         category: "Fondamentaux & Sécurité - Atelier",
         question: "Quels sont les avantages du tube multicouche ?",
-        answers: ["Moins cher", "Résiste température, pas de dilatation, garde forme", "Plus joli", "Plus léger"],
-        correct: 1,
+        answers: ["Résiste à 95°C, faible dilatation grâce à l'aluminium, garde sa forme après cintrage", "Meilleure résistance chimique aux eaux très acides (pH < 6) que le cuivre", "Compatible avec des températures jusqu'à 120°C en pointe comme le cuivre écroui", "Diamètre extérieur identique aux tubes en acier fileté pour mêmes raccords"],
+        correct: 0,
         explanation: "Le multicouche (PEX-ALU-PEX) résiste à la chaleur, ne dilate pas, garde sa forme.",
         keyPoints: ["PEX-ALU-PEX", "Pas de dilatation", "Garde la forme", "Résiste 95°C", "Raccords rapides"]
     },
@@ -375,8 +375,8 @@ const allQuestions = [
         id: 'q36',
         category: "Fondamentaux & Sécurité - Dessin",
         question: "Qu'est-ce qu'un cartouche sur un plan technique ?",
-        answers: ["Un type de fixation", "Le cadre avec infos du plan", "Un raccord", "Un outil"],
-        correct: 1,
+        answers: ["Un encadré normalisé contenant les informations du plan (titre, échelle, auteur, date, indice)", "Un tableau récapitulatif des notes de calcul hydraulique annexé au plan", "La zone de repères et de révisions d'un document technique normalisé ISO", "Un encadré symbolisant les coupes et sections sur les plans d'exécution"],
+        correct: 0,
         explanation: "Le cartouche contient : titre, échelle, date, auteur, indice de révision.",
         keyPoints: ["Infos plan", "Titre", "Échelle", "Date", "Auteur", "Bas droite"]
     },
@@ -485,8 +485,8 @@ const allQuestions = [
         id: 'q48',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "Quel est le rôle d'un circulateur ?",
-        answers: ["Chauffer l'eau", "Faire circuler l'eau", "Filtrer l'eau", "Réguler température"],
-        correct: 1,
+        answers: ["Assurer la mise en circulation de l'eau dans le circuit de chauffage", "Maintenir une pression constante en tête de réseau hydraulique", "Éliminer l'air dissous dans les canalisations de chauffage", "Réguler la température de départ chaudière selon la demande"],
+        correct: 0,
         explanation: "Le circulateur (pompe) fait circuler l'eau dans le circuit de chauffage.",
         keyPoints: ["Pompe circulation", "50-150W", "Vitesse réglable", "Sur retour chaudière", "Distribution chaleur"]
     },
@@ -512,8 +512,8 @@ const allQuestions = [
         id: 'q51',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "À quoi sert un disconnecteur ?",
-        answers: ["Déconnecter l'eau", "Empêcher retour eau polluée", "Couper électricité", "Ventiler"],
-        correct: 1,
+        answers: ["Empêcher le retour d'eau non-potable vers le réseau d'eau potable par une zone de pression réduite", "Filtrer les particules en suspension dans le réseau d'alimentation d'eau", "Réduire et stabiliser la pression d'eau à l'entrée de l'installation (3 bars)", "Séparer hydrauliquement le réseau d'eau froide du circuit de chauffage"],
+        correct: 0,
         explanation: "Le disconnecteur empêche le retour d'eau usée vers le réseau d'eau potable.",
         keyPoints: ["Anti-retour", "Protection réseau", "Types BA/CA/EA", "Contrôle annuel", "Obligatoire"]
     },
@@ -539,8 +539,8 @@ const allQuestions = [
         id: 'q54',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "À quoi sert un adoucisseur d'eau ?",
-        answers: ["Chauffer l'eau", "Réduire le calcaire", "Filtrer impuretés", "Augmenter pression"],
-        correct: 1,
+        answers: ["Réduire la dureté calcaire par échange ionique Ca²⁺/Mg²⁺ → Na⁺ sur résines", "Neutraliser le pH de l'eau acide pour protéger les canalisations en cuivre", "Filtrer par tamisage les particules de calcaire en suspension dans l'eau", "Traiter l'eau par dosage d'inhibiteurs de corrosion et d'anti-tartre"],
+        correct: 0,
         explanation: "L'adoucisseur échange les ions calcium/magnésium contre du sodium (résines).",
         keyPoints: ["Réduit calcaire", "Résines échangeuses", "Régénération sel", "TH < 15°f", "Entretien régulier"]
     },
@@ -4391,7 +4391,9 @@ const allQuestions = [
         id: 'sch011',
         category: "Schémas - Adoucisseur",
         difficulty: "medium",
-        question: "Dans quel ordre doit-on raccorder un adoucisseur d'eau ?",
+        image: "images/schemas/schema-adoucisseur.png",
+        imageAlt: "Schéma d'installation d'un adoucisseur d'eau avec by-pass",
+        question: "Sur ce schéma d'adoucisseur, dans quel ordre doit-on le raccorder sur l'installation ?",
         answers: [
             "Après le compteur général et avant la distribution",
             "Après le ballon ECS",
@@ -4468,7 +4470,9 @@ const allQuestions = [
         id: 'sch016',
         category: "Schémas - Groupe de Sécurité",
         difficulty: "medium",
-        question: "Où doit obligatoirement être installé le groupe de sécurité sur un ballon ECS ?",
+        image: "images/schemas/schema-groupe-securite.png",
+        imageAlt: "Schéma d'installation d'un groupe de sécurité sur ballon ECS",
+        question: "Sur ce schéma, où doit obligatoirement être installé le groupe de sécurité sur un ballon ECS ?",
         answers: [
             "Sur l'arrivée d'eau froide du ballon (partie haute)",
             "Sur la sortie d'eau chaude",
@@ -4545,7 +4549,9 @@ const allQuestions = [
         id: 'sch021',
         category: "Schémas - Primaire Secondaire",
         difficulty: "hard",
-        question: "Qu'est-ce qu'un circuit primaire dans une installation de chauffage ?",
+        image: "images/schemas/schema-primaire-secondaire.png",
+        imageAlt: "Schéma de circuit primaire et secondaire de chauffage",
+        question: "Sur ce schéma primaire/secondaire, qu'est-ce que le circuit primaire ?",
         answers: [
             "Le circuit entre la chaudière et le ballon tampon/échangeur",
             "Le circuit de distribution vers les radiateurs",
@@ -4615,5 +4621,779 @@ const allQuestions = [
         correct: 0,
         explanation: "Les circuits primaire-secondaire sont fréquents avec chaudières bois/granulés, PAC, ou installations complexes avec plusieurs zones (plancher + radiateurs).",
         keyPoints: ["Primaire/Secondaire", "Chaudière bois", "Multi-zones", "Complexe"]
+    },
+
+    // ========== SYMBOLES - IDENTIFICATION VISUELLE (15 questions) ==========
+    {
+        id: 'symid001',
+        category: "Symboles - Vannes",
+        difficulty: "medium",
+        image: "images/symboles-tech/clapet-anti-retour.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Quel est ce symbole utilisé sur les schémas de plomberie ?",
+        answers: [
+            "Clapet anti-retour",
+            "Vanne de réglage à pointeau",
+            "Filtre en Y avec tamis",
+            "Robinet à passage intégral"
+        ],
+        correct: 0,
+        explanation: "Le clapet anti-retour est représenté par un triangle pointant dans le sens du flux autorisé. Il s'oppose à tout retour de fluide dans le sens inverse.",
+        keyPoints: ["Triangle = sens autorisé", "Sens unique", "Protection réseau", "Clapet à disque ou bille"]
+    },
+    {
+        id: 'symid002',
+        category: "Symboles - Vannes",
+        difficulty: "easy",
+        image: "images/symboles-tech/vanne-arret-manuelle.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Identifiez ce symbole sur un schéma de principe :",
+        answers: [
+            "Robinet d'arrêt manuel",
+            "Vanne motorisée à servomoteur électrique",
+            "Détendeur-régulateur de pression",
+            "Robinet à flotteur de remplissage"
+        ],
+        correct: 0,
+        explanation: "Le robinet d'arrêt manuel est représenté par deux triangles pointe à pointe. L'absence de symbole de motorisation indique une manœuvre manuelle.",
+        keyPoints: ["Deux triangles pointe à pointe", "Manœuvre manuelle", "Isolement circuit", "Quart de tour ou volant"]
+    },
+    {
+        id: 'symid003',
+        category: "Symboles - Vannes",
+        difficulty: "hard",
+        image: "images/symboles-tech/vanne-3-voies.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole représente :",
+        answers: [
+            "Une vanne 3 voies mélangeuse ou distributrice",
+            "Un té de dérivation hydraulique sur collecteur",
+            "Un mélangeur thermostatique sanitaire",
+            "Une vanne 2 voies à double siège d'étanchéité"
+        ],
+        correct: 0,
+        explanation: "La vanne 3 voies possède 3 orifices (A, B, AB). En position mélangeuse, elle dose le mélange entre départ et retour chaudière pour réguler la température de l'installation.",
+        keyPoints: ["3 orifices A / B / AB", "Mélangeuse ou distributrice", "Régulation température", "Commandée par servomoteur"]
+    },
+    {
+        id: 'symid004',
+        category: "Symboles - Vannes",
+        difficulty: "hard",
+        image: "images/symboles-tech/vanne-reglage.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Identifiez ce symbole de régulation hydraulique :",
+        answers: [
+            "Vanne de réglage (robinet à pointeau réglable)",
+            "Clapet de retenue à ressort taré",
+            "Soupape de sécurité à ressort compressé",
+            "Vanne d'équilibrage à index verrouillable"
+        ],
+        correct: 0,
+        explanation: "La vanne de réglage permet un ajustement précis du débit par ouverture partielle contrôlée. Indispensable pour l'équilibrage hydraulique entre les émetteurs.",
+        keyPoints: ["Réglage fin du débit", "Perte de charge intentionnelle", "Équilibrage circuit", "Vis micrométrique graduée"]
+    },
+    {
+        id: 'symid005',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        image: "images/symboles-tech/pompe-sens-fluide.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole représente :",
+        answers: [
+            "Un circulateur avec indication du sens de circulation du fluide",
+            "Un ventilateur de soufflage dans un conduit d'air",
+            "Un compresseur de circuit frigorigène",
+            "Une turbine d'éjecteur hydraulique"
+        ],
+        correct: 0,
+        explanation: "Le circulateur est symbolisé par un cercle avec une flèche indiquant le sens d'écoulement. Il assure la mise en mouvement de l'eau dans le circuit fermé de chauffage.",
+        keyPoints: ["Cercle + flèche direction", "Circuit fermé chauffage", "Sur retour chaudière", "50 à 150 W"]
+    },
+    {
+        id: 'symid006',
+        category: "Symboles - Protection",
+        difficulty: "medium",
+        image: "images/symboles-tech/vase-expansion-ferme.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Identifiez ce symbole de sécurité thermique :",
+        answers: [
+            "Vase d'expansion fermé à membrane",
+            "Ballon tampon de découplage hydraulique",
+            "Bouteille de mélange primaire-secondaire",
+            "Séparateur d'air et de boues magnétique"
+        ],
+        correct: 0,
+        explanation: "Le vase d'expansion fermé à membrane absorbe les variations de volume de l'eau dues à la dilatation thermique. Sa membrane sépare le côté eau du côté gaz sous pression.",
+        keyPoints: ["Membrane séparatrice", "Absorbe la dilatation (~4%)", "Côté gaz pré-chargé à 1 bar", "Maintient pression 1-3 bars"]
+    },
+    {
+        id: 'symid007',
+        category: "Symboles - Protection",
+        difficulty: "medium",
+        image: "images/symboles-tech/soupape-securite.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Quel est ce symbole de sécurité ?",
+        answers: [
+            "Soupape de sécurité à ressort taré",
+            "Détendeur de pression aval réglable",
+            "Réducteur de pression à membrane",
+            "Vanne de régulation pression différentielle"
+        ],
+        correct: 0,
+        explanation: "La soupape de sécurité s'ouvre automatiquement quand la pression dépasse son tarage. Tarée à 3 bars pour chauffage (circuit fermé) ou 7 bars pour ECS (groupe de sécurité sanitaire).",
+        keyPoints: ["Ouverture automatique", "Tarage fixe non réglable", "3 bars chauffage", "7 bars ECS (groupe sécurité)"]
+    },
+    {
+        id: 'symid008',
+        category: "Symboles - Équipements",
+        difficulty: "easy",
+        image: "images/symboles-tech/manometre.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Cet instrument de mesure est :",
+        answers: [
+            "Un manomètre (mesure et affichage de la pression)",
+            "Un thermomètre à cadran bimétallique",
+            "Un hygromètre d'ambiance",
+            "Un pressostat de régulation électrique"
+        ],
+        correct: 0,
+        explanation: "Le manomètre mesure et affiche la pression du fluide de façon analogique. À distinguer du pressostat qui commande électriquement un équipement selon un seuil de pression.",
+        keyPoints: ["Mesure pression (bar)", "Affichage analogique direct", "Pas de contact électrique", "À distinguer du pressostat"]
+    },
+    {
+        id: 'symid009',
+        category: "Symboles - Équipements",
+        difficulty: "easy",
+        image: "images/symboles-tech/thermometre.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Identifiez cet instrument de mesure :",
+        answers: [
+            "Un thermomètre (mesure et affichage de la température)",
+            "Un thermostat de régulation de chaudière",
+            "Une sonde de température PT100 à résistance",
+            "Un thermocouple de contrôle de sécurité"
+        ],
+        correct: 0,
+        explanation: "Le thermomètre mesure et affiche la température du fluide directement. À distinguer du thermostat (commande électrique) et de la sonde PT100 (signal électrique 4-20mA).",
+        keyPoints: ["Mesure température directe", "Plongeur dans le fluide", "Affichage analogique", "À distinguer thermostat/sonde PT100"]
+    },
+    {
+        id: 'symid010',
+        category: "Symboles - Chauffage",
+        difficulty: "easy",
+        image: "images/symboles-tech/radiateur.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole sur un schéma de chauffage représente :",
+        answers: [
+            "Un radiateur (émetteur de chaleur à eau chaude)",
+            "Un échangeur de chaleur à plaques brasées",
+            "Un ventilo-convecteur (fan-coil)",
+            "Un plancher chauffant hydraulique"
+        ],
+        correct: 0,
+        explanation: "Le radiateur est symbolisé par des lignes parallèles évoquant ses éléments. Il émet la chaleur de l'eau (70-80°C en BT, 45-55°C en très BT) par convection naturelle et rayonnement.",
+        keyPoints: ["Émetteur chaleur eau chaude", "Convection + rayonnement", "Vanne thermostatique en tête", "Purgeur en partie haute"]
+    },
+    {
+        id: 'symid011',
+        category: "Symboles - Protection",
+        difficulty: "hard",
+        image: "images/symboles-tech/groupe-securite-sanitaire.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole de sécurité sanitaire représente :",
+        answers: [
+            "Un groupe de sécurité sanitaire pour ballon ECS",
+            "Un groupe hydrophore de surpression d'eau",
+            "Un disconnecteur sanitaire de type BA",
+            "Un limiteur de pression différentielle ECS"
+        ],
+        correct: 0,
+        explanation: "Le groupe de sécurité sanitaire regroupe 3 fonctions en 1 corps : clapet anti-retour + soupape tarée à 7 bars + robinet de vidange. Obligatoire sur tout ballon ECS.",
+        keyPoints: ["3 fonctions en 1 corps", "Soupape 7 bars (ECS)", "Arrivée eau froide ballon", "Obligatoire - jamais de vanne entre lui et le ballon"]
+    },
+    {
+        id: 'symid012',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        image: "images/symboles-tech/baignoire.png",
+        imageAlt: "Symbole sanitaire - à identifier",
+        question: "Sur un plan de plomberie sanitaire, ce symbole représente :",
+        answers: [
+            "Une baignoire",
+            "Un bac à douche rectangulaire",
+            "Un bac de lavage collectif en inox",
+            "Une cuve de rétention technique"
+        ],
+        correct: 0,
+        explanation: "La baignoire est représentée en vue de dessus avec sa forme ovale ou rectangulaire arrondie. Taille standard : 170×70 cm. Alimentation par mitigeur, évacuation DN 40.",
+        keyPoints: ["Vue de dessus", "170×70 cm standard", "Alimentation mitigeur bain", "Évacuation DN 40 avec siphon"]
+    },
+    {
+        id: 'symid013',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        image: "images/symboles-tech/lavabo.png",
+        imageAlt: "Symbole sanitaire - à identifier",
+        question: "Ce symbole sur un plan sanitaire représente :",
+        answers: [
+            "Un lavabo (salle de bain)",
+            "Une vasque semi-encastrée sur meuble",
+            "Un évier de cuisine 1 bac",
+            "Un lave-mains d'angle pour WC"
+        ],
+        correct: 0,
+        explanation: "Le lavabo est représenté en vue de dessus avec son débordement arrière et ses deux perçages de robinetterie. Standard : 60×50 cm. Évacuation DN 32 par siphon bouteille.",
+        keyPoints: ["Vue de dessus", "60×50 cm standard", "Robinetterie 2 trous (H/F)", "Évacuation DN 32 siphon bouteille"]
+    },
+    {
+        id: 'symid014',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        image: "images/symboles-tech/evier-1bac.png",
+        imageAlt: "Symbole sanitaire - à identifier",
+        question: "Identifiez cet appareil sanitaire :",
+        answers: [
+            "Un évier 1 bac (cuisine)",
+            "Un lave-mains compact pour WC",
+            "Un bac à laver en buanderie",
+            "Un lavabo de laboratoire"
+        ],
+        correct: 0,
+        explanation: "L'évier 1 bac est l'appareil de cuisine. Il se distingue du lavabo par sa position en plan de travail et sa taille. Évacuation DN 40, nécessite un siphon avec bouchon de vidage.",
+        keyPoints: ["Cuisine", "Plan de travail", "Évacuation DN 40", "Siphon avec bouchon de vidage"]
+    },
+    {
+        id: 'symid015',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        image: "images/symboles-tech/wc.png",
+        imageAlt: "Symbole sanitaire - à identifier",
+        question: "Ce symbole sur un plan de plomberie représente :",
+        answers: [
+            "Un WC (cuvette + réservoir de chasse)",
+            "Un urinoir mural à chasse intégrée",
+            "Un broyeur sanitaire avec cuvette",
+            "Une douche à l'italienne avec siphon de sol"
+        ],
+        correct: 0,
+        explanation: "Le WC est représenté avec sa cuvette et son réservoir de chasse en vue de dessus. Taille standard : 36×60 cm. Évacuation obligatoirement en DN 100.",
+        keyPoints: ["Vue dessus : cuvette + réservoir", "DN 100 évacuation", "Chasse 6/3 L (norme PMR)", "Ventilation primaire DN 100 en toiture"]
+    },
+
+    // ========== SCHÉMAS - IDENTIFICATION D'ÉLÉMENTS (8 questions) ==========
+    {
+        id: 'schid001',
+        category: "Schémas - Groupe de Sécurité",
+        difficulty: "medium",
+        image: "images/schemas/schema-groupe-securite.png",
+        imageAlt: "Schéma d'un groupe de sécurité sanitaire sur ballon ECS",
+        question: "Sur ce schéma de groupe de sécurité ECS, quel organe s'ouvre automatiquement quand la pression dépasse 7 bars pour protéger le ballon ?",
+        answers: [
+            "La soupape de sécurité tarée à 7 bars",
+            "Le clapet anti-retour à disque",
+            "Le robinet de vidange à quart de tour",
+            "Le manomètre de contrôle de pression"
+        ],
+        correct: 0,
+        explanation: "La soupape de sécurité (ressort calibré à 7 bars) s'ouvre automatiquement pour évacuer la surpression. Elle est différente de la soupape de chauffage tarée à 3 bars.",
+        keyPoints: ["Soupape tarée 7 bars", "Protection surpression ballon", "Ouverture automatique par ressort", "Différente soupape chauffage = 3 bars"]
+    },
+    {
+        id: 'schid002',
+        category: "Schémas - Groupe de Sécurité",
+        difficulty: "hard",
+        image: "images/schemas/schema-groupe-securite.png",
+        imageAlt: "Schéma d'un groupe de sécurité sanitaire sur ballon ECS",
+        question: "Sur ce schéma, quel composant du groupe de sécurité empêche l'eau chaude du ballon de refluer vers le réseau d'alimentation eau froide ?",
+        answers: [
+            "Le clapet anti-retour intégré au groupe",
+            "La soupape de sécurité calibrée à 7 bars",
+            "Le robinet d'isolement amont",
+            "La chambre d'expansion intégrée au corps"
+        ],
+        correct: 0,
+        explanation: "Le clapet anti-retour du groupe de sécurité empêche le retour d'eau chaude contaminée vers le réseau public. Obligatoire : sans lui, tout le réseau collectif serait contaminé.",
+        keyPoints: ["Clapet = sens unique", "Protège le réseau public", "Réglementaire DTU 60.11", "Fonctionne indépendamment de la pression"]
+    },
+    {
+        id: 'schid003',
+        category: "Schémas - Adoucisseur",
+        difficulty: "medium",
+        image: "images/schemas/schema-adoucisseur.png",
+        imageAlt: "Schéma d'installation d'un adoucisseur d'eau avec by-pass",
+        question: "Sur ce schéma d'adoucisseur, le by-pass (dérivation) permet de :",
+        answers: [
+            "Maintenir l'alimentation en eau non-adoucie pendant la régénération des résines",
+            "Diluer l'eau adoucie pour ajuster le TH de sortie au niveau souhaité",
+            "Augmenter la capacité d'adoucissement en faisant passer l'eau deux fois",
+            "Rincer les résines encrassées sans consommer de saumure"
+        ],
+        correct: 0,
+        explanation: "Pendant la régénération (adoucisseur hors service), le by-pass maintient l'alimentation en eau, temporairement non-adoucie. Indispensable en habitat pour ne pas couper l'eau.",
+        keyPoints: ["Régénération = adoucisseur hors service", "By-pass = alimentation directe EF", "Eau non-adoucie temporairement", "Indispensable habitat occupé"]
+    },
+    {
+        id: 'schid004',
+        category: "Schémas - Adoucisseur",
+        difficulty: "hard",
+        image: "images/schemas/schema-adoucisseur.png",
+        imageAlt: "Schéma d'installation d'un adoucisseur d'eau avec by-pass",
+        question: "Sur ce schéma d'adoucisseur, par quel procédé les résines saturées en calcium sont-elles régénérées ?",
+        answers: [
+            "Injection d'une solution de saumure (NaCl dissous) en contre-courant",
+            "Passage d'acide chlorhydrique dilué pour dissoudre le calcaire accumulé",
+            "Chauffe de l'eau à 80°C pour désorber thermiquement les ions calcaires",
+            "Application d'un courant électrique pour inverser la polarité des résines"
+        ],
+        correct: 0,
+        explanation: "La régénération échange les ions Ca²⁺ et Mg²⁺ saturant les résines contre des ions Na⁺ de la saumure. Le sel de régénération (NaCl) est la seule consommable de l'adoucisseur.",
+        keyPoints: ["Saumure = eau + sel NaCl", "Échange ionique Ca²⁺/Mg²⁺ → Na⁺", "Consommation sel ~150g/régénération", "Rinçage final obligatoire"]
+    },
+    {
+        id: 'schid005',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "medium",
+        image: "images/schemas/schema-chauffage-complet.png",
+        imageAlt: "Schéma complet d'installation de chauffage central",
+        question: "Sur ce schéma d'installation de chauffage, quel organe raccordé directement sur le circuit fermé absorbe la dilatation de l'eau lors de la chauffe ?",
+        answers: [
+            "Le vase d'expansion à membrane",
+            "Le ballon tampon de découplage",
+            "Le séparateur hydraulique",
+            "Le purgeur automatique central"
+        ],
+        correct: 0,
+        explanation: "Le vase d'expansion fermé à membrane compense la dilatation de l'eau (~4% entre 10 et 80°C) pour maintenir la pression entre 1 et 3 bars. Sa membrane sépare eau et azote.",
+        keyPoints: ["Dilatation ~4% (10→80°C)", "Maintien pression 1-3 bars", "Membrane eau/azote", "Pré-charge azote à 1 bar"]
+    },
+    {
+        id: 'schid006',
+        category: "Schémas - Installation Chauffage",
+        difficulty: "hard",
+        image: "images/schemas/schema-chauffage-complet.png",
+        imageAlt: "Schéma complet d'installation de chauffage central",
+        question: "Sur ce schéma de chauffage, quel composant adapte la température de l'eau de départ en fonction de la température extérieure (loi d'eau) ?",
+        answers: [
+            "Le régulateur/programmateur avec sonde extérieure",
+            "La vanne mélangeuse 3 voies seule, sans régulateur",
+            "Le thermostat d'ambiance installé dans la pièce de référence",
+            "La soupape de sécurité chaudière à tarage thermique"
+        ],
+        correct: 0,
+        explanation: "La régulation par sonde extérieure (loi d'eau) adapte la température de départ : -10°C → ~75°C départ ; +5°C → ~55°C départ. Économies de 10-15% vs thermostat seul.",
+        keyPoints: ["Sonde extérieure", "Courbe de chauffe programmable", "Température départ variable", "Économies 10-15%"]
+    },
+    {
+        id: 'schid007',
+        category: "Schémas - Primaire Secondaire",
+        difficulty: "hard",
+        image: "images/schemas/schema-primaire-secondaire.png",
+        imageAlt: "Schéma de circuit primaire et secondaire de chauffage",
+        question: "Sur ce schéma primaire/secondaire, quel composant découple hydrauliquement les deux circuits tout en assurant le transfert thermique ?",
+        answers: [
+            "Le ballon tampon (ou bouteille de mélange)",
+            "La vanne 3 voies de régulation de température",
+            "L'échangeur à plaques brasées inox",
+            "Le circulateur à vitesse variable du secondaire"
+        ],
+        correct: 0,
+        explanation: "Le ballon tampon découple les débits : la chaudière travaille à son débit optimal sans être perturbée par les variations de demande des émetteurs. Protège la chaudière des retours froids.",
+        keyPoints: ["Découplage hydraulique", "Ballon tampon ou bouteille mélange", "Protection chaudière retours froids", "Indépendance débits primaire/secondaire"]
+    },
+    {
+        id: 'schid008',
+        category: "Schémas - Primaire Secondaire",
+        difficulty: "hard",
+        image: "images/schemas/schema-primaire-secondaire.png",
+        imageAlt: "Schéma de circuit primaire et secondaire de chauffage",
+        question: "Sur ce schéma, pourquoi chaque circuit (primaire et secondaire) possède-t-il son propre vase d'expansion et sa propre soupape de sécurité ?",
+        answers: [
+            "Chaque circuit fermé indépendant doit avoir ses propres organes de sécurité dimensionnés pour son volume",
+            "Pour équilibrer les pressions entre les deux circuits via les organes de sécurité",
+            "Obligation réglementaire uniquement pour les chaudières à condensation type B",
+            "Pour permettre la vidange indépendante sans interaction entre les circuits"
+        ],
+        correct: 0,
+        explanation: "Chaque circuit fermé indépendant doit être protégé par sa propre soupape (débit d'évacuation calculé) et son propre vase (dimensionné selon son volume). Ce sont 2 installations séparées.",
+        keyPoints: ["Chaque circuit fermé = organes de sécurité dédiés", "Dimensionnement propre à chaque volume", "Soupape : débit calculé", "Vase : volume × coefficient dilatation"]
+    },
+
+    // ========== TERMINOLOGIE - DÉFINITION → TERME (13 questions) ==========
+    {
+        id: 'term001',
+        category: "Systèmes Thermiques - Sécurité",
+        difficulty: "hard",
+        question: "Dispositif empêchant la contamination du réseau d'eau potable par retour d'eau non-potable, via une zone de pression réduite contrôlée par deux clapets et une chambre intermédiaire à l'atmosphère :",
+        answers: [
+            "Un disconnecteur à zone de pression réduite (type EA ou BA)",
+            "Un clapet anti-retour simple à disque libre",
+            "Un séparateur de réseau hydraulique à manchon",
+            "Un filtre anti-retour à tamis inox"
+        ],
+        correct: 0,
+        explanation: "Le disconnecteur (types EA, BA, CA selon le niveau de risque de contamination) crée une zone de basse pression entre deux clapets. Contrôle annuel obligatoire par organisme agréé.",
+        keyPoints: ["Types EA/BA/CA selon risque", "Zone basse pression intermédiaire", "Protège réseau AEP public", "Contrôle annuel SOCOTEC/Véritas"]
+    },
+    {
+        id: 'term002',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "hard",
+        question: "Appareil qui produit de l'eau chaude sanitaire stockée dans un ballon préchauffé par des capteurs solaires, avec appoint chaudière ou électrique pour les jours de faible ensoleillement :",
+        answers: [
+            "Un Chauffe-Eau Solaire Individuel (CESI)",
+            "Un échangeur thermodynamique à détente directe",
+            "Un chauffe-eau thermodynamique (PAC air/eau)",
+            "Un ballon électrique à accumulation avec résistance stéatite"
+        ],
+        correct: 0,
+        explanation: "Le CESI couple capteurs solaires thermiques + ballon bi-énergie (solaire + appoint). Taux de couverture solaire : 60-70% en France. Aide MaPrimeRénov' possible.",
+        keyPoints: ["CESI = Chauffe-Eau Solaire Individuel", "Capteurs solaires thermiques", "Ballon bi-énergie", "60-70% couverture solaire annuelle"]
+    },
+    {
+        id: 'term003',
+        category: "Systèmes Thermiques - Plomberie",
+        difficulty: "hard",
+        question: "Phénomène hydraulique de formation et d'implosion de bulles de vapeur dans une pompe, causé par une dépression locale supérieure à la pression de vapeur du liquide, entraînant bruit, vibrations et érosion des pièces :",
+        answers: [
+            "La cavitation",
+            "Le coup de bélier",
+            "L'auto-amorçage par dépression",
+            "La vaporisation flash en sortie de vanne"
+        ],
+        correct: 0,
+        explanation: "La cavitation se produit quand la pression locale chute sous la pression de vapeur : des bulles de vapeur se forment puis implosent violemment, érodant les aubages de la roue.",
+        keyPoints: ["Pression locale < P_vapeur", "Bulles implosion = érosion roue", "Bruit caractéristique (graviers)", "Prévention : Hm aspiration < 6m"]
+    },
+    {
+        id: 'term004',
+        category: "Systèmes Thermiques - Plomberie",
+        difficulty: "medium",
+        question: "Surpression transitoire dans une canalisation, générée par l'arrêt brutal d'un fluide en mouvement (pompe coupée, vanne fermée rapidement), pouvant provoquer chocs, vibrations et ruptures de canalisations :",
+        answers: [
+            "Le coup de bélier",
+            "La cavitation de décharge",
+            "La résonance hydrodynamique",
+            "Le phénomène d'inertie fluidique de Joukowski"
+        ],
+        correct: 0,
+        explanation: "Le coup de bélier crée des ondes de pression pouvant dépasser 100× la pression nominale. Remèdes : fermeture progressive des vannes, pot d'inertie, soupape anti-bélier.",
+        keyPoints: ["Arrêt brutal du flux", "Onde de surpression propagée", "Fermeture progressive = prévention", "Pot d'inertie ou soupape anti-bélier"]
+    },
+    {
+        id: 'term005',
+        category: "Chauffage - Circuits",
+        difficulty: "hard",
+        question: "Procédé d'ajustement des résistances hydrauliques par des vannes de réglage, permettant de distribuer exactement les débits calculés à chaque émetteur indépendamment de sa position dans le réseau :",
+        answers: [
+            "L'équilibrage hydraulique",
+            "La régulation proportionnelle-intégrale",
+            "La compensation de débit par bypass",
+            "L'ajustement dynamique de vitesse du circulateur"
+        ],
+        correct: 0,
+        explanation: "L'équilibrage hydraulique évite que les émetteurs proches reçoivent trop et les éloignés pas assez. Vannes d'équilibrage statiques ou dynamiques, mesure par débitmètre.",
+        keyPoints: ["Vannes d'équilibrage statiques/dynamiques", "Mesure débits par orifice calibré", "Évite déséquilibre court-circuit", "Calcul pertes de charge préalable"]
+    },
+    {
+        id: 'term006',
+        category: "Chauffage - Régulation",
+        difficulty: "hard",
+        question: "Mode de régulation calculant la température de l'eau de départ en fonction de la température extérieure mesurée, selon une courbe de chauffe programmée dans le régulateur :",
+        answers: [
+            "La régulation par loi d'eau (compensation météorologique)",
+            "La régulation par thermostat d'ambiance à sonde unique",
+            "La régulation par sonde de plancher chauffant",
+            "La régulation prédictive par apprentissage automatique"
+        ],
+        correct: 0,
+        explanation: "La loi d'eau adapte la température de départ selon la température extérieure : courbe réglable (ex: -10°C → 75°C départ). Économies de 10-15% vs thermostat ambiance seul.",
+        keyPoints: ["Sonde extérieure obligatoire", "Courbe de chauffe réglable", "Température départ variable selon T°ext", "Combinable avec thermostat ambiance"]
+    },
+    {
+        id: 'term007',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "Maladie respiratoire grave causée par la bactérie Legionella pneumophila, se développant dans les réseaux d'eau entre 25 et 45°C, transmise par inhalation d'aérosols contaminés (douche, aérotherme) :",
+        answers: [
+            "La légionellose (maladie du légionnaire)",
+            "La leptospirose transmise par les eaux douces",
+            "La cryptosporidiose intestinale",
+            "La fièvre de Pontiac (forme bénigne différente)"
+        ],
+        correct: 0,
+        explanation: "La légionellose est mortelle dans 10-15% des cas. Prévention ECS : stockage à 60°C minimum, distribution à 50°C minimum, purge hebdomadaire si peu utilisé.",
+        keyPoints: ["Legionella : 25-45°C zone de risque", "Stockage ECS ≥ 60°C obligatoire", "Distribution ≥ 50°C", "Purge hebdomadaire si inutilisé"]
+    },
+    {
+        id: 'term008',
+        category: "Systèmes Avancés - Ventilation",
+        difficulty: "medium",
+        question: "Système de ventilation qui extrait mécaniquement l'air vicié des pièces humides, sans souffler d'air neuf (entrée naturelle par grilles en menuiseries des pièces de vie) :",
+        answers: [
+            "La VMC simple flux auto-réglable",
+            "La VMC double flux avec échangeur thermique",
+            "La VEC (Ventilation par Extraction Concentrée)",
+            "La ventilation naturelle assistée par conduits shunt"
+        ],
+        correct: 0,
+        explanation: "La VMC simple flux (la plus courante en rénovation) extrait l'air des pièces humides (cuisine, SdB, WC). L'air neuf entre par les grilles de façade en pièces de vie.",
+        keyPoints: ["Extraction seule (pièces humides)", "Pas de soufflage", "Entrées d'air en façade", "Débit réglementaire : 135 m³/h minimum logement"]
+    },
+    {
+        id: 'term009',
+        category: "Systèmes Avancés - Gaz",
+        difficulty: "hard",
+        question: "Document délivré par un organisme de contrôle agréé après vérification d'une installation intérieure de gaz (étanchéité, conformité DTU 61.1), obligatoire à la mise en service ou remise en service :",
+        answers: [
+            "L'attestation de conformité gaz (délivrée par CERTIGAZ ou Qualigaz)",
+            "Le certificat d'aptitude professionnelle au gaz (habilitation)",
+            "Le diagnostic de performance énergétique (DPE) avec mention gaz",
+            "Le procès-verbal de réception de chantier signé par le maître d'œuvre"
+        ],
+        correct: 0,
+        explanation: "CERTIGAZ et Qualigaz sont les organismes agréés pour contrôler et certifier les installations gaz. Cette attestation est exigée par le fournisseur pour l'ouverture du compteur.",
+        keyPoints: ["CERTIGAZ ou Qualigaz", "Conformité DTU 61.1", "Obligatoire mise en service", "Vérification étanchéité + conformité + ventilation"]
+    },
+    {
+        id: 'term010',
+        category: "Fondamentaux & Sécurité - Atelier",
+        difficulty: "medium",
+        question: "Opération créant un filetage extérieur hélicoïdal sur un tube ou une barre d'acier à l'aide d'une filière, permettant le vissage d'un raccord ou d'un écrou fileté :",
+        answers: [
+            "Le filetage (ou filage)",
+            "Le taraudage",
+            "Le tronçonnage hélicoïdal",
+            "Le fraisage en bout fileté"
+        ],
+        correct: 0,
+        explanation: "Le filetage (ou filage) crée le profil hélicoïdal extérieur avec une filière. Le taraudage crée le filetage intérieur dans un trou avec un taraud. Ces opérations sont complémentaires.",
+        keyPoints: ["Filetage = extérieur (filière)", "Taraudage = intérieur (taraud)", "Graissage obligatoire", "3 passes minimum (ébauche, demi-finition, finition)"]
+    },
+    {
+        id: 'term011',
+        category: "Fondamentaux & Sécurité - Éco-construction",
+        difficulty: "medium",
+        question: "Document estimant la consommation annuelle d'énergie d'un logement en kWh/m²/an et son impact CO2, classant le bien de A (très performant, < 70 kWh/m²) à G (passoire thermique, > 420 kWh/m²) :",
+        answers: [
+            "Le Diagnostic de Performance Énergétique (DPE)",
+            "Le Bilan Thermique Réglementaire (BTR) selon RT2012",
+            "Le label BBC-Rénovation délivré par Promotelec",
+            "L'Audit Énergétique obligatoire pour les maisons classées F ou G"
+        ],
+        correct: 0,
+        explanation: "Le DPE (obligatoire à la vente et à la location) classe de A à G. Depuis 2025, les logements classés G sont interdits à la location. Depuis 2028, les logements F seront interdits.",
+        keyPoints: ["A < 70 kWh/m²/an", "G > 420 kWh/m²/an", "Obligatoire vente et location", "G interdit location depuis 01/2025"]
+    },
+    {
+        id: 'term012',
+        category: "Fondamentaux & Sécurité - Combustion",
+        difficulty: "hard",
+        question: "Valeur calorifique d'un combustible incluant la chaleur de condensation de la vapeur d'eau contenue dans les fumées (supérieure au PCI d'environ 10% pour le gaz naturel) :",
+        answers: [
+            "Le PCS (Pouvoir Calorifique Supérieur)",
+            "Le PCI (Pouvoir Calorifique Inférieur)",
+            "Le PCN (Pouvoir Calorifique Net à condensation)",
+            "Le PCE (Pouvoir Calorifique Effectif à charge nominale)"
+        ],
+        correct: 0,
+        explanation: "PCS > PCI car il intègre la chaleur latente de condensation (≈10% pour le gaz naturel). Les chaudières à condensation récupèrent cette énergie, d'où un rendement > 100% PCI.",
+        keyPoints: ["PCS > PCI (+ chaleur latente)", "Δ ≈ 10% pour gaz naturel", "Base de calcul chaudières condensation", "Rendement condensation > 100% PCI"]
+    },
+    {
+        id: 'term013',
+        category: "Systèmes Thermiques - Dimensionnement",
+        difficulty: "hard",
+        question: "Perte de pression causée par les changements de direction, vannes, coudes, tés et autres obstacles ponctuels dans un réseau de tuyauteries, s'ajoutant aux pertes linéaires par frottement :",
+        answers: [
+            "La perte de charge singulière",
+            "La perte de charge linéaire de Darcy-Weisbach",
+            "La résistance hydraulique spécifique du réseau",
+            "La dépression de cavitation aux points hauts"
+        ],
+        correct: 0,
+        explanation: "Les pertes singulières (coudes, vannes, tés, réductions) représentent 20-40% des pertes totales. Elles se calculent en longueur équivalente de tube droit ajoutée aux pertes linéaires.",
+        keyPoints: ["Coudes, vannes, tés, réductions", "20-40% des pertes totales", "Méthode longueur équivalente", "Ajoutée aux pertes linéaires"]
+    },
+
+    // ========== TERMINOLOGIE - TERME → DÉFINITION (12 questions) ==========
+    {
+        id: 'term014',
+        category: "Systèmes Thermiques - Sécurité",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un purgeur automatique d'air dans un circuit de chauffage ?",
+        answers: [
+            "Un dispositif à flotteur qui évacue automatiquement l'air accumulé aux points hauts du circuit hydraulique",
+            "Un organe qui régule la pression dans le vase d'expansion en évacuant l'excès",
+            "Une soupape de sécurité qui protège le circuit contre les surpressions de vapeur",
+            "Un appareil mesurant la teneur en oxygène dissous pour contrôler la corrosion"
+        ],
+        correct: 0,
+        explanation: "Le purgeur automatique (à flotteur ou mécanique) s'ouvre pour laisser passer l'air et se ferme dès que l'eau arrive. À installer en points hauts du circuit et sur les radiateurs.",
+        keyPoints: ["Points hauts du circuit", "Flotteur = ouverture automatique", "Fermeture dès que l'eau arrive", "Radiateurs froids en partie haute = air non purgé"]
+    },
+    {
+        id: 'term015',
+        category: "Chauffage - Régulation",
+        difficulty: "medium",
+        question: "Quelle est la différence entre un thermostat d'ambiance simple et un thermostat programmable ?",
+        answers: [
+            "Le programmable permet de définir des plages horaires avec des températures différentes (confort 20°C / réduit 17°C / hors-gel 8°C)",
+            "Le programmable est nécessairement connecté Wi-Fi et piloté par application mobile",
+            "Le thermostat d'ambiance simple est plus précis (±0,1°C) que le programmable",
+            "Le programmable est utilisable uniquement sur les chaudières à condensation récentes"
+        ],
+        correct: 0,
+        explanation: "Le thermostat programmable permet plusieurs zones de température selon les heures (ex: 20°C le jour, 17°C la nuit, 8°C en absence). Économies de 10 à 20% selon programmation.",
+        keyPoints: ["Plages horaires configurables", "Confort/Réduit/Hors-gel", "Économies 10-20%", "7 plages/jour minimum en RT2012"]
+    },
+    {
+        id: 'term016',
+        category: "Chauffage - Générateurs",
+        difficulty: "hard",
+        question: "Qu'est-ce que le rendement d'une chaudière à condensation peut dépasser 100% du PCI et pourquoi ?",
+        answers: [
+            "Elle récupère la chaleur latente de condensation de la vapeur d'eau des fumées (≈10% pour gaz naturel), non comptée dans le PCI",
+            "Elle utilise un échangeur supplémentaire qui génère de l'énergie électrique en complément",
+            "La condensation des fumées comprime l'eau de retour, augmentant son enthalpie disponible",
+            "Elle fonctionne avec un combustible enrichi dont le PCI réel est supérieur au PCI déclaré"
+        ],
+        correct: 0,
+        explanation: "Le PCI exclut la chaleur de condensation de la vapeur d'eau des fumées. En récupérant cette énergie via un échangeur de condensation, la chaudière dépasse 100% PCI (généralement 105-109%).",
+        keyPoints: ["PCI exclut chaleur latente condensation", "Condensation fumées < 57°C", "105-109% rendement PCI", "T° retour < 55°C pour condenser"]
+    },
+    {
+        id: 'term017',
+        category: "Systèmes Avancés - Solaire",
+        difficulty: "hard",
+        question: "Quelle est la différence de performance entre un capteur solaire plan vitré et un capteur à tubes sous vide par temps froid ou couvert ?",
+        answers: [
+            "Les tubes sous vide sont plus efficaces par temps froid car le vide élimine les pertes par convection entre l'absorbeur et la vitre",
+            "Le capteur plan est plus efficace en hiver car sa surface plus grande capte plus d'énergie diffuse",
+            "Les tubes sous vide ne fonctionnent qu'en circuit forcé, pas en thermosiphon, ce qui les pénalise",
+            "Le capteur plan résiste mieux à la surchauffe estivale car il perd plus de chaleur en été"
+        ],
+        correct: 0,
+        explanation: "Le vide dans les tubes supprime la convection : l'absorbeur perd moins de chaleur même à basse température extérieure. Rendement tubes > plan quand T°ext < 15°C ou rayonnement faible.",
+        keyPoints: ["Vide = suppression convection", "Meilleur par T°ext < 15°C", "Capteur plan : robuste, moins cher", "Tubes sous vide : meilleur hiver/couvert"]
+    },
+    {
+        id: 'term018',
+        category: "Systèmes Avancés - Ventilation",
+        difficulty: "hard",
+        question: "Qu'est-ce qu'une VMC double flux et quel est son principal avantage sur la VMC simple flux ?",
+        answers: [
+            "Elle souffle de l'air neuf préchauffé via un échangeur avec l'air extrait, récupérant 75-95% de l'énergie de ventilation",
+            "Elle extrait deux fois plus d'air qu'une VMC simple flux pour les grands logements",
+            "Elle chauffe le logement en été grâce à la récupération thermique de l'air extérieur",
+            "Elle fonctionne uniquement la nuit pour le rafraîchissement par free-cooling"
+        ],
+        correct: 0,
+        explanation: "La VMC double flux récupère la chaleur de l'air extrait pour préchauffer l'air neuf (rendement échangeur 75-95%). Obligatoire dans les maisons passives. Coût plus élevé à l'installation.",
+        keyPoints: ["Échangeur air/air thermique", "Récupération 75-95% énergie ventilation", "Air neuf préchauffé avant soufflage", "Obligatoire label Passif/BEPOS"]
+    },
+    {
+        id: 'term019',
+        category: "Chauffage - Circulateurs",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un circulateur à rotor noyé et pourquoi est-il préféré en chauffage résidentiel ?",
+        answers: [
+            "Son moteur baigne directement dans le fluide caloporteur qui assure son refroidissement et sa lubrification, sans joint d'étanchéité rotatif",
+            "Son rotor est noyé dans une résine époxy imperméable pour résister à l'humidité des locaux techniques",
+            "Il peut fonctionner à sec sans dommage, contrairement aux circulateurs à joint mécanique",
+            "Son axe horizontal est noyé dans le béton pour amortir les vibrations transmises aux planchers"
+        ],
+        correct: 0,
+        explanation: "Le rotor noyé (type dominant en résidentiel) est immergé dans le fluide : pas de joint d'étanchéité = pas de fuite mécanique. Silencieux, fiable, longue durée de vie (15-20 ans).",
+        keyPoints: ["Rotor immergé dans le fluide", "Pas de joint rotatif = pas de fuite", "Fluide = refroidissement + lubrification", "Standard résidentiel : Grundfos, Wilo, DAB"]
+    },
+    {
+        id: 'term020',
+        category: "Systèmes Avancés - Protection",
+        difficulty: "hard",
+        question: "Quelle est la différence entre un inhibiteur de corrosion et un anti-tartre dans le traitement d'eau d'un circuit de chauffage ?",
+        answers: [
+            "L'inhibiteur forme une couche protectrice sur les métaux (contre l'oxydation) ; l'anti-tartre séquestre ou disperse les ions calcaires (contre l'entartrage)",
+            "L'inhibiteur est dosé une seule fois à la mise en eau ; l'anti-tartre nécessite un dosage mensuel continu",
+            "L'inhibiteur est réservé aux circuits en acier ; l'anti-tartre est uniquement pour les circuits en aluminium",
+            "Ce sont deux noms du même produit, la différence est uniquement commerciale selon les fabricants"
+        ],
+        correct: 0,
+        explanation: "L'inhibiteur de corrosion forme une couche passive sur les métaux (Fe, Al, Cu). L'anti-tartre séquestre les ions Ca²⁺ et Mg²⁺. Les deux sont souvent combinés dans un seul produit bi-fonctionnel.",
+        keyPoints: ["Inhibiteur = couche passive anti-corrosion", "Anti-tartre = séquestration Ca²⁺/Mg²⁺", "Souvent combinés bi-fonctionnels", "Dosage : 1-2% du volume circuit"]
+    },
+    {
+        id: 'term021',
+        category: "Chauffage - Émetteurs",
+        difficulty: "medium",
+        question: "Quelle est la différence technique entre un plancher chauffant hydraulique et un plancher chauffant électrique ?",
+        answers: [
+            "L'hydraulique utilise des tubes PER/multicouche noyés dans la chape avec eau chaude à 35-45°C ; l'électrique utilise des câbles résistifs ou un film chauffant",
+            "L'hydraulique chauffe plus vite car l'eau a une meilleure conductivité thermique que les câbles électriques",
+            "L'électrique est obligatoirement couplé à une pompe à chaleur pour atteindre une efficacité acceptable",
+            "L'hydraulique ne peut pas être installé en rénovation, uniquement en construction neuve"
+        ],
+        correct: 0,
+        explanation: "Le plancher hydraulique nécessite une chaudière ou PAC basse température (35-45°C). L'électrique est plus simple mais plus coûteux à l'usage. Inertie thermique identique (dalle béton 8-10 cm).",
+        keyPoints: ["Hydraulique : tubes PER + eau 35-45°C", "Électrique : câbles résistifs ou film", "Inertie identique (dalle béton)", "Hydraulique + PAC = optimal"]
+    },
+    {
+        id: 'term022',
+        category: "Systèmes Thermiques - ECS",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un ballon ECS à préparation indirecte (ou ballon à serpentin) ?",
+        answers: [
+            "Un ballon dont l'eau sanitaire est chauffée par un serpentin parcouru par l'eau du circuit de chauffage, sans aucun mélange des deux fluides",
+            "Un ballon alimenté en eau froide de façon indirecte via un surpresseur pour maintenir la pression",
+            "Un ballon qui produit l'ECS uniquement à la demande sans stockage (système instantané)",
+            "Un ballon couplé à un panneau solaire via une pompe à chaleur intermédiaire de type DRV"
+        ],
+        correct: 0,
+        explanation: "Le ballon indirect (ou à serpentin) échange la chaleur de la chaudière vers l'ECS via un serpentin interne. Les deux fluides ne se mélangent JAMAIS. Pas d'appoint électrique intégré.",
+        keyPoints: ["Serpentin interne = échangeur", "2 fluides toujours séparés", "Couplé à chaudière/PAC", "Pas d'appoint électrique intégré"]
+    },
+    {
+        id: 'term023',
+        category: "Fondamentaux & Sécurité - Sécurité",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'une habilitation électrique de niveau B0 et quelle est sa limite d'intervention ?",
+        answers: [
+            "Elle autorise un non-électricien à travailler dans un environnement électrique hors tension : perçage, fixation, sans contact avec des conducteurs actifs",
+            "Elle autorise tous les travaux sur installations électriques jusqu'à 400V en milieu professionnel",
+            "Elle est réservée aux électriciens certifiés pour les travaux en basse tension (BT)",
+            "Elle permet uniquement les contrôles visuels et les relevés sans aucune intervention physique"
+        ],
+        correct: 0,
+        explanation: "B0 = niveau minimal pour un non-électricien travaillant à proximité d'installations électriques. Elle n'autorise PAS les travaux sous tension ni le contact avec des conducteurs.",
+        keyPoints: ["B0 = non-électricien", "Hors tension uniquement", "Pas de contact conducteurs actifs", "Perçage, fixation, déplacement matériel"]
+    },
+    {
+        id: 'term024',
+        category: "Systèmes Thermiques - Dimensionnement",
+        difficulty: "hard",
+        question: "Qu'est-ce que le débit nominal d'un appareil sanitaire et à quoi sert-il en plomberie ?",
+        answers: [
+            "Le débit consommé par l'appareil en utilisation normale (en L/s), servant au calcul des sections de canalisations par la méthode des unités de comptage",
+            "La pression minimale garantie par le réseau pour que l'appareil fonctionne correctement",
+            "Le volume maximum que l'appareil peut stocker avant de déborder en cas de défaillance du siphon",
+            "La vitesse de remplissage d'un ballon ECS en régime thermique normal"
+        ],
+        correct: 0,
+        explanation: "Le débit nominal (ex: lavabo = 0,1 L/s, douche = 0,15 L/s, baignoire = 0,3 L/s) est la base du calcul des canalisations. La méthode des UC (Unités de Comptage) s'appuie dessus.",
+        keyPoints: ["Lavabo : 0,1 L/s", "Douche : 0,15 L/s", "Baignoire : 0,3 L/s", "Base calcul sections (méthode UC)"]
+    },
+    {
+        id: 'term025',
+        category: "Chauffage - Remplissage/Purge",
+        difficulty: "medium",
+        question: "Quelles sont les étapes correctes pour remplir et purger un circuit de chauffage à eau chaude après travaux ?",
+        answers: [
+            "1) Fermer tous les robinets de purge, 2) Ouvrir l'alimentation en eau lentement, 3) Purger chaque radiateur du bas vers le haut, 4) Vérifier pression (1-1,5 bar froid), 5) Redémarrer la chaudière",
+            "1) Démarrer la chaudière à pleine puissance, 2) Ouvrir les purgeurs pour évacuer l'air chaud, 3) Ajouter de l'eau jusqu'à 2,5 bars, 4) Fermer progressivement les purgeurs",
+            "1) Remplir à 3 bars pour forcer l'eau jusqu'aux points hauts, 2) Purger en une seule fois, 3) Revenir à 1 bar après purge, 4) Vérifier l'étanchéité sous pression",
+            "1) Vider totalement le circuit avant remplissage, 2) Injecter un fluide prétraité sous pression, 3) Purger uniquement les purgeurs automatiques, 4) Mettre en chauffe directement"
+        ],
+        correct: 0,
+        explanation: "La purge se fait du bas vers le haut (les radiateurs bas en premier, puis les hauts). Pression de remplissage : 1 à 1,5 bar en eau froide (lira 1,5-2 bar chaud). Ne pas trop remplir.",
+        keyPoints: ["Bas vers le haut", "1-1,5 bar eau froide", "Purgeur = 1 tour, attendre l'eau, refermer", "Vérifier après chauffe : < 3 bars"]
     }
 ];
