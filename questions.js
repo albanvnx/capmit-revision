@@ -23,10 +23,10 @@ const allQuestions = [
         image: "images/schemas/schema-chauffage-1.png",
         imageAlt: "Schéma de principe d'une installation de chauffage",
         answers: [
-            "Décorer le dossier technique",
+            "Déterminer les diamètres exacts des canalisations",
             "Comprendre le fonctionnement global de l'installation",
-            "Calculer les dimensions exactes",
-            "Commander les matériaux"
+            "Calculer les dimensions exactes et les pertes de charge",
+            "Établir le devis quantitatif des matériaux"
         ],
         correct: 1,
         explanation: "Le schéma de principe montre comment les différents éléments fonctionnent ensemble, sans les dimensions exactes.",
@@ -40,10 +40,10 @@ const allQuestions = [
         image: "images/symboles/symbole-chauffage-2.png",
         imageAlt: "Deuxième page de symboles techniques de chauffage",
         answers: [
-            "C'est plus joli visuellement",
+            "Pour respecter les habitudes de chaque bureau d'études",
             "Pour assurer la compréhension universelle par tous les professionnels",
-            "Pour économiser de l'encre",
-            "C'est obligatoire seulement à l'export"
+            "Pour simplifier le travail du dessinateur sur CAO",
+            "C'est obligatoire seulement pour les marchés publics"
         ],
         correct: 1,
         explanation: "Les symboles normalisés garantissent que tous les professionnels (plombiers, chauffagistes, contrôleurs) comprennent exactement la même chose.",
@@ -83,7 +83,7 @@ const allQuestions = [
         id: 'q4',
         category: "Fondamentaux & Sécurité - Sécurité",
         question: "Quelle est la première action en cas d'accident sur chantier ?",
-        answers: ["Appeler l'entreprise", "Protéger-Alerter-Secourir", "Déplacer la victime", "Prendre des photos"],
+        answers: ["Rédiger un rapport d'accident immédiatement", "Protéger-Alerter-Secourir", "Déplacer la victime vers un endroit aéré", "Appeler le chef de chantier"],
         correct: 1,
         explanation: "PAS : Protéger (zone danger), Alerter (secours), Secourir (gestes appropriés).",
         keyPoints: ["Protéger la zone", "Appeler 15 ou 18", "Ne pas déplacer si trauma", "Gestes de premiers secours", "Défibrillateur"]
@@ -146,7 +146,7 @@ const allQuestions = [
         id: 'q11',
         category: "Fondamentaux & Sécurité - Sécurité",
         question: "Qu'est-ce qu'un BSD (Bordereau de Suivi de Déchets) ?",
-        answers: ["Un plan de chantier", "Un document de traçabilité des déchets dangereux", "Un bon de livraison", "Un certificat"],
+        answers: ["Un bon d'enlèvement de déchets inertes du chantier", "Un document de traçabilité des déchets dangereux", "Un formulaire de déclaration de fin de travaux", "Un registre de contrôle d'accès au site"],
         correct: 1,
         explanation: "Le BSD assure la traçabilité des déchets dangereux du producteur à l'éliminateur.",
         keyPoints: ["Déchets dangereux", "Traçabilité complète", "3 volets", "Conservation 5 ans", "Obligatoire"]
@@ -256,7 +256,7 @@ const allQuestions = [
         id: 'q23',
         category: "Fondamentaux & Sécurité - Atelier",
         question: "À quoi sert le décapant (flux) en brasure ?",
-        answers: ["Refroidir", "Dissoudre les oxydes et faciliter l'accroche", "Colorer", "Renforcer"],
+        answers: ["Refroidir le métal d'apport pour le solidifier rapidement", "Dissoudre les oxydes et faciliter l'accroche", "Colorer la brasure pour identifier le type d'alliage utilisé", "Renforcer mécaniquement le joint en pénétrant dans le métal"],
         correct: 1,
         explanation: "Le flux dissout les oxydes et permet au métal d'apport de bien adhérer.",
         keyPoints: ["Dissout oxydes", "Meilleure accroche", "Protection oxydation", "Application avant chauffe", "Brasure tendre"]
@@ -337,7 +337,7 @@ const allQuestions = [
         id: 'q32',
         category: "Fondamentaux & Sécurité - Atelier",
         question: "Quelle est la différence entre un té égal et un té réduit ?",
-        answers: ["La forme", "Les diamètres : égaux ou différents", "Le matériau", "Le prix"],
+        answers: ["La forme (le té égal est T, le té réduit est en L asymétrique)", "Les diamètres : égaux ou différents", "Le matériau de fabrication (cuivre, acier ou laiton)", "Le prix, le té réduit étant plus coûteux que le té égal"],
         correct: 1,
         explanation: "Té égal : 3 diamètres identiques. Té réduit : un diamètre différent (souvent le piquage).",
         keyPoints: ["Té égal : Ø identiques", "Té réduit : Ø différents", "Piquage réduit", "Dérivation", "Moins de perte charge"]
@@ -503,7 +503,7 @@ const allQuestions = [
         id: 'q50',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "Qu'est-ce qu'un réducteur de pression ?",
-        answers: ["Augmente pression", "Stabilise et réduit la pression", "Filtre eau", "Chauffe eau"],
+        answers: ["Amplifie la pression en aval jusqu'à 6 bars", "Stabilise et réduit la pression", "Filtre les particules en suspension dans l'eau", "Maintient une pression minimale dans le réseau"],
         correct: 1,
         explanation: "Le réducteur stabilise la pression en aval à une valeur réglable (généralement 3 bars).",
         keyPoints: ["Réduit pression", "Réglable", "Généralement 3 bars", "Protection installation", "Si > 5 bars"]
@@ -521,7 +521,7 @@ const allQuestions = [
         id: 'q52',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "Quelle est la différence entre eau dure et eau douce ?",
-        answers: ["Température", "Teneur en calcaire (TH)", "Couleur", "Goût"],
+        answers: ["Teneur en chlore résiduel", "Teneur en calcaire (TH)", "Teneur en fluor ajouté", "Teneur en fer dissous"],
         correct: 1,
         explanation: "Eau dure = riche en calcaire (TH élevé). Eau douce = peu de calcaire (TH faible).",
         keyPoints: ["TH = Titre Hydrotimétrique", "Dure : > 30°f", "Douce : < 15°f", "Calcaire", "Adoucisseur"]
@@ -530,7 +530,7 @@ const allQuestions = [
         id: 'q53',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "Que mesure le TH (Titre Hydrotimétrique) ?",
-        answers: ["Température", "Dureté (calcaire)", "Pression", "Débit"],
+        answers: ["Acidité totale de l'eau (pH)", "Dureté (calcaire)", "Teneur en chlore actif", "Conductivité électrique"],
         correct: 1,
         explanation: "Le TH mesure la concentration en calcium et magnésium (dureté de l'eau).",
         keyPoints: ["Dureté eau", "Calcium + Magnésium", "°f (degré français)", "Entartrage", "10 mg/L CaCO3 = 1°f"]
@@ -548,7 +548,7 @@ const allQuestions = [
         id: 'q55',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "Qu'est-ce qu'un ballon tampon dans un circuit de chauffage ?",
-        answers: ["Réserve eau sanitaire", "Stockage inertie thermique", "Filtre à eau", "Pompe"],
+        answers: ["Réservoir de dégazage en point haut d'installation", "Stockage inertie thermique", "Échangeur intermédiaire entre primaire et secondaire", "Vase d'expansion à membrane pour circuit fermé"],
         correct: 1,
         explanation: "Le ballon tampon stocke la chaleur et régule les cycles de la chaudière.",
         keyPoints: ["Inertie thermique", "Stockage chaleur", "Régule cycles", "Économie énergie", "Bois/PAC"]
@@ -557,7 +557,7 @@ const allQuestions = [
         id: 'q56',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "Qu'est-ce qu'un groupe de sécurité chauffe-eau ?",
-        answers: ["Alarme", "Sécurité surpression + vidange", "Interrupteur", "Thermostat"],
+        answers: ["Dispositif de régulation de température du ballon", "Sécurité surpression + vidange", "Organe de filtration anti-calcaire en entrée d'eau froide", "Disconnecteur anti-retour avec réducteur de pression"],
         correct: 1,
         explanation: "Le groupe de sécurité protège contre la surpression et permet la vidange.",
         keyPoints: ["Soupape 7 bars", "Vidange", "Clapet anti-retour", "Goutte normale", "Obligatoire"]
@@ -566,7 +566,7 @@ const allQuestions = [
         id: 'q57',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "Pourquoi le groupe de sécurité goutte-t-il légèrement ?",
-        answers: ["Fuite", "Dilatation eau chauffée (normal)", "Défaut", "Trop de pression"],
+        answers: ["Joint d'étanchéité usé à remplacer", "Dilatation eau chauffée (normal)", "Pression réseau trop élevée dépassant 5 bars", "Clapet anti-retour défaillant mal calibré"],
         correct: 1,
         explanation: "L'eau se dilate en chauffant, la soupape évacue le surplus (normal).",
         keyPoints: ["Dilatation normale", "Quelques gouttes", "Pas une fuite", "3-5% volume", "Si jet : problème"]
@@ -584,7 +584,7 @@ const allQuestions = [
         id: 'q59',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "Quelle est la différence entre production instantanée et accumulation ?",
-        answers: ["Aucune", "Instantanée : chauffe à la demande, Accumulation : stocke", "Prix", "Taille"],
+        answers: ["La température maximale de l'eau produite", "Instantanée : chauffe à la demande, Accumulation : stocke", "Le type d'énergie utilisée (gaz ou électricité)", "Le rendement en période hivernale"],
         correct: 1,
         explanation: "Instantanée : chauffe l'eau à la demande (débit). Accumulation : stocke eau chaude.",
         keyPoints: ["Instantané : à la demande", "Accumulation : stockage", "Instantané : débit limité", "Accumulation : réserve", "Usage différent"]
@@ -593,7 +593,7 @@ const allQuestions = [
         id: 'q60',
         category: "Fondamentaux & Sécurité - Systèmes",
         question: "Qu'est-ce qu'un mitigeur thermostatique ?",
-        answers: ["Robinet simple", "Mélange eau chaude/froide à T° fixe", "Vanne électrique", "Filtre"],
+        answers: ["Robinet à tête céramique à deux commandes séparées", "Mélange eau chaude/froide à T° fixe", "Vanne motorisée de régulation à sonde de contact", "Régulateur de pression différentielle sanitaire"],
         correct: 1,
         explanation: "Le mitigeur thermostatique maintient automatiquement la température choisie.",
         keyPoints: ["Température constante", "Sécurité anti-brûlure", "Réglage précis", "Cartouche cire", "Douche"]
@@ -631,7 +631,7 @@ const allQuestions = [
         id: 'q64',
         category: "Fondamentaux & Sécurité - Combustion",
         question: "Qu'est-ce que le PCI (Pouvoir Calorifique Inférieur) ?",
-        answers: ["Prix du combustible", "Énergie libérée sans condensation vapeur", "Température de combustion", "Volume gaz"],
+        answers: ["Prix d'achat du combustible indexé sur la cote du marché international", "Énergie libérée sans condensation vapeur", "Température maximale atteinte lors de la combustion stœchiométrique", "Volume de gaz produit lors de la combustion d'un kilogramme de combustible"],
         correct: 1,
         explanation: "Le PCI est l'énergie libérée lors de la combustion, vapeur d'eau non condensée.",
         keyPoints: ["Énergie libérée", "Sans condensation", "kWh/kg ou kWh/m³", "Choix combustible", "< PCS"]
@@ -640,7 +640,7 @@ const allQuestions = [
         id: 'q65',
         category: "Fondamentaux & Sécurité - Combustion",
         question: "Qu'est-ce que le PCS (Pouvoir Calorifique Supérieur) ?",
-        answers: ["Prix maximum", "Énergie avec récupération chaleur vapeur", "Température max", "Pression max"],
+        answers: ["Puissance calorifique maximale mesurée en régime de combustion nominal", "Énergie avec récupération chaleur vapeur", "Température maximale des fumées d'une chaudière en régime de croisière", "Pression maximale de service d'une installation de chauffage en régime nominal"],
         correct: 1,
         explanation: "Le PCS inclut la chaleur latente de la vapeur d'eau (chaudière condensation).",
         keyPoints: ["Énergie totale", "Avec condensation", "> PCI", "Chaudière condensation", "Meilleur rendement"]
@@ -658,7 +658,7 @@ const allQuestions = [
         id: 'q67',
         category: "Fondamentaux & Sécurité - Combustion",
         question: "Qu'est-ce qu'une chaudière à condensation ?",
-        answers: ["Chaudière ancienne", "Récupère chaleur des fumées", "Chaudière électrique", "Chaudière gaz uniquement"],
+        answers: ["Chaudière fonctionnant sous haute pression de vapeur", "Récupère chaleur des fumées", "Chaudière équipée d'un brûleur pressurisé à air pulsé", "Chaudière avec résistance électrique d'appoint intégrée"],
         correct: 1,
         explanation: "Elle récupère la chaleur latente de la vapeur d'eau des fumées (rendement >100%).",
         keyPoints: ["Récupère chaleur fumées", "Condensation vapeur", "Rendement > 100%", "Basse température", "Économie 15-20%"]
@@ -667,7 +667,7 @@ const allQuestions = [
         id: 'q68',
         category: "Fondamentaux & Sécurité - Combustion",
         question: "Pourquoi dit-on qu'une chaudière condensation a un rendement > 100% ?",
-        answers: ["Erreur de mesure", "Référence au PCI, récupère + d'énergie", "Créé de l'énergie", "Calcul faux"],
+        answers: ["La chaudière produit plus d'énergie qu'elle n'en consomme", "Référence au PCI, récupère + d'énergie", "Le calcul du rendement est basé sur le PCS et non le PCI", "L'échangeur de condensation génère une réaction exothermique"],
         correct: 1,
         explanation: "Le rendement est calculé sur le PCI. La condensation récupère l'énergie du PCS.",
         keyPoints: ["Référence PCI", "Récupère PCS", "Pas création énergie", "Convention calcul", "Jusqu'à 110%"]
@@ -685,7 +685,7 @@ const allQuestions = [
         id: 'q70',
         category: "Fondamentaux & Sécurité - Éco-construction",
         question: "Qu'est-ce qu'un matériau biosourcé ?",
-        answers: ["Matériau chimique", "Matériau d'origine végétale ou animale", "Matériau recyclé", "Matériau minéral"],
+        answers: ["Matériau issu du recyclage de déchets industriels", "Matériau d'origine végétale ou animale", "Matériau certifié à faible émission de COV", "Matériau produit localement dans un rayon de 100 km"],
         correct: 1,
         explanation: "Matériau biosourcé : d'origine végétale (bois, chanvre) ou animale (laine).",
         keyPoints: ["Origine vivante", "Végétal ou animal", "Renouvelable", "Carbone stocké", "Écologique"]
@@ -696,7 +696,7 @@ const allQuestions = [
         id: 'q71',
         category: "Systèmes Thermiques - Évacuation",
         question: "Quel est le rôle d'un siphon ?",
-        answers: ["Augmenter pression", "Garde d'eau anti-odeurs", "Filtrer", "Réguler débit"],
+        answers: ["Ralentir l'écoulement pour faciliter la décantation", "Garde d'eau anti-odeurs", "Filtrer les matières solides en suspension", "Assurer la pente minimale de l'évacuation"],
         correct: 1,
         explanation: "Le siphon crée une garde d'eau (5 cm min) empêchant les odeurs de remonter.",
         keyPoints: ["Garde d'eau 5 cm", "Anti-odeurs", "Anti-gaz", "Obligatoire", "Types S/P/bouteille"]
@@ -705,7 +705,7 @@ const allQuestions = [
         id: 'q72',
         category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce qu'une chute d'eaux usées ?",
-        answers: ["Fuite", "Canalisation verticale évacuation", "Robinet", "Pompe"],
+        answers: ["Tuyauterie horizontale reliant les appareils sanitaires", "Canalisation verticale évacuation", "Collecteur enterré sous dallage raccordé à l'égout", "Conduit de ventilation secondaire équilibrant les siphons"],
         correct: 1,
         explanation: "La chute est une canalisation verticale qui collecte les évacuations des étages.",
         keyPoints: ["Verticale", "Collecte étages", "Diamètre 100mm", "Ventilation primaire", "Évite dépression"]
@@ -714,7 +714,7 @@ const allQuestions = [
         id: 'q73',
         category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce que la ventilation primaire ?",
-        answers: ["VMC", "Prolongement chute au-dessus toit", "Extracteur", "Fenêtre"],
+        answers: ["Admission d'air basse sur façade pour alimenter les appareils gaz", "Prolongement chute au-dessus toit", "Conduit de VMC relié aux pièces humides", "Entrée d'air haute de cuisine pour évacuation des fumées"],
         correct: 1,
         explanation: "La ventilation primaire prolonge la chute au-dessus du toit pour équilibrer pressions.",
         keyPoints: ["Prolonge chute", "Au-dessus toit", "Équilibre pression", "Évite siphonnage", "Obligatoire"]
@@ -723,7 +723,7 @@ const allQuestions = [
         id: 'q74',
         category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce que la ventilation secondaire ?",
-        answers: ["VMC", "Tuyau équilibrant pression siphons éloignés", "Aération naturelle", "Climatisation"],
+        answers: ["Prolongement de la chute principale au-dessus du toit", "Tuyau équilibrant pression siphons éloignés", "Extraction mécanique des pièces humides d'un logement", "Conduit d'équilibrage reliant chute et collecteur principal"],
         correct: 1,
         explanation: "La ventilation secondaire relie les siphons éloignés à la chute pour éviter le siphonnage.",
         keyPoints: ["Siphons éloignés", "Équilibre pression", "Évite dépression", "Ø32-40mm", "Facultative si proche"]
@@ -741,7 +741,7 @@ const allQuestions = [
         id: 'q76',
         category: "Systèmes Thermiques - Évacuation",
         question: "Pourquoi ne doit-on pas mettre d'angle à 90° sur une évacuation ?",
-        answers: ["Esthétique", "Risque bouchons et turbulences", "Plus cher", "Pas de raison"],
+        answers: ["Les raccords à 90° sont plus fragiles mécaniquement", "Risque bouchons et turbulences", "Les raccords à 90° augmentent les pertes de charge et réduisent le débit utile", "Les normes DTU interdisent les angles droits dans les collecteurs"],
         correct: 1,
         explanation: "Les angles à 90° créent des turbulences et favorisent les bouchons.",
         keyPoints: ["Éviter 90°", "Turbulences", "Bouchons", "Préférer 2×45°", "Écoulement fluide"]
@@ -750,7 +750,7 @@ const allQuestions = [
         id: 'q77',
         category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce qu'un séparateur de graisses ?",
-        answers: ["Filtre eau", "Dispositif séparant graisses eaux usées", "Pompe", "Siphon"],
+        answers: ["Filtre à tamis retenant les matières solides alimentaires", "Dispositif séparant graisses eaux usées", "Siphon renforcé avec bouchon de nettoyage hebdomadaire", "Collecteur de condensats pour installations de restauration"],
         correct: 1,
         explanation: "Le séparateur retient les graisses avant évacuation (cuisine professionnelle).",
         keyPoints: ["Retient graisses", "Cuisine pro", "Évite bouchons", "Nettoyage régulier", "Obligatoire restaurant"]
@@ -759,7 +759,7 @@ const allQuestions = [
         id: 'q78',
         category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce qu'un regard de visite ?",
-        answers: ["Fenêtre", "Accès canalisation pour entretien", "Siphon", "Vanne"],
+        answers: ["Raccord étanche avec bouchon permettant le passage du furet", "Accès canalisation pour entretien", "Siphon de sol avec couvercle amovible", "Tampon de fermeture d'une canalisation en attente"],
         correct: 1,
         explanation: "Le regard permet l'accès aux canalisations enterrées pour inspection/débouchage.",
         keyPoints: ["Accès canalisation", "Inspection", "Débouchage", "Tampon", "Tous les 10-15m"]
@@ -768,7 +768,7 @@ const allQuestions = [
         id: 'q79',
         category: "Systèmes Thermiques - Évacuation",
         question: "Quelle est la différence entre eaux vannes (EV) et eaux usées (EU) ?",
-        answers: ["Aucune", "EV : WC, EU : lavabo/douche", "EV : chaudes, EU : froides", "EV : propres, EU : sales"],
+        answers: ["EV : eaux de pluie récupérées, EU : eaux ménagères grises", "EV : WC, EU : lavabo/douche", "EV : eaux de vidange chaufferie, EU : eaux sanitaires", "EV : réseaux extérieurs, EU : réseaux intérieurs bâtiment"],
         correct: 1,
         explanation: "EV = eaux vannes (WC), EU = eaux usées (lavabo, douche). EV+EU = eaux usées totales.",
         keyPoints: ["EV = WC", "EU = lavabo/douche", "Réseaux séparés/unitaires", "Traitement différent", "Collecte"]
@@ -777,7 +777,7 @@ const allQuestions = [
         id: 'q80',
         category: "Systèmes Thermiques - Évacuation",
         question: "Qu'est-ce qu'un avaloir ?",
-        answers: ["Robinet", "Grille collectant eaux pluviales", "Siphon", "Tuyau"],
+        answers: ["Regard de visite de collecteur d'assainissement", "Grille collectant eaux pluviales", "Siphon de sol carrelé pour pièces humides", "Tampon de curage en extrémité de collecteur"],
         correct: 1,
         explanation: "L'avaloir (grille rue) collecte les eaux pluviales vers le réseau d'évacuation.",
         keyPoints: ["Grille rue", "Eaux pluviales", "Collecte surface", "Panier dégrilleur", "Nettoyage régulier"]
@@ -786,7 +786,7 @@ const allQuestions = [
         id: 'q81',
         category: "Systèmes Thermiques - Émetteurs",
         question: "Quels sont les principaux types d'émetteurs de chaleur ?",
-        answers: ["Chaudières, PAC", "Radiateurs, planchers chauffants, convecteurs", "Tuyaux, vannes", "Thermostats, sondes"],
+        answers: ["Chaudières, PAC, poêles à granulés", "Radiateurs, planchers chauffants, convecteurs", "Circulateurs, vannes mélangeuses, collecteurs", "Vases d'expansion, soupapes, disconnecteurs"],
         correct: 1,
         explanation: "Les émetteurs diffusent la chaleur : radiateurs, planchers chauffants, convecteurs.",
         keyPoints: ["Radiateurs", "Planchers chauffants", "Convecteurs", "Ventilo-convecteurs", "Diffusion chaleur"]
@@ -813,7 +813,7 @@ const allQuestions = [
         id: 'q84',
         category: "Systèmes Thermiques - Émetteurs",
         question: "Quel est l'avantage d'un radiateur basse température ?",
-        answers: ["Moins cher", "Compatible chaudière condensation", "Plus petit", "Plus léger"],
+        answers: ["Il consomme moins d'électricité en veille", "Compatible chaudière condensation", "Il ne nécessite aucun robinet thermostatique", "Il peut fonctionner sans circulateur par thermosiphon"],
         correct: 1,
         explanation: "Les radiateurs BT (50/40°C) optimisent le rendement des chaudières condensation.",
         keyPoints: ["50/40°C", "Rendement optimal", "Condensation efficace", "Économie", "Surface + grande"]
@@ -822,7 +822,7 @@ const allQuestions = [
         id: 'q85',
         category: "Systèmes Thermiques - Dimensionnement",
         question: "Comment dimensionne-t-on un réseau sanitaire ?",
-        answers: ["Au hasard", "Selon débit simultané et perte de charge", "Toujours Ø20", "À l'œil"],
+        answers: ["Selon la hauteur du bâtiment et la pression du réseau uniquement", "Selon débit simultané et perte de charge", "En appliquant un diamètre identique pour tous les appareils", "Selon le débit maximum de chaque appareil additionné"],
         correct: 1,
         explanation: "On calcule le débit simultané (coefficient K) et les pertes de charge pour choisir le diamètre.",
         keyPoints: ["Débit simultané", "Coefficient K", "Pertes charge", "Vitesse < 2 m/s", "Tableaux DTU"]
@@ -833,7 +833,7 @@ const allQuestions = [
         id: 'q86',
         category: "Systèmes Thermiques - Sécurité",
         question: "Qu'est-ce qu'un disconnecteur ?",
-        answers: ["Interrupteur", "Anti-retour protégeant eau potable", "Outil", "Ventilation"],
+        answers: ["Réducteur de pression avec soupape de sécurité intégrée", "Anti-retour protégeant eau potable", "Filtre anti-particules en entrée d'installation", "Vanne de sectionnement avec indicateur de position"],
         correct: 1,
         explanation: "Le disconnecteur empêche le retour d'eau polluée vers le réseau d'eau potable.",
         keyPoints: ["Anti-retour", "Protection réseau", "BA/CA/EA", "Contrôle annuel", "Obligatoire"]
@@ -851,7 +851,7 @@ const allQuestions = [
         id: 'q88',
         category: "Systèmes Thermiques - Sécurité",
         question: "Qu'est-ce qu'un clapet anti-retour ?",
-        answers: ["Vanne manuelle", "Dispositif empêchant retour d'eau", "Filtre", "Pompe"],
+        answers: ["Vanne à boisseau sphérique à fermeture rapide", "Dispositif empêchant retour d'eau", "Filtre retenant les particules en sens inverse", "Soupape à membrane tarantée à une pression fixe"],
         correct: 1,
         explanation: "Le clapet ne laisse passer l'eau que dans un sens (gravité ou ressort).",
         keyPoints: ["Un seul sens", "Ressort ou gravité", "Position horizontale", "Pas de maintenance", "Simple"]
@@ -860,7 +860,7 @@ const allQuestions = [
         id: 'q89',
         category: "Systèmes Thermiques - Sécurité",
         question: "Qu'est-ce qu'une soupape de sécurité ?",
-        answers: ["Thermostat", "Sécurité surpression (7 bars)", "Pompe", "Filtre"],
+        answers: ["Clapet à ressort limitant la vitesse d'écoulement", "Sécurité surpression (7 bars)", "Disconnecteur à zone de pression réduite", "Vase d'expansion à membrane pour absorber la dilatation"],
         correct: 1,
         explanation: "La soupape s'ouvre à 7 bars pour éviter l'éclatement du ballon.",
         keyPoints: ["7 bars", "Surpression", "Groupe sécurité", "Obligatoire", "Test régulier"]
@@ -869,7 +869,7 @@ const allQuestions = [
         id: 'q90',
         category: "Systèmes Thermiques - Sécurité",
         question: "Qu'est-ce qu'une soupape thermique ?",
-        answers: ["Thermostat", "Sécurité surchauffe (100-110°C)", "Vanne", "Capteur"],
+        answers: ["Thermostat de régulation de la chaudière en température de départ", "Sécurité surchauffe (100-110°C)", "Soupape de sécurité tarée à 3 bars pour circuit de chauffage", "Clapet thermostatique sur robinet de radiateur"],
         correct: 1,
         explanation: "La soupape thermique s'ouvre si température > 95-110°C (risque ébullition).",
         keyPoints: ["95-110°C", "Surchauffe", "Ébullition", "Vidange ballon", "Sécurité"]
@@ -878,7 +878,7 @@ const allQuestions = [
         id: 'q91',
         category: "Systèmes Thermiques - Mesure",
         question: "À quoi sert un manomètre ?",
-        answers: ["Mesurer température", "Mesurer pression", "Mesurer débit", "Mesurer niveau"],
+        answers: ["Mesurer la température de l'eau de départ", "Mesurer pression", "Mesurer le débit volumique du fluide", "Mesurer la conductivité électrique de l'eau"],
         correct: 1,
         explanation: "Le manomètre mesure la pression en bars ou kPa.",
         keyPoints: ["Pression", "Bars ou kPa", "1-2 bars normal", "Chauffage", "Contrôle"]
@@ -887,7 +887,7 @@ const allQuestions = [
         id: 'q92',
         category: "Systèmes Thermiques - Mesure",
         question: "À quoi sert un thermomètre ?",
-        answers: ["Mesurer pression", "Mesurer température", "Mesurer débit", "Mesurer pH"],
+        answers: ["Mesurer la pression du fluide caloporteur", "Mesurer température", "Mesurer le débit instantané en L/h", "Mesurer la dureté de l'eau (TH)"],
         correct: 1,
         explanation: "Le thermomètre mesure la température en °C (aller/retour chauffage).",
         keyPoints: ["Température", "°C", "Aller/retour", "Contrôle", "Régulation"]
@@ -896,7 +896,7 @@ const allQuestions = [
         id: 'q93',
         category: "Systèmes Thermiques - Mesure",
         question: "Qu'est-ce qu'un débitmètre ?",
-        answers: ["Mesure pression", "Mesure débit d'eau", "Mesure température", "Mesure pH"],
+        answers: ["Mesure la pression différentielle en entrée et sortie de circuit", "Mesure débit d'eau", "Mesure la température de l'eau en continu", "Mesure l'énergie thermique échangée (kWh)"],
         correct: 1,
         explanation: "Le débitmètre mesure le débit d'eau en L/h ou m³/h.",
         keyPoints: ["Débit", "L/h ou m³/h", "Eau ou gaz", "Comptage", "Régulation"]
@@ -905,7 +905,7 @@ const allQuestions = [
         id: 'q94',
         category: "Systèmes Thermiques - Sécurité",
         question: "Qu'est-ce qu'un purgeur automatique ?",
-        answers: ["Vanne manuelle", "Purge air automatiquement", "Pompe", "Filtre"],
+        answers: ["Soupape de décharge en point bas du circuit chauffage", "Purge air automatiquement", "Clapet anti-retour à flotteur en entrée de chaudière", "Séparateur boues magnétique sur retour chaudière"],
         correct: 1,
         explanation: "Le purgeur automatique évacue l'air du circuit sans intervention.",
         keyPoints: ["Purge auto", "Évacue air", "Flotteur", "Points hauts", "Entretien minimal"]
@@ -914,7 +914,7 @@ const allQuestions = [
         id: 'q95',
         category: "Systèmes Thermiques - Sécurité",
         question: "Où place-t-on les purgeurs automatiques ?",
-        answers: ["Points bas", "Points hauts du circuit", "N'importe où", "Sur chaudière uniquement"],
+        answers: ["Points bas pour récupérer les boues décantées", "Points hauts du circuit", "À la sortie du circulateur pour protéger la roue", "Sur l'arrivée d'eau froide du ballon ECS"],
         correct: 1,
         explanation: "Les purgeurs se placent aux points hauts où l'air s'accumule naturellement.",
         keyPoints: ["Points hauts", "Accumulation air", "Collecteurs", "Radiateurs", "Plusieurs points"]
@@ -925,7 +925,7 @@ const allQuestions = [
         id: 'q96',
         category: "Systèmes Avancés - Gaz",
         question: "Quelle ventilation est obligatoire pour une installation gaz ?",
-        answers: ["Aucune", "Haute et basse", "Uniquement haute", "Uniquement basse"],
+        answers: ["Uniquement une VMC dans la pièce contenant l'appareil", "Haute et basse", "Uniquement haute pour l'évacuation des fumées", "Uniquement basse pour l'amenée d'air comburant"],
         correct: 1,
         explanation: "Ventilation basse (air comburant) et haute (évacuation CO2) obligatoires.",
         keyPoints: ["Basse : air", "Haute : évacuation", "Section selon puissance", "Non obstruable", "Contrôle annuel"]
@@ -952,7 +952,7 @@ const allQuestions = [
         id: 'q99',
         category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'un détendeur gaz ?",
-        answers: ["Pompe", "Réduit pression bouteille vers pression d'usage", "Vanne", "Filtre"],
+        answers: ["Soupape de sécurité tarée qui libère le gaz en surpression", "Réduit pression bouteille vers pression d'usage", "Vanne de sectionnement à sécurité intégrée", "Compteur volumétrique avec correcteur de pression"],
         correct: 1,
         explanation: "Le détendeur réduit la pression de la bouteille (propane 37 mbar, butane 28 mbar).",
         keyPoints: ["Réduit pression", "Propane 37 mbar", "Butane 28 mbar", "Sécurité", "Obligatoire"]
@@ -961,7 +961,7 @@ const allQuestions = [
         id: 'q100',
         category: "Systèmes Avancés - Gaz",
         question: "Quelle est la différence entre butane et propane ?",
-        answers: ["Couleur", "Température d'évaporation", "Goût", "Aucune"],
+        answers: ["La densité par rapport à l'air (l'un monte, l'autre descend)", "Température d'évaporation", "La couleur de la flamme lors de la combustion", "La formule chimique (gaz simple vs gaz composé)"],
         correct: 1,
         explanation: "Butane : > 0°C (intérieur). Propane : > -44°C (extérieur).",
         keyPoints: ["Butane > 0°C", "Propane > -44°C", "Butane intérieur", "Propane extérieur", "Pression différente"]
@@ -970,7 +970,7 @@ const allQuestions = [
         id: 'q101',
         category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'un robinet de barrage gaz ?",
-        answers: ["Robinet cuisine", "Vanne coupure totale installation", "Détendeur", "Filtre"],
+        answers: ["Détendeur de pression réglable en entrée de compteur", "Vanne coupure totale installation", "Clapet anti-retour gaz obligatoire en sortie bouteille", "Disconnecteur anti-pollution réseau gaz"],
         correct: 1,
         explanation: "Le robinet de barrage (1/4 tour) coupe l'alimentation générale en gaz.",
         keyPoints: ["Coupure générale", "1/4 de tour", "Obligatoire", "Accessible", "Signalisation"]
@@ -979,7 +979,7 @@ const allQuestions = [
         id: 'q102',
         category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'un coupe-tirage sur un appareil gaz ?",
-        answers: ["Vanne", "Ouverture admettant air dilution fumées", "Filtre", "Thermostat"],
+        answers: ["Thermostat de sécurité coupant le gaz en cas de surchauffe", "Ouverture admettant air dilution fumées", "Clapet motorisé régulant le tirage selon la puissance", "Sécurité thermoélectrique détectant l'extinction de flamme"],
         correct: 1,
         explanation: "Le coupe-tirage empêche le refoulement et dilue les fumées en cas de refoulement.",
         keyPoints: ["Dilution fumées", "Anti-refoulement", "Entrée air", "Obligatoire", "Type B"]
@@ -988,7 +988,7 @@ const allQuestions = [
         id: 'q103',
         category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'un appareil de type B (gaz) ?",
-        answers: ["Étanche", "Non étanche, prélève air pièce", "Électrique", "Solaire"],
+        answers: ["Appareil raccordé à un conduit collectif avec ventouse", "Non étanche, prélève air pièce", "Appareil à circuit de combustion fermé et ventouse individuelle", "Appareil avec sécurité de flamme thermoélectrique intégrée"],
         correct: 1,
         explanation: "Type B : non étanche, prélève air dans la pièce, évacuation naturelle/forcée.",
         keyPoints: ["Non étanche", "Air pièce", "Ventilation obligatoire", "Évacuation", "Coupe-tirage"]
@@ -997,7 +997,7 @@ const allQuestions = [
         id: 'q104',
         category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'un appareil de type C (gaz) ?",
-        answers: ["Non étanche", "Étanche, circuit fermé air/fumées", "Ouvert", "Sans évacuation"],
+        answers: ["Non étanche prenant l'air de la pièce par amenée basse", "Étanche, circuit fermé air/fumées", "Ouvert raccordé à un conduit collectif (shunt)", "Appareil sans évacuation des produits de combustion"],
         correct: 1,
         explanation: "Type C : étanche, circuit fermé (concentriqueventouse), pas de ventilation pièce.",
         keyPoints: ["Étanche", "Circuit fermé", "Ventouse", "Pas ventilation pièce", "Sécurité"]
@@ -1006,7 +1006,7 @@ const allQuestions = [
         id: 'q105',
         category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce qu'une ventouse (gaz) ?",
-        answers: ["Outil", "Conduit concentrique étanche (air/fumées)", "Vanne", "Siphon"],
+        answers: ["Soupape d'admission d'air pour le tirage naturel de cheminée", "Conduit concentrique étanche (air/fumées)", "Clapet anti-retour sur conduit d'évacuation collectif", "Orifice de ventilation haute obligatoire pour appareil type B"],
         correct: 1,
         explanation: "La ventouse est un conduit concentrique : air frais dans anneau, fumées au centre.",
         keyPoints: ["Concentrique", "Air + fumées", "Étanche", "Horizontal/vertical", "Type C"]
@@ -1024,7 +1024,7 @@ const allQuestions = [
         id: 'q107',
         category: "Systèmes Avancés - Gaz",
         question: "Qu'est-ce que le GN (Gaz Naturel) ?",
-        answers: ["Gaz en bouteille", "Méthane distribué par réseau", "Propane", "Butane"],
+        answers: ["Mélange de propane et butane distribué en bouteille", "Méthane distribué par réseau", "Gaz issu de la distillation du pétrole brut", "Hydrogène naturel extrait des nappes phréatiques"],
         correct: 1,
         explanation: "GN = méthane distribué par réseau de ville, plus léger que l'air.",
         keyPoints: ["Méthane", "Réseau ville", "Plus léger air", "20 mbar", "Compteur"]
@@ -1051,7 +1051,7 @@ const allQuestions = [
         id: 'q110',
         category: "Systèmes Avancés - Gaz",
         question: "Que faire en cas de fuite de gaz détectée ?",
-        answers: ["Allumer lumière", "Ne pas toucher électricité, aérer, couper, évacuer, appeler", "Fumer dehors", "Ignorer"],
+        answers: ["Allumer la lumière pour évaluer l'ampleur du problème", "Ne pas toucher électricité, aérer, couper, évacuer, appeler", "Refermer toutes les fenêtres pour concentrer et localiser la fuite", "Tenter de localiser la fuite avec un briquet avant d'appeler"],
         correct: 1,
         explanation: "1. Ne pas toucher électricité. 2. Aérer. 3. Couper gaz. 4. Évacuer. 5. Appeler pompiers.",
         keyPoints: ["Pas d'électricité", "Aérer", "Couper", "Évacuer", "Appeler 18"]
@@ -1098,7 +1098,7 @@ const allQuestions = [
         id: 'q115',
         category: "Systèmes Avancés - Solaire",
         question: "Pourquoi un appoint est-il nécessaire sur un CESI ?",
-        answers: ["Pas nécessaire", "Soleil insuffisant en hiver", "Pour le prix", "Réglementation"],
+        answers: ["Les capteurs solaires ne peuvent pas atteindre 60°C anti-légionelles", "Soleil insuffisant en hiver", "L'énergie solaire produit trop d'ECS en été créant un risque de brûlure", "La réglementation thermique impose deux sources d'énergie différentes"],
         correct: 1,
         explanation: "L'ensoleillement est insuffisant en hiver et par mauvais temps (appoint chaudière/électrique).",
         keyPoints: ["Ensoleillement variable", "Hiver", "Mauvais temps", "Chaudière ou électrique", "Sécurité"]
@@ -1116,7 +1116,7 @@ const allQuestions = [
         id: 'q117',
         category: "Systèmes Avancés - Solaire",
         question: "Qu'est-ce qu'un ballon solaire double échangeur ?",
-        answers: ["Deux ballons", "Un ballon avec échangeur solaire + appoint", "Ballon électrique", "Pompe"],
+        answers: ["Deux ballons couplés en série avec un seul échangeur commun", "Un ballon avec échangeur solaire + appoint", "Ballon électrique avec résistance double puissance", "Échangeur à plaques brasées pour circuit bithermique"],
         correct: 1,
         explanation: "Échangeur bas (solaire) + échangeur haut (appoint chaudière).",
         keyPoints: ["2 échangeurs", "Bas : solaire", "Haut : appoint", "Stratification", "Optimisation"]
@@ -1125,7 +1125,7 @@ const allQuestions = [
         id: 'q118',
         category: "Systèmes Avancés - Solaire",
         question: "Qu'est-ce que la stagnation d'une installation solaire ?",
-        answers: ["Arrêt circulation", "Surchauffe capteurs sans soutirage", "Gel", "Fuite"],
+        answers: ["Arrêt du circulateur par manque de différentiel de température", "Surchauffe capteurs sans soutirage", "Gel du fluide caloporteur à basse température", "Défaut de régulation entraînant une circulation continue de nuit"],
         correct: 1,
         explanation: "En été sans soutirage, le fluide peut atteindre 150-200°C (vapeur).",
         keyPoints: ["Surchauffe", "Été", "Pas de soutirage", "150-200°C", "Protection nécessaire"]
@@ -1134,7 +1134,7 @@ const allQuestions = [
         id: 'q119',
         category: "Systèmes Avancés - Solaire",
         question: "Qu'est-ce qu'un SSC (Système Solaire Combiné) ?",
-        answers: ["CESI simple", "Solaire pour ECS + chauffage", "Photovoltaïque", "Éolienne"],
+        answers: ["Système couplant un CESI thermique et des panneaux photovoltaïques", "Solaire pour ECS + chauffage", "Chauffe-eau solaire associé à une pompe à chaleur aérothermique", "Système solaire avec stockage par batterie électrique"],
         correct: 1,
         explanation: "SSC produit à la fois l'ECS et participe au chauffage de l'habitation.",
         keyPoints: ["ECS + chauffage", "Plus de capteurs", "10-15 m²", "Ballon tampon", "Appoint obligatoire"]
@@ -1143,7 +1143,7 @@ const allQuestions = [
         id: 'q120',
         category: "Systèmes Avancés - Solaire",
         question: "Quelle différence entre solaire thermique et photovoltaïque ?",
-        answers: ["Aucune", "Thermique : chaleur, Photovoltaïque : électricité", "Couleur", "Prix"],
+        answers: ["Le thermique utilise des cellules semi-conductrices, le photovoltaïque des absorbeurs", "Thermique : chaleur, Photovoltaïque : électricité", "Le thermique est plus rentable en été, le photovoltaïque en hiver", "Le thermique est raccordé au réseau électrique, le photovoltaïque est autonome"],
         correct: 1,
         explanation: "Thermique : produit chaleur (ECS/chauffage). Photovoltaïque : produit électricité.",
         keyPoints: ["Thermique : chaleur", "Photovoltaïque : électricité", "Capteurs différents", "Usages différents", "Complémentaires"]
@@ -1154,7 +1154,7 @@ const allQuestions = [
         id: 'q121',
         category: "Systèmes Avancés - VMC",
         question: "Que signifie VMC ?",
-        answers: ["Ventilation Murale", "Ventilation Mécanique Contrôlée", "Ventilateur Moteur", "Volume Minimal"],
+        answers: ["Ventilation Modulable par Capteurs d'humidité", "Ventilation Mécanique Contrôlée", "Ventilateur Motorisé Centralisé", "Vanne de Mesure et de Contrôle"],
         correct: 1,
         explanation: "VMC = Ventilation Mécanique Contrôlée, renouvelle l'air en continu.",
         keyPoints: ["Renouvellement air", "Mécanique", "Contrôlée", "Extracteur", "Entrées d'air"]
@@ -1163,7 +1163,7 @@ const allQuestions = [
         id: 'q122',
         category: "Systèmes Avancés - VMC",
         question: "Différence entre VMC simple flux et double flux ?",
-        answers: ["Aucune", "Simple : extraction, Double : extraction + insufflation", "Prix", "Couleur"],
+        answers: ["La simple flux débite moins d'air que la double flux", "Simple : extraction, Double : extraction + insufflation", "La simple flux est réservée aux maisons neuves RT2012", "La double flux est obligatoire uniquement en habitat collectif"],
         correct: 1,
         explanation: "Simple flux : extraction seule. Double flux : extraction + insufflation avec échangeur.",
         keyPoints: ["Simple : extraction", "Double : extraction + insufflation", "Échangeur thermique", "Économie 15-20%", "Plus cher"]
@@ -1172,7 +1172,7 @@ const allQuestions = [
         id: 'q123',
         category: "Systèmes Avancés - VMC",
         question: "Où extrait-on l'air vicié avec une VMC ?",
-        answers: ["Chambres", "Cuisine, SDB, WC", "Salon", "Toutes pièces"],
+        answers: ["Pièces de vie (salon, séjour, bureau)", "Cuisine, SDB, WC", "Chambres et pièces principales uniquement", "Toutes les pièces avec un débit uniforme"],
         correct: 1,
         explanation: "Extraction dans les pièces humides : cuisine, salle de bain, WC.",
         keyPoints: ["Pièces humides", "Cuisine", "SDB", "WC", "Buanderie"]
@@ -1181,7 +1181,7 @@ const allQuestions = [
         id: 'q124',
         category: "Systèmes Avancés - VMC",
         question: "Où place-t-on les entrées d'air avec une VMC ?",
-        answers: ["Cuisine", "Pièces principales (salon, chambres)", "SDB", "Toutes pièces"],
+        answers: ["Pièces humides (cuisine, salle de bain, WC)", "Pièces principales (salon, chambres)", "Uniformément dans toutes les pièces", "En toiture avec conduit de distribution dans chaque pièce"],
         correct: 1,
         explanation: "Entrées d'air dans les pièces principales (chambres, salon), air circule sous portes.",
         keyPoints: ["Pièces principales", "Chambres", "Salon", "Fenêtres/coffres volets", "Détalonnage portes"]
@@ -1190,7 +1190,7 @@ const allQuestions = [
         id: 'q125',
         category: "Systèmes Avancés - VMC",
         question: "Qu'est-ce que le détalonnage des portes ?",
-        answers: ["Décoration", "Espace sous porte pour circulation air", "Serrure", "Peinture"],
+        answers: ["Traitement acoustique pour réduire les bruits entre pièces", "Espace sous porte pour circulation air", "Pose de joint brosse d'étanchéité sur la base de la porte", "Réglage de la quincaillerie pour assurer la fermeture étanche"],
         correct: 1,
         explanation: "Espace de 1-2 cm sous les portes pour permettre la circulation de l'air.",
         keyPoints: ["Espace sous porte", "1-2 cm", "Circulation air", "Obligatoire", "Entre pièces"]
@@ -1199,7 +1199,7 @@ const allQuestions = [
         id: 'q126',
         category: "Systèmes Avancés - VMC",
         question: "Pourquoi entretenir une VMC régulièrement ?",
-        answers: ["Pas nécessaire", "Filtres encrassés réduisent débit et consomment plus", "Esthétique", "Réglementation uniquement"],
+        answers: ["Le moteur surchauffe et doit être remplacé tous les 2 ans", "Filtres encrassés réduisent débit et consomment plus", "Les gaines s'obstruent et créent des risques d'incendie", "Le ventilateur crée des vibrations néfastes pour la structure"],
         correct: 1,
         explanation: "L'encrassement réduit le débit, augmente la consommation et dégrade la qualité d'air.",
         keyPoints: ["Nettoyage filtres", "Bouches extraction", "Entrées d'air", "6 mois à 1 an", "Débit optimal"]
@@ -1208,7 +1208,7 @@ const allQuestions = [
         id: 'q127',
         category: "Systèmes Avancés - VMC",
         question: "Qu'est-ce qu'une VMC hygroréglable ?",
-        answers: ["VMC à piles", "Débit adapté selon humidité", "VMC silencieuse", "VMC colorée"],
+        answers: ["VMC à vitesse fixe avec minuterie programmable par pièce", "Débit adapté selon humidité", "VMC avec échangeur thermique récupérant la chaleur de l'air extrait", "VMC pilotée par la qualité de l'air (CO2) et non l'humidité"],
         correct: 1,
         explanation: "La VMC hygroréglable adapte le débit selon l'humidité détectée (économie d'énergie).",
         keyPoints: ["Adapte débit", "Selon humidité", "Économie énergie", "Confort", "Type A ou B"]
@@ -1217,7 +1217,7 @@ const allQuestions = [
         id: 'q128',
         category: "Systèmes Avancés - VMC",
         question: "Quelle est la durée de vie moyenne d'une VMC ?",
-        answers: ["5 ans", "10-15 ans", "30 ans", "50 ans"],
+        answers: ["3-5 ans (remplacement annuel conseillé)", "10-15 ans", "20-25 ans (moteur brushless)", "30-40 ans si entretien annuel complet"],
         correct: 1,
         explanation: "Une VMC bien entretenue dure 10 à 15 ans (moteur et composants).",
         keyPoints: ["10-15 ans", "Entretien régulier", "Remplacement moteur", "Usure normale", "Maintenance"]
@@ -1226,7 +1226,7 @@ const allQuestions = [
         id: 'q129',
         category: "Systèmes Avancés - VMC",
         question: "Pourquoi une VMC double flux est-elle plus économe ?",
-        answers: ["Elle consomme moins", "Échangeur récupère calories air extrait", "Elle est plus petite", "Moins de gaines"],
+        answers: ["Elle extrait moins d'air vicié donc consomme moins d'énergie de ventilation", "Échangeur récupère calories air extrait", "Elle déshumidifie l'air entrant réduisant les besoins de chauffage", "Elle fonctionne uniquement la nuit pour profiter des tarifs heures creuses"],
         correct: 1,
         explanation: "L'échangeur thermique récupère 70-90% des calories de l'air extrait.",
         keyPoints: ["Échangeur thermique", "Récupère 70-90%", "Préchauffage air neuf", "Économie 15-20%", "Filtration"]
@@ -1235,7 +1235,7 @@ const allQuestions = [
         id: 'q130',
         category: "Systèmes Avancés - Ventilation",
         question: "Qu'est-ce qu'un diagramme psychrométrique ?",
-        answers: ["Schéma électrique", "Graphique propriétés air humide", "Plan bâtiment", "Outil calcul débit"],
+        answers: ["Graphique représentant le rendement d'un échangeur selon les débits", "Graphique propriétés air humide", "Diagramme de calcul des pertes de charge en ventilation", "Schéma normalisé des réseaux de gaines VMC double flux"],
         correct: 1,
         explanation: "Diagramme représentant température, humidité, enthalpie de l'air.",
         keyPoints: ["Propriétés air", "Température", "Humidité", "Enthalpie", "Point rosée"]
@@ -1244,7 +1244,7 @@ const allQuestions = [
         id: 'q131',
         category: "Systèmes Avancés - Ventilation",
         question: "Qu'est-ce que l'humidité relative ?",
-        answers: ["Quantité d'eau", "Rapport humidité actuelle / humidité max (%)", "Température", "Pression"],
+        answers: ["Quantité absolue de vapeur d'eau en grammes par m³ d'air", "Rapport humidité actuelle / humidité max (%)", "Température à laquelle la vapeur d'eau commence à condenser", "Différence de pression entre intérieur et extérieur du bâtiment"],
         correct: 1,
         explanation: "HR = (humidité actuelle / humidité maximale possible) × 100. Confort : 40-60%.",
         keyPoints: ["En %", "Actuelle / max", "Confort 40-60%", "Variable selon T°", "Condensation > 100%"]
@@ -1253,7 +1253,7 @@ const allQuestions = [
         id: 'q132',
         category: "Systèmes Avancés - Ventilation",
         question: "Qu'est-ce que le point de rosée ?",
-        answers: ["Température extérieure", "Température où vapeur condense", "Pression atmosphérique", "Humidité maximale"],
+        answers: ["Humidité relative de 60% correspondant au seuil de confort", "Température où vapeur condense", "Température intérieure minimale à maintenir pour éviter les moisissures", "Taux d'humidité à partir duquel la VMC s'accélère automatiquement"],
         correct: 1,
         explanation: "Température à laquelle la vapeur d'eau condense (HR = 100%).",
         keyPoints: ["Condensation", "HR 100%", "Selon humidité", "Ponts thermiques", "Moisissures"]
@@ -1262,7 +1262,7 @@ const allQuestions = [
         id: 'q133',
         category: "Systèmes Avancés - Ventilation",
         question: "Pourquoi ventiler un logement ?",
-        answers: ["Pour le bruit", "Évacuer humidité, CO2, polluants", "Chauffer", "Décoration"],
+        answers: ["Pour maintenir une pression légèrement positive et éviter les infiltrations", "Évacuer humidité, CO2, polluants", "Réduire la consommation de chauffage par dilution des calories", "Pour équilibrer les températures entre les pièces"],
         correct: 1,
         explanation: "Ventiler évacue humidité, CO2, polluants (COV, radon) et apporte air frais.",
         keyPoints: ["Évacue humidité", "Évacue CO2", "Évacue polluants", "Air neuf", "Santé"]
@@ -1280,7 +1280,7 @@ const allQuestions = [
         id: 'q135',
         category: "Systèmes Avancés - Ventilation",
         question: "Qu'est-ce qu'une ventilation naturelle assistée ?",
-        answers: ["VMC", "Tirage naturel + extraction mécanique ponctuellement", "Fenêtre", "Climatisation"],
+        answers: ["VMC simple flux à débit constant et auto-réglable", "Tirage naturel + extraction mécanique ponctuellement", "VMC double flux avec récupération d'énergie sur air extrait", "Ventilation hygroréglable avec capteurs d'humidité dans les bouches"],
         correct: 1,
         explanation: "Tirage naturel (conduits) assisté par extraction mécanique si besoin.",
         keyPoints: ["Tirage naturel", "Assistance mécanique", "Ponctuelle", "Économique", "Conduits"]
@@ -1291,7 +1291,7 @@ const allQuestions = [
         id: 'q136',
         category: "Systèmes Avancés - Protection",
         question: "Pourquoi traiter l'eau d'un circuit de chauffage ?",
-        answers: ["Goût", "Éviter tartre, corrosion, boues", "Augmenter pression", "Réduire consommation"],
+        answers: ["Rendre l'eau potable en cas de siphonnage accidentel", "Éviter tartre, corrosion, boues", "Augmenter la capacité thermique de l'eau pour réduire le débit", "Abaisser le point de congélation pour protéger contre le gel"],
         correct: 1,
         explanation: "Traitement évite tartre (calcaire), corrosion (métaux) et boues (oxydes).",
         keyPoints: ["Tartre", "Corrosion", "Boues", "Durée de vie", "Performance"]
@@ -1300,7 +1300,7 @@ const allQuestions = [
         id: 'q137',
         category: "Systèmes Avancés - Protection",
         question: "Qu'est-ce qu'un inhibiteur de corrosion ?",
-        answers: ["Acide", "Produit chimique protégeant métaux", "Filtre", "Pompe"],
+        answers: ["Produit acide dissolvant le calcaire déposé dans l'échangeur", "Produit chimique protégeant métaux", "Résine d'échange ionique éliminant les ions corrosifs", "Filtre magnétique capturant les particules d'oxyde de fer"],
         correct: 1,
         explanation: "L'inhibiteur crée un film protecteur sur les métaux du circuit.",
         keyPoints: ["Protection métaux", "Film protecteur", "Dosage précis", "Contrôle pH", "Longévité installation"]
@@ -1309,7 +1309,7 @@ const allQuestions = [
         id: 'q138',
         category: "Systèmes Avancés - Protection",
         question: "Qu'est-ce qu'un pot à boues (bouteille de décantation) ?",
-        answers: ["Filtre café", "Collecteur boues et impuretés par décantation", "Réservoir", "Pompe"],
+        answers: ["Filtre à tamis fin retenant les particules solides par tamisage", "Collecteur boues et impuretés par décantation", "Réservoir d'expansion ouvert installé en point haut du circuit", "Séparateur air-eau par centrifugation installé à la sortie chaudière"],
         correct: 1,
         explanation: "Le pot à boues collecte les particules en suspension par gravité (ralentissement).",
         keyPoints: ["Collecte boues", "Décantation", "Sur retour chaudière", "Nettoyage régulier", "Protection chaudière"]
@@ -1318,7 +1318,7 @@ const allQuestions = [
         id: 'q139',
         category: "Systèmes Avancés - Protection",
         question: "Qu'est-ce qu'un filtre désemboueur magnétique ?",
-        answers: ["Filtre eau potable", "Filtre + aimant captant particules fer", "Filtre café", "Adoucisseur"],
+        answers: ["Filtre à tamis inox retenant les impuretés solides non ferreuses", "Filtre + aimant captant particules fer", "Adoucisseur échangeur d'ions réduisant la dureté de l'eau du circuit", "Bouteille de décantation par gravité installée sur le retour chaudière"],
         correct: 1,
         explanation: "Filtre + aimant puissant captant les particules ferreuses (magnétite).",
         keyPoints: ["Filtre + aimant", "Particules fer", "Magnétite", "Nettoyage facile", "Protection optimale"]
@@ -1327,7 +1327,7 @@ const allQuestions = [
         id: 'q140',
         category: "Systèmes Avancés - Protection",
         question: "Quelle est la bonne qualité d'eau pour un circuit de chauffage ?",
-        answers: ["Eau dure", "Eau adoucie TH 10-15°f, pH 7-8", "Eau distillée", "Eau de pluie"],
+        answers: ["Eau très douce (TH < 5°f) pour limiter tout dépôt de calcaire", "Eau adoucie TH 10-15°f, pH 7-8", "Eau distillée pure sans aucun minéral (TH = 0°f)", "Eau du robinet non traitée avec inhibiteur double dose"],
         correct: 1,
         explanation: "TH 10-15°f (légèrement adoucie), pH 7-8 (neutre), pas trop douce (corrosion).",
         keyPoints: ["TH 10-15°f", "pH 7-8", "Pas trop douce", "Inhibiteur", "Contrôle régulier"]
@@ -1338,7 +1338,7 @@ const allQuestions = [
         id: 'q141',
         category: "Chauffage - Chauffage",
         question: "Qu'est-ce qu'un circuit monotube ?",
-        answers: ["Un radiateur", "Radiateurs en série sur même tuyau", "Un tuyau cuivre", "Une chaudière"],
+        answers: ["Circuit avec un seul tuyau aller sans retour vers la chaudière", "Radiateurs en série sur même tuyau", "Circuit bitube avec collecteur de distribution individuel", "Circuit dans lequel tous les radiateurs partagent le même retour"],
         correct: 1,
         explanation: "Circuit monotube : radiateurs en série, dernier moins chaud (ancien système).",
         keyPoints: ["Série", "Un tuyau", "Dernier froid", "Ancien", "Difficile équilibrer"]
@@ -1347,7 +1347,7 @@ const allQuestions = [
         id: 'q142',
         category: "Chauffage - Chauffage",
         question: "Qu'est-ce qu'un circuit bitube ?",
-        answers: ["Deux chaudières", "Aller + retour, radiateurs en parallèle", "Deux étages", "Deux pompes"],
+        answers: ["Circuit avec aller et retour séparés mais radiateurs en série", "Aller + retour, radiateurs en parallèle", "Circuit monotube à dérivation avec branche de court-circuit", "Distribution par collecteur avec un tuyau unique par radiateur"],
         correct: 1,
         explanation: "Circuit bitube : aller et retour, radiateurs en parallèle (température homogène).",
         keyPoints: ["Parallèle", "Aller + retour", "Température égale", "Actuel", "Facile équilibrer"]
@@ -1356,7 +1356,7 @@ const allQuestions = [
         id: 'q143',
         category: "Chauffage - Chauffage",
         question: "Quel est le rôle d'un vase d'expansion ?",
-        answers: ["Augmenter pression", "Absorber dilatation eau", "Filtrer", "Stocker ECS"],
+        answers: ["Maintenir en permanence la pression maximale de service", "Absorber dilatation eau", "Filtrer les impuretés en circulation dans le circuit", "Stocker l'eau chaude pour les pointes de consommation"],
         correct: 1,
         explanation: "Le vase absorbe la dilatation de l'eau (8-10% volume) lors du chauffage.",
         keyPoints: ["Absorbe dilatation", "8-10% volume", "Membrane", "Pré-gonflage 0.5-1 bar", "Protection circuit"]
@@ -1383,7 +1383,7 @@ const allQuestions = [
         id: 'q146',
         category: "Chauffage - Chauffage",
         question: "Comment purger un radiateur ?",
-        answers: ["Ouvrir robinet", "Purgeur en haut, réservoir dessous, ouvrir jusqu'à eau", "Vidanger tout", "Démonter"],
+        answers: ["Ouvrir la vanne thermostatique et la vanne de réglage au maximum", "Purgeur en haut, réservoir dessous, ouvrir jusqu'à eau", "Vidanger complètement le circuit et le reremplir", "Démonter le radiateur et le retourner pour libérer l'air"],
         correct: 1,
         explanation: "Purgeur en haut du radiateur, ouvrir avec clé jusqu'à ce que l'eau coule (air sorti).",
         keyPoints: ["Purgeur haut", "Clé de purge", "Jusqu'à eau", "Récipient", "Vérifier pression après"]
@@ -1392,7 +1392,7 @@ const allQuestions = [
         id: 'q147',
         category: "Chauffage - Chauffage",
         question: "Pourquoi purger les radiateurs ?",
-        answers: ["Augmenter poids", "Éliminer air qui bloque circulation", "Changer eau", "Nettoyer extérieur"],
+        answers: ["Réduire la pression du circuit après la chauffe d'été", "Éliminer air qui bloque circulation", "Renouveler l'eau pour éviter la corrosion annuelle", "Nettoyer l'intérieur des radiateurs des dépôts de calcaire"],
         correct: 1,
         explanation: "L'air empêche la circulation d'eau et crée des zones froides dans le radiateur.",
         keyPoints: ["Éliminer air", "Zones froides", "Améliore circulation", "Annuel", "Début saison"]
@@ -1401,7 +1401,7 @@ const allQuestions = [
         id: 'q148',
         category: "Chauffage - Chauffage",
         question: "Qu'est-ce qu'un collecteur en chauffage ?",
-        answers: ["Outil", "Distributeur alimentant plusieurs circuits", "Vanne", "Radiateur"],
+        answers: ["Vanne 3 voies permettant de mélanger aller et retour", "Distributeur alimentant plusieurs circuits", "Bouteille de découplage entre circuit primaire et secondaire", "Séparateur hydraulique réduisant la vitesse du fluide"],
         correct: 1,
         explanation: "Le collecteur distribue l'eau de départ vers plusieurs circuits (étages, zones).",
         keyPoints: ["Distribution", "Plusieurs circuits", "Aller + retour", "Équilibrage", "Débitmètres"]
@@ -1410,7 +1410,7 @@ const allQuestions = [
         id: 'q149',
         category: "Chauffage - Chauffage",
         question: "Qu'est-ce qu'une vanne d'équilibrage ?",
-        answers: ["Vanne marche/arrêt", "Vanne réglant débit pour équilibrer circuit", "Thermostat", "Filtre"],
+        answers: ["Vanne commandant le départ et retour de la chaudière simultanément", "Vanne réglant débit pour équilibrer circuit", "Thermostat d'ambiance modulant la chauffe selon la pièce de référence", "Filtre magnétique retenant les boues en circulation"],
         correct: 1,
         explanation: "La vanne d'équilibrage règle le débit de chaque circuit pour homogénéiser températures.",
         keyPoints: ["Réglage débit", "Équilibre", "Sur retours", "Température homogène", "Réglage initial"]
@@ -1419,7 +1419,7 @@ const allQuestions = [
         id: 'q150',
         category: "Chauffage - Chauffage",
         question: "Qu'est-ce qu'un robinet thermostatique ?",
-        answers: ["Robinet cuisine", "Vanne régulant débit selon température pièce", "Thermostat mural", "Vanne manuelle"],
+        answers: ["Robinet d'isolement permettant la vidange de chaque radiateur individuellement", "Vanne régulant débit selon température pièce", "Thermostat mural commandant la mise en marche de la chaudière", "Vanne manuelle servant à équilibrer les débits entre circuits"],
         correct: 1,
         explanation: "Le robinet thermostatique régule automatiquement le débit selon la température ambiante.",
         keyPoints: ["Régulation auto", "Température pièce", "Bulbe cire/gaz", "Économie 15%", "Sur chaque radiateur"]
@@ -1428,7 +1428,7 @@ const allQuestions = [
         id: 'q151',
         category: "Chauffage - Régulation",
         question: "À quoi sert une sonde extérieure ?",
-        answers: ["Mesurer température extérieure pour adapter chauffe", "Détecter fuites", "Mesurer consommation", "Ventilation"],
+        answers: ["Mesurer température extérieure pour adapter chauffe", "Détecter les fuites de gaz sur la canalisation d'alimentation", "Mesurer la consommation calorifique du bâtiment par comptage", "Réguler le débit de ventilation mécanique selon la saison"],
         correct: 0,
         explanation: "La sonde extérieure permet une régulation anticipative selon température extérieure (loi d'eau).",
         keyPoints: ["Température ext", "Régulation anticipative", "Loi d'eau", "Économie 10-15%", "Façade nord"]
@@ -1437,7 +1437,7 @@ const allQuestions = [
         id: 'q152',
         category: "Chauffage - Régulation",
         question: "Qu'est-ce que la régulation par loi d'eau ?",
-        answers: ["Réglementation", "Température eau adaptée selon température extérieure", "Débit eau", "Qualité eau"],
+        answers: ["Réglementation imposant la qualité de l'eau utilisée dans les circuits de chauffage", "Température eau adaptée selon température extérieure", "Débit d'eau réglé proportionnellement à la puissance demandée", "Qualité de l'eau contrôlée en continu par analyse chimique"],
         correct: 1,
         explanation: "Loi d'eau : relation température eau circuit / température extérieure (courbe de chauffe).",
         keyPoints: ["T° eau selon T° ext", "Courbe chauffe", "Anticipation", "Confort", "Économie"]
@@ -1446,7 +1446,7 @@ const allQuestions = [
         id: 'q153',
         category: "Chauffage - Régulation",
         question: "Qu'est-ce qu'un thermostat d'ambiance ?",
-        answers: ["Thermomètre", "Régulateur température intérieure agissant sur chaudière", "Vanne radiateur", "Sonde"],
+        answers: ["Thermomètre affichant la température sans interagir avec l'installation", "Régulateur température intérieure agissant sur chaudière", "Vanne thermostatique placée sur chaque radiateur indépendamment", "Sonde extérieure transmettant la loi d'eau au régulateur central"],
         correct: 1,
         explanation: "Le thermostat mesure température intérieure et commande marche/arrêt chaudière.",
         keyPoints: ["Température intérieure", "Commande chaudière", "Pièce de référence", "Consigne", "Économie"]
@@ -1455,7 +1455,7 @@ const allQuestions = [
         id: 'q154',
         category: "Chauffage - Régulation",
         question: "Où placer un thermostat d'ambiance ?",
-        answers: ["Cuisine", "Pièce de référence, ni soleil ni courant d'air", "SDB", "Extérieur"],
+        answers: ["Cuisine, proche de la source de chaleur principale", "Pièce de référence, ni soleil ni courant d'air", "Salle de bain, pour mesurer la pièce la plus froide", "En façade extérieure nord, protégé des intempéries"],
         correct: 1,
         explanation: "Pièce de référence (salon), 1,5m hauteur, pas de soleil direct, ni courant d'air, ni radiateur proche.",
         keyPoints: ["Pièce référence", "1,5m hauteur", "Pas soleil", "Pas courant air", "Pas radiateur proche"]
@@ -1464,7 +1464,7 @@ const allQuestions = [
         id: 'q155',
         category: "Chauffage - Générateurs",
         question: "Quels sont les principaux types de générateurs de chaleur ?",
-        answers: ["Radiateurs", "Chaudières gaz/fioul/bois, PAC, électrique", "Tuyaux", "Thermostats"],
+        answers: ["Radiateurs à inertie, planchers chauffants et ventilo-convecteurs", "Chaudières gaz/fioul/bois, PAC, électrique", "Tuyaux cuivre, acier ou multicouche selon température", "Thermostats, sondes extérieures et régulateurs programmables"],
         correct: 1,
         explanation: "Générateurs : chaudières (gaz, fioul, bois, granulés), PAC, chaudières électriques.",
         keyPoints: ["Chaudières", "Pompes à chaleur", "Électrique", "Bois/granulés", "Production chaleur"]
@@ -1473,7 +1473,7 @@ const allQuestions = [
         id: 'q156',
         category: "Chauffage - Générateurs",
         question: "Qu'est-ce que le COP d'une pompe à chaleur ?",
-        answers: ["Rapport énergie produite / énergie consommée", "Puissance max", "Temps chauffe", "Niveau sonore"],
+        answers: ["Rapport énergie produite / énergie consommée", "Puissance maximale délivrée en régime nominal à 0°C", "Temps nécessaire pour atteindre la température de consigne", "Niveau sonore exprimé en décibels lors du fonctionnement"],
         correct: 0,
         explanation: "COP = Coefficient de Performance = énergie thermique produite / énergie électrique consommée.",
         keyPoints: ["COP = rendement", "Produite / consommée", "COP 3 = 3 kWh produits pour 1 kWh consommé", "Variable selon T°", "SCOP annuel"]
@@ -1482,7 +1482,7 @@ const allQuestions = [
         id: 'q157',
         category: "Chauffage - Générateurs",
         question: "Pourquoi le COP d'une PAC diminue quand il fait froid ?",
-        answers: ["Défaut PAC", "Plus difficile extraire chaleur si T° ext basse", "Normal", "Réglage"],
+        answers: ["Défaut de fabrication dû à une mauvaise qualité du fluide frigorigène", "Plus difficile extraire chaleur si T° ext basse", "Phénomène normal dû au givre sur la sonde extérieure", "Réglage du détendeur électronique mal calibré en usine"],
         correct: 1,
         explanation: "Plus l'écart entre température extérieure et intérieure est grand, plus le COP diminue.",
         keyPoints: ["Écart température", "Extraction difficile", "COP baisse", "Normal", "Appoint nécessaire"]
@@ -1491,7 +1491,7 @@ const allQuestions = [
         id: 'q158',
         category: "Chauffage - Isométrie",
         question: "Qu'est-ce qu'un dessin isométrique ?",
-        answers: ["Perspective 3D tuyauteries avec axes 30°", "Façade", "Schéma électrique", "Plan géographique"],
+        answers: ["Perspective 3D tuyauteries avec axes 30°", "Façade du bâtiment montrant les emplacements des équipements", "Schéma électrique de câblage des équipements de régulation", "Plan géographique du site avec les réseaux enterrés"],
         correct: 0,
         explanation: "Dessin isométrique : représentation 3D avec axes à 30° pour visualiser tuyauteries.",
         keyPoints: ["3D", "Axes 30°", "Tuyauteries", "Facile à lire", "Métrés possibles"]
@@ -1500,7 +1500,7 @@ const allQuestions = [
         id: 'q159',
         category: "Chauffage - Installation",
         question: "Comment remplir un circuit de chauffage ?",
-        answers: ["Robinet quelconque", "Robinet remplissage, ouvrir lentement, purger radiateurs", "Tuyau arrosage", "Pompe"],
+        answers: ["Par n'importe quel robinet d'isolement, en remplissant rapidement jusqu'à 3 bars", "Robinet remplissage, ouvrir lentement, purger radiateurs", "Via un tuyau d'arrosage raccordé au robinet le plus proche de la chaudière", "Avec une pompe externe en circuit ouvert en partant du radiateur le plus bas"],
         correct: 1,
         explanation: "Robinet de remplissage (sous chaudière), remplir lentement, purger radiateurs, pression 1-1,5 bar.",
         keyPoints: ["Robinet remplissage", "Lentement", "Purger au fur et à mesure", "1-1,5 bar", "Contrôler étanchéité"]
@@ -1510,7 +1510,7 @@ const allQuestions = [
         category: "Chauffage - Installation",
         difficulty: "medium",
         question: "Pourquoi faut-il désembouer un circuit avant mise en service chaudière neuve ?",
-        answers: ["Pas nécessaire", "Boues anciennes détruiraient échangeur neuf", "Réglementation", "Esthétique"],
+        answers: ["Pas nécessaire si les radiateurs ont été remplacés récemment", "Boues anciennes détruiraient échangeur neuf", "Réglementation exigeant un certificat de désembouage pour la garantie fabricant", "Esthétique : l'eau doit être claire pour la lecture du manomètre"],
         correct: 1,
         explanation: "Les boues d'un ancien circuit encrassent et détruisent l'échangeur de la chaudière neuve.",
         keyPoints: ["Protection chaudière neuve", "Boues anciennes", "Désembouage chimique", "Rinçage", "Inhibiteur après"]
@@ -1526,7 +1526,7 @@ const allQuestions = [
         question: "Les symboles de chauffage permettent de représenter les installations sur des plans techniques. Sont-ils obligatoires sur les schémas professionnels ?",
         image: "images/symboles/symbole-chauffage-3.png",
         imageAlt: "Symboles normalisés de chauffage",
-        answers: ["Oui, normes obligatoires", "Non, facultatifs", "Seulement pour export", "Obsolètes"],
+        answers: ["Oui, normes obligatoires", "Non, facultatifs mais recommandés par les bureaux d'études", "Seulement pour les marchés à l'export vers d'autres pays", "Obsolètes depuis l'adoption du dessin assisté par ordinateur"],
         correct: 0,
         explanation: "Les symboles normalisés sont obligatoires sur tous les schémas techniques professionnels pour garantir la compréhension universelle.",
         keyPoints: ["Normes NF", "Obligatoire", "Compréhension universelle", "Sécurité"]
@@ -1592,10 +1592,10 @@ const allQuestions = [
         image: "images/schemas/schema-chauffage-3.png",
         imageAlt: "Schéma isométrique de tuyauterie",
         answers: [
-            "Décoration du dossier",
+            "Représenter les circuits électriques de commande des équipements",
             "Visualiser l'installation en 3D avec les hauteurs et parcours",
-            "Calculer les pertes de charge",
-            "Remplacer les photos"
+            "Calculer les pertes de charge à partir des formules hydrauliques",
+            "Remplacer le plan d'architecte pour les autorisations administratives"
         ],
         correct: 1,
         explanation: "Le schéma isométrique permet de représenter en 3D les canalisations avec leurs parcours exacts, changements de direction et hauteurs.",
@@ -1633,10 +1633,10 @@ const allQuestions = [
         image: "images/raccords/raccord-cuivre-1.png",
         imageAlt: "Différents types de raccords cuivre",
         answers: [
-            "Décoration des tuyaux",
+            "Renforcer mécaniquement les tubes contre les vibrations de la chaudière",
             "Assembler, changer de direction ou de diamètre",
-            "Augmenter la pression",
-            "Filtrer l'eau"
+            "Augmenter la pression dans les circuits de chauffage haute température",
+            "Filtrer les impuretés présentes dans le circuit hydraulique"
         ],
         correct: 1,
         explanation: "Les raccords permettent d'assembler des tubes, de changer de direction (coudes), de diviser le flux (tés) ou de changer de diamètre (réductions).",
@@ -1669,10 +1669,10 @@ const allQuestions = [
         image: "images/raccords/raccord-acier-1.png",
         imageAlt: "Raccords acier filetés",
         answers: [
-            "Plus esthétique",
+            "Résistance mécanique supérieure aux raccords cuivre brasés à l'argent",
             "Démontable sans couper le tube",
-            "Moins cher",
-            "Plus léger"
+            "Coût inférieur aux raccords cuivre à compression",
+            "Poids inférieur permettant une fixation sans support supplémentaire"
         ],
         correct: 1,
         explanation: "Les raccords vissés sont démontables, ce qui facilite la maintenance et les modifications futures sans détruire les tuyaux.",
@@ -1686,10 +1686,10 @@ const allQuestions = [
         image: "images/raccords/raccord-acier-2.png",
         imageAlt: "Assemblage raccords acier",
         answers: [
-            "Rien de spécial",
+            "Aucun produit supplémentaire, l'acier s'auto-sertit en serrant",
             "Un produit d'étanchéité (téflon, filasse + pâte)",
-            "De la colle",
-            "Du silicone"
+            "De la colle bicomposante époxy compatible métal",
+            "Du silicone sanitaire appliqué avant serrage"
         ],
         correct: 1,
         explanation: "Les filetages nécessitent un produit d'étanchéité : bande téflon, ou filasse chanvre + pâte à joint pour garantir l'étanchéité.",
@@ -1837,10 +1837,10 @@ const allQuestions = [
         image: "images/solaire/cesi-07.png",
         imageAlt: "Système d'appoint CESI",
         answers: [
-            "Ce n'est pas nécessaire",
+            "Il n'en nécessite pas si la surface de capteurs est correctement dimensionnée",
             "Pour couvrir les besoins quand le soleil est insuffisant",
-            "Pour augmenter la pression",
-            "Par obligation légale"
+            "Pour maintenir la pression du circuit primaire en période de gel",
+            "Par obligation légale de diversifier les sources d'énergie"
         ],
         correct: 1,
         explanation: "L'appoint (électrique, gaz, bois...) prend le relais quand l'ensoleillement est insuffisant (nuit, hiver, mauvais temps) pour garantir l'eau chaude.",
@@ -1854,10 +1854,10 @@ const allQuestions = [
         image: "images/solaire/cesi-08.png",
         imageAlt: "Gestion surchauffe CESI",
         answers: [
-            "Ça n'existe pas",
+            "Phénomène impossible sur un CESI correctement installé et entretenu",
             "Surchauffe en été : évacuer chaleur par dissipateur ou limiter capteurs",
-            "Trop de pression : purger",
-            "Manque d'eau : remplir"
+            "Surpression due à l'entartrage : purger le circuit primaire régulièrement",
+            "Manque d'antigel : remplir le circuit primaire jusqu'au niveau recommandé"
         ],
         correct: 1,
         explanation: "En été avec forte chaleur et faible consommation, le fluide peut surchauffer. On installe un dissipateur thermique ou on limite la surface de capteurs.",
@@ -1885,10 +1885,10 @@ const allQuestions = [
         image: "images/evacuation/evacuation-2.png",
         imageAlt: "Différents types de siphons",
         answers: [
-            "Décoration",
+            "Ralentir l'écoulement pour éviter les bruits dans les canalisations",
             "Empêcher les odeurs de remonter grâce à une garde d'eau",
-            "Filtrer les déchets",
-            "Augmenter la pression"
+            "Retenir les déchets solides avant leur entrée dans la canalisation",
+            "Maintenir une pression constante en amont de l'appareil sanitaire"
         ],
         correct: 1,
         explanation: "Le siphon crée une garde d'eau qui empêche les gaz et odeurs de l'égout de remonter dans le logement.",
@@ -1914,10 +1914,10 @@ const allQuestions = [
         image: "images/evacuation/evacuation-4.png",
         imageAlt: "Schéma de ventilation primaire",
         answers: [
-            "Pour faire joli",
+            "Pour permettre l'inspection de la canalisation depuis le toit",
             "Pour équilibrer les pressions et protéger les gardes d'eau",
-            "Pour refroidir les tuyaux",
-            "C'est obligatoire mais inutile"
+            "Pour faciliter le désengorgement en cas de colmatage par jet d'eau",
+            "Pour évacuer l'humidité condensée dans les canalisations verticales"
         ],
         correct: 1,
         explanation: "Les évents (ventilation primaire et secondaire) équilibrent les pressions, empêchent le désamorçage des siphons et évacuent les gaz.",
@@ -1931,10 +1931,10 @@ const allQuestions = [
         image: "images/evacuation/evacuation-5.png",
         imageAlt: "Chute d'eaux usées",
         answers: [
-            "Une fuite",
+            "Une fuite d'eau détectée dans une canalisation enterrée sous dallage",
             "Une canalisation verticale collectant les eaux usées",
-            "Une pente trop forte",
-            "Un accident"
+            "Une pente trop forte entraînant le désamorçage des siphons en amont",
+            "Un raccord spécial permettant de raccorder deux canalisations en angle aigu"
         ],
         correct: 1,
         explanation: "La chute est la canalisation verticale qui collecte les eaux usées de tous les étages pour les acheminer vers l'égout.",
@@ -2055,10 +2055,10 @@ const allQuestions = [
         difficulty: "medium",
         question: "Quel est l'avantage principal d'une isolation thermique performante ?",
         answers: [
-            "Esthétique",
+            "Améliorer la résistance mécanique des murs contre les infiltrations d'eau",
             "Réduire les besoins en chauffage et les déperditions",
-            "Augmenter la valeur immobilière uniquement",
-            "Obligation légale sans intérêt"
+            "Augmenter la valeur immobilière uniquement, sans impact sur la consommation",
+            "Respecter les obligations légales de la RE2020 sans autre avantage mesurable"
         ],
         correct: 1,
         explanation: "Une bonne isolation réduit drastiquement les déperditions thermiques, donc les besoins en chauffage, les coûts et l'impact environnemental.",
@@ -2070,10 +2070,10 @@ const allQuestions = [
         difficulty: "easy",
         question: "Qu'est-ce qu'un matériau biosourcé ?",
         answers: [
-            "Un matériau synthétique",
+            "Un matériau synthétique produit à partir de ressources pétrolières transformées",
             "Un matériau d'origine végétale ou animale",
-            "Un matériau importé",
-            "Un matériau recyclé uniquement"
+            "Un matériau fabriqué localement pour réduire l'empreinte carbone du transport",
+            "Un matériau recyclé uniquement en fin de vie selon la filière REP"
         ],
         correct: 1,
         explanation: "Un matériau biosourcé provient de la biomasse (végétale ou animale) : bois, chanvre, laine de mouton, paille, etc.",
@@ -2388,7 +2388,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - Évacuation",
         difficulty: "easy",
         question: "Que signifie l'acronyme EU dans un réseau d'évacuation ?",
-        answers: ["Eaux Usagées", "Eaux Usées", "Eaux Ménagères", "Eaux Uniques"],
+        answers: ["Eaux Urbaines (réseau municipal de collecte)", "Eaux Usées (terme générique)", "Eaux Ménagères (lavabos, douches, cuisine)", "Eaux Unifiées (réseau non séparatif)"],
         correct: 2,
         explanation: "EU signifie Eaux Ménagères, c'est-à-dire l'ensemble des eaux provenant des salles de bains, cuisine, lavabos (sauf WC).",
         keyPoints: ["EU = Eaux Ménagères", "Exclut les WC", "Salles de bains et cuisine", "Différent des eaux vannes"]
@@ -2540,7 +2540,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - ECS",
         difficulty: "easy",
         question: "Que signifie l'acronyme ECS ?",
-        answers: ["Eau Chaude Solaire", "Eau Chaude Sanitaire", "Évacuation Chaude Séparée", "Échangeur Chauffage Solaire"],
+        answers: ["Eau Chaude Solaire produite par capteurs thermiques", "Eau Chaude Sanitaire", "Évacuation des Condensats de Sécurité en chaufferie", "Échangeur Chaleur Secondaire pour circuit de chauffage"],
         correct: 1,
         explanation: "ECS signifie Eau Chaude Sanitaire, c'est-à-dire l'eau potable chauffée destinée aux usages domestiques (douche, lavabo, cuisine...).",
         keyPoints: ["ECS = Eau Chaude Sanitaire", "Eau potable chauffée", "Usages domestiques", "Différent du chauffage"]
@@ -2550,7 +2550,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - ECS",
         difficulty: "easy",
         question: "Quels sont les trois principaux types de production d'ECS ?",
-        answers: ["Instantanée, accumulation, mixte", "Instantanée, accumulation, semi-accumulation", "Électrique, gaz, solaire", "Directe, indirecte, mixte"],
+        answers: ["Instantanée, accumulation, mixte (mi-accumulation mi-instantanée)", "Instantanée, accumulation, semi-accumulation", "Électrique, gaz, solaire (selon source d'énergie)", "Directe, indirecte, mixte (selon contact avec fluide chauffant)"],
         correct: 1,
         explanation: "Les trois procédés de production d'ECS sont : la production instantanée (sans réserve), l'accumulation (stockage journalier), et la semi-accumulation/semi-instantanée (ballon tampon).",
         keyPoints: ["3 procédés principaux", "Instantanée (sans réserve)", "Accumulation (stockage)", "Semi-accumulation (tampon)"]
@@ -2630,7 +2630,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - ECS",
         difficulty: "easy",
         question: "Quels sont les deux types d'accumulateurs ECS à accumulation ?",
-        answers: ["Horizontal et vertical", "Blindé et stéatite", "Électriques et à gaz", "Simple et double paroi"],
+        answers: ["Horizontal et vertical, selon la position d'installation", "Blindé et stéatite selon le type de résistance", "Électriques et à gaz", "Simple paroi et double paroi pour isolation renforcée"],
         correct: 2,
         explanation: "On rencontre deux types de préparateurs ECS à accumulation : les accumulateurs électriques et les accumulateurs à gaz.",
         keyPoints: ["Électriques", "À gaz", "Principe d'accumulation", "Deux sources d'énergie différentes"]
@@ -2710,7 +2710,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - ECS",
         difficulty: "hard",
         question: "Dans un ballon à gaz à accumulation, où est situé le tube de fumées ?",
-        answers: ["À l'extérieur du ballon", "Sur le côté du ballon", "Au centre du réservoir", "Sous le ballon"],
+        answers: ["À l'extérieur du ballon, raccordé par une double paroi isolée", "Sur le côté du ballon, en partie basse pour faciliter l'évacuation", "Au centre du réservoir", "Sous le ballon, entre le brûleur et la chambre de combustion"],
         correct: 2,
         explanation: "Le tube de fumées est situé au centre du réservoir. Les gaz de combustion évacués par ce tube sont ralentis par des turbulateurs placés à l'intérieur pour favoriser l'échange de chaleur entre l'eau et les fumées.",
         keyPoints: ["Tube au centre du réservoir", "Turbulateurs pour échange", "Ralentit les fumées", "Optimise rendement"]
@@ -2722,7 +2722,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - Émetteurs",
         difficulty: "easy",
         question: "Quels sont les trois principaux types d'émetteurs de chaleur ?",
-        answers: ["Radiateurs, convecteurs, climatiseurs", "Radiateurs, plancher chauffant, ventilo-convecteurs", "Chaudières, pompes, radiateurs", "Poêles, inserts, radiateurs"],
+        answers: ["Radiateurs, convecteurs électriques, climatiseurs réversibles", "Radiateurs, plancher chauffant, ventilo-convecteurs", "Chaudières, pompes à chaleur, radiateurs haute température", "Poêles à bois, inserts, radiateurs électriques"],
         correct: 1,
         explanation: "Les trois principaux types d'émetteurs de chaleur sont : les radiateurs (fonte, acier, aluminium), le plancher chauffant (basse température), et les ventilo-convecteurs (pulsent l'air).",
         keyPoints: ["Radiateurs (différents matériaux)", "Plancher chauffant", "Ventilo-convecteurs", "Diffusion chaleur dans locaux"]
@@ -2732,7 +2732,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - Émetteurs",
         difficulty: "medium",
         question: "Quel est l'avantage principal du plancher chauffant ?",
-        answers: ["Installation rapide", "Coût minimal", "Température basse et confort optimal", "Aucun entretien"],
+        answers: ["Installation rapide ne nécessitant qu'une journée de pose", "Coût à l'installation inférieur à celui des radiateurs", "Température basse et confort optimal", "Absence totale d'entretien contrairement aux radiateurs"],
         correct: 2,
         explanation: "Le plancher chauffant fonctionne à basse température (35-40°C) et offre un confort optimal avec une répartition homogène de la chaleur et une sensation de bien-être au niveau des pieds.",
         keyPoints: ["Basse température (35-40°C)", "Confort optimal", "Répartition homogène", "Économies d'énergie"]
@@ -2792,7 +2792,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - Émetteurs",
         difficulty: "easy",
         question: "Où doivent être placés les radiateurs dans une pièce ?",
-        answers: ["Au centre de la pièce", "Sous les fenêtres", "Près de la porte", "N'importe où"],
+        answers: ["Au centre de la pièce pour une diffusion homogène de la chaleur", "Sous les fenêtres", "Près de la porte d'entrée pour compenser les infiltrations d'air froid", "Sur les murs intérieurs pour éviter les ponts thermiques en façade"],
         correct: 1,
         explanation: "Les radiateurs doivent être placés sous les fenêtres pour contrer les déperditions thermiques par les vitrages (pont froid) et créer un rideau d'air chaud.",
         keyPoints: ["Sous les fenêtres", "Contre déperditions", "Rideau d'air chaud", "Optimise confort"]
@@ -2812,7 +2812,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - Émetteurs",
         difficulty: "hard",
         question: "Pourquoi le plancher chauffant est-il compatible avec les pompes à chaleur ?",
-        answers: ["Installation facile", "Coût réduit", "Fonctionne à basse température", "Entretien simplifié"],
+        answers: ["Installation plus facile que les radiateurs pour une PAC air/air", "Coût d'installation réduit par rapport aux radiateurs haute température", "Fonctionne à basse température", "Entretien simplifié grâce à l'absence de circulateur dédié"],
         correct: 2,
         explanation: "Le plancher chauffant est idéal avec les pompes à chaleur car il fonctionne à basse température (35-40°C). Les PAC sont plus efficaces (meilleur COP) lorsqu'elles produisent de l'eau à basse température.",
         keyPoints: ["Compatible basse température", "Optimise COP de la PAC", "Eau 35-40°C", "Solution économique"]
@@ -2824,7 +2824,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - Sécurité",
         difficulty: "medium",
         question: "Quel est le rôle d'un vase d'expansion dans une installation de chauffage ?",
-        answers: ["Filtrer l'eau", "Compenser la dilatation de l'eau", "Augmenter la pression", "Purger l'air"],
+        answers: ["Filtrer les impuretés et boues magnétiques en circulation", "Compenser la dilatation de l'eau", "Augmenter la pression pour irriguer les radiateurs des étages", "Purger l'air accumulé aux points hauts du circuit"],
         correct: 1,
         explanation: "Le vase d'expansion compense l'augmentation de volume de l'eau lors du chauffage (dilatation thermique). Il absorbe le surplus de volume pour éviter une surpression dans le circuit.",
         keyPoints: ["Compense dilatation eau", "Évite surpression", "Volume variable", "Obligatoire sur circuits fermés"]
@@ -2844,7 +2844,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - Sécurité",
         difficulty: "medium",
         question: "Qu'est-ce qu'un purgeur automatique ?",
-        answers: ["Une vanne de vidange", "Un dispositif d'évacuation d'air automatique", "Un filtre à boues", "Une soupape de sécurité"],
+        answers: ["Une vanne de vidange placée au point bas pour vider le circuit", "Un dispositif d'évacuation d'air automatique", "Un filtre à boues magnétique pour retenir les oxydes ferreux", "Une soupape de sécurité à ressort tarée à 3 bars"],
         correct: 1,
         explanation: "Un purgeur automatique est un dispositif qui évacue automatiquement l'air présent dans le circuit de chauffage. Il se place aux points hauts de l'installation pour éliminer les bulles d'air qui nuisent à la circulation.",
         keyPoints: ["Évacuation air automatique", "Points hauts de l'installation", "Améliore circulation", "Évite bouchons d'air"]
@@ -2854,7 +2854,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - Sécurité",
         difficulty: "easy",
         question: "Quel est le rôle d'un disconnecteur ?",
-        answers: ["Réguler la température", "Empêcher le retour d'eau contaminée", "Filtrer les impuretés", "Réduire la pression"],
+        answers: ["Réguler la température de l'eau d'appoint pour protéger le ballon", "Empêcher le retour d'eau contaminée", "Filtrer les impuretés mécaniques avant les équipements sensibles", "Réduire la pression du réseau public avant distribution intérieure"],
         correct: 1,
         explanation: "Un disconnecteur empêche le retour d'eau potentiellement contaminée dans le réseau d'eau potable. Il protège le réseau public contre les pollutions accidentelles provenant des installations privées.",
         keyPoints: ["Protection eau potable", "Empêche retour eau contaminée", "Obligatoire selon installations", "Zone de rupture de charge"]
@@ -2874,7 +2874,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - Sécurité",
         difficulty: "hard",
         question: "Quelle est la différence entre un vase d'expansion ouvert et fermé ?",
-        answers: ["Le matériau de fabrication", "Le contact avec l'atmosphère", "La capacité", "La pression de service"],
+        answers: ["Le matériau de fabrication : le vase fermé est acier, l'ouvert est inox", "Le contact avec l'atmosphère", "La capacité : le vase fermé est toujours plus grand que l'ouvert", "La pression de service : l'ouvert supporte plus de pression que le fermé"],
         correct: 1,
         explanation: "Un vase ouvert est en contact avec l'atmosphère (pression atmosphérique), placé en hauteur, plus simple mais risque de corrosion. Un vase fermé est pressurisé, avec membrane, plus compact, obligatoire sur installations modernes.",
         keyPoints: ["Ouvert = contact atmosphère", "Fermé = pressurisé, membrane", "Fermé plus compact", "Fermé obligatoire installations modernes"]
@@ -2884,7 +2884,7 @@ const allQuestions = [
         category: "Systèmes Thermiques - Sécurité",
         difficulty: "medium",
         question: "Qu'est-ce qu'un clapet anti-retour ?",
-        answers: ["Un dispositif de filtration", "Un dispositif empêchant l'inversion du flux", "Une soupape de sécurité", "Un régulateur de débit"],
+        answers: ["Un dispositif de filtration retenant les impuretés supérieures à 1 mm", "Un dispositif empêchant l'inversion du flux", "Une soupape de sécurité s'ouvrant automatiquement sous surpression", "Un régulateur de débit maintenant un débit constant malgré les variations de pression"],
         correct: 1,
         explanation: "Un clapet anti-retour est un dispositif qui autorise le passage de l'eau dans un seul sens et empêche le retour en sens inverse. Il est essentiel pour protéger certains équipements et éviter les inversions de flux.",
         keyPoints: ["Passage unidirectionnel", "Empêche retour", "Protection équipements", "Partie du groupe de sécurité"]
@@ -3018,7 +3018,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Solaire",
         difficulty: "medium",
         question: "Quel est le principe de fonctionnement d'un CESI thermosiphon monobloc ?",
-        answers: ["Circulateur électrique", "Hauteur d'eau naturelle", "Pression forcée", "Pompe solaire"],
+        answers: ["Un circulateur électrique commandé par la régulation différentielle", "La différence de densité entre l'eau chaude et froide crée une circulation naturelle", "Une pression forcée maintenue par un vase d'expansion préchargé", "Une pompe solaire à entraînement photovoltaïque intégré"],
         correct: 1,
         explanation: "Le thermosiphon utilise la différence de hauteur : le liquide chaud monte naturellement vers le ballon de stockage, le froid redescend vers les capteurs. Pas de régulation électrique.",
         keyPoints: ["Circulation naturelle", "Pas de circulateur", "Ballon sur toiture", "Simple et économique"]
@@ -3028,7 +3028,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Solaire",
         difficulty: "easy",
         question: "Quels sont les 5 éléments successifs composant une installation C.E.S.I. ?",
-        answers: ["Captage, Transfert, Échange & Stockage, Appoint, Distribution", "Captage, Pompe, Ballon, Chaudière, Robinet", "Panneau, Tuyau, Réservoir, Chauffage, Eau", "Soleil, Circuit, Eau, Gaz, Maison"],
+        answers: ["Captage, Transfert, Échange & Stockage, Appoint, Distribution", "Captage, Circulateur, Ballon, Chaudière d'appoint, Robinet de puisage", "Panneau solaire, Tuyauterie cuivre, Réservoir, Résistance, Mitigeur", "Orientation, Inclinaison, Fluide, Régulation, Distribution"],
         correct: 0,
         explanation: "Les 5 éléments sont : 1) Captage (capteur solaire), 2) Transfert (circuit caloporteur), 3) Échange & Stockage (échangeur + ballon), 4) Appoint (résistance/chaudière), 5) Distribution (ECS).",
         keyPoints: ["5 éléments", "Captage → Distribution", "Circuit complet", "Appoint nécessaire"]
@@ -3038,7 +3038,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Solaire",
         difficulty: "hard",
         question: "Dans un CESI thermosiphon monobloc, où doit obligatoirement se situer le ballon de stockage par rapport au capteur ?",
-        answers: ["En dessous du capteur", "Au même niveau", "Plus haut que le capteur", "N'importe où"],
+        answers: ["En dessous du capteur pour faciliter le drainage gravitaire", "Au même niveau que le capteur, reliés par des tuyaux horizontaux", "Plus haut que le capteur", "La position est libre car un circulateur assure la circulation"],
         correct: 2,
         explanation: "Le stockage doit être directement sur la toiture avec le capteur, plus haut pour que le thermosiphon fonctionne. Il faut respecter une pente vers le stockage pour la circulation naturelle.",
         keyPoints: ["Ballon plus haut", "Sur toiture", "Pente vers stockage", "Circulation naturelle"]
@@ -3048,7 +3048,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Solaire",
         difficulty: "medium",
         question: "Quelle est la principale différence entre un CESI thermosiphon et un CESI à circulation forcée ?",
-        answers: ["La couleur des capteurs", "La présence d'un circulateur", "La taille du ballon", "Le type de toit"],
+        answers: ["La couleur des capteurs (sélectifs pour la circulation forcée, noirs pour le thermosiphon)", "La présence d'un circulateur", "La taille du ballon (toujours plus grand en thermosiphon)", "Le type de toit requis (tuiles pour thermosiphon, ardoises pour forcé)"],
         correct: 1,
         explanation: "Le CESI à circulation forcée utilise un circulateur piloté pour provoquer la circulation du fluide caloporteur, contrairement au thermosiphon qui fonctionne naturellement.",
         keyPoints: ["Circulateur piloté", "Régulation électronique", "Ballon séparé possible", "Plus flexible"]
@@ -3068,7 +3068,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Solaire",
         difficulty: "hard",
         question: "Dans un CESI à circulation forcée auto-vidangeable, que se passe-t-il lors de l'arrêt du circulateur ?",
-        answers: ["Le système explose", "Le fluide se refugie dans l'échangeur", "Les capteurs se vident automatiquement", "Rien de spécial"],
+        answers: ["Le système explose si la pression dépasse la limite de la soupape", "Le fluide reste dans les capteurs jusqu'à refroidissement complet", "Les capteurs se vident automatiquement", "La régulation relance le circulateur après 30 secondes d'arrêt"],
         correct: 2,
         explanation: "Quand le circulateur s'arrête, le fluide caloporteur se réfugie spontanément vers l'échangeur et les capteurs se vident automatiquement. Cela protège contre la surchauffe et le gel.",
         keyPoints: ["Auto-vidangeable", "Protection gel", "Protection surchauffe", "Capteurs vides à l'arrêt"]
@@ -3150,7 +3150,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Solaire",
         difficulty: "hard",
         question: "Quel est le principal avantage d'une implantation en auvent (fixé à la façade) ?",
-        answers: ["Meilleure performance", "Installation moins chère", "Pas besoin d'accès toiture", "Plus esthétique"],
+        answers: ["Meilleure performance grâce à l'inclinaison verticale optimale en hiver", "Installation moins chère car la liaison hydraulique est plus courte", "Pas besoin d'accès toiture", "Plus esthétique pour les bâtiments classés ou en zone ABF"],
         correct: 2,
         explanation: "L'implantation en auvent permet d'installer les capteurs sans accéder à la toiture, ce qui peut être pratique pour certaines configurations ou contraintes bâtimentaires.",
         keyPoints: ["Fixation façade", "Pas d'accès toiture", "Vertical possible", "Solution alternative"]
@@ -3172,7 +3172,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Ventilation",
         difficulty: "medium",
         question: "Quelle est la différence entre une VMC simple flux et une VMC double flux ?",
-        answers: ["La puissance", "La récupération de chaleur", "La couleur", "Le prix"],
+        answers: ["La puissance du moteur (le double flux est deux fois plus puissant)", "La récupération de chaleur", "Le nombre de bouches d'extraction (double flux en a deux fois plus)", "Le prix d'achat uniquement, sans différence de principe"],
         correct: 1,
         explanation: "La VMC double flux récupère la chaleur de l'air extrait pour préchauffer l'air entrant, contrairement à la simple flux qui évacue directement l'air vicié sans récupération.",
         keyPoints: ["Simple flux: extraction", "Double flux: échange chaleur", "Économies d'énergie", "Échangeur thermique"]
@@ -3192,7 +3192,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Ventilation",
         difficulty: "hard",
         question: "Pourquoi est-il déconseillé d'installer un appareil à gaz raccordé à un conduit de fumée à tirage naturel avec une VMC ?",
-        answers: ["C'est trop cher", "La VMC crée une dépression qui contrarie le tirage", "C'est interdit", "Ça consomme trop"],
+        answers: ["Le coût d'entretien des deux systèmes simultanément est trop élevé", "La VMC crée une dépression qui contrarie le tirage", "L'installation combinée est techniquement impossible avec les conduits en brique", "La consommation électrique cumulée dépasse les limites de la RT2020"],
         correct: 1,
         explanation: "La dépression créée par la VMC risque de contrarier le tirage naturel de l'appareil à gaz, pouvant causer un refoulement des fumées. Cette configuration est à proscrire pour la sécurité.",
         keyPoints: ["Dépression VMC", "Contrarie tirage naturel", "Risque refoulement", "Configuration à proscrire"]
@@ -3202,7 +3202,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Ventilation",
         difficulty: "medium",
         question: "Qu'est-ce qu'une VMC hygro-réglable ?",
-        answers: ["VMC qui mesure la température", "VMC qui ajuste le débit selon l'humidité", "VMC avec filtre HEPA", "VMC silencieuse"],
+        answers: ["VMC qui mesure la température et adapte le débit thermique", "VMC qui ajuste le débit selon l'humidité", "VMC équipée d'un filtre HEPA pour les allergènes", "VMC fonctionnant à vitesse réduite la nuit pour le confort acoustique"],
         correct: 1,
         explanation: "Une VMC hygro-réglable adapte automatiquement son débit de ventilation en fonction du taux d'humidité détecté, ce qui optimise la qualité d'air et les économies d'énergie.",
         keyPoints: ["Débit variable", "Détection humidité", "Économies d'énergie", "Confort optimisé"]
@@ -3214,7 +3214,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Protection",
         difficulty: "easy",
         question: "Quel est le rôle principal d'un disconnecteur dans une installation sanitaire ?",
-        answers: ["Augmenter la pression", "Empêcher le retour d'eau polluée vers le réseau", "Filtrer l'eau", "Chauffer l'eau"],
+        answers: ["Augmenter la pression du réseau intérieur en cas de pression insuffisante", "Empêcher le retour d'eau polluée vers le réseau", "Filtrer les impuretés mécaniques en entrée d'installation", "Chauffer l'eau sanitaire par échange avec le circuit de chauffage"],
         correct: 1,
         explanation: "Le disconnecteur protège le réseau public d'eau potable contre les retours d'eau potentiellement polluée provenant d'une installation privée (phénomène de siphonage).",
         keyPoints: ["Protection réseau public", "Anti-retour", "Eau potable", "Obligatoire selon usage"]
@@ -3224,7 +3224,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Protection",
         difficulty: "medium",
         question: "Qu'est-ce que le TH (Titre Hydrotimétrique) de l'eau ?",
-        answers: ["La température de l'eau", "La dureté de l'eau (teneur en calcaire)", "La pression de l'eau", "Le pH de l'eau"],
+        answers: ["La température maximale que peut supporter l'eau avant d'entartrer les équipements", "La dureté de l'eau (teneur en calcaire)", "La pression nominale de service dans les canalisations intérieures", "Le pH de l'eau indiquant son caractère acide ou basique"],
         correct: 1,
         explanation: "Le TH (Titre Hydrotimétrique) mesure la dureté de l'eau, c'est-à-dire sa teneur en ions calcium et magnésium (calcaire). Il s'exprime en degrés français (°f).",
         keyPoints: ["TH = dureté", "Teneur calcaire", "°f (degrés français)", "Cause entartrage"]
@@ -3254,7 +3254,7 @@ const allQuestions = [
         category: "Systèmes Avancés - Protection",
         difficulty: "medium",
         question: "Quel est le rôle d'un groupe de sécurité sur un chauffe-eau ?",
-        answers: ["Filtrer l'eau", "Protéger contre surpression et permettre la vidange", "Adoucir l'eau", "Réchauffer l'eau"],
+        answers: ["Filtrer l'eau entrant dans le ballon pour protéger la résistance du calcaire", "Protéger contre surpression et permettre la vidange", "Adoucir l'eau sanitaire par échange d'ions sodiques", "Réchauffer l'eau froide par préchauffage avant entrée dans le ballon"],
         correct: 1,
         explanation: "Le groupe de sécurité protège le chauffe-eau contre les surpressions (soupape taré à 7 bars), permet la vidange de l'appareil et l'évacuation de l'eau lors de la dilatation.",
         keyPoints: ["Protection surpression", "Soupape 7 bars", "Vidange possible", "Évacuation dilatation"]
@@ -3276,7 +3276,7 @@ const allQuestions = [
         category: "Chauffage - Circuits",
         difficulty: "medium",
         question: "Quel est le rôle principal du circulateur dans une installation de chauffage ?",
-        answers: ["Chauffer l'eau", "Faire circuler l'eau dans le réseau", "Réguler la température", "Purger l'air"],
+        answers: ["Chauffer l'eau par résistance électrique en cas de défaillance de la chaudière", "Faire circuler l'eau dans le réseau", "Réguler la température en modulant la puissance de la chaudière", "Purger l'air accumulé dans les points hauts du circuit"],
         correct: 1,
         explanation: "Le circulateur sert à donner de la force motrice à l'eau pour qu'elle puisse irriguer tous les corps de chauffe (radiateurs) du réseau.",
         keyPoints: ["Force motrice", "Circulation de l'eau", "Irrigation des émetteurs", "Position sur l'ALLER"]
@@ -3306,7 +3306,7 @@ const allQuestions = [
         category: "Chauffage - Circuits",
         difficulty: "medium",
         question: "Si l'ALLER d'un radiateur est raccordé vers le bas, que faut-il obligatoirement installer ?",
-        answers: ["Un robinet thermostatique", "Un purgeur", "Une vanne de réglage", "Un clapet anti-retour"],
+        answers: ["Un robinet thermostatique avec sonde déportée en partie haute", "Un purgeur", "Une vanne de réglage pour équilibrer le débit avec les autres radiateurs", "Un clapet anti-retour pour éviter la circulation gravitaire inverse"],
         correct: 1,
         explanation: "Si l'ALLER d'un radiateur est raccordé vers le bas, un purgeur est obligatoire car l'air ne peut pas s'évacuer naturellement vers le haut.",
         keyPoints: ["Raccordement par le bas", "Purgeur obligatoire", "Air emprisonné", "Évacuation impossible"]
@@ -3422,7 +3422,7 @@ const allQuestions = [
         category: "Chauffage - Générateurs",
         difficulty: "easy",
         question: "Quel est le rôle principal d'un générateur de chaleur ?",
-        answers: ["Distribuer la chaleur", "Transformer une énergie en chaleur pour un fluide caloporteur", "Réguler la température", "Purger le circuit"],
+        answers: ["Distribuer la chaleur dans les différentes pièces par les émetteurs", "Transformer une énergie en chaleur pour un fluide caloporteur", "Réguler la température intérieure par modulation de puissance", "Purger le circuit hydraulique des gaz dissous et de l'air"],
         correct: 1,
         explanation: "Le générateur transforme une énergie (combustible) en chaleur et la transmet à un fluide caloporteur (eau) qui circule dans le réseau.",
         keyPoints: ["Transformation énergie", "Vers fluide caloporteur", "Combustible → chaleur", "Eau chauffée"]
@@ -3474,7 +3474,7 @@ const allQuestions = [
         category: "Chauffage - Régulation",
         difficulty: "easy",
         question: "Quels sont les trois mots clés qui résument le rôle de la régulation ?",
-        answers: ["Chauffer, distribuer, économiser", "Mesurer, comparer, corriger", "Allumer, éteindre, régler", "Calculer, installer, maintenir"],
+        answers: ["Programmer, distribuer, économiser", "Mesurer, comparer, corriger", "Allumer, moduler, éteindre", "Calculer, dimensionner, installer"],
         correct: 1,
         explanation: "L'objectif de la régulation est de mesurer une grandeur, la comparer à la consigne, puis corriger automatiquement l'écart.",
         keyPoints: ["Mesurer la grandeur", "Comparer à consigne", "Corriger l'écart", "Automatique"]
@@ -3484,7 +3484,7 @@ const allQuestions = [
         category: "Chauffage - Régulation",
         difficulty: "medium",
         question: "Qu'est-ce qu'une boucle fermée en régulation ?",
-        answers: ["Un circuit sans purge", "La mesure est la grandeur à régler", "Un circuit sans vase d'expansion", "Une régulation manuelle"],
+        answers: ["Un circuit hydraulique sans purgeur ni évacuation d'air", "La mesure est la grandeur à régler", "Un circuit sans vase d'expansion, fonctionnant en régime ouvert", "Une régulation manuelle par consigne fixe sans capteur de retour"],
         correct: 1,
         explanation: "Une boucle fermée (ou longue/lente) mesure la grandeur à régler elle-même (température ambiante). Elle prend en compte les apports internes.",
         keyPoints: ["Mesure = grandeur à régler", "Température ambiante", "Apports internes pris en compte", "Boucle longue/lente"]
@@ -3494,7 +3494,7 @@ const allQuestions = [
         category: "Chauffage - Régulation",
         difficulty: "medium",
         question: "Qu'est-ce qu'une boucle ouverte (ou loi d'eau) en régulation ?",
-        answers: ["Un circuit avec fuite", "La mesure n'est pas la grandeur à régler", "Un système sans thermostat", "Une régulation mécanique"],
+        answers: ["Un circuit hydraulique présentant une fuite délibérée pour évacuer le trop-plein", "La mesure n'est pas la grandeur à régler", "Un système sans thermostat ni sonde fonctionnant à puissance constante", "Une régulation purement mécanique sans composant électronique"],
         correct: 1,
         explanation: "Une boucle ouverte mesure la température extérieure pour déterminer la température de départ d'eau. C'est une régulation rapide mais qui ne prend pas en compte les apports internes.",
         keyPoints: ["Mesure ≠ grandeur à régler", "Température extérieure", "Loi d'eau (courbe)", "Boucle courte/rapide"]
@@ -3576,7 +3576,7 @@ const allQuestions = [
         category: "Chauffage - Remplissage/Purge",
         difficulty: "hard",
         question: "Quel est l'avantage principal d'un séparateur d'air/eau par rapport à un purgeur simple ?",
-        answers: ["Plus esthétique", "Utilise la force centrifuge pour séparer les gaz", "Moins cher", "Plus petit"],
+        answers: ["Aspect plus esthétique pour les installations apparentes en chaufferie", "Utilise la force centrifuge pour séparer les gaz", "Coût d'achat inférieur au purgeur automatique classique", "Encombrement moindre adapté aux installations en faux plafond"],
         correct: 1,
         explanation: "Les séparateurs d'air/eau utilisent la force centrifuge pour dissocier les gaz de l'eau. Ils sont placés à l'origine de l'installation, en partie haute, avec un purgeur automatique.",
         keyPoints: ["Force centrifuge", "Séparation efficace", "Partie haute installation", "Avec purgeur automatique"]
@@ -3654,7 +3654,7 @@ const allQuestions = [
         category: "Symboles - Sanitaire",
         difficulty: "easy",
         question: "Le symbole ovale allongé sur un plan représente quel équipement ?",
-        answers: ["Baignoire", "Receveur de douche", "Lavabo", "Bac à douche"],
+        answers: ["Baignoire", "Receveur de douche rectangulaire", "Lavabo suspendu demi-ovale", "Bac à laver profond en buanderie"],
         correct: 0,
         explanation: "Ce symbole ovale allongé représente une baignoire. Il permet de situer le vidage et la robinetterie.",
         keyPoints: ["Symbole sanitaire", "Baignoire", "Salle de bain", "Vidage"]
@@ -3674,7 +3674,7 @@ const allQuestions = [
         category: "Symboles - Sanitaire",
         difficulty: "easy",
         question: "Quel équipement est représenté par un symbole en forme de demi-cercle ?",
-        answers: ["Lavabo", "Vasque sur meuble", "Évier", "Lave-mains"],
+        answers: ["Lavabo", "Vasque ronde encastrée sur meuble", "Évier 1 bac sans égouttoir", "Lave-mains d'angle pour WC"],
         correct: 0,
         explanation: "Ce symbole en forme de demi-cercle représente un lavabo simple.",
         keyPoints: ["Symbole sanitaire", "Lavabo", "Salle de bain", "Point d'eau"]
@@ -3694,7 +3694,7 @@ const allQuestions = [
         category: "Symboles - Sanitaire",
         difficulty: "easy",
         question: "Quel équipement sanitaire utilise le symbole en forme de cuvette avec réservoir ?",
-        answers: ["WC (Water Closet)", "Bidet", "Urinoir", "Cuvette de lavage"],
+        answers: ["WC (Water Closet)", "Bidet avec robinetterie intégrée", "Urinoir mural à chasse automatique", "Cuvette de lavage pour laboratoire"],
         correct: 0,
         explanation: "Ce symbole représente un WC (toilettes). La forme indique la cuvette et le réservoir.",
         keyPoints: ["Symbole sanitaire", "WC", "Toilettes", "Évacuation EU"]
@@ -3704,7 +3704,7 @@ const allQuestions = [
         category: "Symboles - Sanitaire",
         difficulty: "easy",
         question: "Quel est le symbole d'un bidet ?",
-        answers: ["Bidet", "WC", "Lave-pieds", "Cuvette"],
+        answers: ["Bidet (lavage intime)", "WC avec réservoir de chasse intégré", "Lave-pieds encastré de salle de bain", "Cuvette WC suspendue sans réservoir apparent"],
         correct: 0,
         explanation: "Ce symbole représente un bidet, appareil sanitaire de lavage intime.",
         keyPoints: ["Symbole sanitaire", "Bidet", "Obsolète", "Eau chaude/froide"]
@@ -3714,7 +3714,7 @@ const allQuestions = [
         category: "Symboles - Sanitaire",
         difficulty: "medium",
         question: "Le symbole triangulaire noir sur un plan représente quoi ?",
-        answers: ["Cheminée", "Conduit de ventilation", "Sortie VMC", "Gaine technique"],
+        answers: ["Cheminée", "Conduit de ventilation VMC en gaine maçonnée", "Sortie d'air VMC en façade", "Gaine technique contenant fluides et câbles"],
         correct: 0,
         explanation: "Ce symbole triangulaire noir représente une cheminée sur un plan architectural.",
         keyPoints: ["Symbole", "Cheminée", "Conduit fumées", "Chauffage bois"]
@@ -3724,7 +3724,7 @@ const allQuestions = [
         category: "Symboles - Sanitaire",
         difficulty: "medium",
         question: "Le symbole avec 4 cercles représente quel équipement de cuisine ?",
-        answers: ["Gazinière (plaque de cuisson gaz)", "Four électrique", "Hotte aspirante", "Plaque induction"],
+        answers: ["Gazinière (plaque de cuisson gaz)", "Four électrique encastrable 60×60 cm", "Hotte aspirante avec extraction extérieure", "Plaque induction vitrocéramique 4 zones"],
         correct: 0,
         explanation: "Ce symbole avec 4 cercles représente une gazinière (plaque de cuisson au gaz) avec 4 feux.",
         keyPoints: ["Symbole", "Gazinière", "Gaz de ville", "Cuisine"]
@@ -3734,7 +3734,7 @@ const allQuestions = [
         category: "Symboles - Sanitaire",
         difficulty: "easy",
         question: "Le symbole avec une flèche vers le bas représente quoi en général ?",
-        answers: ["Générateur de chaleur", "Chaudière murale", "Ballon ECS", "Radiateur"],
+        answers: ["Générateur de chaleur", "Chaudière murale à condensation", "Ballon ECS vertical à accumulation", "Radiateur à eau chaude avec robinetterie"],
         correct: 0,
         explanation: "Ce symbole avec une flèche vers le bas représente un générateur de chaleur en général (chaudière, etc.).",
         keyPoints: ["Symbole chauffage", "Générateur", "Production chaleur", "Chaudière"]
@@ -3746,7 +3746,7 @@ const allQuestions = [
         category: "Symboles - Chauffage",
         difficulty: "medium",
         question: "Quel symbole représente une chaudière à combustible liquide ou gazeux ?",
-        answers: ["Rectangle avec symbole flamme", "Cercle simple", "Carré", "Triangle"],
+        answers: ["Rectangle avec symbole flamme", "Cercle simple avec flèche indiquant le sens du fluide", "Carré avec membrane centrale indiquant un vase d'expansion", "Triangle barré représentant une vanne d'isolement"],
         correct: 0,
         explanation: "Ce symbole représente une chaudière fonctionnant au fioul, gaz ou autre combustible liquide/gazeux.",
         keyPoints: ["Symbole chauffage", "Chaudière", "Combustible", "Fioul/Gaz"]
@@ -3776,7 +3776,7 @@ const allQuestions = [
         category: "Symboles - Chauffage",
         difficulty: "easy",
         question: "Le symbole rectangulaire avec ailettes représente quoi ?",
-        answers: ["Radiateur", "Convecteur", "Sèche-serviettes", "Plancher chauffant"],
+        answers: ["Radiateur", "Convecteur électrique à résistance blindée", "Sèche-serviettes eau chaude sanitaire", "Plancher chauffant hydraulique (serpentin)"],
         correct: 0,
         explanation: "Ce symbole rectangulaire avec ailettes représente un radiateur (émetteur de chaleur).",
         keyPoints: ["Symbole chauffage", "Radiateur", "Émetteur", "Chauffage central"]
@@ -3846,7 +3846,7 @@ const allQuestions = [
         category: "Symboles - Chauffage",
         difficulty: "easy",
         question: "Le symbole circulaire avec 'T' ou 'θ' représente quoi ?",
-        answers: ["Thermomètre", "Manomètre", "Thermostat", "Sonde de température"],
+        answers: ["Thermomètre", "Manomètre à cadran à pointeur d'affichage analogique", "Thermostat d'ambiance commandant la chaudière", "Sonde de température PT100 envoyant un signal électrique"],
         correct: 0,
         explanation: "Ce symbole circulaire avec 'T' ou 'θ' représente un thermomètre (mesure de température).",
         keyPoints: ["Symbole", "Thermomètre", "Température", "Mesure °C"]
@@ -3856,7 +3856,7 @@ const allQuestions = [
         category: "Symboles - Chauffage",
         difficulty: "easy",
         question: "Le symbole circulaire avec 'P' ou 'μ' représente quoi ?",
-        answers: ["Manomètre", "Thermomètre", "Pressostat", "Débitmètre"],
+        answers: ["Manomètre", "Thermomètre bimétallique à cadran analogique", "Pressostat électrique commandant un équipement sur seuil", "Débitmètre à turbine mesurant le débit en L/h"],
         correct: 0,
         explanation: "Ce symbole circulaire avec 'P' ou 'μ' représente un manomètre (mesure de pression).",
         keyPoints: ["Symbole", "Manomètre", "Pression", "Mesure bars"]
@@ -3980,7 +3980,7 @@ const allQuestions = [
         category: "Symboles - Équipements",
         difficulty: "medium",
         question: "Le symbole circulaire avec flèche et triangle noir représente quoi ?",
-        answers: ["Pompe (circulateur) avec sens du fluide", "Ventilateur", "Compresseur", "Turbine"],
+        answers: ["Pompe (circulateur) avec sens du fluide", "Ventilateur centrifuge de soufflage", "Compresseur de circuit frigorifique", "Turbine hydraulique à récupération d'énergie"],
         correct: 0,
         explanation: "Ce symbole circulaire avec flèche et triangle noir représente une pompe/circulateur. La flèche indique le sens de circulation.",
         keyPoints: ["Symbole", "Pompe", "Circulateur", "Sens circulation"]
@@ -3990,7 +3990,7 @@ const allQuestions = [
         category: "Symboles - Équipements",
         difficulty: "medium",
         question: "Le symbole avec tamis incliné représente quoi ?",
-        answers: ["Filtre à tamis", "Crépine", "Pot à boue", "Adoucisseur"],
+        answers: ["Filtre à tamis", "Crépine d'aspiration montée à l'entrée d'une pompe", "Pot à boue magnétique retenant les oxydes ferreux", "Adoucisseur à résines échangeuses d'ions"],
         correct: 0,
         explanation: "Ce symbole avec tamis incliné représente un filtre à tamis qui retient les impuretés solides.",
         keyPoints: ["Symbole", "Filtre", "Tamis", "Protection circuit"]
@@ -4000,7 +4000,7 @@ const allQuestions = [
         category: "Symboles - Équipements",
         difficulty: "medium",
         question: "Le symbole conique (rétrécissement) représente quoi ?",
-        answers: ["Venturi (effet venturi)", "Réducteur de pression", "Diaphragme", "Convergent"],
+        answers: ["Venturi (effet venturi)", "Réducteur de pression à membrane aval réglable", "Diaphragme calibré de mesure de débit", "Raccord de réduction concentrique entre deux diamètres"],
         correct: 0,
         explanation: "Ce symbole conique représente un venturi, dispositif créant une dépression par rétrécissement de section.",
         keyPoints: ["Symbole", "Venturi", "Dépression", "Effet Bernoulli"]
@@ -4090,7 +4090,7 @@ const allQuestions = [
         category: "Symboles - Équipements",
         difficulty: "medium",
         question: "Le symbole rectangulaire arrondi représente quoi ?",
-        answers: ["Réservoir de liquide", "Ballon tampon", "Cuve de stockage", "Vase d'expansion"],
+        answers: ["Réservoir de liquide", "Ballon tampon de découplage hydraulique primaire-secondaire", "Cuve de stockage fioul enterrée double paroi", "Vase d'expansion fermé à membrane pressurisé"],
         correct: 0,
         explanation: "Ce symbole rectangulaire arrondi représente un réservoir de stockage de liquide.",
         keyPoints: ["Symbole", "Réservoir", "Stockage", "Liquide"]
@@ -4112,7 +4112,7 @@ const allQuestions = [
         category: "Symboles - Protection",
         difficulty: "medium",
         question: "Le symbole d'amortisseur de coups de bélier est ?",
-        answers: ["Anti-bélier", "Vase d'expansion", "Clapet anti-retour", "Limiteur de pression"],
+        answers: ["Anti-bélier", "Vase d'expansion fermé à membrane pour circuit chauffage", "Clapet anti-retour à disque à ressort centré", "Limiteur de pression différentielle à ressort réglable"],
         correct: 0,
         explanation: "Ce symbole représente un anti-bélier qui absorbe les coups de bélier (surpressions brutales).",
         keyPoints: ["Symbole", "Anti-bélier", "Coup de bélier", "Protection"]
@@ -4132,7 +4132,7 @@ const allQuestions = [
         category: "Symboles - Protection",
         difficulty: "medium",
         question: "Le symbole conique inversé avec flèche vers le haut représente quoi ?",
-        answers: ["Surpresseur", "Détendeur", "Pompe de relevage", "Compresseur"],
+        answers: ["Surpresseur", "Détendeur réducteur abaissant la pression réseau à 3 bars", "Pompe de relevage pour eaux usées en sous-sol", "Compresseur d'air pour alimentation outils pneumatiques"],
         correct: 0,
         explanation: "Ce symbole conique inversé avec flèche représente un surpresseur qui augmente la pression du réseau.",
         keyPoints: ["Symbole", "Surpresseur", "Augmentation pression", "Pompage"]
@@ -4142,7 +4142,7 @@ const allQuestions = [
         category: "Symboles - Protection",
         difficulty: "hard",
         question: "Le symbole en X dans un cadre représente quoi ?",
-        answers: ["Batterie chaude (ou froide)", "Échangeur à plaques", "Radiateur", "Convecteur"],
+        answers: ["Batterie chaude (ou froide)", "Échangeur à plaques brasées inox pour CESI", "Radiateur à eau chaude haute température", "Convecteur électrique à résistance blindée"],
         correct: 0,
         explanation: "Ce symbole en X dans un cadre représente une batterie chaude ou froide utilisée en climatisation/CTA.",
         keyPoints: ["Symbole", "Batterie chaude/froide", "Climatisation", "CTA"]
@@ -4152,7 +4152,7 @@ const allQuestions = [
         category: "Symboles - Protection",
         difficulty: "hard",
         question: "Le symbole circulaire avec pales représente quoi ?",
-        answers: ["Ventilateur", "Extracteur d'air", "Pompe", "Circulateur"],
+        answers: ["Ventilateur", "Extracteur d'air localisé de type salle de bain", "Pompe centrifuge hydraulique à roue", "Circulateur à rotor noyé pour circuit de chauffage"],
         correct: 0,
         explanation: "Ce symbole circulaire avec pales représente un ventilateur pour extraction ou insufflation d'air.",
         keyPoints: ["Symbole VMC", "Ventilateur", "Extraction air", "Ventilation"]
@@ -4162,7 +4162,7 @@ const allQuestions = [
         category: "Symboles - Protection",
         difficulty: "hard",
         question: "Le symbole avec ventilateur et batterie représente quoi ?",
-        answers: ["Ventilo-convecteur", "Radiateur soufflant", "Convecteur électrique", "Aérotherme"],
+        answers: ["Ventilo-convecteur", "Radiateur soufflant électrique de salle de bain", "Convecteur électrique statique à résistance", "Aérotherme à air pulsé pour grands volumes industriels"],
         correct: 0,
         explanation: "Ce symbole avec ventilateur et batterie représente un ventilo-convecteur (chauffage + ventilation).",
         keyPoints: ["Symbole", "Ventilo-convecteur", "Chauffage soufflé", "Climatisation"]
@@ -4194,7 +4194,7 @@ const allQuestions = [
         category: "Symboles - Réfrigération",
         difficulty: "hard",
         question: "Le symbole circulaire avec flèche (groupe frigorifique) représente quoi ?",
-        answers: ["Compresseur frigorifique", "Pompe", "Circulateur", "Turbine"],
+        answers: ["Compresseur frigorifique", "Pompe hydraulique à engrenage pour circuit eau glacée", "Circulateur à rotor noyé pour circuit chauffage", "Turbine de récupération d'énergie sur condenseur"],
         correct: 0,
         explanation: "Ce symbole circulaire avec flèche représente un compresseur frigorifique (PAC, climatisation).",
         keyPoints: ["Symbole", "Compresseur", "Froid", "PAC"]
@@ -4204,7 +4204,7 @@ const allQuestions = [
         category: "Symboles - Réfrigération",
         difficulty: "hard",
         question: "Le symbole en X barré (transformation gaz→liquide) représente quoi ?",
-        answers: ["Condenseur", "Évaporateur", "Échangeur", "Radiateur"],
+        answers: ["Condenseur", "Évaporateur transformant le liquide frigorigène en vapeur", "Échangeur à plaques brasées inox eau/eau", "Radiateur haute température à éléments en fonte"],
         correct: 0,
         explanation: "Ce symbole en X barré représente un condenseur qui transforme le gaz en liquide (cycle frigorifique).",
         keyPoints: ["Symbole", "Condenseur", "Cycle froid", "Liquéfaction"]
@@ -4214,7 +4214,7 @@ const allQuestions = [
         category: "Symboles - Réfrigération",
         difficulty: "hard",
         question: "Le symbole en X (transformation liquide→gaz) représente quoi ?",
-        answers: ["Évaporateur", "Condenseur", "Batterie froide", "Échangeur"],
+        answers: ["Évaporateur", "Condenseur transformant le gaz frigorigène en liquide", "Batterie froide de traitement d'air en centrale CTA", "Échangeur tubulaire eau/eau pour récupération de chaleur"],
         correct: 0,
         explanation: "Ce symbole en X représente un évaporateur qui transforme le liquide en gaz (cycle frigorifique).",
         keyPoints: ["Symbole", "Évaporateur", "Cycle froid", "Vaporisation"]
@@ -4224,7 +4224,7 @@ const allQuestions = [
         category: "Symboles - Réfrigération",
         difficulty: "medium",
         question: "Le symbole circulaire double (contrôle visuel) représente quoi ?",
-        answers: ["Voyant (indicateur visuel de fluide)", "Hublot", "Regard", "Témoin lumineux"],
+        answers: ["Voyant (indicateur visuel de fluide)", "Hublot d'inspection de foyer de chaudière", "Regard de visite pour canalisations enterrées", "Témoin lumineux de tableau de commande électrique"],
         correct: 0,
         explanation: "Ce symbole circulaire double représente un voyant permettant de voir le fluide circuler.",
         keyPoints: ["Symbole", "Voyant", "Contrôle visuel", "Fluide"]
@@ -4347,9 +4347,9 @@ const allQuestions = [
         question: "Pourquoi place-t-on généralement le circulateur sur le retour (après les radiateurs) ?",
         answers: [
             "Pour pomper de l'eau plus froide et protéger le moteur",
-            "Pour augmenter la pression",
-            "Pour économiser de l'énergie",
-            "C'est une obligation réglementaire"
+            "Pour augmenter la pression de départ vers les radiateurs",
+            "Pour réduire la consommation électrique du moteur",
+            "Parce que la réglementation RT2020 l'impose sur l'aller"
         ],
         correct: 0,
         explanation: "Le circulateur sur retour aspire de l'eau plus froide (60-70°C vs 80-90°C aller), ce qui prolonge la durée de vie du moteur.",
@@ -4411,9 +4411,9 @@ const allQuestions = [
         question: "Pourquoi faut-il prévoir un by-pass (dérivation) sur un adoucisseur ?",
         answers: [
             "Pour pouvoir isoler l'adoucisseur en cas de maintenance",
-            "Pour économiser le sel",
-            "Pour augmenter la pression",
-            "C'est obligatoire par la loi"
+            "Pour diluer l'eau adoucie et éviter un taux de sodium trop élevé",
+            "Pour compenser les chutes de pression créées par les résines en service",
+            "Parce que la DTU 68.3 impose un by-pass sur tout équipement de traitement d'eau"
         ],
         correct: 0,
         explanation: "Le by-pass permet d'isoler l'adoucisseur pour maintenance ou remplacement de résines sans couper l'eau de la maison.",
@@ -4426,9 +4426,9 @@ const allQuestions = [
         question: "Quel est le rôle principal d'un adoucisseur d'eau ?",
         answers: [
             "Éliminer le calcaire (calcium et magnésium)",
-            "Filtrer les impuretés solides",
-            "Augmenter la pression de l'eau",
-            "Chauffer l'eau"
+            "Filtrer les impuretés solides par tamisage et rétention mécanique",
+            "Réduire la pression du réseau à 3 bars en entrée d'installation",
+            "Désinfecter l'eau par injection de chlore dosé en continu"
         ],
         correct: 0,
         explanation: "L'adoucisseur élimine le calcaire (ions calcium Ca²⁺ et magnésium Mg²⁺) par échange d'ions avec du sodium.",
@@ -4441,9 +4441,9 @@ const allQuestions = [
         question: "Pourquoi laisser un robinet d'eau froide NON adoucie (en amont de l'adoucisseur) ?",
         answers: [
             "Pour conserver une eau avec minéraux pour la consommation",
-            "Pour économiser le sel",
-            "Pour augmenter la pression",
-            "Ce n'est pas nécessaire"
+            "Pour réduire la consommation de sel de régénération à long terme",
+            "Pour maintenir une pression plus élevée à ce point de soutirage",
+            "Car l'adoucisseur ne traite que l'eau chaude, pas l'eau froide"
         ],
         correct: 0,
         explanation: "On laisse souvent un robinet d'eau dure (non adoucie) pour la boisson, car l'eau adoucie contient plus de sodium et moins de minéraux.",
@@ -4535,9 +4535,9 @@ const allQuestions = [
         question: "Pourquoi ne doit-on JAMAIS mettre de vanne d'arrêt entre le groupe de sécurité et le ballon ?",
         answers: [
             "Risque d'explosion si vanne fermée et surpression",
-            "Pour des raisons esthétiques",
-            "Pour faciliter la maintenance",
-            "Ce n'est pas interdit"
+            "Pour éviter les chocs thermiques sur le corps du groupe de sécurité",
+            "Pour faciliter la maintenance sans couper l'alimentation générale",
+            "Ce n'est pas interdit, c'est simplement déconseillé par le DTU"
         ],
         correct: 0,
         explanation: "Une vanne fermée entre GS et ballon empêcherait l'évacuation de pression → risque d'explosion du ballon ! C'est STRICTEMENT INTERDIT.",
@@ -5395,5 +5395,24 @@ const allQuestions = [
         correct: 0,
         explanation: "La purge se fait du bas vers le haut (les radiateurs bas en premier, puis les hauts). Pression de remplissage : 1 à 1,5 bar en eau froide (lira 1,5-2 bar chaud). Ne pas trop remplir.",
         keyPoints: ["Bas vers le haut", "1-1,5 bar eau froide", "Purgeur = 1 tour, attendre l'eau, refermer", "Vérifier après chauffe : < 3 bars"]
+    },
+
+    // ========== TEST : IDENTIFICATION DE SYMBOLES INDIVIDUELS ==========
+    {
+        id: 'symtech001',
+        category: "Symboles - Identification",
+        difficulty: "medium",
+        question: "Quel composant ce symbole représente-t-il ?",
+        image: "images/symboles-tech/clapet-anti-retour.png",
+        imageAlt: "Symbole normalisé d'un composant de circuit hydraulique",
+        answers: [
+            "Clapet anti-retour",
+            "Filtre anti-impuretés",
+            "Disconnecteur hydraulique",
+            "Détendeur de pression"
+        ],
+        correct: 0,
+        explanation: "Le clapet anti-retour se représente par une flèche indiquant le sens d'écoulement autorisé avec un triangle. Il empêche le retour du fluide dans la canalisation.",
+        keyPoints: ["Sens unique d'écoulement", "Empêche retour de fluide", "Obligatoire sur certains circuits", "Triangle = sens autorisé"]
     }
 ];
