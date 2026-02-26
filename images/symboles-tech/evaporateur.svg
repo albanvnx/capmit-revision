@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">
+  <rect width="100" height="80" fill="white"/>
+  <!-- Corps évaporateur -->
+  <rect x="10" y="10" width="80" height="60" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Serpentin vaporisation (zigzag plus espacé) -->
+  <path d="M 20 20 L 80 20 Q 85 30 80 40 L 20 40 Q 15 50 20 60 L 80 60"
+        fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Entrée liquide frigorigène - gauche -->
+  <line x1="5" y1="40" x2="10" y2="40" stroke="#333" stroke-width="2"/>
+  <!-- Sortie gaz (vapeur) - droite -->
+  <line x1="90" y1="40" x2="95" y2="40" stroke="#333" stroke-width="2"/>
+  <path d="M 90 36 L 97 40 L 90 44" fill="#333" stroke="none"/>
+  <!-- Flèches d'absorption chaleur (entrée) -->
+  <line x1="15" y1="78" x2="15" y2="73" stroke="#333" stroke-width="1"/>
+  <path d="M 11 76 L 15 70 L 19 76" fill="none" stroke="#333" stroke-width="1"/>
+  <line x1="30" y1="78" x2="30" y2="73" stroke="#333" stroke-width="1"/>
+  <path d="M 26 76 L 30 70 L 34 76" fill="none" stroke="#333" stroke-width="1"/>
+</svg>

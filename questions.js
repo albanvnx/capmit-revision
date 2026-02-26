@@ -4880,6 +4880,766 @@ const allQuestions = [
         keyPoints: ["Vue dessus : cuvette + réservoir", "DN 100 évacuation", "Chasse 6/3 L (norme PMR)", "Ventilation primaire DN 100 en toiture"]
     },
 
+    // ========== SYMBOLES - SANITAIRE AVANCÉ (8 questions) ==========
+    {
+        id: 'symid016',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        image: "images/symboles-tech/evier-2bacs.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole sur un plan d'installation sanitaire représente :",
+        answers: [
+            "Un évier 2 bacs avec égouttoir (cuisine)",
+            "Un évier 1 bac avec égouttoir",
+            "Un bac à laver en buanderie",
+            "Un plan de travail avec cuve encastrée"
+        ],
+        correct: 0,
+        explanation: "L'évier 2 bacs est reconnaissable à ses deux compartiments distincts et l'égouttoir latéral. Il se distingue de l'évier 1 bac par la cloison centrale. Évacuation DN 40.",
+        keyPoints: ["2 bacs + égouttoir", "Cuisine collective ou équipée", "Évacuation DN 40", "Siphon double ou mixte"]
+    },
+    {
+        id: 'symid017',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        image: "images/symboles-tech/receveur-douche.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Sur un plan de plomberie, ce symbole carré avec cercle dans un coin désigne :",
+        answers: [
+            "Un receveur de douche (vue de dessus, bonde positionnée)",
+            "Une baignoire rectangulaire à tablier",
+            "Un bac de lavage inox industriel",
+            "Une cuve de rétention technique"
+        ],
+        correct: 0,
+        explanation: "Le receveur de douche est représenté en vue de dessus avec son carré et le cercle indiquant la position de la bonde. La bonde se place généralement à l'opposé de la douche. Évacuation DN 50.",
+        keyPoints: ["Vue de dessus", "Carré + cercle = bonde", "Pente vers bonde (1 à 2%)", "Évacuation DN 50 recommandé"]
+    },
+    {
+        id: 'symid018',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        image: "images/symboles-tech/vasque-meuble.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole (cercle dans un rectangle) sur un plan sanitaire représente :",
+        answers: [
+            "Une vasque circulaire posée sur meuble",
+            "Un lavabo suspendu porcelaine",
+            "Un lave-mains compact d'angle",
+            "Un urinoir à stalle mural"
+        ],
+        correct: 0,
+        explanation: "La vasque sur meuble se distingue du lavabo classique par sa forme circulaire (vasque) intégrée dans un rectangle (le meuble). De plus en plus fréquente en salle de bain moderne.",
+        keyPoints: ["Cercle = vasque ronde", "Rectangle = meuble sous vasque", "Robinetterie sur meuble ou mural", "Évacuation DN 32 siphon bouteille"]
+    },
+    {
+        id: 'symid019',
+        category: "Symboles - Sanitaire",
+        difficulty: "medium",
+        image: "images/symboles-tech/bidet.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Identifiez cet appareil sanitaire (vue de dessus, forme ovale allongée) :",
+        answers: [
+            "Un bidet (lavage intime eau chaude/froide)",
+            "Un lavabo allongé mural",
+            "Un bac à douche balnéo ovale",
+            "Un WC suspendu avec abattant"
+        ],
+        correct: 0,
+        explanation: "Le bidet est représenté en vue de dessus avec sa forme ovale caractéristique et ses perçages de robinetterie aux extrémités. De moins en moins fréquent dans les nouvelles installations.",
+        keyPoints: ["Forme ovale vue dessus", "Robinetterie 2 orifices", "Évacuation DN 32-40", "Rare dans les nouvelles constructions"]
+    },
+    {
+        id: 'symid020',
+        category: "Symboles - Sanitaire",
+        difficulty: "medium",
+        image: "images/symboles-tech/cheminee.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce triangle noir plein sur un plan architectural représente :",
+        answers: [
+            "Une cheminée (foyer ou conduit de fumée)",
+            "Un escalier vu de dessus",
+            "Un poteau structurel porteur",
+            "Une trémie technique verticale"
+        ],
+        correct: 0,
+        explanation: "Le triangle noir plein est le symbole conventionnel de la cheminée sur les plans d'architecture. Il indique la position du foyer. À distinguer du conduit VMC (cercle avec croix) et de l'escalier (lignes parallèles).",
+        keyPoints: ["Triangle noir = cheminée", "Indique position du foyer", "Conduit fumée séparé", "Distance légale 0,40 m des matériaux combustibles"]
+    },
+    {
+        id: 'symid021',
+        category: "Symboles - Sanitaire",
+        difficulty: "easy",
+        image: "images/symboles-tech/gaziniere.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole à 4 cercles sur un plan de cuisine représente :",
+        answers: [
+            "Une gazinière (table de cuisson gaz 4 feux)",
+            "Une table de cuisson électrique à vitrocéramique",
+            "Un évier 4 robinets de puisage",
+            "Un plan de travail avec 4 spots intégrés"
+        ],
+        correct: 0,
+        explanation: "La gazinière est représentée par un rectangle avec 4 cercles symbolisant les 4 brûleurs. Nécessite une alimentation gaz (DN 12 ou 20 mm) et une ventilation du local conforme DTU 61.1.",
+        keyPoints: ["4 cercles = 4 brûleurs gaz", "Alimentation gaz + ventilation locale", "DTU 61.1 pour gaz en cuisine", "Joint de raccordement annuel obligatoire"]
+    },
+    {
+        id: 'symid022',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        image: "images/symboles-tech/generateur.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole générique (cercle avec flèche descendante) sur un schéma de principe représente :",
+        answers: [
+            "Un générateur de chaleur (chaudière, PAC, ou poêle)",
+            "Un groupe moto-pompe de relevage",
+            "Un échangeur de chaleur primaire",
+            "Un ballon de stockage ECS"
+        ],
+        correct: 0,
+        explanation: "Le symbole générique de générateur (cercle + flèche) indique une source de chaleur sans en préciser la nature. Il peut représenter une chaudière, une PAC, un poêle à granulés, etc. Des symboles spécifiques complètent le schéma.",
+        keyPoints: ["Symbole générique = tout générateur", "Complété par symboles spécifiques", "Flèche = sens sortie chaleur", "À préciser dans nomenclature"]
+    },
+
+    // ========== SYMBOLES - CHAUFFAGE AVANCÉ (10 questions) ==========
+    {
+        id: 'symid023',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        image: "images/symboles-tech/chaudiere-combustible.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole avec flamme intérieure sur un schéma de chauffage représente :",
+        answers: [
+            "Une chaudière à combustible (fioul ou gaz naturel)",
+            "Un ballon d'eau chaude sanitaire électrique",
+            "Une pompe à chaleur air/eau réversible",
+            "Un échangeur thermique à serpentin"
+        ],
+        correct: 0,
+        explanation: "La chaudière à combustible est symbolisée par un rectangle ou cercle avec une flamme intérieure. Les connexions latérales indiquent le départ (eau chaude) et le retour (eau froide). Rendement saisonnier ηs selon ErP.",
+        keyPoints: ["Flamme = combustion", "Départ chaud / retour froid", "Fioul (2 tuyaux) ou gaz (1 tuyau)", "Rendement ηs ≥ 86% (ErP)"]
+    },
+    {
+        id: 'symid024',
+        category: "Symboles - Chauffage",
+        difficulty: "hard",
+        image: "images/symboles-tech/echangeur-tubulaire.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Identifiez cet équipement thermique à double circuit :",
+        answers: [
+            "Un échangeur de chaleur tubulaire (fluides en circuits séparés)",
+            "Un échangeur à plaques brasées compact",
+            "Un condenseur de pompe à chaleur",
+            "Un serpentin de ballon ECS bivalent"
+        ],
+        correct: 0,
+        explanation: "L'échangeur tubulaire possède un faisceau de tubes à l'intérieur d'une enveloppe. Un fluide circule dans les tubes, l'autre dans l'enveloppe. Plus robuste que le modèle à plaques, utilisé en industrie.",
+        keyPoints: ["Deux circuits séparés", "Tube + calandre (enveloppe)", "Résistant aux hautes pressions", "Entretien : détartrage tubes"]
+    },
+    {
+        id: 'symid025',
+        category: "Symboles - Chauffage",
+        difficulty: "hard",
+        image: "images/symboles-tech/echangeur-plaques.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole en losange avec 4 connexions représente :",
+        answers: [
+            "Un échangeur de chaleur à plaques (brasé ou à joints)",
+            "Un échangeur tubulaire concentrique",
+            "Un filtre en Y avec tamis incliné",
+            "Un vase d'expansion fermé à membrane"
+        ],
+        correct: 0,
+        explanation: "L'échangeur à plaques est symbolisé par un losange avec les 4 connexions aux coins. Compact et très efficace, il est utilisé pour le transfert thermique entre circuit primaire et secondaire (solar, PAC, sous-station).",
+        keyPoints: ["Losange = échangeur plaques", "4 connexions primaire + secondaire", "Très efficace (∆T faible)", "Utilisé PAC / solaire / sous-stations"]
+    },
+    {
+        id: 'symid026',
+        category: "Symboles - Protection",
+        difficulty: "hard",
+        image: "images/symboles-tech/soupape-differentielle.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole de régulation de pression représente :",
+        answers: [
+            "Une soupape à pression différentielle (by-pass automatique)",
+            "Une soupape de sécurité tarée à ressort fixe",
+            "Un réducteur de pression aval réglable",
+            "Un clapet anti-retour à ressort compressé"
+        ],
+        correct: 0,
+        explanation: "La soupape différentielle (ou by-pass différentiel) maintient une pression différentielle constante entre départ et retour de chauffage. Elle s'ouvre pour décharger le débit excédentaire quand les vannes thermostatiques ferment.",
+        keyPoints: ["Maintien ΔP constant départ/retour", "S'ouvre si ΔP > consigne", "Protection pompe à faible débit", "Réglage 0,05 à 0,6 bar"]
+    },
+    {
+        id: 'symid027',
+        category: "Symboles - Chauffage",
+        difficulty: "medium",
+        image: "images/symboles-tech/vase-expansion-ouvert.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole ouvert en haut sur un schéma de chauffage représente :",
+        answers: [
+            "Un vase d'expansion ouvert (en contact avec l'atmosphère)",
+            "Un vase d'expansion fermé à membrane pressurisé",
+            "Un ballon tampon de découplage hydraulique",
+            "Un réservoir de fluide frigorigène liquide"
+        ],
+        correct: 0,
+        explanation: "Le vase d'expansion ouvert est représenté par un rectangle sans couvercle, symbolisant son contact avec l'atmosphère. Placé au point le plus haut du circuit, aujourd'hui rare (risque de corrosion, légionelles). Remplacé par le vase fermé.",
+        keyPoints: ["Ouvert = contact atmosphère", "Point le plus haut circuit", "Aujourd'hui interdit (NF P52-612)", "Remplacé par vase fermé"]
+    },
+    {
+        id: 'symid028',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        image: "images/symboles-tech/compteur-volumetrique.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Cet instrument de comptage en ligne représente :",
+        answers: [
+            "Un compteur volumétrique d'eau (mesure en m³ cumulés)",
+            "Un débitmètre instantané (mesure en L/h)",
+            "Un manomètre différentiel de pertes de charge",
+            "Un régulateur de débit à pointeau calibré"
+        ],
+        correct: 0,
+        explanation: "Le compteur volumétrique mesure le volume cumulé d'eau consommée (m³). Obligatoire à l'entrée de chaque logement. Il se distingue du débitmètre (mesure du débit instantané en L/h).",
+        keyPoints: ["Mesure volume cumulé (m³)", "Obligatoire en entrée logement", "Relevé périodique (trimestriel)", "À distinguer du débitmètre"]
+    },
+    {
+        id: 'symid029',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        image: "images/symboles-tech/thermostat-ambiance.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce boîtier de régulation sur un schéma de chauffage est :",
+        answers: [
+            "Un thermostat d'ambiance (régule la température de la pièce)",
+            "Un thermomètre plongeur d'installation",
+            "Un aquastat de chaudière (limiteur de température eau)",
+            "Un programmateur horaire hebdomadaire"
+        ],
+        correct: 0,
+        explanation: "Le thermostat d'ambiance mesure la température de l'air de la pièce et commande le chauffage (marche/arrêt ou modulant). À placer à 1,50 m, à l'abri des sources de chaleur parasites.",
+        keyPoints: ["Mesure T° air ambiant", "Commande mise en route chauffage", "Placement : 1,50 m du sol", "À l'abri soleil / radiateur / courant d'air"]
+    },
+
+    // ========== SYMBOLES - VANNES AVANCÉES (6 questions) ==========
+    {
+        id: 'symid030',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        image: "images/symboles-tech/debitmetre.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Cet instrument de mesure hydraulique représente :",
+        answers: [
+            "Un débitmètre (mesure du débit instantané en L/h ou m³/h)",
+            "Un compteur volumétrique (m³ cumulés)",
+            "Un manomètre différentiel de pertes de charge",
+            "Un régulateur de débit à pointeau calibré"
+        ],
+        correct: 0,
+        explanation: "Le débitmètre mesure le débit instantané du fluide (L/h, m³/h). Utilisé pour l'équilibrage hydraulique et le contrôle des installations. À distinguer du compteur volumétrique (mesure cumulée).",
+        keyPoints: ["Débit instantané (L/h ou m³/h)", "Équilibrage hydraulique", "Différent du compteur (volume cumulé)", "Peut être à ultrasons, électromagnétique..."]
+    },
+    {
+        id: 'symid031',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        image: "images/symboles-tech/pressostat.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Cet équipement de contrôle automatique par pression est :",
+        answers: [
+            "Un pressostat (commande électrique déclenchée par seuil de pression)",
+            "Un manomètre à cadran bimétallique analogique",
+            "Un aquastat à bulbe plongeur dans le circuit eau",
+            "Un thermomètre de contact extérieur"
+        ],
+        correct: 0,
+        explanation: "Le pressostat déclenche un contact électrique quand la pression atteint un seuil (maxi ou mini). Utilisé pour déclencher/arrêter une pompe, une alarme, etc. À distinguer du manomètre (affichage seul, pas de commande).",
+        keyPoints: ["Commande électrique par seuil pression", "Pas d'affichage analogique", "Maxi ou mini pression", "Exemples : pressostat pompe, pressostat PAC"]
+    },
+    {
+        id: 'symid032',
+        category: "Symboles - Vannes",
+        difficulty: "hard",
+        image: "images/symboles-tech/vanne-4-voies.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole à 4 triangles sur un schéma frigorifique ou de chauffage représente :",
+        answers: [
+            "Une vanne 4 voies (inversion de cycle frigorifique ou chauffage/rafraîchissement)",
+            "Une vanne 3 voies mélangeuse ou distributrice",
+            "Un collecteur distributeur à 4 départs",
+            "Un té de dérivation quadruple sur collecteur"
+        ],
+        correct: 0,
+        explanation: "La vanne 4 voies permet d'inverser le cycle frigorifique d'une pompe à chaleur (été/hiver). En position chauffage, le condenseur chauffe le logement. En position été (rafraîchissement), les rôles s'inversent.",
+        keyPoints: ["Inversion cycle PAC", "4 orifices : compresseur, condenseur, évaporateur, détendeur", "Commandée électriquement", "PAC réversible air/air ou air/eau"]
+    },
+    {
+        id: 'symid033',
+        category: "Symboles - Vannes",
+        difficulty: "medium",
+        image: "images/symboles-tech/vanne-motorisee.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole avec losange et rectangle 'M' en haut représente :",
+        answers: [
+            "Une vanne motorisée (actionnée par servomoteur électrique)",
+            "Un robinet d'arrêt manuel à quart de tour",
+            "Une vanne thermostatique à tête cire remplie",
+            "Un robinet à flotteur de remplissage réservoir"
+        ],
+        correct: 0,
+        explanation: "La vanne motorisée est actionnée par un servomoteur électrique (moteur M). Elle permet la régulation ou coupure à distance, commandée par un régulateur ou une GTC. Temps de manœuvre typique : 30 à 120 secondes.",
+        keyPoints: ["Servomoteur électrique 24V ou 230V", "Commande à distance (régulateur)", "2 fils (tout-ou-rien) ou 3 fils (0-10V)", "Temps de manœuvre 30 à 120 s"]
+    },
+    {
+        id: 'symid034',
+        category: "Symboles - Protection",
+        difficulty: "hard",
+        image: "images/symboles-tech/disconnecteur.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole complexe de protection sanitaire représente un :",
+        answers: [
+            "Disconnecteur (protège le réseau eau potable contre les retours contaminés)",
+            "Groupe de sécurité sanitaire pour ballon ECS",
+            "Filtre à tamis double avec by-pass de nettoyage",
+            "Réducteur de pression avec filtre et by-pass"
+        ],
+        correct: 0,
+        explanation: "Le disconnecteur crée une zone de pression intermédiaire entre deux clapets anti-retour, communicant avec l'atmosphère en cas de retour. Il protège le réseau public des contaminations. Types CA, BA, EA selon le risque. Contrôle annuel obligatoire.",
+        keyPoints: ["2 clapets + chambre atmosphérique", "Types CA (risque élevé), BA, EA", "Contrôle annuel organisme agréé", "Obligatoire sur certains branchements industriels"]
+    },
+
+    // ========== SYMBOLES - ÉQUIPEMENTS AVANCÉS (14 questions) ==========
+    {
+        id: 'symid035',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        image: "images/symboles-tech/vidange-siphonnee.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole en forme de U sur un schéma de plomberie représente :",
+        answers: [
+            "Une vidange siphonnée (garde d'eau intégrée contre gaz EU)",
+            "Un siphon de sol avec grille amovible",
+            "Un regard de nettoyage sur chute verticale",
+            "Un branchement de trop-plein sur réservoir"
+        ],
+        correct: 0,
+        explanation: "La vidange siphonnée intègre une garde d'eau qui empêche les gaz d'eaux usées de remonter. Elle est représentée par le profil en U du siphon. Garde d'eau mini : 50 mm pour EU, 70 mm pour EP.",
+        keyPoints: ["Garde d'eau = 50 mm mini (EU)", "Empêche gaz H2S de remonter", "Siphon en P, S ou U", "Désactivation par évaporation si peu utilisé"]
+    },
+    {
+        id: 'symid036',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        image: "images/symboles-tech/robinet-puisage.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole sur un plan sanitaire représente :",
+        answers: [
+            "Un robinet de puisage (point d'eau extérieur ou technique)",
+            "Un robinet d'équilibrage avec index de réglage",
+            "Une vanne de vidange de circuit de chauffage",
+            "Un robinet thermostatique de radiateur"
+        ],
+        correct: 0,
+        explanation: "Le robinet de puisage est un point de soutirage d'eau froide simple. Souvent en extérieur (jardin) ou local technique. Alimentation directe eau froide avec bouchon de vidage en partie basse pour protection hors gel.",
+        keyPoints: ["Point de soutirage eau froide", "Extérieur ou local technique", "Bouchon anti-gel en partie basse", "Ø 15 (1/2') ou 20 (3/4') mm"]
+    },
+    {
+        id: 'symid037',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        image: "images/symboles-tech/filtre-tamis.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole losange avec grille intérieure représente :",
+        answers: [
+            "Un filtre à tamis (filtre en Y, retient les impuretés solides)",
+            "Un clapet anti-retour à disque libre",
+            "Une soupape de sécurité à ressort calibré",
+            "Un venturi à effet dépresseur"
+        ],
+        correct: 0,
+        explanation: "Le filtre à tamis (en Y ou en ligne) retient les impuretés solides pour protéger les équipements sensibles (compteurs, vannes motorisées, échangeurs). Le pot de décantation en partie basse se vidange périodiquement.",
+        keyPoints: ["Retient impuretés ≥ 0,5 mm", "Protège compteurs et vannes", "Pot de décantation à vidanger", "À placer avant équipements sensibles"]
+    },
+    {
+        id: 'symid038',
+        category: "Symboles - Équipements",
+        difficulty: "hard",
+        image: "images/symboles-tech/venturi.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole à section variable (convergent-divergent) représente :",
+        answers: [
+            "Un venturi (crée une dépression par accélération du fluide)",
+            "Un diffuseur d'air à section variable",
+            "Un réducteur de section concentrique fixe",
+            "Un régulateur de débit à débit variable"
+        ],
+        correct: 0,
+        explanation: "Le venturi crée une dépression au point d'étranglement (section minimale) selon le théorème de Bernoulli. Utilisé pour mesurer les débits, injecter du produit chimique, ou créer une aspiration. Pas de pièce mobile.",
+        keyPoints: ["Bernoulli : vitesse↑ = pression↓", "Mesure de débit (P amont - P col)", "Injection de produit (effet aspirateur)", "Pas de pièce mobile, très fiable"]
+    },
+    {
+        id: 'symid039',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        image: "images/symboles-tech/croisement-sans-melange.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Cet arc de cercle à l'intersection de deux canalisations symbolise :",
+        answers: [
+            "Un croisement sans mélange (canalisations se croisent sans se connecter)",
+            "Un té de dérivation avec branchement",
+            "Une jonction de deux circuits (mélange des fluides)",
+            "Un by-pass hydraulique avec clapet intégré"
+        ],
+        correct: 0,
+        explanation: "Le 'chapeau de gendarme' (arc à la croisée) indique que les deux canalisations se croisent sans communiquer. Une passe par-dessus l'autre. En l'absence de cet arc, le croisement signifie une connexion (jonction).",
+        keyPoints: ["Arc = pas de connexion", "Sans arc = connexion (jonction)", "Lecture essentielle des schémas", "Chapeau de gendarme = terminologie métier"]
+    },
+    {
+        id: 'symid040',
+        category: "Symboles - Équipements",
+        difficulty: "easy",
+        image: "images/symboles-tech/te-130.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce raccord de tuyauterie (3 branches à 90°) est :",
+        answers: [
+            "Un té simple 90° (référence 130)",
+            "Un té oblique 45° (référence 131, pied de biche)",
+            "Un té culotte 45° double (référence 132)",
+            "Une culotte de dérivation 60°"
+        ],
+        correct: 0,
+        explanation: "Le té 130 (ou té simple) permet une dérivation à 90° par rapport à la canalisation principale. C'est le raccord le plus courant en plomberie pour réaliser un branchement perpendiculaire.",
+        keyPoints: ["Dérivation 90° perpendiculaire", "Référence NF 130", "Le plus courant en plomberie", "Existe en PVC, cuivre, acier, PE..."]
+    },
+    {
+        id: 'symid041',
+        category: "Symboles - Équipements",
+        difficulty: "easy",
+        image: "images/symboles-tech/te-131.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce raccord de tuyauterie avec dérivation oblique est :",
+        answers: [
+            "Un té 45° oblique (référence 131, dit 'pied de biche')",
+            "Un té simple 90° (référence 130)",
+            "Un té culotte 45° double (référence 132)",
+            "Un coude 45° simple sans dérivation"
+        ],
+        correct: 0,
+        explanation: "Le té 131 ou 'pied de biche' permet une dérivation à 45°. Il est utilisé en évacuation EU pour améliorer l'écoulement (moins de turbulence qu'un té 90°). Obligatoire pour certains branchements en évacuation.",
+        keyPoints: ["Dérivation à 45° oblique", "Référence NF 131 (pied de biche)", "Moins de turbulence que le 130", "Recommandé en évacuation EU"]
+    },
+    {
+        id: 'symid042',
+        category: "Symboles - Équipements",
+        difficulty: "easy",
+        image: "images/symboles-tech/te-132.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce raccord à deux dérivations obliques symétriques est :",
+        answers: [
+            "Un té culotte 45° double (référence 132, dit 'paire de fesses')",
+            "Un té simple 90° (référence 130)",
+            "Un té oblique unilatéral 45° (référence 131)",
+            "Un Y de dérivation 60° double"
+        ],
+        correct: 0,
+        explanation: "Le té 132 (paire de fesses) permet deux dérivations symétriques à 45° depuis la canalisation principale. Utilisé pour raccorder deux colonnes sur une même chute EU. Son nom imagé facilite la mémorisation.",
+        keyPoints: ["2 dérivations 45° symétriques", "Référence NF 132 (paire de fesses)", "Raccordement 2 colonnes sur 1 chute", "En PVC gris pour EU"]
+    },
+    {
+        id: 'symid043',
+        category: "Symboles - Équipements",
+        difficulty: "hard",
+        image: "images/symboles-tech/manchon-dg.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce raccord fileté acier (filetages inverses de part et d'autre) est un :",
+        answers: [
+            "Manchon D-G (droite-gauche, pour démonter sans déplacer les tubes)",
+            "Manchon D-D (double filetage droit)",
+            "Union 3 pièces avec joint plat et écrou",
+            "Raccord mâle-femelle fileté"
+        ],
+        correct: 0,
+        explanation: "Le manchon D-G possède un filetage à droite d'un côté et à gauche de l'autre. En le tournant, on serre simultanément les deux tubes sans les faire tourner. Utilisé pour raccorder deux tuyaux fixes (pas d'accès aux extrémités).",
+        keyPoints: ["Droite d'un côté, gauche de l'autre", "Serre les 2 tubes en tournant 1 fois", "Dépannage sans démontage", "Acier galvanisé filetage gaz (BSP)"]
+    },
+    {
+        id: 'symid044',
+        category: "Symboles - Équipements",
+        difficulty: "hard",
+        image: "images/symboles-tech/manchon-dd.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce raccord fileté acier à filetage identique des deux côtés est un :",
+        answers: [
+            "Manchon D-D (double droit, assemblage classique deux tubes)",
+            "Manchon D-G (droite-gauche, filetages inverses)",
+            "Raccord union trois pièces avec joint",
+            "Réduction mâle-femelle fileté acier"
+        ],
+        correct: 0,
+        explanation: "Le manchon D-D (double droit) possède deux filetages identiques (à droite). Il assemble deux tubes en les vissant l'un après l'autre. Contrairement au D-G, il faut pouvoir faire tourner au moins un des deux tubes.",
+        keyPoints: ["2 filetages à droite identiques", "Vissage classique des 2 tubes", "Un tube doit pouvoir tourner", "Acier galvanisé + téflon"]
+    },
+    {
+        id: 'symid045',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        image: "images/symboles-tech/aquastat.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole de régulation avec sonde plongeante est :",
+        answers: [
+            "Un aquastat (thermostat plongeur commandant en fonction de T° eau)",
+            "Un thermostat d'ambiance à bulbe déporté",
+            "Un thermomètre à cadran à immersion directe",
+            "Un limiteur de température de sécurité (STB) non réarmable"
+        ],
+        correct: 0,
+        explanation: "L'aquastat est un thermostat plongeur qui mesure la température de l'eau et commande électriquement un équipement (pompe, brûleur...). Exemples : aquastat de maintien chaudière, aquastat anti-légionelles ECS.",
+        keyPoints: ["Sonde plongée dans circuit eau", "Commande électrique (contact)", "Réglage de 20 à 90°C selon usage", "Anti-légionelles : T° > 60°C hebdo"]
+    },
+    {
+        id: 'symid046',
+        category: "Symboles - Protection",
+        difficulty: "medium",
+        image: "images/symboles-tech/purgeur-automatique.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Identifiez cet organe de dégazage automatique :",
+        answers: [
+            "Un purgeur automatique d'air (évacue l'air dissous dans le circuit)",
+            "Une soupape de sécurité tarée à 3 bars",
+            "Un évent manuel (vis de purge à dévisser)",
+            "Un séparateur d'air et de boues magnétique"
+        ],
+        correct: 0,
+        explanation: "Le purgeur automatique d'air évacue en continu les bulles d'air dissoutes dans le circuit de chauffage. Il est placé aux points hauts et sur le collecteur de distribution. Un clapet anti-retour intégré évite les entrées d'air.",
+        keyPoints: ["Évacue l'air dissous en continu", "À placer aux points hauts", "Clapet intégré anti-entrée d'air", "À fermer après mise en service (risque fuite)"]
+    },
+    {
+        id: 'symid047',
+        category: "Symboles - Équipements",
+        difficulty: "medium",
+        image: "images/symboles-tech/reservoir-liquide.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole de stockage vertical sur un schéma représente :",
+        answers: [
+            "Un réservoir de stockage de liquide (eau, frigorigène...)",
+            "Un vase d'expansion ouvert alimentaire",
+            "Un ballon tampon de découplage hydraulique",
+            "Un ballon solaire bivalent ECS"
+        ],
+        correct: 0,
+        explanation: "Le réservoir de liquide est un symbole générique de stockage. Selon le contexte, il peut représenter un réservoir d'eau, de frigorigène liquide (côté HP d'une PAC), ou de tout liquide technique.",
+        keyPoints: ["Stockage générique de liquide", "Côté HP circuit frigorifique", "Ou réservoir eau d'appoint", "Capot arrondi = sous pression"]
+    },
+
+    // ========== SYMBOLES - PROTECTION AVANCÉE (4 questions) ==========
+    {
+        id: 'symid048',
+        category: "Symboles - Protection",
+        difficulty: "medium",
+        image: "images/symboles-tech/anti-belier.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce dispositif de protection contre les surpressions brutales est :",
+        answers: [
+            "Un anti-bélier (absorbe les coups de bélier hydrauliques)",
+            "Un vase d'expansion fermé à membrane",
+            "Un ballon tampon de régulation de pression",
+            "Un surpresseur à réservoir intégré"
+        ],
+        correct: 0,
+        explanation: "L'anti-bélier est un vase à gaz (azote N₂) qui absorbe les ondes de surpression créées lors de la fermeture rapide d'une vanne. Sans lui, les chocs peuvent déformer les canalisations ou endommager les équipements.",
+        keyPoints: ["Absorbe ondes de surpression", "Azote N₂ pré-chargé", "Fermeture rapide vanne = coup de bélier", "Pression onde = ρ × c × ΔV (formule Joukowski)"]
+    },
+    {
+        id: 'symid049',
+        category: "Symboles - Protection",
+        difficulty: "medium",
+        image: "images/symboles-tech/detendeur-pression.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole losange avec ressort représente :",
+        answers: [
+            "Un détendeur / réducteur de pression (HP → BP réglable)",
+            "Un surpresseur de réseau basse pression",
+            "Une soupape de sécurité à ressort taré fixe",
+            "Un clapet anti-retour taré à 1 bar"
+        ],
+        correct: 0,
+        explanation: "Le réducteur de pression (détendeur) abaisse et stabilise la pression en aval. Obligatoire si pression réseau > 3 bars (NF EN 1567). Réglage standard entre 2,5 et 3 bars pour les installations sanitaires.",
+        keyPoints: ["Réduit et stabilise pression aval", "Obligatoire si P réseau > 3 bars", "Réglage 2,5 à 3 bars standard", "Filtre intégré souvent + manomètre aval"]
+    },
+    {
+        id: 'symid050',
+        category: "Symboles - Protection",
+        difficulty: "hard",
+        image: "images/symboles-tech/surpresseur.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole (pompe + réservoir) représente :",
+        answers: [
+            "Un groupe surpresseur (augmente la pression du réseau intérieur)",
+            "Un groupe de réduction de pression",
+            "Un groupe de relevage eaux usées",
+            "Un groupe hydrophore à fonctionnement continu"
+        ],
+        correct: 0,
+        explanation: "Le surpresseur est utilisé quand la pression de réseau est insuffisante (bâtiments élevés, zones de basse pression). Il comprend une pompe + un réservoir pressurisé (capacité tampon). Le pressostat commande la pompe selon la pression.",
+        keyPoints: ["Augmente pression réseau insuffisante", "Pompe + réservoir pressurisé", "Pressostat : 2 seuils BP/HP", "Calcul : H (m) × 0,1 = pression (bar)"]
+    },
+
+    // ========== SYMBOLES - AÉRAULIQUE ET RÉFRIGÉRATION (9 questions) ==========
+    {
+        id: 'symid051',
+        category: "Symboles - Ventilation",
+        difficulty: "hard",
+        image: "images/symboles-tech/batterie-chaude.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce serpentin dans un rectangle sur un schéma CTA représente :",
+        answers: [
+            "Une batterie chaude (ou froide) à eau pour traitement d'air",
+            "Un filtre aéraulique à fibres synthétiques",
+            "Un échangeur de récupération enthalpique",
+            "Un condenseur de groupe frigorifique"
+        ],
+        correct: 0,
+        explanation: "La batterie chaude (ou froide) est un échangeur air/eau intégré dans une centrale de traitement d'air (CTA). L'air passe sur le serpentin alimenté en eau chaude ou froide selon la saison.",
+        keyPoints: ["Serpentin = échange air/eau", "Batterie chaude (hiver) ou froide (été)", "Intégrée dans CTA ou terminaux", "Débit d'eau et d'air dimensionnés ensemble"]
+    },
+    {
+        id: 'symid052',
+        category: "Symboles - Ventilation",
+        difficulty: "medium",
+        image: "images/symboles-tech/ventilateur.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole à pales tournantes sur un schéma de ventilation représente :",
+        answers: [
+            "Un ventilateur (extraction ou soufflage d'air)",
+            "Un circulateur hydraulique (pompe pour eau)",
+            "Un compresseur de circuit frigorifique",
+            "Une turbine hydraulique de production"
+        ],
+        correct: 0,
+        explanation: "Le ventilateur déplace l'air par rotation de ses pales. En VMC, il assure l'extraction de l'air vicié. En CTA, il peut souffler ou extraire. À distinguer du circulateur (circuit eau) et du compresseur (circuit frigorigène).",
+        keyPoints: ["Déplace l'air (pas l'eau)", "Centrifuge ou axial selon usage", "VMC simple flux : extraction uniquement", "VMC double flux : extraction + soufflage"]
+    },
+    {
+        id: 'symid053',
+        category: "Symboles - Ventilation",
+        difficulty: "hard",
+        image: "images/symboles-tech/ventilo-convecteur.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Cet émetteur de chauffage/climatisation (batterie + ventilateur) est :",
+        answers: [
+            "Un ventilo-convecteur (fan-coil, 2 ou 4 tubes)",
+            "Un aérotherme de hall industriel",
+            "Un radiateur avec ventilateur de brassage",
+            "Une centrale de traitement d'air compacte"
+        ],
+        correct: 0,
+        explanation: "Le ventilo-convecteur (fan-coil) est un émetteur terminal utilisant une batterie eau chaude/froide et un ventilateur interne. En 2 tubes (chaud OU froid), en 4 tubes (chaud ET froid simultanément). Permet le chauffage et la climatisation.",
+        keyPoints: ["Batterie eau + ventilateur intégré", "2 tubes : chaud OU froid", "4 tubes : chaud ET froid", "Thermostat ambiance déporté"]
+    },
+    {
+        id: 'symid054',
+        category: "Symboles - Ventilation",
+        difficulty: "hard",
+        image: "images/symboles-tech/aerotherme.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce symbole de chauffage industriel (batterie + ventilateur + soufflage directionnel) est :",
+        answers: [
+            "Un aérotherme (chauffage d'air par batterie, soufflage directionnel)",
+            "Un ventilo-convecteur de bureau (fan-coil)",
+            "Une centrale de traitement d'air (CTA)",
+            "Un soufflage de plancher chauffant par air"
+        ],
+        correct: 0,
+        explanation: "L'aérotherme chauffe l'air par une batterie eau chaude et le propulse directement dans le local (usine, entrepôt, hall). Sa puissance importante (10 à 100 kW) permet de chauffer de grands volumes. Soufflage dirigé par les ailettes.",
+        keyPoints: ["Grande puissance (10-100 kW)", "Chauffage halls et entrepôts", "Batterie eau chaude + ventilateur puissant", "Soufflage horizontal orientable"]
+    },
+    {
+        id: 'symid055',
+        category: "Symboles - Ventilation",
+        difficulty: "medium",
+        image: "images/symboles-tech/filtre-aeraulique.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce rectangle avec lignes verticales dans un conduit aéraulique représente :",
+        answers: [
+            "Un filtre aéraulique (filtre à air pour VMC ou CTA)",
+            "Un filtre hydraulique à tamis en Y",
+            "Une batterie froide de condensation",
+            "Un échangeur de chaleur à contre-courant"
+        ],
+        correct: 0,
+        explanation: "Le filtre aéraulique retient les poussières et particules de l'air. Obligatoire sur les entrées d'air neuf (G4, F5, F7 selon efficacité). À remplacer régulièrement (colmatage ↑ chute de pression ↑ consommation ventilateur).",
+        keyPoints: ["Retient poussières et particules", "Classes G4, F5, F7, H13 (HEPA)", "Remplacement périodique (6-12 mois)", "Colmatage = ↑ consommation électrique"]
+    },
+    {
+        id: 'symid056',
+        category: "Symboles - Réfrigération",
+        difficulty: "hard",
+        image: "images/symboles-tech/compresseur.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Dans un circuit frigorifique, ce symbole (cercle avec triangle) représente :",
+        answers: [
+            "Un compresseur (aspire vapeur BP, refoule gaz HP)",
+            "Un circulateur hydraulique (pompe eau circuit secondaire)",
+            "Un condenseur de liquéfaction du frigorigène",
+            "Un détendeur thermostatique de laminage"
+        ],
+        correct: 0,
+        explanation: "Le compresseur est le cœur du cycle frigorifique. Il aspire le vapeur froide basse pression (sortie évaporateur) et refoule le gaz chaud haute pression vers le condenseur. Consomme l'énergie électrique (COP = Qf/W).",
+        keyPoints: ["Aspiration vapeur BP", "Refoulement gaz HP", "Cœur du cycle frigorifique", "COP = effet frigorifique / puissance absorbée"]
+    },
+    {
+        id: 'symid057',
+        category: "Symboles - Réfrigération",
+        difficulty: "hard",
+        image: "images/symboles-tech/condenseur.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Dans un cycle frigorifique, ce serpentin représente :",
+        answers: [
+            "Un condenseur (liquéfie le frigorigène en rejetant la chaleur)",
+            "Un évaporateur (vaporise le frigorigène en absorbant la chaleur)",
+            "Un échangeur de chaleur eau/eau tubulaire",
+            "Un aérocondenseur de groupe frigorifique"
+        ],
+        correct: 0,
+        explanation: "Le condenseur reçoit le gaz chaud HP du compresseur et le refroidit jusqu'à liquéfaction, rejetant la chaleur vers l'extérieur (air ou eau). En PAC chauffage, c'est le côté chaud qui chauffe le logement.",
+        keyPoints: ["Liquéfie le frigorigène (gaz → liquide)", "Rejette chaleur vers extérieur", "Côté chaud PAC = côté utile en chauffage", "Température condensation 35-55°C selon type"]
+    },
+    {
+        id: 'symid058',
+        category: "Symboles - Réfrigération",
+        difficulty: "hard",
+        image: "images/symboles-tech/evaporateur.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Dans un cycle frigorifique, ce serpentin (côté froid) représente :",
+        answers: [
+            "Un évaporateur (vaporise le frigorigène en absorbant la chaleur)",
+            "Un condenseur (liquéfie le frigorigène en rejetant la chaleur)",
+            "Un échangeur de récupération de chaleur fatale",
+            "Un serpentin de plancher chauffant eau chaude"
+        ],
+        correct: 0,
+        explanation: "L'évaporateur absorbe la chaleur de la source froide (air extérieur, sol, eau) pour vaporiser le frigorigène. C'est le côté 'froid' de la PAC. En mode climatisation, l'évaporateur se trouve du côté intérieur pour refroidir l'air.",
+        keyPoints: ["Vaporise le frigorigène (liquide → gaz)", "Absorbe chaleur de la source froide", "PAC air/eau : évaporateur = échangeur extérieur", "Température évaporation : -15 à +10°C"]
+    },
+    {
+        id: 'symid059',
+        category: "Symboles - Réfrigération",
+        difficulty: "hard",
+        image: "images/symboles-tech/voyant-liquide.png",
+        imageAlt: "Symbole technique de plomberie - à identifier",
+        question: "Ce double cercle sur un circuit frigorifique représente :",
+        answers: [
+            "Un voyant liquide (indicateur visuel d'état du frigorigène)",
+            "Un hublot d'inspection de ballon ECS",
+            "Un manomètre à tube Bourdon",
+            "Un regard de contrôle sur conduit d'évacuation"
+        ],
+        correct: 0,
+        explanation: "Le voyant liquide permet de voir l'état du frigorigène en circulation : liquide pur = circuit OK, présence de bulles = sous-charge ou problème. Placé sur la ligne liquide après le condenseur, avant le détendeur.",
+        keyPoints: ["Indicateur visuel état frigorigène", "Liquide pur = circuit OK", "Bulles = sous-charge ou obstruction", "Placé sur ligne liquide HP"]
+    },
+
     // ========== SCHÉMAS - IDENTIFICATION D'ÉLÉMENTS (8 questions) ==========
     {
         id: 'schid001',

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <rect width="80" height="80" fill="white"/>
+  <!-- Alimentation horizontale -->
+  <line x1="5" y1="40" x2="45" y2="40" stroke="#333" stroke-width="2"/>
+  <!-- Corps robinet (cercle) -->
+  <circle cx="50" cy="40" r="8" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Sortie vers le bas -->
+  <line x1="50" y1="48" x2="50" y2="75" stroke="#333" stroke-width="2"/>
+  <!-- Flèche de sortie -->
+  <path d="M 44 70 L 50 78 L 56 70" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Poignée / manette -->
+  <line x1="50" y1="32" x2="50" y2="22" stroke="#333" stroke-width="2"/>
+  <line x1="43" y1="22" x2="57" y2="22" stroke="#333" stroke-width="2"/>
+</svg>

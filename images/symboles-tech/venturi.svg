@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80">
+  <rect width="120" height="80" fill="white"/>
+  <!-- Tuyauterie amont -->
+  <line x1="5" y1="40" x2="20" y2="40" stroke="#333" stroke-width="2"/>
+  <!-- Convergent -->
+  <path d="M 20 22 L 60 32" stroke="#333" stroke-width="2" fill="none"/>
+  <path d="M 20 58 L 60 48" stroke="#333" stroke-width="2" fill="none"/>
+  <!-- Divergent -->
+  <path d="M 60 32 L 100 22" stroke="#333" stroke-width="2" fill="none"/>
+  <path d="M 60 48 L 100 58" stroke="#333" stroke-width="2" fill="none"/>
+  <!-- Parois amont/aval -->
+  <line x1="20" y1="22" x2="20" y2="58" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="22" x2="100" y2="58" stroke="#333" stroke-width="2"/>
+  <!-- Tuyauterie aval -->
+  <line x1="100" y1="40" x2="115" y2="40" stroke="#333" stroke-width="2"/>
+  <!-- Prise de mesure pression -->
+  <line x1="60" y1="32" x2="60" y2="15" stroke="#333" stroke-width="1.5"/>
+</svg>

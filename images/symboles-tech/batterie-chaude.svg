@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">
+  <rect width="100" height="80" fill="white"/>
+  <!-- Rectangle batterie -->
+  <rect x="15" y="10" width="70" height="60" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Serpentin / zigzag intérieur (batterie d'échange) -->
+  <path d="M 25 20 L 75 20 L 75 32 L 25 32 L 25 44 L 75 44 L 75 56 L 25 56 L 25 68 L 75 68"
+        fill="none" stroke="#333" stroke-width="1.5"/>
+  <!-- Flèches entrée/sortie fluide -->
+  <line x1="50" y1="5" x2="50" y2="10" stroke="#333" stroke-width="2"/>
+  <path d="M 46 8 L 50 2 L 54 8" fill="#333" stroke="none"/>
+  <line x1="50" y1="70" x2="50" y2="78" stroke="#333" stroke-width="2"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="white"/>
+  <!-- Cercle compresseur -->
+  <circle cx="50" cy="50" r="35" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Triangle (piston) -->
+  <path d="M 25 65 L 25 35 L 70 50 Z" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Aspiration (entrée gauche) -->
+  <line x1="5" y1="50" x2="25" y2="50" stroke="#333" stroke-width="2"/>
+  <!-- Refoulement (sortie droite/haut) -->
+  <line x1="70" y1="50" x2="90" y2="50" stroke="#333" stroke-width="2"/>
+  <path d="M 85 45 L 93 50 L 85 55" fill="#333" stroke="none"/>
+</svg>

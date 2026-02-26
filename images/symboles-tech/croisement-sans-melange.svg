@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="white"/>
+  <!-- Tuyau horizontal (continu) -->
+  <line x1="5" y1="50" x2="42" y2="50" stroke="#333" stroke-width="2"/>
+  <line x1="58" y1="50" x2="95" y2="50" stroke="#333" stroke-width="2"/>
+  <!-- Arc de cercle au croisement (chapeau de gendarme) -->
+  <path d="M 42 50 A 16 16 0 0 1 58 50" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Tuyau vertical (passe par dessous) -->
+  <line x1="50" y1="5" x2="50" y2="95" stroke="#333" stroke-width="2"/>
+</svg>

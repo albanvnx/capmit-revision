@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="white"/>
+  <!-- Cercle générateur -->
+  <circle cx="50" cy="50" r="35" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Flèche vers le bas (départ chaleur) -->
+  <line x1="50" y1="20" x2="50" y2="75" stroke="#333" stroke-width="2"/>
+  <path d="M 40 65 L 50 80 L 60 65" fill="none" stroke="#333" stroke-width="2"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">
+  <rect width="100" height="80" fill="white"/>
+  <!-- Tuyauterie -->
+  <line x1="5" y1="40" x2="25" y2="40" stroke="#333" stroke-width="2"/>
+  <line x1="75" y1="40" x2="95" y2="40" stroke="#333" stroke-width="2"/>
+  <!-- Cercle extérieur voyant -->
+  <circle cx="50" cy="40" r="25" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Cercle intérieur (hublot) -->
+  <circle cx="50" cy="40" r="12" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Croix dans le hublot (indicateur bulle) -->
+  <line x1="44" y1="34" x2="56" y2="46" stroke="#333" stroke-width="1.5"/>
+  <line x1="56" y1="34" x2="44" y2="46" stroke="#333" stroke-width="1.5"/>
+</svg>
