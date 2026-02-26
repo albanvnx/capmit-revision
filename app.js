@@ -1180,6 +1180,29 @@ class SpacedRepetitionApp {
         }).sort((a, b) => a.nextReview - b.nextReview);
     }
 
+    getDailyLimit() {
+        return parseInt(localStorage.getItem('daily-limit') || '40');
+    }
+
+    getLimitedTodayCards() {
+        const allDue = this.getTodayCards();
+        const limit = this.getDailyLimit();
+        if (allDue.length <= limit) return allDue;
+
+        // Priorité : learning (en cours) > review (à revoir) > new (nouvelles)
+        const learning = allDue.filter(c => c.status === 'learning');
+        const review   = allDue.filter(c => c.status === 'review');
+        const newCards = allDue.filter(c => c.status === 'new');
+        const mastered = allDue.filter(c => c.status === 'mastered');
+
+        let selected = [...learning];
+        if (selected.length < limit) selected = selected.concat(review.slice(0, limit - selected.length));
+        if (selected.length < limit) selected = selected.concat(newCards.slice(0, limit - selected.length));
+        if (selected.length < limit) selected = selected.concat(mastered.slice(0, limit - selected.length));
+
+        return selected.slice(0, limit);
+    }
+
     getStreak() {
         const sessions = JSON.parse(localStorage.getItem('daily-sessions') || '[]');
         let streak = 0;
@@ -1209,8 +1232,17 @@ class SpacedRepetitionApp {
     }
 
     updateDashboard() {
-        this.todayCards = this.getTodayCards();
-        document.getElementById('today-count').textContent = this.todayCards.length;
+        const allDue = this.getTodayCards();
+        const limited = this.getLimitedTodayCards();
+        this.todayCards = limited;
+
+        const countEl = document.getElementById('today-count');
+        if (allDue.length > limited.length) {
+            countEl.textContent = `${limited.length}/${allDue.length}`;
+        } else {
+            countEl.textContent = limited.length;
+        }
+
         document.getElementById('streak-count').textContent = this.getStreak();
         document.getElementById('mastered-count').textContent =
             this.cards.filter(c => c.status === 'mastered').length;
@@ -1219,7 +1251,7 @@ class SpacedRepetitionApp {
     }
 
     startSession() {
-        this.todayCards = this.getTodayCards();
+        this.todayCards = this.getLimitedTodayCards();
         if (this.todayCards.length === 0) {
             this.showNoQuestionsMessage();
             return;
@@ -1384,9 +1416,9 @@ class SpacedRepetitionApp {
             message = "Courage ! La répétition est la clé ! 💪";
         }
 
-        const nextCards = this.getTodayCards();
+        const nextCards = this.getLimitedTodayCards();
         const nextDate = nextCards.length > 0 ?
-            "Il reste des questions aujourd'hui !" :
+            `Il reste ${nextCards.length} question${nextCards.length > 1 ? 's' : ''} aujourd'hui !` :
             `Prochaine session demain !`;
 
         document.getElementById('daily-tab').innerHTML = `
@@ -1439,16 +1471,24 @@ class SpacedRepetitionApp {
     }
 
     showDailyTab() {
-        this.todayCards = this.getTodayCards();
+        const allDue = this.getTodayCards();
+        this.todayCards = this.getLimitedTodayCards();
 
-        if (this.todayCards.length === 0) {
+        if (allDue.length === 0) {
             this.showNoQuestionsMessage();
         } else {
+            const hasMore = allDue.length > this.todayCards.length;
+            const extraInfo = hasMore ? `
+                <br><span style="color: #ff9800; font-size: 0.9em;">
+                    📋 ${allDue.length - this.todayCards.length} question${allDue.length - this.todayCards.length > 1 ? 's' : ''} supplémentaire${allDue.length - this.todayCards.length > 1 ? 's' : ''} reportée${allDue.length - this.todayCards.length > 1 ? 's' : ''} demain
+                </span>` : '';
+
             document.getElementById('daily-tab').innerHTML = `
                 <h2 style="margin-bottom: 15px;">🌅 Révision du jour</h2>
                 <div class="info-box">
                     <strong>${this.todayCards.length} question${this.todayCards.length > 1 ? 's' : ''}</strong>
-                    à réviser aujourd'hui.
+                    à réviser aujourd'hui${hasMore ? ` (sur ${allDue.length} disponibles)` : ''}.
+                    ${extraInfo}
                     <br><br>
                     Le système adaptera les prochaines révisions selon vos réponses ! 🎯
                 </div>
@@ -1637,6 +1677,7 @@ class SpacedRepetitionApp {
         const notificationsEnabled = localStorage.getItem('notifications-enabled') === 'true';
         const notificationTime = localStorage.getItem('notification-time') || '09:00';
         const isPremium = this.isPremium();
+        const currentLimit = this.getDailyLimit();
         const premiumCode = localStorage.getItem('premium-code') || '';
 
         // Récupérer les stages actifs (par défaut : seul stage 1)
@@ -1765,6 +1806,28 @@ class SpacedRepetitionApp {
                        style="width: 100%; padding: 12px; margin-top: 10px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em;">
             </div>
 
+            <!-- LIMITE QUOTIDIENNE -->
+            <div class="info-box" style="margin-top: 20px;">
+                <strong>📊 Limite quotidienne de questions</strong>
+                <p style="margin-top: 8px; color: #666; font-size: 0.9em;">
+                    Maximum par session (les questions prioritaires passent en premier)
+                </p>
+                <div style="display: flex; gap: 10px; margin-top: 12px;">
+                    ${[20, 30, 40, 50].map(n => `
+                        <button onclick="app.setDailyLimit(${n})"
+                                style="flex: 1; padding: 10px; border: 2px solid ${currentLimit === n ? '#667eea' : '#e0e0e0'};
+                                       background: ${currentLimit === n ? '#667eea' : 'white'};
+                                       color: ${currentLimit === n ? 'white' : '#333'};
+                                       border-radius: 8px; font-size: 1em; font-weight: bold; cursor: pointer;">
+                            ${n}
+                        </button>
+                    `).join('')}
+                </div>
+                <p style="color: #999; margin-top: 10px; font-size: 0.8em;">
+                    💡 Les questions en cours d'apprentissage sont toujours prioritaires
+                </p>
+            </div>
+
             <div class="info-box" style="margin-top: 20px;">
                 <strong>📱 Installation</strong>
                 <p style="margin-top: 10px;">
@@ -1793,6 +1856,12 @@ class SpacedRepetitionApp {
                 </button>
             </div>
         `;
+    }
+
+    setDailyLimit(n) {
+        localStorage.setItem('daily-limit', n.toString());
+        this.updateDashboard();
+        this.showSettings();
     }
 
     toggleStage(stageKey) {
