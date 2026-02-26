@@ -72,6 +72,8 @@ class QuizMode {
         // Filtrer les questions selon les stages actifs
         return allQuestions.filter(q =>
             q.category === 'Conversions' ||
+            q.category.startsWith('Symboles') ||
+            q.category.startsWith('Schémas') ||
             activeStages.some(stage => q.category.startsWith(stage))
         );
     }
@@ -1110,9 +1112,11 @@ class SpacedRepetitionApp {
             activeStages = ['Fondamentaux & Sécurité'];
         }
 
-        // Filtrer les questions selon les stages actifs + Conversions toujours incluses
+        // Filtrer les questions selon les stages actifs + Conversions/Symboles/Schémas toujours inclus
         const filteredQuestions = allQuestions.filter(q =>
             q.category === 'Conversions' ||
+            q.category.startsWith('Symboles') ||
+            q.category.startsWith('Schémas') ||
             activeStages.some(stage => q.category.startsWith(stage))
         );
 
@@ -1688,7 +1692,8 @@ class SpacedRepetitionApp {
             { key: 'Fondamentaux & Sécurité', name: 'Fondamentaux & Sécurité', icon: '🎓', desc: 'Atelier, dessin, sécurité, bases', free: true },
             { key: 'Systèmes Thermiques', name: 'Systèmes Thermiques', icon: '🔧', desc: 'ECS, évacuation, émetteurs', free: false },
             { key: 'Systèmes Avancés', name: 'Systèmes Avancés', icon: '⚙️', desc: 'Gaz, solaire, VMC', free: false },
-            { key: 'Chauffage', name: 'Chauffage', icon: '🔥', desc: 'Circuits, régulation, dimensionnement', free: false }
+            { key: 'Chauffage', name: 'Chauffage', icon: '🔥', desc: 'Circuits, régulation, dimensionnement', free: false },
+            { key: '_symboles', name: 'Symboles & Schémas', icon: '📐', desc: 'Tous les symboles et schémas techniques', free: true, alwaysOn: true }
         ];
 
         document.getElementById('settings-tab').innerHTML = `
@@ -1760,8 +1765,10 @@ class SpacedRepetitionApp {
                     Sélectionnez les stages selon votre progression
                 </p>
                 ${stages.map(stage => {
-                    const isActive = activeStages.includes(stage.key);
-                    const questionCount = allQuestions.filter(q => q.category.startsWith(stage.key)).length;
+                    const isActive = stage.alwaysOn || activeStages.includes(stage.key);
+                    const questionCount = stage.alwaysOn
+                        ? allQuestions.filter(q => q.category.startsWith('Symboles') || q.category.startsWith('Schémas')).length
+                        : allQuestions.filter(q => q.category.startsWith(stage.key)).length;
                     const isLocked = !stage.free && !isPremium;
                     return `
                         <div class="notification-toggle" style="margin-bottom: 10px; ${isLocked ? 'opacity: 0.6;' : ''}">
@@ -1769,6 +1776,7 @@ class SpacedRepetitionApp {
                                 <h3 style="font-size: 1em; margin-bottom: 3px;">
                                     ${stage.icon} ${stage.name}
                                     ${isLocked ? '<span style="background: #ff9800; color: white; padding: 2px 8px; border-radius: 8px; font-size: 0.75em; margin-left: 8px;">🔒 PREMIUM</span>' : ''}
+                                    ${stage.alwaysOn ? '<span style="background: #4caf50; color: white; padding: 2px 8px; border-radius: 8px; font-size: 0.75em; margin-left: 8px;">✓ TOUJOURS ACTIF</span>' : ''}
                                 </h3>
                                 <p style="font-size: 0.85em;">${stage.desc} (${questionCount} questions)</p>
                             </div>
@@ -1776,7 +1784,7 @@ class SpacedRepetitionApp {
                                 <input type="checkbox"
                                        id="stage-${stage.key.replace(/[^a-z0-9]/gi, '')}"
                                        ${isActive ? 'checked' : ''}
-                                       ${isLocked ? 'disabled' : ''}
+                                       ${isLocked || stage.alwaysOn ? 'disabled' : ''}
                                        onchange="app.toggleStage('${stage.key}')">
                                 <span class="slider"></span>
                             </label>
