@@ -5400,7 +5400,7 @@ const allQuestions = [
     // ========== TEST : IDENTIFICATION DE SYMBOLES INDIVIDUELS ==========
     {
         id: 'symtech001',
-        category: "Symboles - Identification",
+        category: "Chauffage - Symboles",
         difficulty: "medium",
         question: "Quel composant ce symbole représente-t-il ?",
         image: "images/symboles-tech/clapet-anti-retour.png",
