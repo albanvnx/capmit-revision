@@ -25,5 +25,37 @@
   "categories": ["education", "productivity"],
   "lang": "fr",
   "dir": "ltr",
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "screenshots/screen1.png",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Révision espacée"
+    },
+    {
+      "src": "screenshots/screen2.png",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mode Quiz"
+    },
+    {
+      "src": "screenshots/screen3.png",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Fiches de révision"
+    },
+    {
+      "src": "screenshots/screen4.png",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Calculatrice de chantier"
+    },
+    {
+      "src": "screenshots/screen5.png",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Statistiques"
+    }
+  ]
 }
