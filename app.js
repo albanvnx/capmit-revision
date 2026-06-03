@@ -1058,7 +1058,7 @@ class SpacedRepetitionApp {
         }
 
         if (this.activatePremium(code)) {
-            alert('🎉 Premium activé avec succès !\n\n✅ Tous les stages sont maintenant débloqués\n✅ 200 questions disponibles\n✅ Accès complet à vie\n\nL\'application va se recharger...');
+            alert('🎉 Premium activé avec succès !\n\n✅ Tous les stages sont maintenant débloqués\n✅ 631 questions disponibles\n✅ Stages 1 à 5 + module PSE\n✅ Accès complet à vie\n\nL\'application va se recharger...');
             setTimeout(() => {
                 location.reload();
             }, 1500);
@@ -1081,7 +1081,7 @@ class SpacedRepetitionApp {
         // Afficher une alerte avec les options
         const choice = confirm(
             '✨ Passer à Premium\n\n' +
-            '🔓 Débloquez 252 questions supplémentaires\n' +
+            '🔓 Débloquez 373 questions supplémentaires\n' +
             '✅ Accès aux Stages 2, 3 et 4\n' +
             '💰 Prix : 9,99€\n\n' +
             'Cliquez sur OK pour acheter sur Gumroad\n' +
@@ -1689,10 +1689,12 @@ class SpacedRepetitionApp {
         const activeStages = JSON.parse(localStorage.getItem('active-stages') || defaultStages);
 
         const stages = [
-            { key: 'Fondamentaux & Sécurité', name: 'Fondamentaux & Sécurité', icon: '🎓', desc: 'Atelier, dessin, sécurité, bases', free: true },
-            { key: 'Systèmes Thermiques', name: 'Systèmes Thermiques', icon: '🔧', desc: 'ECS, évacuation, émetteurs', free: false },
-            { key: 'Systèmes Avancés', name: 'Systèmes Avancés', icon: '⚙️', desc: 'Gaz, solaire, VMC', free: false },
-            { key: 'Chauffage', name: 'Chauffage', icon: '🔥', desc: 'Circuits, régulation, dimensionnement', free: false },
+            { key: 'Fondamentaux & Sécurité', name: 'Stage 1 - Fondamentaux & Sécurité', icon: '🎓', desc: 'Atelier, dessin, sécurité, bases', free: true },
+            { key: 'Systèmes Thermiques', name: 'Stage 2 - Systèmes Thermiques', icon: '🔧', desc: 'ECS, évacuation, émetteurs', free: false },
+            { key: 'Systèmes Avancés', name: 'Stage 3 - Systèmes Avancés', icon: '⚙️', desc: 'Gaz, solaire, VMC', free: false },
+            { key: 'Chauffage', name: 'Stage 4 - Chauffage', icon: '🔥', desc: 'Circuits, régulation, dimensionnement', free: false },
+            { key: 'Électricité', name: 'Stage 5 - Électricité', icon: '⚡', desc: 'Courants, réseau, mesures, NF C 15-100', free: false },
+            { key: 'PSE', name: 'PSE - Prévention Santé Environnement', icon: '🏥', desc: 'Santé, Sécu sociale, sommeil, prévention', free: false },
             { key: '_symboles', name: 'Symboles & Schémas', icon: '📐', desc: 'Tous les symboles et schémas techniques', free: true, alwaysOn: true }
         ];
 
@@ -1709,7 +1711,7 @@ class SpacedRepetitionApp {
                 ${!isPremium ? `
                     <p style="color: #666; margin-bottom: 15px; font-size: 0.95em;">
                         📚 Accès limité au <strong>Stage 1</strong> (Fondamentaux & Sécurité) + Conversions<br>
-                        🔒 Stages 2, 3, 4 bloqués (<strong>252 questions</strong> premium)
+                        🔒 Stages 2 à 5 + PSE bloqués (<strong>373 questions</strong> premium)
                     </p>
                     <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
                         <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">🔑 Code d'activation Premium :</label>
@@ -1727,7 +1729,7 @@ class SpacedRepetitionApp {
                             ✨ Pas encore de code ?
                         </div>
                         <p style="color: white; margin-bottom: 15px; font-size: 0.9em; line-height: 1.4;">
-                            Débloquez les <strong>200 questions</strong> et tous les stages !
+                            Débloquez les <strong>631 questions</strong> et tous les stages !
                         </p>
                         <button onclick="window.open('https://albanuxem.gumroad.com/l/srojao', '_blank')"
                                 style="width: 100%; padding: 15px; background: white; color: #FF8C00; border: none; border-radius: 8px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
@@ -1739,12 +1741,12 @@ class SpacedRepetitionApp {
                     </div>
 
                     <p style="color: #999; font-size: 0.85em; text-align: center; margin-top: 15px;">
-                        💡 La version Premium débloque les 200 questions complètes
+                        💡 La version Premium débloque les 631 questions complètes
                     </p>
                 ` : `
                     <p style="color: #2e7d32; margin-bottom: 10px;">
                         🎉 <strong>Toutes les fonctionnalités débloquées !</strong><br>
-                        ✅ 200 questions • 4 stages complets
+                        ✅ 631 questions • 5 stages + module PSE
                     </p>
                     <div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
                         <div style="color: #666; font-size: 0.9em;">

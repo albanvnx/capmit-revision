@@ -1,5 +1,5 @@
-// Base de données des questions CAP M.I.T FC - VERSION COMPLÈTE v3.1
-// 497 questions : distracteurs techniques améliorés + 15 symboles visuels + 8 schémas ID + 25 terminologie bidirectionnelle
+// Base de données des questions CAP M.I.T FC - VERSION COMPLÈTE v3.2
+// 597 questions : ajout de 100 questions (Stage 5 Électricité + Module PSE)
 
 const allQuestions = [
     // ========== QUESTIONS TEST AVEC IMAGES (3 questions) ==========
@@ -6174,5 +6174,1037 @@ const allQuestions = [
         correct: 0,
         explanation: "Le clapet anti-retour se représente par une flèche indiquant le sens d'écoulement autorisé avec un triangle. Il empêche le retour du fluide dans la canalisation.",
         keyPoints: ["Sens unique d'écoulement", "Empêche retour de fluide", "Obligatoire sur certains circuits", "Triangle = sens autorisé"]
+    },
+
+    // ============================================================
+    // STAGE 5 - ÉLECTRICITÉ (50 questions)
+    // ============================================================
+
+    // ---------- COURANTS (8 questions) ----------
+    {
+        id: 'elec001',
+        category: "Électricité - Courants",
+        difficulty: "easy",
+        question: "Que signifie le sigle AC pour un courant électrique ?",
+        answers: ["Alternating Current (courant alternatif)", "Active Current (courant actif)", "Average Current (courant moyen)", "Applied Current (courant appliqué)"],
+        correct: 0,
+        explanation: "AC signifie Alternating Current : c'est le courant alternatif, qui change périodiquement de sens. Le DC (Direct Current) est le courant continu.",
+        keyPoints: ["AC = alternatif", "DC = continu", "Change de sens périodiquement", "Distribué par EDF"]
+    },
+    {
+        id: 'elec002',
+        category: "Électricité - Courants",
+        difficulty: "easy",
+        question: "Quelle est la fréquence du courant alternatif distribué en France ?",
+        answers: ["50 Hz", "60 Hz", "100 Hz", "230 Hz"],
+        correct: 0,
+        explanation: "EDF distribue un réseau alternatif à 50 Hz, c'est-à-dire 50 périodes par seconde (T = 1/50 = 0,02 s). Aux États-Unis, c'est 60 Hz.",
+        keyPoints: ["50 Hz en France", "60 Hz aux USA", "Hz = Hertz", "1 Hz = 1 période/seconde"]
+    },
+    {
+        id: 'elec003',
+        category: "Électricité - Courants",
+        difficulty: "medium",
+        question: "Combien de fois par seconde un courant alternatif de 50 Hz change-t-il de sens ?",
+        answers: ["100 fois (50 allers-retours)", "50 fois", "25 fois", "200 fois"],
+        correct: 0,
+        explanation: "À 50 Hz, le courant effectue 50 « allers-retours » par seconde, ce qui correspond à 100 changements de sens (un aller + un retour = 2 changements).",
+        keyPoints: ["50 Hz = 50 allers-retours/s", "= 100 changements de sens/s", "Fréquence = nombre de périodes/s"]
+    },
+    {
+        id: 'elec004',
+        category: "Électricité - Courants",
+        difficulty: "easy",
+        question: "Quel composant produit du courant continu (DC) ?",
+        answers: ["Une pile ou batterie", "Un alternateur de centrale", "Un transformateur EDF", "Une bobine de stator"],
+        correct: 0,
+        explanation: "Le courant continu est créé par un générateur chimique (pile, batterie) ou un panneau photovoltaïque. Les alternateurs des centrales produisent du courant alternatif.",
+        keyPoints: ["Pile / batterie = DC", "Panneau solaire = DC", "Alternateur = AC", "DC = Direct Current"]
+    },
+    {
+        id: 'elec005',
+        category: "Électricité - Courants",
+        difficulty: "medium",
+        question: "Quelle est la formule de la puissance apparente S en courant alternatif monophasé ?",
+        answers: ["S = U × I (en VA)", "S = U × I × cos φ (en W)", "S = U × I × sin φ (en VAR)", "S = U / I (en Ω)"],
+        correct: 0,
+        explanation: "S = U × I est la puissance apparente, exprimée en Voltampère (VA). P = U×I×cos φ est la puissance active (W) et Q = U×I×sin φ la puissance réactive (VAR).",
+        keyPoints: ["S = U × I en VA", "P = puissance active en W", "Q = puissance réactive en VAR", "Triangle de puissance"]
+    },
+    {
+        id: 'elec006',
+        category: "Électricité - Courants",
+        difficulty: "hard",
+        question: "En courant triphasé, comment se calcule la puissance active P ?",
+        answers: ["P = U × I × cos φ × √3", "P = U × I × cos φ", "P = U × I × √3", "P = 3 × U × I × cos φ"],
+        correct: 0,
+        explanation: "En triphasé, les formules monophasées sont multipliées par √3 (racine de 3 ≈ 1,732). Donc P = U × I × cos φ × √3.",
+        keyPoints: ["Triphasé : × √3", "P en Watt", "cos φ = facteur de puissance", "√3 ≈ 1,732"]
+    },
+    {
+        id: 'elec007',
+        category: "Électricité - Courants",
+        difficulty: "medium",
+        question: "Dans un alternateur, comment s'appelle la partie qui tourne au centre ?",
+        answers: ["Le rotor (aimant)", "Le stator (bobine)", "Le condensateur", "La diode"],
+        correct: 0,
+        explanation: "Dans un alternateur, le rotor (aimant ou électroaimant) tourne au centre, à l'intérieur du stator (bobine fixe). Le passage de l'aimant près de la bobine produit une tension sinusoïdale.",
+        keyPoints: ["Rotor = aimant tournant", "Stator = bobine fixe", "Produit tension sinusoïdale", "Centrales utilisent électroaimants"]
+    },
+    {
+        id: 'elec008',
+        category: "Électricité - Courants",
+        difficulty: "easy",
+        question: "Quelle unité utilise-t-on pour mesurer la fréquence d'un courant alternatif ?",
+        answers: ["Le Hertz (Hz)", "L'Ampère (A)", "Le Volt (V)", "Le Watt (W)"],
+        correct: 0,
+        explanation: "La fréquence est mesurée en Hertz (Hz), nombre de périodes par seconde. L'Ampère mesure l'intensité, le Volt la tension, le Watt la puissance.",
+        keyPoints: ["Hz = Hertz = fréquence", "A = Ampère = intensité", "V = Volt = tension", "W = Watt = puissance"]
+    },
+
+    // ---------- RÉSEAU MONO/TRIPHASÉ (8 questions) ----------
+    {
+        id: 'elec009',
+        category: "Électricité - Réseau",
+        difficulty: "easy",
+        question: "Quelle est la tension entre phase et neutre dans une installation domestique française ?",
+        answers: ["230 V", "400 V", "110 V", "24 V"],
+        correct: 0,
+        explanation: "En France, la tension entre phase et neutre (tension simple) est de 230 V. Entre phases (tension composée), elle est de 400 V. Relation : V = U / √3 = 400/√3 ≈ 230 V.",
+        keyPoints: ["230 V phase-neutre", "400 V entre phases", "V = U/√3", "Norme française"]
+    },
+    {
+        id: 'elec010',
+        category: "Électricité - Réseau",
+        difficulty: "easy",
+        question: "Quelle est la tension entre deux phases en triphasé ?",
+        answers: ["400 V", "230 V", "690 V", "230 V × 2"],
+        correct: 0,
+        explanation: "En distribution triphasée française, la tension entre phases (tension composée U) est de 400 V efficace. C'est la tension utilisée pour les installations industrielles.",
+        keyPoints: ["400 V entre phases", "Triphasé industriel", "U = V × √3", "Valeur efficace"]
+    },
+    {
+        id: 'elec011',
+        category: "Électricité - Réseau",
+        difficulty: "medium",
+        question: "Quelle couleur est OBLIGATOIREMENT utilisée pour le conducteur de terre ?",
+        answers: ["Vert et jaune", "Bleu clair", "Rouge", "Noir"],
+        correct: 0,
+        explanation: "Règle 1 : la double coloration vert-et-jaune est EXCLUSIVEMENT réservée au conducteur de protection PE (terre) et PEN. Aucun autre conducteur ne peut utiliser cette couleur.",
+        keyPoints: ["Vert/jaune = TERRE uniquement", "Règle 1 absolue", "PE = Protection Équipotentielle", "Sécurité des personnes"]
+    },
+    {
+        id: 'elec012',
+        category: "Électricité - Réseau",
+        difficulty: "easy",
+        question: "Quelle est la couleur du conducteur neutre ?",
+        answers: ["Bleu clair", "Marron", "Noir", "Rouge"],
+        correct: 0,
+        explanation: "Règle 2 : le conducteur neutre est repéré en bleu clair (ou par le chiffre 1 pour les câbles de plus de 5 conducteurs). S'il n'y a pas de neutre, le bleu clair peut servir de phase.",
+        keyPoints: ["Bleu clair = neutre", "Règle 2", "Sinon phase si pas de neutre", "Code couleur strict"]
+    },
+    {
+        id: 'elec013',
+        category: "Électricité - Réseau",
+        difficulty: "medium",
+        question: "Combien de conducteurs sont utilisés pour une alimentation triphasée avec neutre ?",
+        answers: ["4 (3 phases + 1 neutre)", "3 (3 phases sans neutre)", "5 (avec terre)", "2 (phase + neutre)"],
+        correct: 0,
+        explanation: "L'alimentation triphasée standard utilise 4 conducteurs : 3 phases (L1/L2/L3) + 1 neutre (N). La terre (PE) est en plus, créée par l'installateur (non fournie par EDF).",
+        keyPoints: ["3 phases + neutre = 4 fils", "Terre créée par installateur", "L1, L2, L3 = phases", "N = neutre"]
+    },
+    {
+        id: 'elec014',
+        category: "Électricité - Réseau",
+        difficulty: "medium",
+        question: "À quelle utilisation est destiné principalement le courant monophasé en France ?",
+        answers: ["Installations domestiques", "Centrales nucléaires", "Industrie lourde", "Transport haute tension"],
+        correct: 0,
+        explanation: "Le courant alternatif monophasé est essentiellement utilisé pour les installations domestiques (230 V). Le triphasé sert pour l'industrie, le transport et la distribution.",
+        keyPoints: ["Monophasé = domestique", "Triphasé = industriel/transport", "Monophasé 230 V", "Triphasé 400 V"]
+    },
+    {
+        id: 'elec015',
+        category: "Électricité - Réseau",
+        difficulty: "hard",
+        question: "Quel est le décalage entre les 3 phases d'un réseau triphasé à 50 Hz ?",
+        answers: ["6,7 millisecondes (1/150 s)", "20 millisecondes", "10 millisecondes", "50 millisecondes"],
+        correct: 0,
+        explanation: "Calcul : 1 s / (50 Hz × 3) = 0,0067 s = 6,7 ms. Les trois phases sont décalées d'un tiers de période (120°), soit 6,7 ms à 50 Hz.",
+        keyPoints: ["6,7 ms de décalage", "1/(f × 3)", "Déphasage 120°", "Période complète : 20 ms"]
+    },
+    {
+        id: 'elec016',
+        category: "Électricité - Réseau",
+        difficulty: "hard",
+        question: "Pourquoi la valeur de la tension V (phase-neutre) est-elle de 230 V quand U (phase-phase) est de 400 V ?",
+        answers: ["Car V = U / √3 (relation triphasée)", "Car V = U / 2", "Car V = U / 3", "Car V = U × √2"],
+        correct: 0,
+        explanation: "En triphasé équilibré, la relation entre tension simple V (phase-neutre) et tension composée U (entre phases) est : V = U / √3. Donc 400/√3 = 230 V.",
+        keyPoints: ["V = U / √3", "400/1,732 = 230", "Relation triphasée", "Tension simple vs composée"]
+    },
+
+    // ---------- MESURES & MULTIMÈTRE (8 questions) ----------
+    {
+        id: 'elec017',
+        category: "Électricité - Mesures",
+        difficulty: "easy",
+        question: "Comment se branche un ampèremètre dans un circuit ?",
+        answers: ["En série avec le dipôle", "En dérivation (parallèle)", "Aux bornes du générateur", "Entre phase et terre"],
+        correct: 0,
+        explanation: "L'ampèremètre se branche TOUJOURS en série avec le dipôle pour mesurer le courant qui le traverse. Le voltmètre, lui, se branche en dérivation.",
+        keyPoints: ["Ampèremètre = en série", "Voltmètre = en dérivation", "Mesure d'intensité", "Symbole : A dans un cercle"]
+    },
+    {
+        id: 'elec018',
+        category: "Électricité - Mesures",
+        difficulty: "easy",
+        question: "Comment se branche un voltmètre pour mesurer la tension aux bornes d'un dipôle ?",
+        answers: ["En dérivation (parallèle) avec le dipôle", "En série avec le dipôle", "Entre phase et terre", "Sur le neutre uniquement"],
+        correct: 0,
+        explanation: "Le voltmètre se branche EN DÉRIVATION (parallèle) aux bornes du dipôle dont on veut mesurer la tension. L'ampèremètre, lui, se branche en série.",
+        keyPoints: ["Voltmètre = en dérivation", "Aux bornes du dipôle", "Symbole : V dans un cercle", "Mesure de tension"]
+    },
+    {
+        id: 'elec019',
+        category: "Électricité - Mesures",
+        difficulty: "medium",
+        question: "Avant de mesurer avec un multimètre, quel calibre faut-il choisir en premier ?",
+        answers: ["Le plus grand calibre", "Le plus petit calibre", "Un calibre au hasard", "Le calibre moyen"],
+        correct: 0,
+        explanation: "On commence TOUJOURS par le plus grand calibre pour éviter d'endommager l'appareil. Ensuite, on affine en choisissant le calibre immédiatement supérieur à la valeur affichée.",
+        keyPoints: ["Toujours commencer GRAND calibre", "Affiner ensuite", "Évite la destruction", "Calibre = valeur max mesurable"]
+    },
+    {
+        id: 'elec020',
+        category: "Électricité - Mesures",
+        difficulty: "medium",
+        question: "Sur un multimètre, que signifie l'affichage du chiffre « 1 » seul à l'écran ?",
+        answers: ["Le calibre choisi est trop petit (dépassement)", "La pile est faible", "Bon fonctionnement", "Le courant est nul"],
+        correct: 0,
+        explanation: "L'affichage « 1 » seul indique un dépassement de calibre : la valeur mesurée dépasse la capacité du calibre choisi. Il faut passer au calibre supérieur, sinon l'appareil peut s'endommager.",
+        keyPoints: ["1 = calibre trop petit", "Passer au calibre supérieur", "Risque de destruction", "Dépassement = overflow"]
+    },
+    {
+        id: 'elec021',
+        category: "Électricité - Mesures",
+        difficulty: "medium",
+        question: "Que signifie l'affichage d'un signe « – » devant la valeur mesurée en courant continu ?",
+        answers: ["Le sens de branchement est inversé", "L'appareil est en panne", "Le calibre est mauvais", "Le circuit est ouvert"],
+        correct: 0,
+        explanation: "Le signe « – » indique que le sens de branchement n'est pas respecté. En courant continu, la borne COM doit être reliée au pôle négatif du générateur.",
+        keyPoints: ["– = inversion bornes", "DC : COM au pôle négatif", "En AC : bornes sans importance", "Mesure correcte = pas de –"]
+    },
+    {
+        id: 'elec022',
+        category: "Électricité - Mesures",
+        difficulty: "easy",
+        question: "Quelle est l'unité de mesure de l'intensité électrique ?",
+        answers: ["L'Ampère (A)", "Le Volt (V)", "L'Ohm (Ω)", "Le Watt (W)"],
+        correct: 0,
+        explanation: "L'intensité du courant électrique se mesure en Ampère (A) avec un ampèremètre. Le Volt mesure la tension, l'Ohm la résistance, le Watt la puissance.",
+        keyPoints: ["A = Ampère = intensité", "V = Volt = tension", "Ω = Ohm = résistance", "W = Watt = puissance"]
+    },
+    {
+        id: 'elec023',
+        category: "Électricité - Mesures",
+        difficulty: "hard",
+        question: "Qu'est-ce qu'un dipôle passif linéaire ?",
+        answers: ["Un dipôle dont la caractéristique est une droite passant par l'origine (ex : résistance)", "Un dipôle qui fournit de l'énergie (ex : pile)", "Un dipôle polarisé sans symétrie", "Un dipôle non conducteur"],
+        correct: 0,
+        explanation: "Un dipôle passif linéaire ne fournit pas d'énergie et sa caractéristique U(I) est une droite passant par l'origine. Exemple : une résistance. Un dipôle actif fournit de l'énergie (pile, générateur).",
+        keyPoints: ["Passif = ne fournit pas d'énergie", "Linéaire = droite", "Passe par l'origine", "Ex : résistance"]
+    },
+    {
+        id: 'elec024',
+        category: "Électricité - Mesures",
+        difficulty: "medium",
+        question: "Dans un montage en série, que se passe-t-il si un dipôle est défaillant ?",
+        answers: ["Tous les autres dipôles cessent de fonctionner", "Seul le dipôle défaillant s'arrête", "Le courant augmente dans les autres", "Rien ne change"],
+        correct: 0,
+        explanation: "En série, les dipôles sont sur une seule boucle. Si un seul tombe en panne, le circuit est ouvert et TOUS les dipôles cessent de fonctionner. En dérivation, chaque branche est indépendante.",
+        keyPoints: ["Série : 1 panne = tout s'arrête", "Dérivation : indépendant", "Une seule boucle = série", "Plusieurs boucles = dérivation"]
+    },
+
+    // ---------- COMPOSANTS / APPAREILLAGES (8 questions) ----------
+    {
+        id: 'elec025',
+        category: "Électricité - Composants",
+        difficulty: "easy",
+        question: "Quel est le rôle d'un fusible dans une installation électrique ?",
+        answers: ["Protéger contre les courts-circuits et surcharges par fusion d'un élément calibré", "Mesurer le courant qui circule", "Stocker l'énergie électrique", "Convertir le courant alternatif en continu"],
+        correct: 0,
+        explanation: "Le fusible protège contre courts-circuits et surcharges : un élément calibré fond quand le courant dépasse sa valeur nominale, coupant le circuit. C'est à usage unique (à remplacer).",
+        keyPoints: ["Protection court-circuit + surcharge", "Fusion d'un élément calibré", "Usage unique", "Calibre prédéterminé"]
+    },
+    {
+        id: 'elec026',
+        category: "Électricité - Composants",
+        difficulty: "easy",
+        question: "Quel est le rôle d'un disjoncteur ?",
+        answers: ["Interrompre le courant en cas d'incident (surcharge ou court-circuit), réarmable", "Mesurer la tension", "Filtrer les parasites électriques", "Transformer la tension"],
+        correct: 0,
+        explanation: "Le disjoncteur est un organe électromécanique de protection qui interrompt le courant en cas de surcharge ou court-circuit. Contrairement au fusible, il est réarmable (on le rebascule).",
+        keyPoints: ["Protection + réarmable", "Surcharge ET court-circuit", "Organe électromécanique", "Avantage vs fusible"]
+    },
+    {
+        id: 'elec027',
+        category: "Électricité - Composants",
+        difficulty: "medium",
+        question: "Quelle est la fonction d'un sectionneur ?",
+        answers: ["Isoler un circuit hors charge (courant nul) pour intervention en sécurité", "Couper un courant nominal en charge", "Mesurer la tension entre phase et terre", "Limiter le courant en cas de surcharge"],
+        correct: 0,
+        explanation: "Le sectionneur sépare et isole un circuit quand le courant est NUL (à vide). Il garantit la sécurité des personnes intervenant en aval, mais ne doit jamais être manœuvré en charge.",
+        keyPoints: ["Manœuvre HORS charge", "Courant nul obligatoire", "Sécurité intervention", "Ne coupe pas en charge"]
+    },
+    {
+        id: 'elec028',
+        category: "Électricité - Composants",
+        difficulty: "medium",
+        question: "Quel composant protège un récepteur contre les surcharges en surveillant en permanence son courant ?",
+        answers: ["Le relais thermique", "Le disjoncteur magnétique", "Le sectionneur", "Le commutateur"],
+        correct: 0,
+        explanation: "Le relais thermique surveille en permanence le courant du récepteur (ex : moteur). En cas de surcharge, il ouvre le circuit de commande d'un contacteur qui coupe alors la puissance.",
+        keyPoints: ["Protection surcharge", "Surveille en permanence", "Agit via contacteur", "Typiquement sur moteurs"]
+    },
+    {
+        id: 'elec029',
+        category: "Électricité - Composants",
+        difficulty: "easy",
+        question: "Parmi ces matériaux, lequel est un excellent ISOLANT électrique ?",
+        answers: ["L'air sec", "Le cuivre", "L'argent", "L'eau salée"],
+        correct: 0,
+        explanation: "L'air sec est un excellent isolant, ainsi que le plastique, le bois sec, et l'eau pure. Au contraire, les métaux (cuivre, argent, or) et l'eau impure/salée sont de bons conducteurs.",
+        keyPoints: ["Isolants : air sec, plastique, bois sec", "Conducteurs : métaux, eau salée", "Eau pure = isolant", "Humidité rend conducteur"]
+    },
+    {
+        id: 'elec030',
+        category: "Électricité - Composants",
+        difficulty: "easy",
+        question: "Quel est le meilleur conducteur d'électricité parmi ces métaux ?",
+        answers: ["L'argent", "Le cuivre", "L'aluminium", "Le fer"],
+        correct: 0,
+        explanation: "L'argent est le meilleur conducteur, puis l'or, puis le cuivre. Mais le cuivre est le plus utilisé dans les installations à cause de son rapport qualité/prix. L'argent et l'or sont trop chers.",
+        keyPoints: ["1. Argent (meilleur)", "2. Cuivre (le plus utilisé)", "3. Aluminium", "Or = trop cher"]
+    },
+    {
+        id: 'elec031',
+        category: "Électricité - Composants",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un dipôle en électricité ?",
+        answers: ["Un composant à deux bornes", "Un composant à trois bornes", "Un câble à deux fils", "Une connexion polarisée"],
+        correct: 0,
+        explanation: "Un dipôle est un composant électrique à 2 bornes. La plupart des composants courants sont des dipôles : pile, résistance, lampe, condensateur, diode, interrupteur.",
+        keyPoints: ["2 bornes = dipôle", "Pile, résistance, lampe...", "Symboles normalisés", "Bases des circuits"]
+    },
+    {
+        id: 'elec032',
+        category: "Électricité - Composants",
+        difficulty: "medium",
+        question: "Quel type de canalisation électrique convient pour équiper un plan de travail (atelier, cuisine) ?",
+        answers: ["La goulotte", "Le conduit encastré", "Le chemin de câble", "La moulure"],
+        correct: 0,
+        explanation: "La goulotte est conçue pour équiper un plan de travail (atelier, bureau, cuisine). La moulure se pose au-dessus d'une plinthe ou autour d'une porte. Le chemin de câble pour les locaux techniques.",
+        keyPoints: ["Goulotte = plan de travail", "Moulure = plinthe/porte", "Conduit = encastrement", "Chemin câble = technique"]
+    },
+
+    // ---------- SÉCURITÉ ÉLECTRIQUE (10 questions) ----------
+    {
+        id: 'elec033',
+        category: "Électricité - Sécurité",
+        difficulty: "medium",
+        question: "Quelle est la limite supérieure de la Très Basse Tension (TBT) en courant alternatif ?",
+        answers: ["50 V", "230 V", "500 V", "1000 V"],
+        correct: 0,
+        explanation: "La TBT (Très Basse Tension) est définie jusqu'à 50 V en courant alternatif. Au-dessus : BTA jusqu'à 500 V, BTB jusqu'à 1000 V, HTA jusqu'à 50 000 V.",
+        keyPoints: ["TBT ≤ 50 V (AC)", "BTA ≤ 500 V", "BTB ≤ 1000 V", "HTA ≤ 50 000 V"]
+    },
+    {
+        id: 'elec034',
+        category: "Électricité - Sécurité",
+        difficulty: "medium",
+        question: "Que désigne la classification BTA en électricité ?",
+        answers: ["Basse Tension A : jusqu'à 500 V en courant alternatif", "Très Basse Tension < 50 V", "Haute Tension A : 50 000 V", "Basse Tension B : 1000 V"],
+        correct: 0,
+        explanation: "BTA = Basse Tension catégorie A, jusqu'à 500 V en alternatif. Les installations domestiques (230 V) relèvent de la BTA. BTB va jusqu'à 1000 V, HTA jusqu'à 50 kV.",
+        keyPoints: ["BTA = 50 à 500 V", "Installations domestiques", "230 V phase-neutre", "400 V entre phases"]
+    },
+    {
+        id: 'elec035',
+        category: "Électricité - Sécurité",
+        difficulty: "hard",
+        question: "La norme NF C 15-100 définit combien de volumes de protection dans une salle de bain ?",
+        answers: ["3 volumes (0, 1, 2)", "4 volumes (0, 1, 2, 3)", "2 volumes (0 et 1)", "5 volumes"],
+        correct: 0,
+        explanation: "Depuis l'harmonisation avec la norme européenne CENELEC, la NF C 15-100 distingue 3 volumes : 0, 1 et 2 (le volume 3 a été supprimé). Chaque volume a ses règles d'équipement.",
+        keyPoints: ["Volumes 0, 1, 2", "Volume 3 supprimé (CENELEC)", "NF C 15-100", "Règles selon volume"]
+    },
+    {
+        id: 'elec036',
+        category: "Électricité - Sécurité",
+        difficulty: "hard",
+        question: "Quel indice de protection (IP) est requis pour un équipement dans le volume 0 (intérieur de la baignoire) ?",
+        answers: ["IPX7 (immersion temporaire)", "IPX4 (projection toutes directions)", "IPX5 (jets d'eau)", "IPX2 (gouttes)"],
+        correct: 0,
+        explanation: "Volume 0 = intérieur baignoire/douche : IPX7 (immersion temporaire). Volume 1 : IPX5 (jets d'eau). Volume 2 : IPX4 (projections). Plus le volume est risqué, plus l'IP est élevé.",
+        keyPoints: ["Volume 0 : IPX7 (immersion)", "Volume 1 : IPX5 (jets)", "Volume 2 : IPX4 (projections)", "Norme stricte"]
+    },
+    {
+        id: 'elec037',
+        category: "Électricité - Sécurité",
+        difficulty: "medium",
+        question: "Quelle est la différence entre un appareil de classe I et de classe II ?",
+        answers: ["Classe I = obligatoirement relié à la terre, Classe II = double isolation, pas besoin de terre", "Classe I = double isolation, Classe II = avec terre", "Aucune différence", "Classe I = basse tension, Classe II = haute tension"],
+        correct: 0,
+        explanation: "Classe I : appareils ménagers, convecteurs... reliés obligatoirement à la terre. Classe II : appareils à double isolation (symbole carré dans carré), pas besoin de mise à la terre.",
+        keyPoints: ["Classe I = terre obligatoire", "Classe II = double isolation", "Symbole II = ⊓⊓ (carré dans carré)", "Sécurité personne"]
+    },
+    {
+        id: 'elec038',
+        category: "Électricité - Sécurité",
+        difficulty: "medium",
+        question: "À quelle hauteur minimum du sol doit être installée une prise électrique 16A ou 20A ?",
+        answers: ["Au moins 5 cm", "Au moins 12 cm", "Au moins 25 cm", "Au moins 50 cm"],
+        correct: 0,
+        explanation: "Les prises 16A/20A doivent être à au moins 5 cm du sol. Les prises 32A (puissantes) : 12 cm minimum. Dans la cuisine au plan de travail : entre 8 et 25 cm.",
+        keyPoints: ["16/20A : ≥ 5 cm", "32A : ≥ 12 cm", "Cuisine plan travail : 8-25 cm", "Jamais au-dessus point d'eau"]
+    },
+    {
+        id: 'elec039',
+        category: "Électricité - Sécurité",
+        difficulty: "hard",
+        question: "Où est-il INTERDIT d'installer une prise électrique selon la NF C 15-100 ?",
+        answers: ["Au-dessus ou en-dessous d'un point d'eau et au-dessus des plaques de cuisson", "Près d'une porte", "Dans un placard", "À côté d'une fenêtre"],
+        correct: 0,
+        explanation: "Il est strictement interdit de placer une prise électrique au-dessus ou en-dessous d'un point d'eau (évier, lavabo) ni au-dessus des plaques de cuisson. Risques d'éclaboussures et brûlures de câble.",
+        keyPoints: ["Pas au-dessus point d'eau", "Pas en-dessous point d'eau", "Pas au-dessus plaques cuisson", "Norme NF C 15-100"]
+    },
+    {
+        id: 'elec040',
+        category: "Électricité - Sécurité",
+        difficulty: "medium",
+        question: "Quel rôle joue la double coloration vert-et-jaune sur un conducteur ?",
+        answers: ["Identifier exclusivement le conducteur de protection (terre/PE)", "Identifier le neutre", "Identifier une phase", "Identifier un conducteur de signal"],
+        correct: 0,
+        explanation: "Le vert-et-jaune est EXCLUSIVEMENT réservé au conducteur de protection PE (Protection Équipotentielle) et PEN. Cette règle est absolue : aucun autre conducteur ne peut utiliser cette couleur.",
+        keyPoints: ["Vert/jaune = terre/PE", "Règle absolue", "Sécurité des personnes", "Évite confusion"]
+    },
+    {
+        id: 'elec041',
+        category: "Électricité - Sécurité",
+        difficulty: "easy",
+        question: "Pourquoi l'eau et l'électricité forment-elles une combinaison dangereuse ?",
+        answers: ["L'eau (même peu impure) conduit l'électricité, créant un risque d'électrisation", "L'eau coupe le courant systématiquement", "L'eau chauffe les fils électriques", "L'eau brûle les composants"],
+        correct: 0,
+        explanation: "L'eau, dès qu'elle contient des impuretés (presque toujours en pratique), devient conductrice. L'eau salée l'est encore plus. D'où les volumes de protection en salle de bain et les normes IP.",
+        keyPoints: ["Eau impure = conductrice", "Eau salée très conductrice", "Eau pure = isolant", "Risque électrisation"]
+    },
+    {
+        id: 'elec042',
+        category: "Électricité - Sécurité",
+        difficulty: "medium",
+        question: "Que signifie « coupure d'urgence » en électricité ?",
+        answers: ["Mise hors tension d'un appareil ou circuit dangereux à maintenir sous tension", "Coupure programmée par EDF", "Économie d'énergie automatique", "Bouton de réarmement"],
+        correct: 0,
+        explanation: "La coupure d'urgence met hors tension un appareil/circuit qu'il serait dangereux de maintenir sous tension. Quand elle arrête un mouvement dangereux, on parle d'arrêt d'urgence.",
+        keyPoints: ["Mise hors tension immédiate", "Situation dangereuse", "Arrêt d'urgence = mvt dangereux", "Bouton coup-de-poing rouge"]
+    },
+
+    // ---------- ÉLECTRICITÉ + MÉTIER PLOMBIER/CHAUFFAGISTE (8 questions) ----------
+    {
+        id: 'elec043',
+        category: "Électricité - Plomberie",
+        difficulty: "medium",
+        question: "Pourquoi un plombier-chauffagiste doit-il avoir des connaissances en électricité ?",
+        answers: ["Pour raccorder chaudières, circulateurs, thermostats et sondes qui sont électriques", "Car les tuyaux sont électriques", "Pour mesurer la dureté de l'eau", "Pour calculer la pression"],
+        correct: 0,
+        explanation: "Le plombier-chauffagiste raccorde des équipements électriques : chaudière, circulateur, thermostat, sondes, vannes motorisées, ventouse. Connaître l'électricité est indispensable.",
+        keyPoints: ["Chaudière, circulateur, thermostat", "Vannes motorisées, sondes", "Raccordement électrique", "Sécurité installation"]
+    },
+    {
+        id: 'elec044',
+        category: "Électricité - Plomberie",
+        difficulty: "medium",
+        question: "Sur quelle tension est généralement alimentée une chaudière murale domestique ?",
+        answers: ["230 V monophasé", "400 V triphasé", "12 V continu", "24 V alternatif"],
+        correct: 0,
+        explanation: "Une chaudière murale domestique se raccorde en 230 V monophasé (phase + neutre + terre). Les chaudières industrielles ou très grosses peuvent être en 400 V triphasé.",
+        keyPoints: ["230 V monophasé = standard", "400 V = industrie", "Phase + neutre + terre", "Disjoncteur dédié"]
+    },
+    {
+        id: 'elec045',
+        category: "Électricité - Plomberie",
+        difficulty: "hard",
+        question: "Un chauffe-eau électrique à accumulation peut-il être installé dans le volume 2 de la salle de bain ?",
+        answers: ["Oui, si classe I (relié à la terre) ou classe II", "Non, jamais en salle de bain", "Oui, uniquement en classe III", "Oui, sans aucune condition"],
+        correct: 0,
+        explanation: "Le chauffe-eau à accumulation est autorisé en volume 2 s'il est de classe I (raccordé à la terre) ou de classe II. Dans le volume 0 (intérieur baignoire) : interdit absolu.",
+        keyPoints: ["Volume 2 : autorisé classe I/II", "Volume 1 : conditions strictes", "Volume 0 : interdit", "Toujours raccordé à la terre"]
+    },
+    {
+        id: 'elec046',
+        category: "Électricité - Plomberie",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un circulateur dans un circuit de chauffage central ?",
+        answers: ["Une pompe électrique qui fait circuler l'eau du circuit", "Une vanne d'isolement", "Un radiateur", "Un thermostat de régulation"],
+        correct: 0,
+        explanation: "Le circulateur est une pompe électrique (généralement 230 V monophasé) qui assure la circulation forcée de l'eau dans le circuit primaire ou secondaire de chauffage central.",
+        keyPoints: ["Pompe électrique 230 V", "Circulation forcée eau", "Plusieurs vitesses possibles", "Élément clé du chauffage"]
+    },
+    {
+        id: 'elec047',
+        category: "Électricité - Plomberie",
+        difficulty: "medium",
+        question: "À quoi sert un thermostat d'ambiance dans une installation de chauffage ?",
+        answers: ["Commander la chaudière selon la température mesurée dans la pièce", "Mesurer la pression du circuit", "Couper l'eau en cas de fuite", "Filtrer l'eau du circuit"],
+        correct: 0,
+        explanation: "Le thermostat d'ambiance mesure la température de la pièce et envoie un signal électrique à la chaudière (ouverture/fermeture d'un contact) pour la mettre en marche ou l'arrêter.",
+        keyPoints: ["Mesure température pièce", "Commande la chaudière", "Contact sec ou modulant", "Régulation thermique"]
+    },
+    {
+        id: 'elec048',
+        category: "Électricité - Plomberie",
+        difficulty: "hard",
+        question: "Pourquoi raccorde-t-on obligatoirement à la terre les canalisations métalliques d'eau (équipotentialité) ?",
+        answers: ["Pour éviter qu'une tension accidentelle ne reste sur les tuyaux et électrise les utilisateurs", "Pour améliorer la conductivité thermique", "Pour mesurer le débit d'eau", "Pour réchauffer les tuyaux"],
+        correct: 0,
+        explanation: "La liaison équipotentielle des canalisations métalliques à la terre évite que, en cas de défaut d'isolement (fuite électrique), les tuyaux ne deviennent sous tension et électrisent une personne les touchant.",
+        keyPoints: ["Liaison équipotentielle obligatoire", "Évite tension accidentelle", "Sécurité utilisateur", "NF C 15-100"]
+    },
+    {
+        id: 'elec049',
+        category: "Électricité - Plomberie",
+        difficulty: "medium",
+        question: "Quelle puissance électrique typique consomme un circulateur de chauffage domestique moderne ?",
+        answers: ["Entre 5 et 100 W (souvent < 50 W avec moteur EC)", "Plus de 1000 W", "Moins de 1 W", "Environ 500 W"],
+        correct: 0,
+        explanation: "Un circulateur moderne à moteur EC (électroniquement commuté, classe A) consomme typiquement 5 à 50 W. Les anciens modèles à vitesses fixes pouvaient atteindre 80-100 W.",
+        keyPoints: ["Moderne EC : 5-50 W", "Ancien fixe : jusqu'à 100 W", "Étiquette ErP classe A", "Économie d'énergie"]
+    },
+    {
+        id: 'elec050',
+        category: "Électricité - Plomberie",
+        difficulty: "hard",
+        question: "Avant toute intervention sur le câblage électrique d'une chaudière, quelle est la première étape de sécurité ?",
+        answers: ["Couper le disjoncteur dédié et vérifier l'absence de tension (consignation)", "Fermer le robinet de gaz", "Vidanger le circuit", "Démonter le capot"],
+        correct: 0,
+        explanation: "Sécurité électrique fondamentale : couper le disjoncteur dédié à la chaudière, puis VÉRIFIER l'absence de tension avec un vérificateur (VAT). C'est la consignation. Ne jamais se fier au seul interrupteur de la chaudière.",
+        keyPoints: ["1. Couper disjoncteur", "2. Vérifier absence tension (VAT)", "3. Consigner (cadenas)", "Habilitation électrique requise"]
+    },
+
+    // ============================================================
+    // MODULE PSE - Prévention Santé Environnement (50 questions)
+    // ============================================================
+
+    // ---------- SANTÉ & PRÉVENTION (8 questions) ----------
+    {
+        id: 'pse001',
+        category: "PSE - Santé",
+        difficulty: "easy",
+        question: "Que signifie le sigle PSE ?",
+        answers: ["Prévention Santé Environnement", "Protection Sociale Européenne", "Plan Sécurité Entreprise", "Programme Sanitaire d'État"],
+        correct: 0,
+        explanation: "PSE = Prévention Santé Environnement. C'est une matière du CAP qui aborde la santé individuelle, la santé au travail et la santé environnementale, avec une approche de prévention.",
+        keyPoints: ["P = Prévention", "S = Santé", "E = Environnement", "Matière obligatoire au CAP"]
+    },
+    {
+        id: 'pse002',
+        category: "PSE - Santé",
+        difficulty: "medium",
+        question: "Selon l'OMS, qu'est-ce que la santé ?",
+        answers: ["Un état de complet bien-être physique, mental et social, pas seulement absence de maladie", "L'absence de maladie ou d'infirmité", "Un état physique seulement", "L'espérance de vie maximale"],
+        correct: 0,
+        explanation: "Définition OMS (1946) : « La santé est un état de complet bien-être physique, mental et social, et ne consiste pas seulement en une absence de maladie ou d'infirmité. ». Approche globale.",
+        keyPoints: ["3 dimensions : physique, mental, social", "Approche globale OMS", "Pas seulement absence de maladie", "Bien-être complet"]
+    },
+    {
+        id: 'pse003',
+        category: "PSE - Santé",
+        difficulty: "medium",
+        question: "Qu'est-ce que le « capital santé » ?",
+        answers: ["L'ensemble des ressources physiques, mentales et sociales qu'on possède dès la naissance et qu'on peut entretenir ou dégrader", "L'argent mis de côté pour les soins", "Le nombre de visites médicales gratuites", "Les médicaments en pharmacie"],
+        correct: 0,
+        explanation: "Le capital santé est le potentiel de santé reçu à la naissance (génétique + environnement), qu'on peut préserver par de bonnes habitudes (sommeil, alimentation, activité physique) ou dégrader (addictions, sédentarité).",
+        keyPoints: ["Reçu à la naissance", "Préservable ou dégradable", "Génétique + comportements", "Hygiène de vie"]
+    },
+    {
+        id: 'pse004',
+        category: "PSE - Santé",
+        difficulty: "medium",
+        question: "Quel est le principe général de la prévention en santé ?",
+        answers: ["Agir AVANT l'apparition du problème pour l'éviter ou en limiter les conséquences", "Soigner uniquement après l'apparition d'une maladie", "Acheter une mutuelle complémentaire", "Faire un dépistage après symptômes"],
+        correct: 0,
+        explanation: "La prévention consiste à anticiper : éviter l'apparition d'une maladie/accident (prévention primaire), la dépister tôt (secondaire) ou en limiter les séquelles (tertiaire). Mieux vaut prévenir que guérir.",
+        keyPoints: ["Agir AVANT le problème", "Primaire : éviter", "Secondaire : dépister", "Tertiaire : limiter séquelles"]
+    },
+    {
+        id: 'pse005',
+        category: "PSE - Santé",
+        difficulty: "easy",
+        question: "Parmi ces actions, laquelle relève de la prévention primaire ?",
+        answers: ["Se vacciner pour éviter une maladie", "Faire un dépistage", "Suivre une rééducation après accident", "Prendre des médicaments"],
+        correct: 0,
+        explanation: "La prévention PRIMAIRE consiste à éviter l'apparition de la maladie (vaccins, hygiène, alimentation équilibrée). Le dépistage = secondaire. La rééducation = tertiaire.",
+        keyPoints: ["Primaire = éviter (vaccin)", "Secondaire = dépister (mammographie)", "Tertiaire = limiter (rééducation)", "Approche en cascade"]
+    },
+    {
+        id: 'pse006',
+        category: "PSE - Santé",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un « risque sociétal » abordé en PSE ?",
+        answers: ["Un risque touchant la société et la santé collective (addictions, IST, accidents routiers, sédentarité)", "Un risque uniquement financier", "Un risque environnemental industriel", "Un risque de cybersécurité"],
+        correct: 0,
+        explanation: "Les risques sociétaux sont des risques pour la santé liés aux comportements ou contextes sociaux : addictions (tabac, alcool, drogues), IST, sédentarité, troubles alimentaires, accidents de la route.",
+        keyPoints: ["Addictions tabac/alcool/drogues", "IST et grossesses non désirées", "Sédentarité", "Accidents de la route"]
+    },
+    {
+        id: 'pse007',
+        category: "PSE - Santé",
+        difficulty: "hard",
+        question: "Quels sont les 3 niveaux de prévention en santé publique ?",
+        answers: ["Primaire (éviter), secondaire (dépister précocement), tertiaire (limiter séquelles/récidives)", "Faible, moyen, fort", "Individuel, familial, national", "Médical, social, financier"],
+        correct: 0,
+        explanation: "Les 3 niveaux : 1) Primaire = empêcher l'apparition (vaccination, hygiène). 2) Secondaire = dépister tôt pour traiter vite (mammographie, frottis). 3) Tertiaire = réduire impact ou récidive (rééducation).",
+        keyPoints: ["1. Primaire : éviter", "2. Secondaire : dépister", "3. Tertiaire : limiter conséquences", "Approche progressive"]
+    },
+    {
+        id: 'pse008',
+        category: "PSE - Santé",
+        difficulty: "easy",
+        question: "Citer un exemple d'acteur de prévention en santé.",
+        answers: ["Le médecin traitant, le planning familial, les CeGIDD, l'Assurance maladie", "Le boulanger", "La SNCF", "Le maire uniquement"],
+        correct: 0,
+        explanation: "Acteurs de prévention : médecin traitant, médecin scolaire, planning familial, CeGIDD (Centres gratuits IST), Assurance maladie, services de santé au travail, associations (Croix-Rouge, etc.).",
+        keyPoints: ["Médecin traitant", "Planning familial", "CeGIDD = dépistage IST gratuit", "Assurance maladie / CPAM"]
+    },
+
+    // ---------- SÉCURITÉ SOCIALE (10 questions) ----------
+    {
+        id: 'pse009',
+        category: "PSE - Sécurité sociale",
+        difficulty: "easy",
+        question: "Sur quel grand principe repose la Sécurité sociale française ?",
+        answers: ["La solidarité nationale : chacun cotise selon ses moyens et reçoit selon ses besoins", "Le mérite individuel", "L'épargne personnelle obligatoire", "Le bénévolat des professionnels"],
+        correct: 0,
+        explanation: "La Sécurité sociale repose sur la solidarité nationale : les bien-portants sont solidaires des malades, les actifs des inactifs et retraités. Chacun cotise selon ses revenus et reçoit selon ses besoins.",
+        keyPoints: ["Solidarité nationale", "Actifs ↔ retraités/inactifs", "Bien-portants ↔ malades", "Pivot de la protection sociale"]
+    },
+    {
+        id: 'pse010',
+        category: "PSE - Sécurité sociale",
+        difficulty: "medium",
+        question: "Quels sont les principaux contributeurs aux cotisations de la Sécurité sociale ?",
+        answers: ["Les travailleurs, les employeurs et l'État", "Uniquement les travailleurs", "Uniquement l'État", "Les associations caritatives"],
+        correct: 0,
+        explanation: "Les cotisations sociales sont versées par les travailleurs (cotisations salariales sur le salaire), les employeurs (cotisations patronales) et l'État. Elles sont collectées par l'URSSAF.",
+        keyPoints: ["Travailleurs (cotisations salariales)", "Employeurs (cotisations patronales)", "État (impôts)", "Collecte par URSSAF"]
+    },
+    {
+        id: 'pse011',
+        category: "PSE - Sécurité sociale",
+        difficulty: "medium",
+        question: "Quel organisme collecte les cotisations sociales en France ?",
+        answers: ["L'URSSAF", "La CAF", "Pôle emploi", "La Banque de France"],
+        correct: 0,
+        explanation: "L'URSSAF (Union de Recouvrement des cotisations de Sécurité Sociale et d'Allocations Familiales) collecte les cotisations puis les redistribue aux différentes branches de la Sécurité sociale.",
+        keyPoints: ["URSSAF = collecte", "Redistribue aux branches", "Branche recouvrement", "Cotisations sociales"]
+    },
+    {
+        id: 'pse012',
+        category: "PSE - Sécurité sociale",
+        difficulty: "hard",
+        question: "Combien de branches principales compte la Sécurité sociale ?",
+        answers: ["5 branches : maladie, retraite, famille, autonomie, accidents du travail/maladies professionnelles", "3 branches", "7 branches", "1 seule branche"],
+        correct: 0,
+        explanation: "5 branches : Maladie (frais de santé), Retraite (pensions), Famille (allocations), Autonomie (CNSA, personnes âgées/handicapées), AT/MP (Accidents Travail et Maladies Professionnelles). + branche Recouvrement (URSSAF).",
+        keyPoints: ["Maladie", "Retraite", "Famille", "Autonomie + AT/MP"]
+    },
+    {
+        id: 'pse013',
+        category: "PSE - Sécurité sociale",
+        difficulty: "medium",
+        question: "Que prend en charge la branche « Maladie » de la Sécurité sociale ?",
+        answers: ["Les frais de santé (consultations, médicaments, hospitalisations)", "Les retraites", "Les allocations familiales", "Les indemnités de chômage"],
+        correct: 0,
+        explanation: "La branche Maladie (Assurance Maladie / CPAM) prend en charge les frais de santé : remboursement des consultations, médicaments, examens, hospitalisations, soins infirmiers, etc.",
+        keyPoints: ["Frais de santé", "Consultations médecin", "Médicaments", "Hospitalisations"]
+    },
+    {
+        id: 'pse014',
+        category: "PSE - Sécurité sociale",
+        difficulty: "medium",
+        question: "Qui gère la branche « Autonomie » de la Sécurité sociale ?",
+        answers: ["La CNSA (Caisse Nationale de Solidarité pour l'Autonomie)", "La CAF", "L'URSSAF", "Pôle Emploi"],
+        correct: 0,
+        explanation: "La CNSA (Caisse Nationale de Solidarité pour l'Autonomie) gère la 5e branche, créée en 2020. Elle finance les aides pour les personnes âgées en perte d'autonomie et les personnes handicapées.",
+        keyPoints: ["CNSA = autonomie", "5e branche (2020)", "Personnes âgées", "Personnes handicapées"]
+    },
+    {
+        id: 'pse015',
+        category: "PSE - Sécurité sociale",
+        difficulty: "easy",
+        question: "Quel organisme verse les allocations familiales ?",
+        answers: ["La CAF (Caisse d'Allocations Familiales)", "La CPAM", "L'URSSAF", "France Travail"],
+        correct: 0,
+        explanation: "La CAF (Caisse d'Allocations Familiales) verse les prestations familiales : allocations familiales, APL (aide au logement), RSA, prime d'activité, allocation de rentrée scolaire, etc.",
+        keyPoints: ["CAF = allocations familiales", "Branche famille", "APL, RSA, prime d'activité", "Rentrée scolaire"]
+    },
+    {
+        id: 'pse016',
+        category: "PSE - Sécurité sociale",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un AT/MP en Sécurité sociale ?",
+        answers: ["Accident du Travail / Maladie Professionnelle (branche dédiée)", "Aide Technique / Médicale Permanente", "Allocation Temporaire / Maximale Possible", "Arrêt Total / Mise au repos Préventive"],
+        correct: 0,
+        explanation: "AT/MP = Accidents du Travail et Maladies Professionnelles. Cette branche indemnise les salariés victimes d'un accident lors du travail ou d'une maladie liée à leur profession (ex : surdité du chaudronnier).",
+        keyPoints: ["AT = Accident du Travail", "MP = Maladie Professionnelle", "Indemnités spécifiques", "Branche AT/MP"]
+    },
+    {
+        id: 'pse017',
+        category: "PSE - Sécurité sociale",
+        difficulty: "hard",
+        question: "Quelle est la différence entre l'Assurance maladie obligatoire et une mutuelle ?",
+        answers: ["L'Assurance maladie est publique et obligatoire, la mutuelle est complémentaire et facultative (rembourse le « ticket modérateur »)", "Aucune différence", "La mutuelle est obligatoire et l'Assurance maladie facultative", "La mutuelle remplace l'Assurance maladie"],
+        correct: 0,
+        explanation: "L'Assurance maladie (publique) rembourse une partie des frais (par ex. 70% du tarif conventionné). La mutuelle (complémentaire santé, privée) prend en charge le reste : c'est le « ticket modérateur ».",
+        keyPoints: ["Assurance maladie = publique obligatoire", "Mutuelle = complémentaire facultative", "Mutuelle rembourse ticket modérateur", "Cumul des deux"]
+    },
+    {
+        id: 'pse018',
+        category: "PSE - Sécurité sociale",
+        difficulty: "medium",
+        question: "Comment financent les actifs la retraite des personnes âgées en France ?",
+        answers: ["Par leurs cotisations sociales (système par répartition)", "Par leur épargne personnelle uniquement", "Par les dons aux associations", "Par la fortune individuelle"],
+        correct: 0,
+        explanation: "En France, le système de retraite est par RÉPARTITION : les cotisations des actifs financent en temps réel les pensions des retraités actuels. Solidarité intergénérationnelle.",
+        keyPoints: ["Système par répartition", "Actifs paient retraités", "Solidarité intergénérationnelle", "Branche retraite"]
+    },
+
+    // ---------- PARCOURS DE SOINS & REMBOURSEMENT (8 questions) ----------
+    {
+        id: 'pse019',
+        category: "PSE - Parcours de soins",
+        difficulty: "easy",
+        question: "Qu'est-ce qu'un médecin traitant ?",
+        answers: ["Le médecin déclaré à la CPAM qui coordonne votre suivi médical", "Tout médecin que l'on consulte", "Un médecin spécialiste", "Un pharmacien"],
+        correct: 0,
+        explanation: "Le médecin traitant est le médecin (généraliste le plus souvent) déclaré à la CPAM. Il coordonne votre parcours de soins, vous oriente vers les spécialistes et tient votre dossier médical à jour.",
+        keyPoints: ["Déclaré à la CPAM", "Coordonne le parcours", "Souvent généraliste", "Tient dossier médical"]
+    },
+    {
+        id: 'pse020',
+        category: "PSE - Parcours de soins",
+        difficulty: "medium",
+        question: "À partir de quel âge faut-il déclarer un médecin traitant à la CPAM ?",
+        answers: ["16 ans", "18 ans", "21 ans", "12 ans"],
+        correct: 0,
+        explanation: "Depuis 2017, la désignation d'un médecin traitant est étendue aux enfants de moins de 16 ans (mais c'est à partir de 16 ans qu'elle est nécessaire pour bénéficier d'un remboursement normal).",
+        keyPoints: ["16 ans = obligation pratique", "Depuis 2017 : <16 ans possible", "Sinon : remboursement réduit", "Déclaration à la CPAM"]
+    },
+    {
+        id: 'pse021',
+        category: "PSE - Parcours de soins",
+        difficulty: "medium",
+        question: "Quel pourcentage du tarif est remboursé par l'Assurance maladie pour une consultation DANS le parcours de soins coordonnés ?",
+        answers: ["70 % (moins 1 € de participation forfaitaire)", "100 %", "30 %", "50 %"],
+        correct: 0,
+        explanation: "Dans le parcours de soins coordonnés (avec médecin traitant déclaré) : 70 % du tarif de la consultation est remboursé, moins une participation forfaitaire de 1 €. Hors parcours : seulement 30 %.",
+        keyPoints: ["Parcours respecté : 70 %", "Hors parcours : 30 %", "Participation forfaitaire 1 €", "Mutuelle complète"]
+    },
+    {
+        id: 'pse022',
+        category: "PSE - Parcours de soins",
+        difficulty: "medium",
+        question: "Quel pourcentage est remboursé HORS parcours de soins coordonnés ?",
+        answers: ["30 % (moins 1 € de participation forfaitaire)", "70 %", "100 %", "0 %"],
+        correct: 0,
+        explanation: "Si vous consultez un médecin (généraliste ou spécialiste) sans passer par votre médecin traitant ou sans en avoir déclaré un, l'Assurance maladie ne rembourse que 30 % du tarif (moins 1 €).",
+        keyPoints: ["Hors parcours : 30 %", "Économie : déclarer médecin", "Reste à charge important", "Mutuelle ne couvre pas tjs"]
+    },
+    {
+        id: 'pse023',
+        category: "PSE - Parcours de soins",
+        difficulty: "hard",
+        question: "Quels spécialistes peut-on consulter SANS passer par le médecin traitant tout en restant dans le parcours de soins ?",
+        answers: ["Ophtalmologue, gynécologue, pédiatre, chirurgien-dentiste, stomatologue, psychiatre", "Aucun, il faut toujours passer par le médecin traitant", "Tous les spécialistes", "Uniquement les urgentistes"],
+        correct: 0,
+        explanation: "Accès direct autorisé (sans pénalité de remboursement) à 6 spécialistes : ophtalmologue, gynécologue, pédiatre, chirurgien-dentiste, stomatologue, psychiatre ou neuropsychiatre. Sinon : passer par le médecin traitant.",
+        keyPoints: ["Ophtalmologue, gynéco, pédiatre", "Dentiste, stomato, psy", "Accès direct autorisé", "Sans pénalité"]
+    },
+    {
+        id: 'pse024',
+        category: "PSE - Parcours de soins",
+        difficulty: "easy",
+        question: "Quel est le tarif d'une consultation chez un médecin généraliste conventionné secteur 1 en France (au 01/11/2023) ?",
+        answers: ["26,50 €", "23 €", "50 €", "15 €"],
+        correct: 0,
+        explanation: "Depuis le 1er novembre 2023, la consultation d'un médecin généraliste de secteur 1 est tarifée 26,50 € (avant : 25 €). C'est le tarif conventionné de référence pour les remboursements.",
+        keyPoints: ["26,50 € depuis 11/2023", "Secteur 1 conventionné", "Tarif de référence", "Avant : 25 €"]
+    },
+    {
+        id: 'pse025',
+        category: "PSE - Parcours de soins",
+        difficulty: "medium",
+        question: "Quelle est la participation forfaitaire prélevée sur chaque consultation médicale ?",
+        answers: ["1 €", "5 €", "0,50 €", "10 €"],
+        correct: 0,
+        explanation: "Sur chaque consultation médicale, examen radiologique ou analyse biologique, l'Assurance maladie déduit 1 € de participation forfaitaire (plafonnée à 50 €/an). Cela vise à responsabiliser les assurés.",
+        keyPoints: ["1 € par consultation", "Plafond annuel 50 €", "Non remboursable", "Sensibilisation aux coûts"]
+    },
+    {
+        id: 'pse026',
+        category: "PSE - Parcours de soins",
+        difficulty: "easy",
+        question: "Dans quelle situation peut-on consulter un autre médecin que son traitant sans pénalité ?",
+        answers: ["Urgence ou éloignement géographique (vacances, déplacement)", "Pour faire des économies", "Quand le médecin traitant est en vacances seulement", "Jamais"],
+        correct: 0,
+        explanation: "On peut consulter un « médecin de remplacement » sans pénalité en cas d'urgence ou d'éloignement géographique (vacances loin du domicile, déplacement professionnel). Le médecin l'indique sur la feuille de soins.",
+        keyPoints: ["Urgence", "Éloignement géographique", "Vacances / déplacement", "Mention sur feuille de soins"]
+    },
+
+    // ---------- CARTE VITALE & DMP (8 questions) ----------
+    {
+        id: 'pse027',
+        category: "PSE - Carte Vitale",
+        difficulty: "easy",
+        question: "À partir de quel âge est-on titulaire de sa propre carte Vitale ?",
+        answers: ["16 ans", "18 ans", "12 ans", "21 ans"],
+        correct: 0,
+        explanation: "La carte Vitale (carte à puce nominative d'assurance maladie) est délivrée à chaque assuré âgé de 16 ans ou plus. Avant 16 ans, l'enfant figure sur la carte d'un parent.",
+        keyPoints: ["16 ans minimum", "Carte à puce nominative", "Avant : sur carte parent", "Carte d'assurance maladie"]
+    },
+    {
+        id: 'pse028',
+        category: "PSE - Carte Vitale",
+        difficulty: "medium",
+        question: "À quoi sert la carte Vitale lors d'une consultation médicale ?",
+        answers: ["Justifier les droits de l'assuré et permettre la télétransmission pour un remboursement rapide", "Payer la consultation directement", "Donner accès au dossier médical complet", "Remplacer la carte d'identité"],
+        correct: 0,
+        explanation: "La carte Vitale contient les éléments administratifs nécessaires à la prise en charge des soins. Donnée au professionnel de santé, elle vérifie les droits et permet la télétransmission à la CPAM pour un remboursement automatique sous quelques jours.",
+        keyPoints: ["Justifie les droits", "Télétransmission CPAM", "Remboursement rapide", "Pas de paiement direct"]
+    },
+    {
+        id: 'pse029',
+        category: "PSE - Carte Vitale",
+        difficulty: "hard",
+        question: "Que représente le premier chiffre du numéro de sécurité sociale (NIR) sur la carte Vitale ?",
+        answers: ["Le sexe (1 = masculin, 2 = féminin)", "La région de résidence", "L'âge", "Le numéro d'ordre"],
+        correct: 0,
+        explanation: "Le n° INSEE / NIR a 13 chiffres + 2 (clé) : chiffre 1 = sexe (1 = M, 2 = F), chiffres 2-3 = année naissance, 4-5 = mois, 6-7 = département, 8-10 = commune, 11-13 = ordre d'enregistrement, 14-15 = clé de contrôle.",
+        keyPoints: ["1er chiffre = sexe (1/2)", "2-3 : année naissance", "4-5 : mois naissance", "6-7 : département"]
+    },
+    {
+        id: 'pse030',
+        category: "PSE - Carte Vitale",
+        difficulty: "medium",
+        question: "Que signifie « DMP » ?",
+        answers: ["Dossier Médical Partagé", "Document Médical Personnel", "Dossier Médecin Privé", "Données Médicales Protégées"],
+        correct: 0,
+        explanation: "Le DMP (Dossier Médical Partagé) est un carnet de santé numérique qui regroupe traitements, résultats d'examens, allergies, antécédents médicaux. Il est accessible via « Mon espace Santé ».",
+        keyPoints: ["DMP = Dossier Médical Partagé", "Carnet de santé numérique", "Mon espace Santé", "monespacesante.fr"]
+    },
+    {
+        id: 'pse031',
+        category: "PSE - Carte Vitale",
+        difficulty: "medium",
+        question: "Qu'est-ce que « Mon espace Santé » ?",
+        answers: ["Le service numérique sécurisé qui donne accès au DMP et permet à chacun d'être acteur de sa santé", "Une mutuelle d'État", "Un hôpital privé en ligne", "Un site de rendez-vous médicaux uniquement"],
+        correct: 0,
+        explanation: "Mon espace Santé (monespacesante.fr) est créé automatiquement pour chaque assuré (sauf opposition). Il donne accès au DMP, à une messagerie sécurisée avec les soignants et à un agenda de santé.",
+        keyPoints: ["monespacesante.fr", "Création automatique", "Accès au DMP", "Messagerie sécurisée"]
+    },
+    {
+        id: 'pse032',
+        category: "PSE - Carte Vitale",
+        difficulty: "hard",
+        question: "Combien de temps sont conservées les données du DMP ?",
+        answers: ["10 ans", "5 ans", "À vie", "1 an"],
+        correct: 0,
+        explanation: "Les données du DMP/Mon espace Santé sont conservées 10 ans. Après ce délai, elles peuvent être supprimées. La conservation longue facilite le suivi médical pluriannuel.",
+        keyPoints: ["10 ans de conservation", "Suivi pluriannuel", "Données médicales sensibles", "Sécurisées et chiffrées"]
+    },
+    {
+        id: 'pse033',
+        category: "PSE - Carte Vitale",
+        difficulty: "medium",
+        question: "Qui peut consulter votre DMP ?",
+        answers: ["Vous-même et votre médecin traitant en intégralité, les autres soignants seulement certaines infos", "Tous les professionnels de santé sans restriction", "Uniquement les médecins urgentistes", "L'employeur et la mutuelle"],
+        correct: 0,
+        explanation: "Vous et votre médecin traitant êtes les seuls à voir l'intégralité du DMP. Les autres professionnels de santé (pharmacien, infirmier, spécialiste) ne voient que les informations utiles à leur spécialité.",
+        keyPoints: ["Vous + médecin traitant : tout", "Autres soignants : selon spécialité", "Vous gérez les accès", "Confidentialité protégée"]
+    },
+    {
+        id: 'pse034',
+        category: "PSE - Carte Vitale",
+        difficulty: "medium",
+        question: "Que faut-il faire si on perd ou se fait voler sa carte Vitale ?",
+        answers: ["Déclarer immédiatement la perte à la CPAM (en ligne ou par téléphone) pour la bloquer et en commander une nouvelle", "Attendre qu'elle réapparaisse", "Acheter une nouvelle carte en pharmacie", "Utiliser celle d'un proche"],
+        correct: 0,
+        explanation: "En cas de perte ou vol : déclarer immédiatement à la CPAM (en ligne sur ameli.fr, par téléphone au 3646, ou en agence). La carte est bloquée et une nouvelle est envoyée gratuitement.",
+        keyPoints: ["Déclaration immédiate à la CPAM", "ameli.fr ou 3646", "Carte bloquée", "Renouvellement gratuit"]
+    },
+
+    // ---------- SOMMEIL & BIORYTHMES (10 questions) ----------
+    {
+        id: 'pse035',
+        category: "PSE - Sommeil",
+        difficulty: "medium",
+        question: "Combien de cycles de sommeil comporte environ une nuit « classique » ?",
+        answers: ["4 à 5 cycles", "1 à 2 cycles", "10 cycles", "15 cycles"],
+        correct: 0,
+        explanation: "Une nuit complète comprend environ 4 à 5 cycles de sommeil de 90 minutes chacun. C'est la répétition de ces cycles qui permet au sommeil de remplir son rôle de récupération.",
+        keyPoints: ["4 à 5 cycles par nuit", "Cycle = 90 min env.", "Répétition essentielle", "Récupération physique/mentale"]
+    },
+    {
+        id: 'pse036',
+        category: "PSE - Sommeil",
+        difficulty: "medium",
+        question: "Combien de temps dure approximativement un cycle de sommeil ?",
+        answers: ["Environ 90 minutes", "30 minutes", "120 minutes", "60 minutes"],
+        correct: 0,
+        explanation: "Un cycle de sommeil dure environ 90 minutes (1h30) : il comprend 5 phases — endormissement, sommeil lent léger, profond, très profond, puis sommeil paradoxal. Le sommeil lent dure 60-75 min, le paradoxal 15-20 min.",
+        keyPoints: ["90 min par cycle", "Lent : 60-75 min", "Paradoxal : 15-20 min", "5 phases au total"]
+    },
+    {
+        id: 'pse037',
+        category: "PSE - Sommeil",
+        difficulty: "hard",
+        question: "Pendant quelle phase du sommeil le corps récupère-t-il physiquement et fabrique-t-il l'hormone de croissance et les anticorps ?",
+        answers: ["Le sommeil lent très profond (phase 4)", "Le sommeil paradoxal", "L'endormissement", "Le sommeil lent léger"],
+        correct: 0,
+        explanation: "Phase 4 = sommeil lent très profond : température corporelle baisse, rythme cardiaque ralentit, hormone de croissance synthétisée, anticorps fabriqués. C'est la phase de récupération physique principale.",
+        keyPoints: ["Phase 4 = lent très profond", "Récupération physique", "Hormone de croissance", "Anticorps (immunité)"]
+    },
+    {
+        id: 'pse038',
+        category: "PSE - Sommeil",
+        difficulty: "medium",
+        question: "Quel est le rôle principal du sommeil paradoxal ?",
+        answers: ["Récupération mentale et mémorisation des notions apprises (phase des rêves)", "Récupération physique", "Production d'hormone de croissance", "Détoxification du foie"],
+        correct: 0,
+        explanation: "Le sommeil paradoxal (phase 5) est la phase des rêves. C'est la phase de récupération mentale et de mémorisation : le cerveau consolide ce qu'on a appris dans la journée. Indispensable à la mémoire.",
+        keyPoints: ["Récupération mentale", "Mémorisation", "Phase des rêves", "Mouvements oculaires rapides"]
+    },
+    {
+        id: 'pse039',
+        category: "PSE - Sommeil",
+        difficulty: "medium",
+        question: "Quelle hormone est sécrétée par le cerveau pour favoriser l'endormissement ?",
+        answers: ["La mélatonine", "L'adrénaline", "L'insuline", "Le cortisol"],
+        correct: 0,
+        explanation: "La mélatonine, dite « hormone du sommeil », est sécrétée par la glande pinéale le soir, quand la lumière baisse. Elle favorise l'endormissement. Les écrans (lumière bleue) inhibent sa production.",
+        keyPoints: ["Mélatonine = hormone du sommeil", "Sécrétée le soir", "Lumière baisse → sécrétion", "Écrans inhibent"]
+    },
+    {
+        id: 'pse040',
+        category: "PSE - Sommeil",
+        difficulty: "easy",
+        question: "Qu'est-ce qu'un biorythme ?",
+        answers: ["Une variation régulière du fonctionnement de l'organisme qui se répète dans le temps", "Un rythme de musique relaxante", "Un sport pratiqué le matin", "Un type de respiration"],
+        correct: 0,
+        explanation: "Les biorythmes (ou rythmes biologiques) sont des variations régulières et cycliques du fonctionnement de l'organisme, contrôlées par une « horloge interne » du cerveau. Ex : digestion, sommeil, pression sanguine.",
+        keyPoints: ["Variations régulières du corps", "Horloge interne (cerveau)", "Ex : sommeil, digestion", "Cycliques dans le temps"]
+    },
+    {
+        id: 'pse041',
+        category: "PSE - Sommeil",
+        difficulty: "medium",
+        question: "Quelle est la fréquence du biorythme du sommeil ?",
+        answers: ["24 heures (rythme circadien)", "12 heures", "1 semaine", "1 mois"],
+        correct: 0,
+        explanation: "Le rythme veille/sommeil est circadien : sa fréquence est d'environ 24 heures. D'autres biorythmes ont des fréquences différentes (digestion : quelques heures, cycle hormonal féminin : 28 jours).",
+        keyPoints: ["24 h = rythme circadien", "Du latin « circa diem »", "Influencé par lumière/repas", "Veille/sommeil"]
+    },
+    {
+        id: 'pse042',
+        category: "PSE - Sommeil",
+        difficulty: "medium",
+        question: "Qu'est-ce qui influence principalement les biorythmes ?",
+        answers: ["L'alternance jour/nuit, les horaires de travail et de repas", "Uniquement la génétique", "La météo seulement", "Le rythme cardiaque"],
+        correct: 0,
+        explanation: "Les biorythmes sont influencés principalement par : l'alternance jour/nuit (lumière), les horaires de travail (notamment travail de nuit perturbateur), les horaires de prise des repas, l'activité physique.",
+        keyPoints: ["Alternance jour/nuit", "Horaires de travail", "Horaires des repas", "Activité physique"]
+    },
+    {
+        id: 'pse043',
+        category: "PSE - Sommeil",
+        difficulty: "hard",
+        question: "Quels sont les risques pour la santé d'un manque de sommeil chronique ?",
+        answers: ["Fatigue, baisse de vigilance, irritabilité, troubles de mémoire, baisse d'immunité, risques d'accidents", "Aucun risque", "Uniquement la fatigue", "Seulement des problèmes de digestion"],
+        correct: 0,
+        explanation: "Manque de sommeil chronique = fatigue persistante, baisse de vigilance (risque accidents route et travail), irritabilité/agressivité, troubles de concentration et mémoire, baisse de l'immunité, prise de poids.",
+        keyPoints: ["Fatigue, baisse vigilance", "Risque accidents", "Troubles mémoire/concentration", "Baisse immunité"]
+    },
+    {
+        id: 'pse044',
+        category: "PSE - Sommeil",
+        difficulty: "medium",
+        question: "Quel comportement perturbe particulièrement l'endormissement ?",
+        answers: ["L'utilisation prolongée d'écrans le soir (lumière bleue inhibant la mélatonine)", "Boire de l'eau", "Manger un fruit", "Lire un livre papier"],
+        correct: 0,
+        explanation: "Les écrans (téléphone, tablette, ordinateur) émettent de la lumière bleue qui inhibe la sécrétion de mélatonine. Conseil : éviter les écrans au moins 1h avant le coucher pour favoriser l'endormissement.",
+        keyPoints: ["Écrans = lumière bleue", "Inhibent la mélatonine", "Éviter 1h avant coucher", "Difficulté à s'endormir"]
+    },
+
+    // ---------- MÉTHODE D'ANALYSE & RISQUES TRAVAIL (6 questions) ----------
+    {
+        id: 'pse045',
+        category: "PSE - Méthodologie",
+        difficulty: "medium",
+        question: "Quelle est la méthode d'analyse d'une situation de santé en PSE ?",
+        answers: ["Qui ? Quoi ? Pourquoi ? Comment ? (QQOQCP : identifier la personne, le problème, les causes, les solutions)", "Lire, comprendre, oublier", "Mémoriser sans analyser", "Faire confiance à son intuition"],
+        correct: 0,
+        explanation: "Méthode QQOQCP (Qui, Quoi, Où, Quand, Comment, Pourquoi) ou simplifiée Qui/Quoi/Pourquoi/Comment : identifier la personne concernée, son problème, les causes, et les solutions à proposer.",
+        keyPoints: ["Qui = personne concernée", "Quoi = problème identifié", "Pourquoi = causes", "Comment = solutions"]
+    },
+    {
+        id: 'pse046',
+        category: "PSE - Méthodologie",
+        difficulty: "easy",
+        question: "Quel acteur est responsable de la santé et la sécurité au travail dans l'entreprise ?",
+        answers: ["L'employeur (obligation légale)", "Le salarié seul", "Les clients", "Les fournisseurs"],
+        correct: 0,
+        explanation: "L'employeur a l'obligation légale de protéger la santé et la sécurité de ses salariés (Code du travail). Il met en place les mesures de prévention. Le salarié doit également veiller à sa propre sécurité.",
+        keyPoints: ["Obligation employeur", "Code du travail", "Salarié doit aussi appliquer", "DUERP : Document Unique"]
+    },
+    {
+        id: 'pse047',
+        category: "PSE - Méthodologie",
+        difficulty: "medium",
+        question: "Qu'est-ce qu'un TMS (Trouble Musculo-Squelettique) ?",
+        answers: ["Une pathologie touchant muscles, tendons, nerfs, causée par gestes répétitifs ou mauvaises postures", "Une maladie infectieuse", "Un trouble du sommeil", "Un problème respiratoire"],
+        correct: 0,
+        explanation: "Les TMS (lombalgies, tendinites, syndrome du canal carpien) sont les 1re cause de maladies professionnelles en France. Causés par gestes répétitifs, port de charges, mauvaises postures, vibrations.",
+        keyPoints: ["1re maladie professionnelle", "Gestes répétitifs, postures", "Tendinites, lombalgies, canal carpien", "Prévention : ergonomie"]
+    },
+    {
+        id: 'pse048',
+        category: "PSE - Méthodologie",
+        difficulty: "medium",
+        question: "Quelle est la durée du 4e Plan régional santé environnement (PRSE) de Bourgogne-Franche-Comté ?",
+        answers: ["5 ans (2023-2027)", "1 an", "10 ans", "20 ans"],
+        correct: 0,
+        explanation: "Le 4e PRSE de Bourgogne-Franche-Comté est mis en œuvre pour une période de 5 ans, de 2023 à 2027. Les PRSE déclinent au niveau régional le Plan national santé environnement.",
+        keyPoints: ["5 ans : 2023-2027", "Plan régional", "Décliné du PNSE national", "Pilotage ARS + préfecture"]
+    },
+    {
+        id: 'pse049',
+        category: "PSE - Méthodologie",
+        difficulty: "hard",
+        question: "Quelle est la durée du Plan Santé au Travail (PST) en cours ?",
+        answers: ["5 ans : 2021-2025 (4e PST)", "10 ans", "1 an", "20 ans"],
+        correct: 0,
+        explanation: "Le 4e Plan Santé au Travail (PST 4) couvre la période 2021-2025. Il fixe les priorités nationales en matière de prévention des risques professionnels, qualité de vie au travail et accompagnement des entreprises.",
+        keyPoints: ["4e PST : 2021-2025", "Durée 5 ans", "Prévention risques pro", "Qualité de vie au travail"]
+    },
+    {
+        id: 'pse050',
+        category: "PSE - Méthodologie",
+        difficulty: "medium",
+        question: "Pour un plombier-chauffagiste, quels sont les principaux risques professionnels ?",
+        answers: ["TMS (postures, charges), chutes de hauteur, brûlures (soudure, eau chaude), risques chimiques (colles, soudures)", "Aucun risque particulier", "Uniquement le risque informatique", "Seulement la fatigue oculaire"],
+        correct: 0,
+        explanation: "Risques typiques du plombier-chauffagiste : TMS (gestes contraints, port de charges), chutes hauteur (échelles, échafaudages), brûlures (chalumeau, eau bouillante), exposition produits chimiques (colles PVC, flux soudure, amiante ancien).",
+        keyPoints: ["TMS et lombalgies", "Chutes hauteur", "Brûlures (soudure)", "Produits chimiques + amiante"]
     }
 ];
