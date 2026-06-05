@@ -1,5 +1,18 @@
 // Application de révision espacée - Logique principale
 
+// Mélange les réponses d'une question pour l'affichage, retourne {answers, correct}
+function shuffleAnswersForDisplay(question) {
+    const indices = question.answers.map((_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    return {
+        answers: indices.map(i => question.answers[i]),
+        correct: indices.indexOf(question.correct)
+    };
+}
+
 // Classe Card pour le système de répétition espacée
 class Card {
     constructor(question) {
@@ -218,6 +231,9 @@ class QuizMode {
 
         this.answered = false;
         const question = this.quizQuestions[this.currentQuestionIndex];
+        const shuffled = shuffleAnswersForDisplay(question);
+        this._shuffledAnswers = shuffled.answers;
+        this._shuffledCorrect = shuffled.correct;
         const progress = ((this.currentQuestionIndex + 1) / this.quizQuestions.length) * 100;
 
         const imageHTML = question.image ? `
@@ -276,7 +292,7 @@ class QuizMode {
                 <div class="question-text">${question.question}</div>
 
                 <div class="answers">
-                    ${question.answers.map((answer, index) => `
+                    ${this._shuffledAnswers.map((answer, index) => `
                         <button class="answer-btn" onclick="app.quiz.selectQuizAnswer(${index})">
                             ${answer}
                         </button>
@@ -293,7 +309,7 @@ class QuizMode {
         this.answered = true;
 
         const question = this.quizQuestions[this.currentQuestionIndex];
-        const isCorrect = selectedIndex === question.correct;
+        const isCorrect = selectedIndex === this._shuffledCorrect;
 
         this.quizStats.total++;
         if (isCorrect) {
@@ -304,7 +320,7 @@ class QuizMode {
 
         const buttons = document.querySelectorAll('#quiz-tab .answer-btn');
         buttons.forEach((btn, idx) => {
-            if (idx === question.correct) {
+            if (idx === this._shuffledCorrect) {
                 btn.style.background = '#6bcf7f';
                 btn.style.color = 'white';
             } else if (idx === selectedIndex) {
@@ -964,6 +980,7 @@ class SpacedRepetitionApp {
         this.currentIndex = 0;
         this.answered = false;
         this.sessionStats = { correct: 0, incorrect: 0, total: 0 };
+        this.selectedCategory = 'all';
 
         // Initialiser les nouveaux modes
         this.quiz = new QuizMode(this);
@@ -1189,9 +1206,13 @@ class SpacedRepetitionApp {
     }
 
     getLimitedTodayCards() {
-        const allDue = this.getTodayCards();
+        let allDue = this.getTodayCards();
         const limit = this.getDailyLimit();
-        if (allDue.length <= limit) return allDue;
+
+        // Filtre par catégorie si sélectionnée
+        if (this.selectedCategory && this.selectedCategory !== 'all') {
+            allDue = allDue.filter(c => c.question.category === this.selectedCategory);
+        }
 
         // Priorité : learning (en cours) > review (à revoir) > new (nouvelles)
         const learning = allDue.filter(c => c.status === 'learning');
@@ -1204,7 +1225,15 @@ class SpacedRepetitionApp {
         if (selected.length < limit) selected = selected.concat(newCards.slice(0, limit - selected.length));
         if (selected.length < limit) selected = selected.concat(mastered.slice(0, limit - selected.length));
 
-        return selected.slice(0, limit);
+        selected = selected.slice(0, limit);
+
+        // Mélanger pour éviter les longues séries sur le même thème
+        for (let i = selected.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [selected[i], selected[j]] = [selected[j], selected[i]];
+        }
+
+        return selected;
     }
 
     getStreak() {
@@ -1274,6 +1303,9 @@ class SpacedRepetitionApp {
         this.answered = false;
         this.currentCard = this.todayCards[this.currentIndex];
         const question = this.currentCard.question;
+        const shuffled = shuffleAnswersForDisplay(question);
+        this._shuffledAnswers = shuffled.answers;
+        this._shuffledCorrect = shuffled.correct;
         const progress = ((this.currentIndex + 1) / this.todayCards.length) * 100;
 
         // Image HTML si présente
@@ -1325,7 +1357,7 @@ class SpacedRepetitionApp {
                 <div class="question-text">${question.question}</div>
 
                 <div class="answers">
-                    ${question.answers.map((answer, index) => `
+                    ${this._shuffledAnswers.map((answer, index) => `
                         <button class="answer-btn" onclick="app.selectAnswer(${index})">
                             ${answer}
                         </button>
@@ -1342,7 +1374,7 @@ class SpacedRepetitionApp {
         this.answered = true;
 
         const question = this.currentCard.question;
-        const isCorrect = index === question.correct;
+        const isCorrect = index === this._shuffledCorrect;
 
         this.sessionStats.total++;
         if (isCorrect) {
@@ -1357,7 +1389,7 @@ class SpacedRepetitionApp {
         const answerButtons = document.querySelectorAll('.answer-btn');
         answerButtons.forEach((btn, i) => {
             btn.classList.add('disabled');
-            if (i === question.correct) {
+            if (i === this._shuffledCorrect) {
                 btn.classList.add('correct');
             } else if (i === index) {
                 btn.classList.add('incorrect');
@@ -1474,9 +1506,42 @@ class SpacedRepetitionApp {
         `;
     }
 
+    getExamCountdown() {
+        const examDate = localStorage.getItem('exam-date');
+        if (!examDate) return null;
+        const exam = new Date(examDate);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        exam.setHours(0, 0, 0, 0);
+        const diff = Math.round((exam - today) / (1000 * 60 * 60 * 24));
+        return diff;
+    }
+
     showDailyTab() {
         const allDue = this.getTodayCards();
         this.todayCards = this.getLimitedTodayCards();
+
+        // Catégories disponibles parmi les cartes dues
+        const allDueCategories = [...new Set(this.getTodayCards().map(c => c.question.category))].sort();
+        const categoryOptions = `
+            <option value="all">🎯 Tous les thèmes (${allDue.length})</option>
+            ${allDueCategories.map(cat => {
+                const count = this.getTodayCards().filter(c => c.question.category === cat).length;
+                return `<option value="${cat}" ${this.selectedCategory === cat ? 'selected' : ''}>${cat} (${count})</option>`;
+            }).join('')}
+        `;
+
+        // Compte à rebours examen
+        const days = this.getExamCountdown();
+        const countdownHTML = days !== null ? `
+            <div style="background: ${days <= 7 ? '#fff3e0' : '#e8f4ff'}; border-left: 4px solid ${days <= 7 ? '#ff9800' : '#667eea'};
+                        padding: 12px 15px; border-radius: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.9em; color: #555;">📅 Examen dans</span>
+                <strong style="font-size: 1.3em; color: ${days <= 7 ? '#e65100' : '#3730a3'};">
+                    ${days > 0 ? `${days} jour${days > 1 ? 's' : ''}` : days === 0 ? "Aujourd'hui !" : 'Passé'}
+                </strong>
+            </div>
+        ` : '';
 
         if (allDue.length === 0) {
             this.showNoQuestionsMessage();
@@ -1489,6 +1554,20 @@ class SpacedRepetitionApp {
 
             document.getElementById('daily-tab').innerHTML = `
                 <h2 style="margin-bottom: 15px;">🌅 Révision du jour</h2>
+
+                ${countdownHTML}
+
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; font-size: 0.85em; color: #666; margin-bottom: 6px; font-weight: 600;">
+                        📚 Thème à réviser :
+                    </label>
+                    <select onchange="app.setCategory(this.value)"
+                            style="width: 100%; padding: 10px 12px; border: 2px solid #e0e0e0; border-radius: 8px;
+                                   font-size: 0.95em; background: white; cursor: pointer;">
+                        ${categoryOptions}
+                    </select>
+                </div>
+
                 <div class="info-box">
                     <strong>${this.todayCards.length} question${this.todayCards.length > 1 ? 's' : ''}</strong>
                     à réviser aujourd'hui${hasMore ? ` (sur ${allDue.length} disponibles)` : ''}.
@@ -1501,6 +1580,11 @@ class SpacedRepetitionApp {
                 </button>
             `;
         }
+    }
+
+    setCategory(cat) {
+        this.selectedCategory = cat;
+        this.showDailyTab();
     }
 
     showFlashcards() {
@@ -1677,6 +1761,15 @@ class SpacedRepetitionApp {
         `;
     }
 
+    saveExamDate() {
+        const input = document.getElementById('exam-date-input');
+        if (input && input.value) {
+            localStorage.setItem('exam-date', input.value);
+            this.showSettings();
+            this.showDailyTab();
+        }
+    }
+
     showSettings() {
         const notificationsEnabled = localStorage.getItem('notifications-enabled') === 'true';
         const notificationTime = localStorage.getItem('notification-time') || '09:00';
@@ -1758,6 +1851,27 @@ class SpacedRepetitionApp {
                         Désactiver Premium
                     </button>
                 `}
+            </div>
+
+            <!-- DATE D'EXAMEN -->
+            <div class="info-box" style="margin-bottom: 20px; background: #f3f0ff; border-left: 4px solid #7c3aed;">
+                <h3 style="margin-bottom: 10px;">📅 Date de l'examen</h3>
+                <p style="color: #666; margin-bottom: 12px; font-size: 0.9em;">
+                    Entrez la date de votre examen pour afficher le compte à rebours.
+                </p>
+                <input type="date" id="exam-date-input"
+                       value="${localStorage.getItem('exam-date') || ''}"
+                       style="width: 100%; padding: 10px 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em; margin-bottom: 10px;">
+                <button onclick="app.saveExamDate()"
+                        style="width: 100%; padding: 10px; background: #7c3aed; color: white; border: none; border-radius: 8px; font-size: 0.95em; font-weight: bold; cursor: pointer;">
+                    Enregistrer
+                </button>
+                ${localStorage.getItem('exam-date') ? `
+                    <button onclick="localStorage.removeItem('exam-date'); app.showSettings();"
+                            style="width: 100%; margin-top: 8px; padding: 8px; background: transparent; color: #999; border: 1px solid #ddd; border-radius: 8px; font-size: 0.85em; cursor: pointer;">
+                        Supprimer la date
+                    </button>
+                ` : ''}
             </div>
 
             <!-- SÉLECTION DES STAGES -->
